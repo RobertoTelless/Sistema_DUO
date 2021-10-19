@@ -56,6 +56,7 @@ namespace ERP_Condominios_Solution.Controllers
             ViewBag.UsuariosLista = baseApp.GetAllUsuarios(idAss.Value);
             ViewBag.LogsLista = logApp.GetAllItens(idAss.Value);
             return View();
+
         }
 
         public ActionResult CarregarLandingPage()

@@ -129,6 +129,7 @@ namespace SMS_Solution.Controllers
                 {
                     frase = "Boa noite, " + nome;
                 }
+
                 ViewBag.Greeting = frase;
                 ViewBag.Nome = usuario.USUA_NM_NOME;
                 if (usuario.CARGO != null)
