@@ -114,6 +114,45 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_TELEFONE_UF" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_ANEXO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_FUNCIONARIO_USUARIO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_CLIENTE" Width="1.5" PointX="21.5" PointY="59.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE" Width="1.5" PointX="23.75" PointY="45.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_ANEXO" Width="1.5" PointX="26" PointY="51.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_CONTATO" Width="1.5" PointX="26" PointY="54.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_QUADRO_SOCIETARIO" Width="1.5" PointX="26" PointY="44.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_REFERENCIA" Width="1.5" PointX="26" PointY="48.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_TAG" Width="1.5" PointX="26" PointY="67.125" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FILIAL" Width="1.5" PointX="13.5" PointY="63.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR" Width="1.5" PointX="15.75" PointY="31.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_ANEXO" Width="1.5" PointX="18" PointY="37.5" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_CONTATO" Width="1.5" PointX="18" PointY="34.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_QUADRO_SOCIETARIO" Width="1.5" PointX="18" PointY="30.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.SEXO" Width="1.5" PointX="21.5" PointY="51.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_CONTRIBUINTE" Width="1.5" PointX="21.5" PointY="48.625" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_CLIENTE_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FILIAL_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_CATEGORIA_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_CATEGORIA_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_ANEXO_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_CONTATO_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_QUADRO_SOCIETARIO_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_REFERENCIA_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_SEXO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TAG_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TIPO_CONTRIBUINTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TIPO_PESSOA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_UF" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_UF1" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FILIAL_UF" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_ANEXO_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_CONTATO_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_QUADRO_SOCIETARIO_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_TIPO_PESSOA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_UF" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

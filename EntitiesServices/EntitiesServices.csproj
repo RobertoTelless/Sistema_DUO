@@ -277,6 +277,9 @@
     <Compile Include="Model\CATEGORIA_AGENDA.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\CATEGORIA_CLIENTE.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CATEGORIA_EQUIPAMENTO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
@@ -296,6 +299,24 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CENTRO_CUSTO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CLIENTE.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CLIENTE_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CLIENTE_CONTATO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CLIENTE_QUADRO_SOCIETARIO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CLIENTE_REFERENCIA.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CLIENTE_TAG.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CONFIGURACAO.cs">
@@ -325,6 +346,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DUO_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\FILIAL.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FORNECEDOR.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FORNECEDOR_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FORNECEDOR_CONTATO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FORNECEDOR_QUADRO_SOCIETARIO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\GRUPO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
@@ -350,6 +386,9 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PERIODICIDADE_TAREFA.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SEXO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SUBGRUPO.cs">
@@ -380,6 +419,9 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TIPO_CONTA.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TIPO_CONTRIBUINTE.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TIPO_GRUPO.cs">

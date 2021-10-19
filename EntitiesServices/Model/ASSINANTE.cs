@@ -43,6 +43,10 @@ namespace EntitiesServices.Model
             this.TIPO_GRUPO = new HashSet<TIPO_GRUPO>();
             this.TIPO_TAREFA = new HashSet<TIPO_TAREFA>();
             this.USUARIO = new HashSet<USUARIO>();
+            this.CATEGORIA_CLIENTE = new HashSet<CATEGORIA_CLIENTE>();
+            this.CLIENTE = new HashSet<CLIENTE>();
+            this.FILIAL = new HashSet<FILIAL>();
+            this.FORNECEDOR = new HashSet<FORNECEDOR>();
         }
     
         public int ASSI_CD_ID { get; set; }
@@ -118,5 +122,13 @@ namespace EntitiesServices.Model
         public virtual ICollection<TIPO_TAREFA> TIPO_TAREFA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USUARIO> USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CATEGORIA_CLIENTE> CATEGORIA_CLIENTE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CLIENTE> CLIENTE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FILIAL> FILIAL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FORNECEDOR> FORNECEDOR { get; set; }
     }
 }

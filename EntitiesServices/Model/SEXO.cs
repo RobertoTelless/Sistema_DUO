@@ -12,19 +12,21 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class CATEGORIA_FORNECEDOR
+    public partial class SEXO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CATEGORIA_FORNECEDOR()
+        public SEXO()
         {
-            this.FORNECEDOR = new HashSet<FORNECEDOR>();
+            this.CLIENTE = new HashSet<CLIENTE>();
         }
     
-        public int CAFO_CD_ID { get; set; }
-        public string CAFO_NM_NOME { get; set; }
-        public Nullable<int> CAFO_IN_ATIVO { get; set; }
+        public int SEXO_CD_ID { get; set; }
+        public string SEXO_SG_SIGLA { get; set; }
+        public string SEXO_NM_NOME { get; set; }
+        public Nullable<int> ASSI_CD_ID { get; set; }
+        public Nullable<int> SEXO_IN_ATIVO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FORNECEDOR> FORNECEDOR { get; set; }
+        public virtual ICollection<CLIENTE> CLIENTE { get; set; }
     }
 }
