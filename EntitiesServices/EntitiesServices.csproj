@@ -176,11 +176,42 @@
     <Compile Include="Attributes\CustomValidationCNPJAttribute .cs" />
     <Compile Include="Attributes\CustomValidationCPFAttribute.cs" />
     <Compile Include="Attributes\DataAnteriorAttribute.cs" />
+    <Compile Include="EntitiesServices\AgendaService.cs" />
+    <Compile Include="EntitiesServices\AssinanteService.cs" />
+    <Compile Include="EntitiesServices\CategoriaTelefoneService.cs" />
+    <Compile Include="EntitiesServices\ConfiguracaoService.cs" />
+    <Compile Include="EntitiesServices\LogService.cs" />
+    <Compile Include="EntitiesServices\NoticiaService.cs" />
+    <Compile Include="EntitiesServices\NotificacaoService.cs" />
+    <Compile Include="EntitiesServices\PerfilService.cs" />
+    <Compile Include="EntitiesServices\ServiceBase.cs" />
+    <Compile Include="EntitiesServices\TarefaService.cs" />
+    <Compile Include="EntitiesServices\TelefoneService.cs" />
+    <Compile Include="EntitiesServices\TemplateService.cs" />
+    <Compile Include="EntitiesServices\TipoPessoaService.cs" />
+    <Compile Include="EntitiesServices\UsuarioService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IAgendaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IAssinanteService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ICategoriaTelefoneService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IConfiguracaoService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ILogService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\INoticiaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\INotificacaoService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IPerfilService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IPeriodicidadeService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IServiceBase.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ITarefaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ITelefoneService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ITemplateService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ITipoPessoaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IUsuarioService.cs" />
     <Compile Include="Interfaces\Repositories\IAgendaAnexoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IAgendaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IAssinanteAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IAssinanteRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaAgendaRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaNotificacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoriaTelefoneRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaUsuarioRepository.cs" />
     <Compile Include="Interfaces\Repositories\IConfiguracaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ILogRepository.cs" />
@@ -189,6 +220,8 @@
     <Compile Include="Interfaces\Repositories\INotificacaoAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\INotificacaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPerfilRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPeriodicidadeTarefaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPeriodicidadeRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Repositories\ITarefaAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITarefaNotificacaoRepository.cs" />
@@ -359,8 +392,6 @@
     <Compile Include="WorkClasses\TrocaSenha.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntitiesServices\" />
-    <Folder Include="Interfaces\EntitiesServices\" />
     <Folder Include="Interfaces\ExternalServices\" />
   </ItemGroup>
   <ItemGroup>
@@ -388,6 +419,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrossCutting\CrossCutting.csproj">
+      <Project>{e59c5bd2-e664-40b0-b6a7-334a284cbde5}</Project>
+      <Name>CrossCutting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

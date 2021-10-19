@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ERP_Condominios_Solution
+namespace SMS_Presentation
 {
     public class RouteConfig
     {

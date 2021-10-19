@@ -182,6 +182,7 @@
     <Compile Include="Repositories\NotificacaoAnexoRepository.cs" />
     <Compile Include="Repositories\NotificacaoRepository.cs" />
     <Compile Include="Repositories\PerfilRepository.cs" />
+    <Compile Include="Repositories\PeriodicidadeTarefaRepository.cs" />
     <Compile Include="Repositories\PeriodicidadeRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\TarefaAnexoRepository.cs" />
