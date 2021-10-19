@@ -2918,6 +2918,28 @@
     <Content Include="Views\Noticia\EditarNoticia.cshtml" />
     <Content Include="Views\Noticia\ExcluirNoticia.cshtml" />
     <Content Include="Views\Noticia\ReativarNoticia.cshtml" />
+    <Content Include="Views\Notificacao\VerNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\MontarTelaNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\VerAnexoNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\MontarTelaNotificacaoGeral.cshtml" />
+    <Content Include="Views\Notificacao\IncluirNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\EditarNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\ExcluirNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\ReativarNotificacao.cshtml" />
+    <Content Include="Views\Notificacao\VerAnexoNotificacaoGeral.cshtml" />
+    <Content Include="Views\Log\MontarTelaLog.cshtml" />
+    <Content Include="Views\Agenda\MontarTelaAgendaCalendario.cshtml" />
+    <Content Include="Views\Agenda\MontarTelaAgenda.cshtml" />
+    <Content Include="Views\Agenda\IncluirAgenda.cshtml" />
+    <Content Include="Views\Agenda\EditarAgenda.cshtml" />
+    <Content Include="Views\Agenda\VerAnexoAgenda.cshtml" />
+    <Content Include="Views\Agenda\VerTimelineAgenda.cshtml" />
+    <Content Include="Views\Tarefa\MontarTelaTarefaKanban.cshtml" />
+    <Content Include="Views\Tarefa\MontarTelaTarefa.cshtml" />
+    <Content Include="Views\Tarefa\IncluirTarefa.cshtml" />
+    <Content Include="Views\Tarefa\EditarTarefa.cshtml" />
+    <Content Include="Views\Tarefa\VerAnexoTarefa.cshtml" />
+    <Content Include="Views\Tarefa\IncluirAcompanhamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2930,10 +2952,6 @@
     <Folder Include="Imagens\1\Tarefa\" />
     <Folder Include="Imagens\1\Usuario\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Agenda\" />
-    <Folder Include="Views\Log\" />
-    <Folder Include="Views\Notificacao\" />
-    <Folder Include="Views\Tarefa\" />
     <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
