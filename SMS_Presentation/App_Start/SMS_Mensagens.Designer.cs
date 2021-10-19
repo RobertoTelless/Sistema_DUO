@@ -59,5 +59,311 @@ namespace SMS_Presentation.App_Start {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a E-mail invalido.
+        /// </summary>
+        internal static string M0001 {
+            get {
+                return ResourceManager.GetString("M0001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Login não cadastrado.
+        /// </summary>
+        internal static string M0002 {
+            get {
+                return ResourceManager.GetString("M0002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O usuario esta inativo.
+        /// </summary>
+        internal static string M0003 {
+            get {
+                return ResourceManager.GetString("M0003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O usuario esta bloqueado. Entre em contato com o administrador do sistema para executar o desbloqueio.
+        /// </summary>
+        internal static string M0004 {
+            get {
+                return ResourceManager.GetString("M0004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O usuario ja efetuou um login com a senha provisoria. Favor gerar outra senha.
+        /// </summary>
+        internal static string M0005 {
+            get {
+                return ResourceManager.GetString("M0005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Numero de falhas de login superior ao limite diario de falhas.
+        /// </summary>
+        internal static string M0006 {
+            get {
+                return ResourceManager.GetString("M0006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Credenciais invalidas.
+        /// </summary>
+        internal static string M0007 {
+            get {
+                return ResourceManager.GetString("M0007", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A nova senha nao pode ser igual a anterior.
+        /// </summary>
+        internal static string M0008 {
+            get {
+                return ResourceManager.GetString("M0008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A nova senha nao foi confirmada corretamente.
+        /// </summary>
+        internal static string M0009 {
+            get {
+                return ResourceManager.GetString("M0009", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Você não tem acesso a essa funcionalidade.
+        /// </summary>
+        internal static string M0011 {
+            get {
+                return ResourceManager.GetString("M0011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário cadastrado mas sem acesso ao sistema. Consulte a administração..
+        /// </summary>
+        internal static string M0012 {
+            get {
+                return ResourceManager.GetString("M0012", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Data de conclusão inferior a data de cadastro.
+        /// </summary>
+        internal static string M0013 {
+            get {
+                return ResourceManager.GetString("M0013", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Data de conclusão maior que a data corrente.
+        /// </summary>
+        internal static string M0014 {
+            get {
+                return ResourceManager.GetString("M0014", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nenhum registro atendeu ao filtro especificado.
+        /// </summary>
+        internal static string M0016 {
+            get {
+                return ResourceManager.GetString("M0016", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nenhum arquivo selecionado.
+        /// </summary>
+        internal static string M0019 {
+            get {
+                return ResourceManager.GetString("M0019", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Extensão de arquivo não suportada.
+        /// </summary>
+        internal static string M0020 {
+            get {
+                return ResourceManager.GetString("M0020", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome do arquivo muito longo.
+        /// </summary>
+        internal static string M0024 {
+            get {
+                return ResourceManager.GetString("M0024", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Telefone já cadastrado.
+        /// </summary>
+        internal static string M0028 {
+            get {
+                return ResourceManager.GetString("M0028", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Centro de Custo já cadastrado. Já existem um centro de custo com os mesmos grupo, subgrupo e número..
+        /// </summary>
+        internal static string M0036 {
+            get {
+                return ResourceManager.GetString("M0036", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse centro de custo. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0037 {
+            get {
+                return ResourceManager.GetString("M0037", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Banco já cadastrado.
+        /// </summary>
+        internal static string M0038 {
+            get {
+                return ResourceManager.GetString("M0038", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse banco. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0039 {
+            get {
+                return ResourceManager.GetString("M0039", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir essa conta bancária. Existem informações vinculadas a ela.
+        /// </summary>
+        internal static string M0040 {
+            get {
+                return ResourceManager.GetString("M0040", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Conta bancária já cadastrada.
+        /// </summary>
+        internal static string M0041 {
+            get {
+                return ResourceManager.GetString("M0041", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Falha no envio do SMS.
+        /// </summary>
+        internal static string M0051 {
+            get {
+                return ResourceManager.GetString("M0051", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SMS enviado com sucesso.
+        /// </summary>
+        internal static string M0052 {
+            get {
+                return ResourceManager.GetString("M0052", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Tarefa ja cadastrada.
+        /// </summary>
+        internal static string M0058 {
+            get {
+                return ResourceManager.GetString("M0058", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe uma conta bancária definida como conta principal. Não pode haver duas contas nessa situação..
+        /// </summary>
+        internal static string M0063 {
+            get {
+                return ResourceManager.GetString("M0063", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A Senha não pode ficar em branco.
+        /// </summary>
+        internal static string M0073 {
+            get {
+                return ResourceManager.GetString("M0073", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nova senha não pode ser em branco.
+        /// </summary>
+        internal static string M0074 {
+            get {
+                return ResourceManager.GetString("M0074", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Confirmação da senha não pode ser em branco.
+        /// </summary>
+        internal static string M0075 {
+            get {
+                return ResourceManager.GetString("M0075", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Você tem notificações não lidas até esta data.
+        /// </summary>
+        internal static string M0093 {
+            get {
+                return ResourceManager.GetString("M0093", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Você tem tarefas pendentes até esta data.
+        /// </summary>
+        internal static string M0094 {
+            get {
+                return ResourceManager.GetString("M0094", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O login não pode ficar em branco.
+        /// </summary>
+        internal static string M0109 {
+            get {
+                return ResourceManager.GetString("M0109", resourceCulture);
+            }
+        }
     }
 }
