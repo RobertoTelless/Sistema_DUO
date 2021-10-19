@@ -21,7 +21,7 @@ namespace ModelServices.EntitiesServices
         private readonly ISubgrupoRepository _baseRepository;
         private readonly IGrupoRepository _gruRepository;
         private readonly ILogRepository _logRepository;
-        protected ERP_CondominioEntities Db = new ERP_CondominioEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public SubgrupoService(ISubgrupoRepository baseRepository, ILogRepository logRepository, IGrupoRepository gruRepository) : base(baseRepository)
         {

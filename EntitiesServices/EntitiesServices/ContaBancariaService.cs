@@ -23,7 +23,7 @@ namespace ModelServices.EntitiesServices
         private readonly ITipoContaRepository _tipoRepository;
         private readonly IContaBancariaContatoRepository _contRepository;
         private readonly IContaBancariaLancamentoRepository _lancRepository;
-        protected ERP_CondominioEntities Db = new ERP_CondominioEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public ContaBancariaService(IContaBancariaRepository baseRepository, ILogRepository logRepository, ITipoContaRepository tipoRepository, IContaBancariaContatoRepository contRepository, IContaBancariaLancamentoRepository lancRepository) : base(baseRepository)
         {

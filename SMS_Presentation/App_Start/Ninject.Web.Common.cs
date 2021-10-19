@@ -82,6 +82,11 @@ namespace Presentation.Start
             kernel.Bind<IAssinanteAppService>().To<AssinanteAppService>();
             kernel.Bind<ITelefoneAppService>().To<TelefoneAppService>();
             kernel.Bind<ICategoriaTelefoneAppService>().To<CategoriaTelefoneAppService>();
+            kernel.Bind<IBancoAppService>().To<BancoAppService>();
+            kernel.Bind<ICentroCustoAppService>().To<CentroCustoAppService>();
+            kernel.Bind<IContaBancariaAppService>().To<ContaBancariaAppService>();
+            kernel.Bind<IGrupoAppService>().To<GrupoAppService>();
+            kernel.Bind<ISubgrupoAppService>().To<SubgrupoAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -97,6 +102,11 @@ namespace Presentation.Start
             kernel.Bind<IAssinanteService>().To<AssinanteService>();
             kernel.Bind<ITelefoneService>().To<TelefoneService>();
             kernel.Bind<ICategoriaTelefoneService>().To<CategoriaTelefoneService>();
+            kernel.Bind<IBancoService>().To<BancoService>();
+            kernel.Bind<ICentroCustoService>().To<CentroCustoService>();
+            kernel.Bind<IContaBancariaService>().To<ContaBancariaService>();
+            kernel.Bind<IGrupoService>().To<GrupoService>();
+            kernel.Bind<ISubgrupoService>().To<SubgrupoService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -124,6 +134,13 @@ namespace Presentation.Start
             kernel.Bind<ITelefoneRepository>().To<TelefoneRepository>();
             kernel.Bind<ICategoriaTelefoneRepository>().To<CategoriaTelefoneRepository>();
             kernel.Bind<IPeriodicidadeRepository>().To<PeriodicidadeRepository>();
+            kernel.Bind<IBancoRepository>().To<BancoRepository>();
+            kernel.Bind<ICentroCustoRepository>().To<CentroCustoRepository>();
+            kernel.Bind<IContaBancariaRepository>().To<ContaBancariaRepository>();
+            kernel.Bind<IContaBancariaContatoRepository>().To<ContaBancariaContatoRepository>();
+            kernel.Bind<IContaBancariaLancamentoRepository>().To<ContaBancariaLancamentoRepository>();
+            kernel.Bind<IGrupoRepository>().To<GrupoRepository>();
+            kernel.Bind<ISubgrupoRepository>().To<SubgrupoRepository>();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Web;
 using EntitiesServices.Model;
 using EntitiesServices.Attributes;
 
-namespace ERP_Condominios_Solution.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class CentroCustoViewModel
     {

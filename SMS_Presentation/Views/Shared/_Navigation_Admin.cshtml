@@ -39,6 +39,7 @@
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "BaseAdmin", cssClass: "in")">
                     <li class="@Html.IsSelected(action: "MontarTelaAgenda")"><a href="@Url.Action("MontarTelaAgenda", "Agenda")">Agenda</a></li>
                     <li class="@Html.IsSelected(action: "MontarTelaTarefa")"><a href="@Url.Action("MontarTelaTarefa", "Tarefa")">Tarefas</a></li>
+                    <li class="@Html.IsSelected(action: "MontarTelaTelefone")"><a href="@Url.Action("MontarTelaTelefone", "Telefone")">Telefones</a></li>
                 </ul>
             </li>
 
@@ -63,18 +64,23 @@
                             <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Cargos</a></li>
                         </ul>
                     </li>
-                    <li class="@*@Html.IsSelected(action: " CarregarBase")*@">
-                        <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Financeiro</span> <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "Cadastros", cssClass: "in")">
-                            <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Bancos & Contas</a></li>
-                            <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Centros de Custos</a></li>
-                        </ul>
-                    </li>
+                    @if (ViewBag.Perfil == "ADM" || ViewBag.Perfil == "GER")
+	                {
+                        <li class="@*@Html.IsSelected(action: " CarregarBase")*@">
+                            <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Financeiro</span> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "Cadastros", cssClass: "in")">
+                                <li class="@Html.IsSelected(action: "MontarTelaBanco")"><a href="@Url.Action("MontarTelaBanco", "Banco")">Bancos & Contas</a></li>
+                                <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Grupos</a></li>
+                                <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Sub-Grupos</a></li>
+                                <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Centros de Custos</a></li>
+                            </ul>
+                        </li>
+	                }
                 </ul>
             </li>
 
             @*Administração*@
-            @if (((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "ADM" || ((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "SIN")
+            @if (((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "ADM" || ((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "GER")
             {
                 <li class="@Html.IsSelected(controller: "BaseAdmin")">
                     <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Administração</span> <span class="fa arrow"></span></a>
@@ -101,7 +107,7 @@
             }
 
             @*Configuração*@
-            @if (((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "ADM" || ((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "SIN")
+            @if (((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "ADM" || ((EntitiesServices.Model.PERFIL)Session["Perfil"]).PERF_SG_SIGLA  == "GER")
             {
                 <li class="@Html.IsSelected(controller: "BaseAdmin")">
                     <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Configurações</span> <span class="fa arrow"></span></a>

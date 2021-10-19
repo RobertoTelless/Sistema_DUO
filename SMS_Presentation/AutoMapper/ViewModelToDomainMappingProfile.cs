@@ -24,13 +24,13 @@ namespace MvcMapping.Mappers
             CreateMap<AgendaViewModel, AGENDA>();
             CreateMap<TarefaAcompanhamentoViewModel, TAREFA_ACOMPANHAMENTO>();
             CreateMap<TelefoneViewModel, TELEFONE>();
-            //CreateMap<BancoViewModel, BANCO>();
-            //CreateMap<CentroCustoViewModel, CENTRO_CUSTO>();
-            //CreateMap<ContaBancariaContatoViewModel, CONTA_BANCO_CONTATO>();
-            //CreateMap<ContaBancariaLancamentoViewModel, CONTA_BANCO_LANCAMENTO>();
-            //CreateMap<CentroCustoViewModel, CENTRO_CUSTO>();
-            //CreateMap<GrupoViewModel, GRUPO>();
-            //CreateMap<SubgrupoViewModel, SUBGRUPO>();
+            CreateMap<BancoViewModel, BANCO>();
+            CreateMap<CentroCustoViewModel, CENTRO_CUSTO>();
+            CreateMap<ContaBancariaContatoViewModel, CONTA_BANCO_CONTATO>();
+            CreateMap<ContaBancariaLancamentoViewModel, CONTA_BANCO_LANCAMENTO>();
+            CreateMap<CentroCustoViewModel, CENTRO_CUSTO>();
+            CreateMap<GrupoViewModel, GRUPO>();
+            CreateMap<SubgrupoViewModel, SUBGRUPO>();
 
         }
     }

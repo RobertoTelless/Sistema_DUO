@@ -5,7 +5,7 @@ using System.Linq;
 using EntitiesServices.Model;
 using System.Web;
 
-namespace ERP_Condominios_Solution.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class ContaBancariaLancamentoViewModel
     {

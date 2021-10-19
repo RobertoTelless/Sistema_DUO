@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IBancoRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected ERP_CondominioEntities Db = new ERP_CondominioEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public BancoService(IBancoRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {
