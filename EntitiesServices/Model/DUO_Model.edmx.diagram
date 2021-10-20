@@ -153,6 +153,54 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_QUADRO_SOCIETARIO_FORNECEDOR" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_TIPO_PESSOA" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_UF" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO" Width="1.5" PointX="21.125" PointY="37.875" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO_ANEXO" Width="1.5" PointX="23.375" PointY="39.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO_MANUTENCAO" Width="1.5" PointX="21.375" PointY="34.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.MOVIMENTO_ESTOQUE_PRODUTO" Width="1.5" PointX="16.125" PointY="59.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRECO_PRODUTO" Width="1.5" PointX="19.125" PointY="66" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO" Width="1.5" PointX="29.125" PointY="54" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ANEXO" Width="1.5" PointX="31.375" PointY="65.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ESTOQUE_FILIAL" Width="1.5" PointX="31.375" PointY="61.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_FORNECEDOR" Width="1.5" PointX="21.375" PointY="30.5" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ORIGEM" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_TABELA_PRECO" Width="1.5" PointX="34.375" PointY="62.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.SUBCATEGORIA_PRODUTO" Width="1.5" PointX="26.875" PointY="60.125" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TRANSPORTE" Width="1.5" PointX="19.875" PointY="82.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_VEICULO" Width="1.5" PointX="19.875" PointY="79.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TRANSPORTADORA" Width="1.5" PointX="22.125" PointY="66.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TRANSPORTADORA_ANEXO" Width="1.5" PointX="24.375" PointY="70.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.UNIDADE" Width="1.5" PointX="26.875" PointY="63.375" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_CATEGORIA_EQUIPAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_CATEGORIA_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_CATEGORIA_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_ANEXO_EQUIPAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_PERIODICIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRECO_PRODUTO_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ESTOQUE_FILIAL_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FORNECEDOR_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRECO_PRODUTO_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ANEXO_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ESTOQUE_FILIAL_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FORNECEDOR_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_SUBCATEGORIA_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_UNIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_TRANSPORTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_VEICULO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ANEXO_TRANSPORTADORA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -84,5 +84,22 @@ namespace EntitiesServices.Model
         public virtual DbSet<FORNECEDOR_QUADRO_SOCIETARIO> FORNECEDOR_QUADRO_SOCIETARIO { get; set; }
         public virtual DbSet<SEXO> SEXO { get; set; }
         public virtual DbSet<TIPO_CONTRIBUINTE> TIPO_CONTRIBUINTE { get; set; }
+        public virtual DbSet<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        public virtual DbSet<EQUIPAMENTO_ANEXO> EQUIPAMENTO_ANEXO { get; set; }
+        public virtual DbSet<EQUIPAMENTO_MANUTENCAO> EQUIPAMENTO_MANUTENCAO { get; set; }
+        public virtual DbSet<MOVIMENTO_ESTOQUE_PRODUTO> MOVIMENTO_ESTOQUE_PRODUTO { get; set; }
+        public virtual DbSet<PRECO_PRODUTO> PRECO_PRODUTO { get; set; }
+        public virtual DbSet<PRODUTO> PRODUTO { get; set; }
+        public virtual DbSet<PRODUTO_ANEXO> PRODUTO_ANEXO { get; set; }
+        public virtual DbSet<PRODUTO_ESTOQUE_FILIAL> PRODUTO_ESTOQUE_FILIAL { get; set; }
+        public virtual DbSet<PRODUTO_FORNECEDOR> PRODUTO_FORNECEDOR { get; set; }
+        public virtual DbSet<PRODUTO_ORIGEM> PRODUTO_ORIGEM { get; set; }
+        public virtual DbSet<PRODUTO_TABELA_PRECO> PRODUTO_TABELA_PRECO { get; set; }
+        public virtual DbSet<SUBCATEGORIA_PRODUTO> SUBCATEGORIA_PRODUTO { get; set; }
+        public virtual DbSet<TIPO_TRANSPORTE> TIPO_TRANSPORTE { get; set; }
+        public virtual DbSet<TIPO_VEICULO> TIPO_VEICULO { get; set; }
+        public virtual DbSet<TRANSPORTADORA> TRANSPORTADORA { get; set; }
+        public virtual DbSet<TRANSPORTADORA_ANEXO> TRANSPORTADORA_ANEXO { get; set; }
+        public virtual DbSet<UNIDADE> UNIDADE { get; set; }
     }
 }

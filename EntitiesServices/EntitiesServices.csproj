@@ -348,6 +348,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DUO_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\EQUIPAMENTO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EQUIPAMENTO_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EQUIPAMENTO_MANUTENCAO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\FILIAL.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
@@ -367,6 +376,9 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LOG.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MOVIMENTO_ESTOQUE_PRODUTO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\NOTICIA.cs">
@@ -390,7 +402,31 @@
     <Compile Include="Model\PERIODICIDADE_TAREFA.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PRECO_PRODUTO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PRODUTO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PRODUTO_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PRODUTO_ESTOQUE_FILIAL.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PRODUTO_FORNECEDOR.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PRODUTO_ORIGEM.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PRODUTO_TABELA_PRECO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\SEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SUBCATEGORIA_PRODUTO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SUBGRUPO.cs">
@@ -435,7 +471,22 @@
     <Compile Include="Model\TIPO_TAREFA.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\TIPO_TRANSPORTE.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TIPO_VEICULO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TRANSPORTADORA.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TRANSPORTADORA_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UF.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UNIDADE.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\USUARIO.cs">

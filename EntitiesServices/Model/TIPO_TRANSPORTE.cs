@@ -12,20 +12,19 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PERIODICIDADE
+    public partial class TIPO_TRANSPORTE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PERIODICIDADE()
+        public TIPO_TRANSPORTE()
         {
-            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
+            this.TRANSPORTADORA = new HashSet<TRANSPORTADORA>();
         }
     
-        public int PERI_CD_ID { get; set; }
-        public string PERI_NM_NOME { get; set; }
-        public int PERI_NR_DIAS { get; set; }
-        public int PERI_IN_ATIVO { get; set; }
+        public int TITR_CD_ID { get; set; }
+        public string TITR_NM_NOME { get; set; }
+        public Nullable<int> TITR_IN_ATIVO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        public virtual ICollection<TRANSPORTADORA> TRANSPORTADORA { get; set; }
     }
 }

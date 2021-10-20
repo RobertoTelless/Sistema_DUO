@@ -12,20 +12,23 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PERIODICIDADE
+    public partial class SUBCATEGORIA_PRODUTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PERIODICIDADE()
+        public SUBCATEGORIA_PRODUTO()
         {
-            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
+            this.PRODUTO = new HashSet<PRODUTO>();
         }
     
-        public int PERI_CD_ID { get; set; }
-        public string PERI_NM_NOME { get; set; }
-        public int PERI_NR_DIAS { get; set; }
-        public int PERI_IN_ATIVO { get; set; }
+        public int SCPR_CD_ID { get; set; }
+        public int ASSI_CD_ID { get; set; }
+        public Nullable<int> CAPR_CD_ID { get; set; }
+        public string SCPR_NM_NOME { get; set; }
+        public Nullable<int> SCPR_IN_ATIVO { get; set; }
     
+        public virtual ASSINANTE ASSINANTE { get; set; }
+        public virtual CATEGORIA_PRODUTO CATEGORIA_PRODUTO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        public virtual ICollection<PRODUTO> PRODUTO { get; set; }
     }
 }

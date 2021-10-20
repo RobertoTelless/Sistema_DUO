@@ -12,20 +12,22 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PERIODICIDADE
+    public partial class UNIDADE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PERIODICIDADE()
+        public UNIDADE()
         {
-            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
+            this.PRODUTO = new HashSet<PRODUTO>();
         }
     
-        public int PERI_CD_ID { get; set; }
-        public string PERI_NM_NOME { get; set; }
-        public int PERI_NR_DIAS { get; set; }
-        public int PERI_IN_ATIVO { get; set; }
+        public int UNID_CD_ID { get; set; }
+        public int ASSI_CD_ID { get; set; }
+        public string UNID_NM_NOME { get; set; }
+        public Nullable<int> UNID_IN_ATIVO { get; set; }
+        public string UNID_SG_SIGLA { get; set; }
+        public Nullable<int> UNID_IN_TIPO_UNIDADE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        public virtual ICollection<PRODUTO> PRODUTO { get; set; }
     }
 }

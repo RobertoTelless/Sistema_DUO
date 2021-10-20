@@ -47,6 +47,11 @@ namespace EntitiesServices.Model
             this.CLIENTE = new HashSet<CLIENTE>();
             this.FILIAL = new HashSet<FILIAL>();
             this.FORNECEDOR = new HashSet<FORNECEDOR>();
+            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
+            this.MOVIMENTO_ESTOQUE_PRODUTO = new HashSet<MOVIMENTO_ESTOQUE_PRODUTO>();
+            this.PRODUTO = new HashSet<PRODUTO>();
+            this.SUBCATEGORIA_PRODUTO = new HashSet<SUBCATEGORIA_PRODUTO>();
+            this.TRANSPORTADORA = new HashSet<TRANSPORTADORA>();
         }
     
         public int ASSI_CD_ID { get; set; }
@@ -130,5 +135,15 @@ namespace EntitiesServices.Model
         public virtual ICollection<FILIAL> FILIAL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FORNECEDOR> FORNECEDOR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MOVIMENTO_ESTOQUE_PRODUTO> MOVIMENTO_ESTOQUE_PRODUTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRODUTO> PRODUTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SUBCATEGORIA_PRODUTO> SUBCATEGORIA_PRODUTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TRANSPORTADORA> TRANSPORTADORA { get; set; }
     }
 }

@@ -14,11 +14,19 @@ namespace EntitiesServices.Model
     
     public partial class CATEGORIA_EQUIPAMENTO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CATEGORIA_EQUIPAMENTO()
+        {
+            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
+        }
+    
         public int CAEQ_CD_ID { get; set; }
         public int ASSI_CD_ID { get; set; }
         public string CAEQ_NM_NOME { get; set; }
         public Nullable<int> CAEQ_IN_ATIVO { get; set; }
     
         public virtual ASSINANTE ASSINANTE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
     }
 }
