@@ -195,6 +195,18 @@
   <data name="M0043" xml:space="preserve">
     <value>Não é possível excluir essa Filial. Existem informações vinculadas a ela</value>
   </data>
+  <data name="M0044" xml:space="preserve">
+    <value>Grupo já cadastrado</value>
+  </data>
+  <data name="M0045" xml:space="preserve">
+    <value>Não é possível excluir esse grupo. Existem informações vinculadas a ele</value>
+  </data>
+  <data name="M0046" xml:space="preserve">
+    <value>SubGrupo já cadastrado</value>
+  </data>
+  <data name="M0047" xml:space="preserve">
+    <value>Não é possível excluir esse Subgrupo. Existem informações vinculadas a ele</value>
+  </data>
   <data name="M0051" xml:space="preserve">
     <value>Falha no envio do SMS</value>
   </data>

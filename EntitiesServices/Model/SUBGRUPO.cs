@@ -27,6 +27,7 @@ namespace EntitiesServices.Model
         public Nullable<int> SUBG_IN_ATIVO { get; set; }
         public string SUBG_NR_NUMERO { get; set; }
         public string SUBG_NM_EXIBE { get; set; }
+        public string SUBG_DS_DESCRICAO { get; set; }
     
         public virtual ASSINANTE ASSINANTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

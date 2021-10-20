@@ -22,6 +22,8 @@ namespace SMS_Solution.ViewModels
         [StringLength(10, MinimumLength = 1, ErrorMessage = "O CARGO deve ter no minimo 1 caractere e no máximo 10 caracteres.")]
         public string SUBG_NR_NUMERO { get; set; }
         public string SUBG_NM_EXIBE { get; set; }
+        [StringLength(500, ErrorMessage = "A DESCRIÇÃO deve ter no máximo 500 caracteres.")]
+        public string SUBG_DS_DESCRICAO { get; set; }
 
         public virtual ASSINANTE ASSINANTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

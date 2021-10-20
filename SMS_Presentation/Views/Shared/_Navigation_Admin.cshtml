@@ -69,8 +69,8 @@
                             <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Financeiro</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "Cadastros", cssClass: "in")">
                                 <li class="@Html.IsSelected(action: "MontarTelaBanco")"><a href="@Url.Action("MontarTelaBanco", "Banco")">Bancos & Contas</a></li>
-                                <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Grupos</a></li>
-                                <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Sub-Grupos</a></li>
+                                <li class="@Html.IsSelected(action: "MontarTelaGrupo")"><a href="@Url.Action("MontarTelaGrupo", "Grupo")">Grupos</a></li>
+                                <li class="@Html.IsSelected(action: "MontarTelaSubGrupo")"><a href="@Url.Action("MontarTelaSubGrupo", "Grupo")">Sub-Grupos</a></li>
                                 <li class="@Html.IsSelected(action: "MontarTelaCC")"><a href="@Url.Action("MontarTelaCC", "CentroCusto")">Centros de Custos</a></li>
                             </ul>
                         </li>

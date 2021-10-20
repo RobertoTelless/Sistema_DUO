@@ -295,6 +295,42 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Grupo já cadastrado.
+        /// </summary>
+        internal static string M0044 {
+            get {
+                return ResourceManager.GetString("M0044", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse grupo. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0045 {
+            get {
+                return ResourceManager.GetString("M0045", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SubGrupo já cadastrado.
+        /// </summary>
+        internal static string M0046 {
+            get {
+                return ResourceManager.GetString("M0046", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse Subgrupo. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0047 {
+            get {
+                return ResourceManager.GetString("M0047", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Falha no envio do SMS.
         /// </summary>
         internal static string M0051 {

@@ -2979,6 +2979,12 @@
     <Content Include="Views\CentroCusto\MontarTelaCC.cshtml" />
     <Content Include="Views\CentroCusto\IncluirCC.cshtml" />
     <Content Include="Views\CentroCusto\EditarCC.cshtml" />
+    <Content Include="Views\Grupo\MontarTelaGrupo.cshtml" />
+    <Content Include="Views\Grupo\IncluirGrupo.cshtml" />
+    <Content Include="Views\Grupo\EditarGrupo.cshtml" />
+    <Content Include="Views\Grupo\MontarTelaSubGrupo.cshtml" />
+    <Content Include="Views\Grupo\IncluirSubGrupo.cshtml" />
+    <Content Include="Views\Grupo\EditarSubGrupo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2991,7 +2997,6 @@
     <Folder Include="Imagens\1\Tarefa\" />
     <Folder Include="Imagens\1\Usuario\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Grupo\" />
     <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>

@@ -608,6 +608,7 @@
           <Property Name="SUBG_IN_ATIVO" Type="int" />
           <Property Name="SUBG_NR_NUMERO" Type="varchar" MaxLength="10" />
           <Property Name="SUBG_NM_EXIBE" Type="varchar" MaxLength="63" StoreGeneratedPattern="Computed" />
+          <Property Name="SUBG_DS_DESCRICAO" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TAREFA">
           <Key>
@@ -2818,6 +2819,7 @@
           <NavigationProperty Name="ASSINANTE" Relationship="Self.FK_SUBGRUPO_ASSINANTE" FromRole="SUBGRUPO" ToRole="ASSINANTE" />
           <NavigationProperty Name="CENTRO_CUSTO" Relationship="Self.FK_CENTRO_CUSTO_SUBGRUPO" FromRole="SUBGRUPO" ToRole="CENTRO_CUSTO" />
           <NavigationProperty Name="GRUPO" Relationship="Self.FK_SUBGRUPO_GRUPO" FromRole="SUBGRUPO" ToRole="GRUPO" />
+          <Property Name="SUBG_DS_DESCRICAO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TAREFA">
           <Key>
@@ -5284,6 +5286,7 @@
           <EntitySetMapping Name="SUBGRUPO">
             <EntityTypeMapping TypeName="DUO_DatabaseModel.SUBGRUPO">
               <MappingFragment StoreEntitySet="SUBGRUPO">
+                <ScalarProperty Name="SUBG_DS_DESCRICAO" ColumnName="SUBG_DS_DESCRICAO" />
                 <ScalarProperty Name="SUBG_CD_ID" ColumnName="SUBG_CD_ID" />
                 <ScalarProperty Name="ASSI_CD_ID" ColumnName="ASSI_CD_ID" />
                 <ScalarProperty Name="GRUP_CD_ID" ColumnName="GRUP_CD_ID" />
