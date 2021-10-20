@@ -684,6 +684,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagens\1\Assinante\1\Fotos\FotoBase.jpg" />
     <Content Include="Imagens\Base\favicon_SystemBR.jpg" />
     <Content Include="Imagens\Base\FotoBase.jpg" />
     <Content Include="Imagens\Base\icone_imagem.jpg" />
@@ -2989,6 +2990,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Imagens\1\Agenda\" />
+    <Folder Include="Imagens\1\Assinante\1\Anexos\" />
     <Folder Include="Imagens\1\Equipamento\" />
     <Folder Include="Imagens\1\Fornecedores\" />
     <Folder Include="Imagens\1\Noticias\" />
