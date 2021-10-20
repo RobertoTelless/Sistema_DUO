@@ -15,10 +15,12 @@ namespace ModelServices.Interfaces.EntitiesServices
         Int32 Edit(FILIAL perfil, LOG log);
         Int32 Edit(FILIAL perfil);
         Int32 Delete(FILIAL perfil, LOG log);
-        FILIAL CheckExist(FILIAL item);
+        
+        FILIAL CheckExist(FILIAL item, Int32 idAss);
         FILIAL GetItemById(Int32 id);
-        List<FILIAL> GetAllItens();
-        List<FILIAL> GetAllItensAdm();
+        List<FILIAL> GetAllItens(Int32 idAss);
+        List<FILIAL> GetAllItensAdm(Int32 idAss);
         List<UF> GetAllUF();
+        UF GetUFbySigla(String sigla);
     }
 }

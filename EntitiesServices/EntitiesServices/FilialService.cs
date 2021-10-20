@@ -21,7 +21,7 @@ namespace ModelServices.EntitiesServices
         private readonly IFilialRepository _baseRepository;
         private readonly ILogRepository _logRepository;
         private readonly IUFRepository _ufRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public FilialService(IFilialRepository baseRepository, ILogRepository logRepository, IUFRepository ufRepository) : base(baseRepository)
         {
@@ -30,9 +30,9 @@ namespace ModelServices.EntitiesServices
             _ufRepository = ufRepository;
         }
 
-        public FILIAL CheckExist(FILIAL filial)
+        public FILIAL CheckExist(FILIAL filial, Int32 idAss)
         {
-            FILIAL item = _baseRepository.CheckExist(filial);
+            FILIAL item = _baseRepository.CheckExist(filial, idAss);
             return item;
         }
 
@@ -47,14 +47,19 @@ namespace ModelServices.EntitiesServices
             return _ufRepository.GetAllItens();
         }
 
-        public List<FILIAL> GetAllItens()
+        public UF GetUFbySigla(String sigla)
         {
-            return _baseRepository.GetAllItens();
+            return _ufRepository.GetItemBySigla(sigla);
         }
 
-        public List<FILIAL> GetAllItensAdm()
+        public List<FILIAL> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItens(idAss);
+        }
+
+        public List<FILIAL> GetAllItensAdm(Int32 idAss)
+        {
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
         public Int32 Create(FILIAL item, LOG log)

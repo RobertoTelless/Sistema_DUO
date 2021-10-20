@@ -13,10 +13,12 @@ namespace ApplicationServices.Interfaces
         Int32 ValidateEdit(FILIAL perfil, FILIAL perfilAntes, USUARIO usuario);
         Int32 ValidateDelete(FILIAL perfil, USUARIO usuario);
         Int32 ValidateReativar(FILIAL perfil, USUARIO usuario);
-        List<FILIAL> GetAllItens();
-        List<FILIAL> GetAllItensAdm();
+
+        List<FILIAL> GetAllItens(Int32 idAss);
+        List<FILIAL> GetAllItensAdm(Int32 idAss);
         FILIAL GetItemById(Int32 id);
-        FILIAL CheckExist(FILIAL filial);
+        FILIAL CheckExist(FILIAL filial, Int32 idAss);
         List<UF> GetAllUF();
+        UF GetUFbySigla(String sigla);
     }
 }

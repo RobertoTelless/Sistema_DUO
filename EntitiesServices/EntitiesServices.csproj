@@ -183,6 +183,7 @@
     <Compile Include="EntitiesServices\CentroCustoService.cs" />
     <Compile Include="EntitiesServices\ConfiguracaoService.cs" />
     <Compile Include="EntitiesServices\ContaBancariaService.cs" />
+    <Compile Include="EntitiesServices\FilialService.cs" />
     <Compile Include="EntitiesServices\GrupoService.cs" />
     <Compile Include="EntitiesServices\LogService.cs" />
     <Compile Include="EntitiesServices\NoticiaService.cs" />
@@ -231,6 +232,7 @@
     <Compile Include="Interfaces\Repositories\IContaBancariaContatoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaLancamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFilialRepository.cs" />
     <Compile Include="Interfaces\Repositories\IGrupoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ILogRepository.cs" />
     <Compile Include="Interfaces\Repositories\INoticiaComentarioRepository.cs" />

@@ -123,6 +123,8 @@ namespace ERP_Condominios_Solution.Controllers
             Session["MensConfiguracao"] = 0;
             Session["MensTelefone"] = 0;
             Session["MensBanco"] = 0;
+            Session["MensFilial"] = 0;
+            Session["MensCC"] = 0;
 
             Session["VoltaNotificacao"] = 3;
             Session["VoltaNoticia"] = 1;
@@ -218,6 +220,14 @@ namespace ERP_Condominios_Solution.Controllers
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
             }
             if ((Int32)Session["MensBanco"] == 2)
+            {
+                ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
+            }
+            if ((Int32)Session["MensFilial"] == 2)
+            {
+                ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
+            }
+            if ((Int32)Session["MensCC"] == 2)
             {
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
             }

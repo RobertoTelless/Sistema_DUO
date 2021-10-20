@@ -59,9 +59,8 @@
                         <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Operacional</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "Cadastros", cssClass: "in")">
                             <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Patrimônio</a></li>
-                            <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Filiais</a></li>
+                            <li class="@Html.IsSelected(action: "MontarTelaFilial")"><a href="@Url.Action("MontarTelaFilial", "Filial")">Filiais</a></li>
                             <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Padrões de Mensagens</a></li>
-                            <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Cargos</a></li>
                         </ul>
                     </li>
                     @if (ViewBag.Perfil == "ADM" || ViewBag.Perfil == "GER")
@@ -72,7 +71,7 @@
                                 <li class="@Html.IsSelected(action: "MontarTelaBanco")"><a href="@Url.Action("MontarTelaBanco", "Banco")">Bancos & Contas</a></li>
                                 <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Grupos</a></li>
                                 <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Sub-Grupos</a></li>
-                                <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Centros de Custos</a></li>
+                                <li class="@Html.IsSelected(action: "MontarTelaCC")"><a href="@Url.Action("MontarTelaCC", "CentroCusto")">Centros de Custos</a></li>
                             </ul>
                         </li>
 	                }

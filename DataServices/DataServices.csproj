@@ -181,6 +181,7 @@
     <Compile Include="Repositories\ContaBancariaContatoRepository.cs" />
     <Compile Include="Repositories\ContaBancariaLancamentoRepository.cs" />
     <Compile Include="Repositories\ContaBancariaRepository.cs" />
+    <Compile Include="Repositories\FilialRepository.cs" />
     <Compile Include="Repositories\GrupoRepository.cs" />
     <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\NoticiaComentarioRepository.cs" />

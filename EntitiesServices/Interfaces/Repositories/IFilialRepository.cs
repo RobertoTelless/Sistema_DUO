@@ -9,9 +9,9 @@ namespace ModelServices.Interfaces.Repositories
 {
     public interface IFilialRepository : IRepositoryBase<FILIAL>
     {
-        FILIAL CheckExist(FILIAL item);
+        FILIAL CheckExist(FILIAL item, Int32 idAss);
         FILIAL GetItemById(Int32 id);
-        List<FILIAL> GetAllItens();
-        List<FILIAL> GetAllItensAdm();
+        List<FILIAL> GetAllItens(Int32 idAss);
+        List<FILIAL> GetAllItensAdm(Int32 idAss);
     }
 }

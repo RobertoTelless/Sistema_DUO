@@ -277,6 +277,24 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Filial já cadastrada.
+        /// </summary>
+        internal static string M0042 {
+            get {
+                return ResourceManager.GetString("M0042", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir essa Filial. Existem informações vinculadas a ela.
+        /// </summary>
+        internal static string M0043 {
+            get {
+                return ResourceManager.GetString("M0043", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Falha no envio do SMS.
         /// </summary>
         internal static string M0051 {
