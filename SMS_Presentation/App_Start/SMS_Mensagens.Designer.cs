@@ -214,6 +214,24 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Fornecedor já cadastrado.
+        /// </summary>
+        internal static string M0026 {
+            get {
+                return ResourceManager.GetString("M0026", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse fornecedor. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0027 {
+            get {
+                return ResourceManager.GetString("M0027", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Telefone já cadastrado.
         /// </summary>
         internal static string M0028 {

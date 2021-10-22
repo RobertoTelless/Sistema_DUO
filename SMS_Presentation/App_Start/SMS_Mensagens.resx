@@ -168,6 +168,12 @@
   <data name="M0024" xml:space="preserve">
     <value>Nome do arquivo muito longo</value>
   </data>
+  <data name="M0026" xml:space="preserve">
+    <value>Fornecedor já cadastrado</value>
+  </data>
+  <data name="M0027" xml:space="preserve">
+    <value>Não é possível excluir esse fornecedor. Existem informações vinculadas a ele</value>
+  </data>
   <data name="M0028" xml:space="preserve">
     <value>Telefone já cadastrado</value>
   </data>

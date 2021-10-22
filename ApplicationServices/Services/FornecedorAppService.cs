@@ -129,12 +129,11 @@ namespace ApplicationServices.Services
                 // Completa objeto
                 item.FORN_IN_ATIVO = 1;
                 item.ASSI_CD_ID = usuario.ASSI_CD_ID;
-                item.FORN_NR_DOCUMENTO = "-";
 
                 // Checa endereço
-                if (String.IsNullOrEmpty(item.FORM_NM_ENDERECO))
+                if (String.IsNullOrEmpty(item.FORN_NM_ENDERECO))
                 {
-                    item.FORM_NM_ENDERECO = "-";
+                    item.FORN_NM_ENDERECO = "-";
                 }
                 if (String.IsNullOrEmpty(item.FORN_NM_BAIRRO))
                 {
@@ -179,9 +178,9 @@ namespace ApplicationServices.Services
             try
             {
                 // Checa endereço
-                if (String.IsNullOrEmpty(item.FORM_NM_ENDERECO))
+                if (String.IsNullOrEmpty(item.FORN_NM_ENDERECO))
                 {
-                    item.FORM_NM_ENDERECO = "-";
+                    item.FORN_NM_ENDERECO = "-";
                 }
                 if (String.IsNullOrEmpty(item.FORN_NM_BAIRRO))
                 {
@@ -227,9 +226,9 @@ namespace ApplicationServices.Services
             try
             {
                 // Checa endereço
-                if (String.IsNullOrEmpty(item.FORM_NM_ENDERECO))
+                if (String.IsNullOrEmpty(item.FORN_NM_ENDERECO))
                 {
-                    item.FORM_NM_ENDERECO = "-";
+                    item.FORN_NM_ENDERECO = "-";
                 }
                 if (String.IsNullOrEmpty(item.FORN_NM_BAIRRO))
                 {

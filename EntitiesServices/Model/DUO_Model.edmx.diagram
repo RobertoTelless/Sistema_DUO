@@ -201,6 +201,14 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_TRANSPORTE" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_VEICULO" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ANEXO_TRANSPORTADORA" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_COMENTARIO" Width="1.5" PointX="18" PointY="42" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_MENSAGEM" Width="1.5" PointX="18" PointY="45.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_MENSAGEM" Width="1.5" PointX="15.75" PointY="46.375" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_TIPO_MENSAGEM" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_USUARIO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

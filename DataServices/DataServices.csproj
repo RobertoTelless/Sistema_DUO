@@ -173,6 +173,7 @@
     <Compile Include="Repositories\AssinanteRepository.cs" />
     <Compile Include="Repositories\BancoRepository.cs" />
     <Compile Include="Repositories\CategoriaAgendaRepository.cs" />
+    <Compile Include="Repositories\CategoriaFornecedorRepository.cs" />
     <Compile Include="Repositories\CategoriaNotificacaoRepository.cs" />
     <Compile Include="Repositories\CategoriaTelefoneRepository.cs" />
     <Compile Include="Repositories\CategoriaUsuarioRepository.cs" />
@@ -182,6 +183,10 @@
     <Compile Include="Repositories\ContaBancariaLancamentoRepository.cs" />
     <Compile Include="Repositories\ContaBancariaRepository.cs" />
     <Compile Include="Repositories\FilialRepository.cs" />
+    <Compile Include="Repositories\FornecedorAnexoRepository.cs" />
+    <Compile Include="Repositories\FornecedorCnpjRepository.cs" />
+    <Compile Include="Repositories\FornecedorContatoRepository.cs" />
+    <Compile Include="Repositories\FornecedorRepository.cs" />
     <Compile Include="Repositories\GrupoRepository.cs" />
     <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\NoticiaComentarioRepository.cs" />

@@ -310,6 +310,7 @@
     <Compile Include="Controllers\CentroCustoController.cs" />
     <Compile Include="Controllers\ControleAcessoController.cs" />
     <Compile Include="Controllers\FilialController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogController.cs" />
@@ -337,6 +338,8 @@
     <Compile Include="ViewModels\ContaBancariaContatoViewModel.cs" />
     <Compile Include="ViewModels\ContaBancariaLancamentoViewModel.cs" />
     <Compile Include="ViewModels\ContaBancariaViewModel.cs" />
+    <Compile Include="ViewModels\FornecedorContatoViewModel.cs" />
+    <Compile Include="ViewModels\FornecedorViewModel.cs" />
     <Compile Include="ViewModels\GrupoViewModel.cs" />
     <Compile Include="ViewModels\FilialViewModel.cs" />
     <Compile Include="ViewModels\LogViewModel.cs" />
@@ -2986,6 +2989,17 @@
     <Content Include="Views\Grupo\MontarTelaSubGrupo.cshtml" />
     <Content Include="Views\Grupo\IncluirSubGrupo.cshtml" />
     <Content Include="Views\Grupo\EditarSubGrupo.cshtml" />
+    <Content Include="Views\Fornecedor\MontarTelaFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\IncluirFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\EditarFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\VerFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\ExcluirFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\VerCardsFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\ReativarFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\VerAnexoFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\EditarContatoFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\IncluirContatoFornecedor.cshtml" />
+    <Content Include="Views\Fornecedor\VerFornecedorInativos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -32,6 +32,8 @@ namespace MvcMapping.Mappers
             CreateMap<GRUPO, GrupoViewModel>();
             CreateMap<SUBGRUPO, SubgrupoViewModel>();
             CreateMap<FILIAL, FilialViewModel>();
+            CreateMap<FORNECEDOR, FornecedorViewModel>();
+            CreateMap<FORNECEDOR_CONTATO, FornecedorContatoViewModel>();
         }
     }
 }

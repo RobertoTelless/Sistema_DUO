@@ -184,6 +184,8 @@
     <Compile Include="EntitiesServices\ConfiguracaoService.cs" />
     <Compile Include="EntitiesServices\ContaBancariaService.cs" />
     <Compile Include="EntitiesServices\FilialService.cs" />
+    <Compile Include="EntitiesServices\FornecedorCnpjService.cs" />
+    <Compile Include="EntitiesServices\FornecedorService.cs" />
     <Compile Include="EntitiesServices\GrupoService.cs" />
     <Compile Include="EntitiesServices\LogService.cs" />
     <Compile Include="EntitiesServices\NoticiaService.cs" />
@@ -204,6 +206,8 @@
     <Compile Include="Interfaces\EntitiesServices\IConfiguracaoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IContaBancariaService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IFilialService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IFornecedorCnpjService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IFornecedorService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IGrupoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\ILogService.cs" />
     <Compile Include="Interfaces\EntitiesServices\INoticiaService.cs" />
@@ -224,6 +228,7 @@
     <Compile Include="Interfaces\Repositories\IAssinanteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBancoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaAgendaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoriaFornecedorRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaNotificacaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaTelefoneRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaUsuarioRepository.cs" />
@@ -233,6 +238,10 @@
     <Compile Include="Interfaces\Repositories\IContaBancariaLancamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFilialRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFornecedorAnexoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFornecedorCnpjRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFornecedorContatoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFornecedorRepository.cs" />
     <Compile Include="Interfaces\Repositories\IGrupoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ILogRepository.cs" />
     <Compile Include="Interfaces\Repositories\INoticiaComentarioRepository.cs" />
@@ -366,7 +375,13 @@
     <Compile Include="Model\FORNECEDOR_ANEXO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\FORNECEDOR_COMENTARIO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\FORNECEDOR_CONTATO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FORNECEDOR_MENSAGEM.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\FORNECEDOR_QUADRO_SOCIETARIO.cs">
@@ -463,6 +478,9 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TIPO_GRUPO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TIPO_MENSAGEM.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TIPO_PESSOA.cs">
