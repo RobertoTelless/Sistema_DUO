@@ -13,6 +13,7 @@ namespace SMS_Solution.ViewModels
         [Key]
         public int FORN_CD_ID { get; set; }
         public int ASSI_CD_ID { get; set; }
+        public Nullable<int> FILI_CD_ID { get; set; }
         [Required(ErrorMessage = "Campo CATEGORIA obrigatorio")]
         public Nullable<int> CAFO_CD_ID { get; set; }
         [Required(ErrorMessage = "Campo TIPO DE PESSOA obrigatorio")]
@@ -21,11 +22,11 @@ namespace SMS_Solution.ViewModels
         [StringLength(50, MinimumLength = 1, ErrorMessage = "O NOME deve conter no minimo 1 e no máximo 50 caracteres.")]
         public string FORN_NM_NOME { get; set; }
         [StringLength(50, ErrorMessage = "A RAZÃO SOCIAL deve conter no máximo 50 caracteres.")]
-        public string FORN_NM_RAZAO_SOCIAL { get; set; }
+        public string FORN_NM_RAZAO { get; set; }
         [StringLength(50, ErrorMessage = "O DOCUMENTO deve conter no máximo 50 caracteres.")]
         public string FORN_NR_DOCUMENTO { get; set; }
         [StringLength(50, ErrorMessage = "O ENDEREÇO deve conter no máximo 50 caracteres.")]
-        public string FORM_NM_ENDERECO { get; set; }
+        public string FORN_NM_ENDERECO { get; set; }
         [StringLength(50, ErrorMessage = "O BAIRRO deve conter no máximo 50 caracteres.")]
         public string FORN_NM_BAIRRO { get; set; }
         [StringLength(50, ErrorMessage = "A CIDADE deve conter no máximo 50 caracteres.")]
@@ -34,7 +35,7 @@ namespace SMS_Solution.ViewModels
         [StringLength(10, ErrorMessage = "O CEP deve conter no máximo 10 caracteres.")]
         public string FORN_NR_CEP { get; set; }
         [StringLength(50, ErrorMessage = "O TELEFONE deve conter no máximo 50 caracteres.")]
-        public string FORN_NR_TELEFONE { get; set; }
+        public string FORN_NM_TELEFONES { get; set; }
         [StringLength(50, ErrorMessage = "O CONTATO deve conter no máximo 50 caracteres.")]
         public string FORN_NM_CONTATO { get; set; }
         [Required(ErrorMessage = "Campo E-MAIL obrigatorio")]
@@ -51,7 +52,7 @@ namespace SMS_Solution.ViewModels
         [StringLength(50, ErrorMessage = "O WHATSAPP deve conter no máximo 50 caracteres.")]
         public string FORN_NR_WHATSAPP { get; set; }
         [StringLength(50, ErrorMessage = "O WEBSITE deve conter no máximo 50 caracteres.")]
-        public string FORN_NM_WEBSITE { get; set; }
+        public string FORN_NM_REDES_SOCIAIS { get; set; }
         [StringLength(50, ErrorMessage = "A INSCRIÇÃO ESTADUAL deve conter no máximo 50 caracteres.")]
         public string FORN_NR_INSCRICAO_ESTADUAL { get; set; }
         [StringLength(50, ErrorMessage = "A SITUAÇÃO deve conter no máximo 50 caracteres.")]

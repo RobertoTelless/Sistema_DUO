@@ -3000,6 +3000,7 @@
     <Content Include="Views\Fornecedor\EditarContatoFornecedor.cshtml" />
     <Content Include="Views\Fornecedor\IncluirContatoFornecedor.cshtml" />
     <Content Include="Views\Fornecedor\VerFornecedorInativos.cshtml" />
+    <Content Include="Views\Fornecedor\IncluirComentarioFornecedor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

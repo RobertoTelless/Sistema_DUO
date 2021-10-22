@@ -2696,102 +2696,61 @@ namespace SMS_Presentation.Controllers
             return RedirectToAction("VerFornecedorInativos");
         }
 
-        //public ActionResult VerFornecedorSemPedidos()
-        //{
-        //    if (SessionMocks.UserCredentials == null)
-        //    {
-        //        return RedirectToAction("Login", "ControleAcesso");
-        //    }
-
-        //    if (SessionMocks.listaFornecedoresSemPedido == null)
-        //    {
-        //        SessionMocks.listaFornecedoresSemPedido = fornApp.GetAllItens().Where(p => p.ITEM_PEDIDO_COMPRA.Count == 0 || p.ITEM_PEDIDO_COMPRA == null).ToList();
-        //    }
-        //    if (SessionMocks.listaFornecedoresSemPedido.Count == 0)
-        //    {
-        //        SessionMocks.listaFornecedoresSemPedido = fornApp.GetAllItens().Where(p => p.ITEM_PEDIDO_COMPRA.Count == 0 || p.ITEM_PEDIDO_COMPRA == null).ToList();
-        //    }
-
-        //    ViewBag.Atrasos = SessionMocks.listaCP.Select(x => x.FORN_CD_ID).Distinct().ToList().Count;
-        //    ViewBag.Perfil = SessionMocks.UserCredentials.PERFIL.PERF_SG_SIGLA;
-        //    ViewBag.Inativos = fornApp.GetAllItensAdm().Where(p => p.FORN_IN_ATIVO == 0).ToList().Count;
-        //    ViewBag.SemPedidos = SessionMocks.listaFornecedoresSemPedido.Where(p => p.ITEM_PEDIDO_COMPRA.Count == 0 || p.ITEM_PEDIDO_COMPRA == null).ToList().Count;
-
-        //    if (Session["MensSemPedidoFornecedor"] != null)
-        //    {
-        //        if ((Int32)Session["MensSemPedidoFornecedor"] == 1)
-        //        {
-        //            ModelState.AddModelError("", SystemBR_Resource.ResourceManager.GetString("M0010", CultureInfo.CurrentCulture));
-        //            Session["MensSemPedidoFornecedor"] = 0;
-        //        }
-        //    }
-
-        //    // Prepara view
-        //    ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_SG_SIGLA");
-        //    ViewBag.Listas = SessionMocks.listaFornecedoresSemPedido.Where(p => p.ITEM_PEDIDO_COMPRA.Count == 0 || p.ITEM_PEDIDO_COMPRA == null).ToList();
-        //    return View();
-        //}
+        public ActionResult IncluirComentarioFornecedor()
+        {
+            if ((String)Session["Ativa"] == null)
+            {
+                return RedirectToAction("Login", "ControleAcesso");
+            }
+            FORNECEDOR item = fornApp.GetItemById((Int32)Session["IdFornecedor"]);
+            USUARIO usuarioLogado = (USUARIO)Session["UserCredentials"];
+            FORNECEDOR_COMENTARIO coment = new FORNECEDOR_COMENTARIO();
+            Forne vm = Mapper.Map<ENCOMENDA_COMENTARIO, EncomendaComentarioViewModel>(coment);
+            vm.ECOM_DT_COMENTARIO = DateTime.Now;
+            vm.ECOM_IN_ATIVO = 1;
+            vm.ENCO_CD_ID = item.ENCO_CD_ID;
+            vm.USUARIO = usuarioLogado;
+            vm.USUA_CD_ID = usuarioLogado.USUA_CD_ID;
+            return View(vm);
+        }
 
         [HttpPost]
-        //public ActionResult FiltrarSemPedido(FORNECEDOR item)
-        //{
-        //    if (SessionMocks.UserCredentials == null)
-        //    {
-        //        return RedirectToAction("Login", "ControleAcesso");
-        //    }
-        //    try
-        //    {
-        //        // Executa a operação
-        //        List<FORNECEDOR> listaObj = new List<FORNECEDOR>();
-        //        SessionMocks.filtroFornecedor = item;
-        //        Int32 volta = fornApp.ExecuteFilterSemPedido(item.FORN_NM_NOME, item.FORN_NM_CIDADE, item.UF_CD_ID, out listaObj);
+        [ValidateAntiForgeryToken]
+        public ActionResult IncluirComentarioEncomenda(EncomendaComentarioViewModel vm)
+        {
+            if ((String)Session["Ativa"] == null)
+            {
+                return RedirectToAction("Login", "ControleAcesso");
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Executa a operação
+                    ENCOMENDA_COMENTARIO item = Mapper.Map<EncomendaComentarioViewModel, ENCOMENDA_COMENTARIO>(vm);
+                    USUARIO usuarioLogado = (USUARIO)Session["UserCredentials"];
+                    ENCOMENDA not = fornApp.GetItemById((Int32)Session["IdEncomenda"]);
 
-        //        // Verifica retorno
-        //        if (volta == 1)
-        //        {
-        //            Session["MensSemPedidoFornecedor"] = 1;
-        //        }
+                    item.USUARIO = null;
+                    not.ENCOMENDA_COMENTARIO.Add(item);
+                    objetoFornAntes = not;
+                    Int32 volta = fornApp.ValidateEdit(not, objetoFornAntes);
 
-        //        // Sucesso
-        //        SessionMocks.listaFornecedoresSemPedido = listaObj;
-        //        return RedirectToAction("VerFornecedorSemPedidos");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Message = ex.Message;
-        //        return RedirectToAction("VerFornecedorSemPedidos");
-        //    }
-        //}
+                    // Verifica retorno
 
-        //public ActionResult RetirarFiltroFornecedorSemPedido()
-        //{
-        //    if (SessionMocks.UserCredentials == null)
-        //    {
-        //        return RedirectToAction("Login", "ControleAcesso");
-        //    }
-        //    SessionMocks.listaFornecedoresSemPedido = null;
-        //    return RedirectToAction("VerFornecedorSemPedidos");
-        //}
-
-        //public ActionResult VerLancamentoAtraso(Int32 id)
-        //{
-        //    if (SessionMocks.UserCredentials == null)
-        //    {
-        //        return RedirectToAction("Login", "ControleAcesso");
-        //    }
-
-        //    ViewBag.Atrasos = SessionMocks.listaCP.Select(x => x.FORN_CD_ID).Distinct().ToList().Count;
-        //    ViewBag.Perfil = SessionMocks.UserCredentials.PERFIL.PERF_SG_SIGLA;
-        //    ViewBag.Inativos = fornApp.GetAllItensAdm().Where(p => p.FORN_IN_ATIVO == 0).ToList().Count;
-        //    ViewBag.SemPedidos = SessionMocks.listaFornecedor.Where(p => p.ITEM_PEDIDO_COMPRA.Count == 0 || p.ITEM_PEDIDO_COMPRA == null).ToList().Count;
-
-        //    // Prepara view
-        //    CONTA_PAGAR item = cpApp.GetItemById(id);
-        //    SessionMocks.contaPagar = item;
-        //    SessionMocks.idCPVolta = id;
-        //    ContaPagarViewModel vm = Mapper.Map<CONTA_PAGAR, ContaPagarViewModel>(item);
-        //    return View(vm);
-        //}
-    
+                    // Sucesso
+                    return RedirectToAction("EditarEncomenda", new { id = (Int32)Session["IdEncomenda"] });
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = ex.Message;
+                    return View(vm);
+                }
+            }
+            else
+            {
+                return View(vm);
+            }
+        }
     }
 }

@@ -193,8 +193,8 @@
                                     @if (ViewBag.Perfil == "ADM" || ViewBag.Perfil == "GER")
 	                                {
                                         @Html.ButtonLinkIndex(text: "Novo Fornecedor", controller: "Fornecedor", action: "IncluirFornecedor")
+                                        @Html.ButtonLinkIndex(text: "Exibir Cards dos Fornecedores", controller: "Fornecedor", action: "VerCardsFornecedor")
 	                                }
-                                    @Html.ButtonLinkIndex(text: "Exibir Cards dos Fornecedores", controller: "Fornecedor", action: "VerCardsFornecedor")
                                     @Html.ButtonLinkIndex(text: "Gerar Relatório", controller: "Fornecedor", action: "GerarRelatorioLista")
                                     @Html.ButtonLinkIndex(text: "Voltar", controller: "Fornecedor", action: "Voltar")
                                 </div>
