@@ -428,9 +428,12 @@ namespace SMS_Solution.Controllers
             ViewBag.Clientes = ((List<CLIENTE>)Session["ListaCliente"]).Count;
             ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
             //ViewBag.Atrasos = crApp.GetItensAtrasoCliente().Select(x => x.CLIE_CD_ID).Distinct().ToList().Count;
+            ViewBag.Atrasos = 0;
             ViewBag.Inativos = baseApp.GetAllItensAdm(idAss).Where(p => p.CLIE_IN_ATIVO == 0).ToList().Count;
             //ViewBag.SemPedidos = baseApp.GetAllItens().Where(p => p.PEDIDO_VENDA.Count == 0 || p.PEDIDO_VENDA == null).ToList().Count;
             //ViewBag.ContasAtrasos = SessionMocks.listaCR;
+            ViewBag.SemPedidos = 0;
+            ViewBag.ContasAtrasos = 0;
             ViewBag.CodigoCliente = Session["IdCliente"];
 
             if (Session["MensCliente"] != null)
