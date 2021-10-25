@@ -25,13 +25,11 @@ namespace ModelServices.EntitiesServices
         private readonly IClienteContatoRepository _contRepository;
         private readonly IClienteTagRepository _tagRepository;
         private readonly ITipoPessoaRepository _pesRepository;
-        private readonly IRegimeTributarioRepository _regRepository;
         private readonly IClienteReferenciaRepository _refRepository;
-        private readonly ITipoContribuinteRepository _tcRepository;
         private readonly IUFRepository _ufRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
-        public ClienteService(IClienteRepository baseRepository, ILogRepository logRepository, ICategoriaClienteRepository tipoRepository, IClienteAnexoRepository anexoRepository, ITipoPessoaRepository pesRepository, IClienteTagRepository tagRepository, IRegimeTributarioRepository regRepository, IClienteContatoRepository contRepository, IClienteReferenciaRepository refRepository, ITipoContribuinteRepository tcRepository, IUFRepository ufRepository) : base(baseRepository)
+        public ClienteService(IClienteRepository baseRepository, ILogRepository logRepository, ICategoriaClienteRepository tipoRepository, IClienteAnexoRepository anexoRepository, ITipoPessoaRepository pesRepository, IClienteTagRepository tagRepository, IClienteContatoRepository contRepository, IClienteReferenciaRepository refRepository, IUFRepository ufRepository) : base(baseRepository)
         {
             _baseRepository = baseRepository;
             _logRepository = logRepository;
@@ -40,15 +38,13 @@ namespace ModelServices.EntitiesServices
             _contRepository = contRepository;
             _pesRepository = pesRepository;
             _tagRepository = tagRepository;
-            _regRepository = regRepository;
             _refRepository = refRepository;
-            _tcRepository = tcRepository;
             _ufRepository = ufRepository;
         }
 
-        public CLIENTE CheckExist(CLIENTE conta)
+        public CLIENTE CheckExist(CLIENTE conta, Int32 idAss)
         {
-            CLIENTE item = _baseRepository.CheckExist(conta);
+            CLIENTE item = _baseRepository.CheckExist(conta, idAss);
             return item;
         }
 
@@ -74,34 +70,24 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<CLIENTE> GetAllItens()
+        public List<CLIENTE> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<CLIENTE> GetAllItensAdm()
+        public List<CLIENTE> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
-        public List<CATEGORIA_CLIENTE> GetAllTipos()
+        public List<CATEGORIA_CLIENTE> GetAllTipos(Int32 idAss)
         {
-            return _tipoRepository.GetAllItens();
+            return _tipoRepository.GetAllItens(idAss);
         }
 
         public List<TIPO_PESSOA> GetAllTiposPessoa()
         {
             return _pesRepository.GetAllItens();
-        }
-
-        public List<TIPO_CONTRIBUINTE> GetAllContribuinte()
-        {
-            return _tcRepository.GetAllItens();
-        }
-
-        public List<REGIME_TRIBUTARIO> GetAllRegimes()
-        {
-            return _regRepository.GetAllItens();
         }
 
         public CLIENTE_ANEXO GetAnexoById(Int32 id)
@@ -119,15 +105,15 @@ namespace ModelServices.EntitiesServices
             return _refRepository.GetItemById(id);
         }
 
-        public List<CLIENTE> ExecuteFilter(Int32? id, Int32? catId, String razao, String nome, String cpf, String cnpj, String email, String cidade, Int32? uf, Int32? ativo)
+        public List<CLIENTE> ExecuteFilter(Int32? id, Int32? catId, String razao, String nome, String cpf, String cnpj, String email, String cidade, Int32? uf, Int32? ativo, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilter(id, catId, razao, nome, cpf, cnpj, email, cidade, uf, ativo);
+            return _baseRepository.ExecuteFilter(id, catId, razao, nome, cpf, cnpj, email, cidade, uf, ativo, idAss);
         }
 
-        public List<CLIENTE> ExecuteFilterSemPedido(String nome, String cidade, Int32? uf)
-        {
-            return _baseRepository.ExecuteFilterSemPedido(nome, cidade, uf);
-        }
+        //public List<CLIENTE> ExecuteFilterSemPedido(String nome, String cidade, Int32? uf)
+        //{
+        //    return _baseRepository.ExecuteFilterSemPedido(nome, cidade, uf);
+        //}
 
         public Int32 Create(CLIENTE item, LOG log)
         {

@@ -23,9 +23,9 @@ namespace ApplicationServices.Services
             _confService = confService;
         }
 
-        public List<CLIENTE> GetAllItens()
+        public List<CLIENTE> GetAllItens(Int32 idAss)
         {
-            List<CLIENTE> lista = _baseService.GetAllItens();
+            List<CLIENTE> lista = _baseService.GetAllItens(idAss);
             return lista;
         }
 
@@ -40,9 +40,9 @@ namespace ApplicationServices.Services
             return _baseService.GetUFbySigla(sigla);
         }
 
-        public List<CLIENTE> GetAllItensAdm()
+        public List<CLIENTE> GetAllItensAdm(Int32 idAss)
         {
-            List<CLIENTE> lista = _baseService.GetAllItensAdm();
+            List<CLIENTE> lista = _baseService.GetAllItensAdm(idAss);
             return lista;
         }
 
@@ -58,21 +58,15 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public CLIENTE CheckExist(CLIENTE conta)
+        public CLIENTE CheckExist(CLIENTE conta, Int32 idAss)
         {
-            CLIENTE item = _baseService.CheckExist(conta);
+            CLIENTE item = _baseService.CheckExist(conta, idAss);
             return item;
         }
 
-        public List<CATEGORIA_CLIENTE> GetAllTipos()
+        public List<CATEGORIA_CLIENTE> GetAllTipos(Int32 idAss)
         {
-            List<CATEGORIA_CLIENTE> lista = _baseService.GetAllTipos();
-            return lista;
-        }
-
-        public List<REGIME_TRIBUTARIO> GetAllRegimes()
-        {
-            List<REGIME_TRIBUTARIO> lista = _baseService.GetAllRegimes();
+            List<CATEGORIA_CLIENTE> lista = _baseService.GetAllTipos(idAss);
             return lista;
         }
 
@@ -100,7 +94,7 @@ namespace ApplicationServices.Services
             return lista;
         }
 
-        public Int32 ExecuteFilter(Int32? id, Int32? catId, String razao, String nome, String cpf, String cnpj, String email, String cidade, Int32? uf, Int32? ativo, out List<CLIENTE> objeto)
+        public Int32 ExecuteFilter(Int32? id, Int32? catId, String razao, String nome, String cpf, String cnpj, String email, String cidade, Int32? uf, Int32? ativo, Int32 idAss, out List<CLIENTE> objeto)
         {
             try
             {
@@ -108,7 +102,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilter(id, catId, razao, nome, cpf, cnpj, email, cidade, uf, ativo);
+                objeto = _baseService.ExecuteFilter(id, catId, razao, nome, cpf, cnpj, email, cidade, uf, ativo, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -121,37 +115,32 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ExecuteFilterSemPedido(String nome, String cidade, Int32? uf, out List<CLIENTE> objeto)
-        {
-            try
-            {
-                objeto = new List<CLIENTE>();
-                Int32 volta = 0;
+        //public Int32 ExecuteFilterSemPedido(String nome, String cidade, Int32? uf, out List<CLIENTE> objeto)
+        //{
+        //    try
+        //    {
+        //        objeto = new List<CLIENTE>();
+        //        Int32 volta = 0;
 
-                // Processa filtro
-                objeto = _baseService.ExecuteFilterSemPedido(nome, cidade, uf);
-                if (objeto.Count == 0)
-                {
-                    volta = 1;
-                }
-                return volta;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
+        //        // Processa filtro
+        //        objeto = _baseService.ExecuteFilterSemPedido(nome, cidade, uf);
+        //        if (objeto.Count == 0)
+        //        {
+        //            volta = 1;
+        //        }
+        //        return volta;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
 
         public Int32 ValidateCreate(CLIENTE item, USUARIO usuario)
         {
             try
             {
-                var conf = _confService.GetItemById(SessionMocks.IdAssinante);
-
-                if ((conf.CONF_IN_PERMITE_DUPLO_CLIENTE == null || conf.CONF_IN_PERMITE_DUPLO_CLIENTE == 0) && _baseService.CheckExist(item) != null)
-                {
-                    return 1;
-                }
+                var conf = _confService.GetItemById(usuario.ASSI_CD_ID);
 
                 // Completa objeto
                 item.CLIE_IN_ATIVO = 1;
@@ -161,7 +150,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddCLIE",
                     LOG_IN_ATIVO = 1,
@@ -170,9 +159,6 @@ namespace ApplicationServices.Services
 
                 // Persiste
                 Int32 volta = _baseService.Create(item, log);
-
-                SessionMocks.idCliente = item.CLIE_CD_ID;
-
                 return volta;
             }
             catch (Exception ex)
@@ -196,14 +182,6 @@ namespace ApplicationServices.Services
                 if (itemAntes.FILIAL != null)
                 {
                     itemAntes.FILIAL = null;
-                }
-                if (itemAntes.MATRIZ != null)
-                {
-                    itemAntes.MATRIZ = null;
-                }
-                if (itemAntes.REGIME_TRIBUTARIO != null)
-                {
-                    itemAntes.REGIME_TRIBUTARIO = null;
                 }
                 if (itemAntes.SEXO != null)
                 {
@@ -234,7 +212,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "EditCLIE",
                     LOG_IN_ATIVO = 1,
@@ -244,14 +222,10 @@ namespace ApplicationServices.Services
 
                 // Persiste
                 item.TIPO_PESSOA = null;
-
-                SessionMocks.idCliente = item.CLIE_CD_ID;
-
                 return _baseService.Edit(item, log);
             }
             catch (Exception ex)
             {
-                SessionMocks.idCliente = 0;
                 throw;
             }
         }
@@ -263,12 +237,10 @@ namespace ApplicationServices.Services
                 item.UF = null;
                 item.TIPO_PESSOA = null;
                 // Persiste
-                SessionMocks.idCliente = item.CLIE_CD_ID;
                 return _baseService.Edit(item);
             }
             catch (Exception ex)
             {
-                SessionMocks.idCliente = 0;
                 throw;
             }
         }
@@ -278,6 +250,10 @@ namespace ApplicationServices.Services
             try
             {
                 // Verifica integridade referencial
+                if (true)
+                {
+
+                }
 
                 // Acerta campos
                 item.CLIE_IN_ATIVO = 0;
@@ -286,7 +262,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DelCLIE",
@@ -315,7 +291,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatCLIE",

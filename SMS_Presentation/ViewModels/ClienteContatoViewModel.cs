@@ -6,7 +6,7 @@ using System.Web;
 using EntitiesServices.Model;
 using EntitiesServices.Attributes;
 
-namespace SystemBRPresentation.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class ClienteContatoViewModel
     {

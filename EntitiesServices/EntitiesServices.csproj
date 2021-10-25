@@ -181,6 +181,8 @@
     <Compile Include="EntitiesServices\BancoService.cs" />
     <Compile Include="EntitiesServices\CategoriaTelefoneService.cs" />
     <Compile Include="EntitiesServices\CentroCustoService.cs" />
+    <Compile Include="EntitiesServices\ClienteCnpjService.cs" />
+    <Compile Include="EntitiesServices\ClienteService.cs" />
     <Compile Include="EntitiesServices\ConfiguracaoService.cs" />
     <Compile Include="EntitiesServices\ContaBancariaService.cs" />
     <Compile Include="EntitiesServices\FilialService.cs" />
@@ -203,6 +205,8 @@
     <Compile Include="Interfaces\EntitiesServices\IBancoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\ICategoriaTelefoneService.cs" />
     <Compile Include="Interfaces\EntitiesServices\ICentroCustoService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IClienteCnpjService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IClienteService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IConfiguracaoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IContaBancariaService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IFilialService.cs" />
@@ -228,11 +232,18 @@
     <Compile Include="Interfaces\Repositories\IAssinanteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBancoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaAgendaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoriaClienteRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaFornecedorRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaNotificacaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaTelefoneRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaUsuarioRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICentroCustoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteAnexoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteCnpjRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteContatoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteReferenciaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteTagRepository.cs" />
     <Compile Include="Interfaces\Repositories\IConfiguracaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaContatoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaLancamentoRepository.cs" />

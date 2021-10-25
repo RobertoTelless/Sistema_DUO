@@ -14,9 +14,8 @@ namespace DataServices.Repositories
 {
     public class ClienteRepository : RepositoryBase<CLIENTE>, IClienteRepository
     {
-        public CLIENTE CheckExist(CLIENTE conta)
+        public CLIENTE CheckExist(CLIENTE conta, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE> query = Db.CLIENTE;
             query = query.Where(p => p.CLIE_NM_NOME == conta.CLIE_NM_NOME);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
@@ -25,10 +24,8 @@ namespace DataServices.Repositories
 
         public CLIENTE GetByEmail(String email)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE> query = Db.CLIENTE.Where(p => p.CLIE_IN_ATIVO == 1);
             query = query.Where(p => p.CLIE_NM_EMAIL == email);
-            query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.Include(p => p.CLIENTE_ANEXO);
             query = query.Include(p => p.CLIENTE_CONTATO);
             query = query.Include(p => p.CLIENTE_TAG);
@@ -45,27 +42,24 @@ namespace DataServices.Repositories
             return query.FirstOrDefault();
         }
 
-        public List<CLIENTE> GetAllItens()
+        public List<CLIENTE> GetAllItens(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE> query = Db.CLIENTE.Where(p => p.CLIE_IN_ATIVO == 1);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.OrderBy(a => a.CLIE_NM_NOME);
             return query.ToList();
         }
 
-        public List<CLIENTE> GetAllItensAdm()
+        public List<CLIENTE> GetAllItensAdm(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE> query = Db.CLIENTE;
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.OrderBy(a => a.CLIE_NM_NOME);
             return query.ToList();
         }
 
-        public List<CLIENTE> ExecuteFilter(Int32? id, Int32? catId, String razao, String nome, String cpf, String cnpj, String email, String cidade, Int32? uf, Int32? ativo)
+        public List<CLIENTE> ExecuteFilter(Int32? id, Int32? catId, String razao, String nome, String cpf, String cnpj, String email, String cidade, Int32? uf, Int32? ativo, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             List<CLIENTE> lista = new List<CLIENTE>();
             IQueryable<CLIENTE> query = Db.CLIENTE;
             if (id != 0)
@@ -122,30 +116,30 @@ namespace DataServices.Repositories
             return lista;
         }
 
-        public List<CLIENTE> ExecuteFilterSemPedido(String nome, String cidade, Int32? uf)
-        {
-            Int32? idAss = SessionMocks.IdAssinante;
-            List<CLIENTE> lista = new List<CLIENTE>();
-            IQueryable<CLIENTE> query = Db.CLIENTE.Where(p => p.PEDIDO_VENDA.Count == 0);
-            if (!String.IsNullOrEmpty(nome))
-            {
-                query = query.Where(p => p.CLIE_NM_NOME.Contains(nome));
-            }
-            if (!String.IsNullOrEmpty(cidade))
-            {
-                query = query.Where(p => p.CLIE_NM_CIDADE.Contains(cidade));
-            }
-            if (uf != null)
-            {
-                query = query.Where(p => p.UF_CD_ID == uf);
-            }
-            if (query != null)
-            {
-                query = query.Where(p => p.ASSI_CD_ID == idAss);
-                lista = query.ToList<CLIENTE>();
-            }
-            return lista;
-        }
+        //public List<CLIENTE> ExecuteFilterSemPedido(String nome, String cidade, Int32? uf)
+        //{
+        //    Int32? idAss = SessionMocks.IdAssinante;
+        //    List<CLIENTE> lista = new List<CLIENTE>();
+        //    IQueryable<CLIENTE> query = Db.CLIENTE.Where(p => p.PEDIDO_VENDA.Count == 0);
+        //    if (!String.IsNullOrEmpty(nome))
+        //    {
+        //        query = query.Where(p => p.CLIE_NM_NOME.Contains(nome));
+        //    }
+        //    if (!String.IsNullOrEmpty(cidade))
+        //    {
+        //        query = query.Where(p => p.CLIE_NM_CIDADE.Contains(cidade));
+        //    }
+        //    if (uf != null)
+        //    {
+        //        query = query.Where(p => p.UF_CD_ID == uf);
+        //    }
+        //    if (query != null)
+        //    {
+        //        query = query.Where(p => p.ASSI_CD_ID == idAss);
+        //        lista = query.ToList<CLIENTE>();
+        //    }
+        //    return lista;
+        //}
     }
 }
  

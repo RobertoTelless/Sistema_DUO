@@ -172,6 +172,8 @@
     <Compile Include="Interfaces\IBancoAppService.cs" />
     <Compile Include="Interfaces\ICategoriaTelefoneAppService.cs" />
     <Compile Include="Interfaces\ICentroCustoAppService.cs" />
+    <Compile Include="Interfaces\IClienteAppService.cs" />
+    <Compile Include="Interfaces\IClienteCnpjAppService.cs" />
     <Compile Include="Interfaces\IConfiguracaoAppService.cs" />
     <Compile Include="Interfaces\IContaBancariaAppService.cs" />
     <Compile Include="Interfaces\IFilialAppService.cs" />
@@ -196,6 +198,8 @@
     <Compile Include="Services\BancoAppService.cs" />
     <Compile Include="Services\CategoriaTelefoneAppService.cs" />
     <Compile Include="Services\CentroCustoAppService.cs" />
+    <Compile Include="Services\ClienteAppService.cs" />
+    <Compile Include="Services\ClienteCnpjAppService.cs" />
     <Compile Include="Services\ConfiguracaoAppService.cs" />
     <Compile Include="Services\ContaBancariaAppService.cs" />
     <Compile Include="Services\FilialAppService.cs" />

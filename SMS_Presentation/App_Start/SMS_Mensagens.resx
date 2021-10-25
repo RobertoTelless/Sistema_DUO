@@ -177,6 +177,12 @@
   <data name="M0028" xml:space="preserve">
     <value>Telefone já cadastrado</value>
   </data>
+  <data name="M0029" xml:space="preserve">
+    <value>Cliente já cadastrado</value>
+  </data>
+  <data name="M0030" xml:space="preserve">
+    <value>Não é possível excluir esse cliente. Existem informações vinculadas a ele</value>
+  </data>
   <data name="M0036" xml:space="preserve">
     <value>Centro de Custo já cadastrado. Já existem um centro de custo com os mesmos grupo, subgrupo e número.</value>
   </data>

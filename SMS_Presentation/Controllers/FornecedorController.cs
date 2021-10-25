@@ -379,7 +379,7 @@ namespace SMS_Presentation.Controllers
             Int32 idAss = (Int32)Session["IdAssinante"];
 
             // Carrega listas
-            if (Session["ListaFornecedor"] == null)
+            if (Session["ListaFornecedor"] == null || ((List<FORNECEDOR>)Session["ListaFornecedor"]).Count == 0)
             {
                 listaMasterForn = fornApp.GetAllItens(idAss);
                 Session["ListaFornecedor"] = listaMasterForn;
@@ -480,7 +480,6 @@ namespace SMS_Presentation.Controllers
                 // Verifica retorno
                 if (volta == 1)
                 {
-                    Session["MensFornecedor"] = 1;
                     return RedirectToAction("MontarTelaFornecedor");
                 }
 
@@ -997,7 +996,7 @@ namespace SMS_Presentation.Controllers
             {
                 return RedirectToAction("Login", "ControleAcesso");
             }
-            return RedirectToAction("EditarFornecedor", new { id = (Int32)Session["IdVolta"] });
+            return RedirectToAction("EditarFornecedor", new { id = (Int32)Session["IdFornecedor"] });
         }
 
         public FileResult DownloadFornecedor(Int32 id)
@@ -2705,10 +2704,10 @@ namespace SMS_Presentation.Controllers
             FORNECEDOR item = fornApp.GetItemById((Int32)Session["IdFornecedor"]);
             USUARIO usuarioLogado = (USUARIO)Session["UserCredentials"];
             FORNECEDOR_COMENTARIO coment = new FORNECEDOR_COMENTARIO();
-            Forne vm = Mapper.Map<ENCOMENDA_COMENTARIO, EncomendaComentarioViewModel>(coment);
-            vm.ECOM_DT_COMENTARIO = DateTime.Now;
-            vm.ECOM_IN_ATIVO = 1;
-            vm.ENCO_CD_ID = item.ENCO_CD_ID;
+            FornecedorComentarioViewModel vm = Mapper.Map<FORNECEDOR_COMENTARIO, FornecedorComentarioViewModel>(coment);
+            vm.FOCM_DT_COMENTARIO = DateTime.Now;
+            vm.FOCM_IN_ATIVO = 1;
+            vm.FORN_CD_ID = item.FORN_CD_ID;
             vm.USUARIO = usuarioLogado;
             vm.USUA_CD_ID = usuarioLogado.USUA_CD_ID;
             return View(vm);
@@ -2716,7 +2715,7 @@ namespace SMS_Presentation.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult IncluirComentarioEncomenda(EncomendaComentarioViewModel vm)
+        public ActionResult IncluirComentarioFornecedor(FornecedorComentarioViewModel vm)
         {
             if ((String)Session["Ativa"] == null)
             {
@@ -2727,19 +2726,19 @@ namespace SMS_Presentation.Controllers
                 try
                 {
                     // Executa a operação
-                    ENCOMENDA_COMENTARIO item = Mapper.Map<EncomendaComentarioViewModel, ENCOMENDA_COMENTARIO>(vm);
+                    FORNECEDOR_COMENTARIO item = Mapper.Map<FornecedorComentarioViewModel, FORNECEDOR_COMENTARIO>(vm);
                     USUARIO usuarioLogado = (USUARIO)Session["UserCredentials"];
-                    ENCOMENDA not = fornApp.GetItemById((Int32)Session["IdEncomenda"]);
+                    FORNECEDOR not = fornApp.GetItemById((Int32)Session["IdFornecedor"]);
 
                     item.USUARIO = null;
-                    not.ENCOMENDA_COMENTARIO.Add(item);
+                    not.FORNECEDOR_COMENTARIO.Add(item);
                     objetoFornAntes = not;
                     Int32 volta = fornApp.ValidateEdit(not, objetoFornAntes);
 
                     // Verifica retorno
 
                     // Sucesso
-                    return RedirectToAction("EditarEncomenda", new { id = (Int32)Session["IdEncomenda"] });
+                    return RedirectToAction("EditarFornecedor", new { id = (Int32)Session["IdFornecedor"] });
                 }
                 catch (Exception ex)
                 {

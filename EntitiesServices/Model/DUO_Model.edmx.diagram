@@ -209,6 +209,7 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_USUARIO" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_TIPO_MENSAGEM" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_FILIAL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

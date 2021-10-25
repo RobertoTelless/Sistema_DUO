@@ -241,6 +241,24 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Cliente já cadastrado.
+        /// </summary>
+        internal static string M0029 {
+            get {
+                return ResourceManager.GetString("M0029", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse cliente. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0030 {
+            get {
+                return ResourceManager.GetString("M0030", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Centro de Custo já cadastrado. Já existem um centro de custo com os mesmos grupo, subgrupo e número..
         /// </summary>
         internal static string M0036 {

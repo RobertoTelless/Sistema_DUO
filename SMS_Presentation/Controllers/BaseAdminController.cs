@@ -127,6 +127,8 @@ namespace ERP_Condominios_Solution.Controllers
             Session["MensCC"] = 0;
             Session["MensGrupo"] = 0;
             Session["MensFornecedor"] = 0;
+            Session["MensCliente"] = 0;
+            Session["MensSMSCliente"] = 0;
 
             Session["VoltaNotificacao"] = 3;
             Session["VoltaNoticia"] = 1;
@@ -238,6 +240,10 @@ namespace ERP_Condominios_Solution.Controllers
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
             }
             if ((Int32)Session["MensFornecedor"] == 2)
+            {
+                ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
+            }
+            if ((Int32)Session["MensCliente"] == 2)
             {
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
             }
