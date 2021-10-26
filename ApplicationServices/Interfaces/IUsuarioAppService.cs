@@ -37,5 +37,6 @@ namespace ApplicationServices.Interfaces
         Int32 ExecuteFilter(Int32? perfilId, Int32? cargoId, String nome, String login, String email, Int32 idAss, out List<USUARIO> objeto);
         List<NOTICIA> GetAllNoticias(Int32 idAss);
         USUARIO GetAdministrador(Int32 idAss);
+        List<CARGO> GetAllCargos(Int32 idAss);
     }
 }

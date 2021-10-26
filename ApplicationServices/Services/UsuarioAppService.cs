@@ -31,6 +31,11 @@ namespace ApplicationServices.Services
             return _usuarioService.GetByEmail(email, idAss);
         }
 
+        public List<CARGO> GetAllCargos(Int32 idAss)
+        {
+            return _usuarioService.GetAllCargos(idAss);
+        }
+
         public USUARIO GetByLogin(String login, Int32 idAss)
         {
             return _usuarioService.GetByLogin(login, idAss);

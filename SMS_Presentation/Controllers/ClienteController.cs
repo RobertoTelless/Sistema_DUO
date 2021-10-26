@@ -802,6 +802,9 @@ namespace SMS_Solution.Controllers
             //ViewBag.Vendas = item.PEDIDO_VENDA.Count;
             //ViewBag.Servicos = 0;
             //ViewBag.Atendimentos = item.ATENDIMENTO.Count;
+            ViewBag.Vendas = 12;
+            ViewBag.Servicos = 0;
+            ViewBag.Atendimentos = 8;
             ViewBag.Incluir = (Int32)Session["IncluirCliente"];
 
             Session["VoltaCliente"] = 1;

@@ -3020,6 +3020,11 @@
     <Content Include="Views\Cliente\IncluirReferencia.cshtml" />
     <Content Include="Views\Cliente\IncluirTag.cshtml" />
     <Content Include="Views\Cliente\VerClientesInativos.cshtml" />
+    <Content Include="Views\Usuario\MontarTelaUsuario.cshtml" />
+    <Content Include="Views\Usuario\VerAnexoUsuario.cshtml" />
+    <Content Include="Views\Usuario\VerUsuario.cshtml" />
+    <Content Include="Views\Usuario\IncluirUsuario.cshtml" />
+    <Content Include="Views\Usuario\EditarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3034,7 +3039,6 @@
     <Folder Include="Imagens\1\Tarefa\" />
     <Folder Include="Imagens\1\Usuario\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

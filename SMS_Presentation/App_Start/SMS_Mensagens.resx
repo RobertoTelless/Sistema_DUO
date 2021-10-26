@@ -249,4 +249,10 @@
   <data name="M0109" xml:space="preserve">
     <value>O login não pode ficar em branco</value>
   </data>
+  <data name="M0110" xml:space="preserve">
+    <value>E-Mail já cadastrado</value>
+  </data>
+  <data name="M0111" xml:space="preserve">
+    <value>Login já cadastrado</value>
+  </data>
 </root>
