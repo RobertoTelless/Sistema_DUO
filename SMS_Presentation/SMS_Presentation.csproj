@@ -310,6 +310,7 @@
     <Compile Include="Controllers\CentroCustoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ControleAcessoController.cs" />
+    <Compile Include="Controllers\EquipamentoController.cs" />
     <Compile Include="Controllers\FilialController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
@@ -319,6 +320,7 @@
     <Compile Include="Controllers\NotificacaoController.cs" />
     <Compile Include="Controllers\TarefaController.cs" />
     <Compile Include="Controllers\TelefoneController.cs" />
+    <Compile Include="Controllers\TransportadoraController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Extensions\HMTLHelperExtensions.cs" />
     <Compile Include="Extensions\MVCButtonExtensions.cs" />
@@ -343,6 +345,8 @@
     <Compile Include="ViewModels\ContaBancariaContatoViewModel.cs" />
     <Compile Include="ViewModels\ContaBancariaLancamentoViewModel.cs" />
     <Compile Include="ViewModels\ContaBancariaViewModel.cs" />
+    <Compile Include="ViewModels\EquipamentoManutencaoViewModel.cs" />
+    <Compile Include="ViewModels\EquipamentoViewModel.cs" />
     <Compile Include="ViewModels\FornecedorContatoViewModel.cs" />
     <Compile Include="ViewModels\FornecedorViewModel.cs" />
     <Compile Include="ViewModels\GrupoViewModel.cs" />
@@ -357,6 +361,7 @@
     <Compile Include="ViewModels\TarefaAcompanhamentoViewModel.cs" />
     <Compile Include="ViewModels\TarefaViewModel.cs" />
     <Compile Include="ViewModels\TelefoneViewModel.cs" />
+    <Compile Include="ViewModels\TransportadoraViewModel.cs" />
     <Compile Include="ViewModels\UsuarioAnexoViewModel.cs" />
     <Compile Include="ViewModels\UsuarioLoginViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
@@ -3025,6 +3030,25 @@
     <Content Include="Views\Usuario\VerUsuario.cshtml" />
     <Content Include="Views\Usuario\IncluirUsuario.cshtml" />
     <Content Include="Views\Usuario\EditarUsuario.cshtml" />
+    <Content Include="Views\Equipamento\MontarTelaEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\IncluirEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\EditarEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\ExcluirEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\ReativarEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\VerAnexoEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\VerEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\VerManutencaoEquipamento.cshtml" />
+    <Content Include="Views\Equipamento\IncluirManutencao.cshtml" />
+    <Content Include="Views\Equipamento\EditarManutencao.cshtml" />
+    <Content Include="Views\Equipamento\VerManutencoesVencidas.cshtml" />
+    <Content Include="Views\Equipamento\VerDepreciados.cshtml" />
+    <Content Include="Views\Equipamento\VerBaixados.cshtml" />
+    <Content Include="Views\Transportadora\MontarTelaTransportadora.cshtml" />
+    <Content Include="Views\Transportadora\IncluirTransportadora.cshtml" />
+    <Content Include="Views\Transportadora\VerTransportadora.cshtml" />
+    <Content Include="Views\Transportadora\EditarTransportadora.cshtml" />
+    <Content Include="Views\Transportadora\VerCardsTransportadora.cshtml" />
+    <Content Include="Views\Transportadora\VerAnexoTransportadora.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3037,6 +3061,7 @@
     <Folder Include="Imagens\1\Notificacao\" />
     <Folder Include="Imagens\1\Produtos\" />
     <Folder Include="Imagens\1\Tarefa\" />
+    <Folder Include="Imagens\1\Transportadoras\" />
     <Folder Include="Imagens\1\Usuario\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -176,6 +176,7 @@
     <Compile Include="Interfaces\IClienteCnpjAppService.cs" />
     <Compile Include="Interfaces\IConfiguracaoAppService.cs" />
     <Compile Include="Interfaces\IContaBancariaAppService.cs" />
+    <Compile Include="Interfaces\IEquipamentoAppService.cs" />
     <Compile Include="Interfaces\IFilialAppService.cs" />
     <Compile Include="Interfaces\IFornecedorAppService.cs" />
     <Compile Include="Interfaces\IFornecedorCnpjAppService.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Interfaces\ITelefoneAppService.cs" />
     <Compile Include="Interfaces\ITemplateAppService.cs" />
     <Compile Include="Interfaces\ITipoPessoaAppService.cs" />
+    <Compile Include="Interfaces\ITransportadoraAppService.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AgendaAppService.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="Services\ClienteCnpjAppService.cs" />
     <Compile Include="Services\ConfiguracaoAppService.cs" />
     <Compile Include="Services\ContaBancariaAppService.cs" />
+    <Compile Include="Services\EquipamentoAppService.cs" />
     <Compile Include="Services\FilialAppService.cs" />
     <Compile Include="Services\FornecedorAppService.cs" />
     <Compile Include="Services\FornecedorCnpjAppService.cs" />
@@ -215,6 +218,7 @@
     <Compile Include="Services\TelefoneAppService.cs" />
     <Compile Include="Services\TemplateAppService.cs" />
     <Compile Include="Services\TipoPessoaAppService.cs" />
+    <Compile Include="Services\TransportadoraAppService.cs" />
     <Compile Include="Services\UsuarioAppService.cs" />
   </ItemGroup>
   <ItemGroup />

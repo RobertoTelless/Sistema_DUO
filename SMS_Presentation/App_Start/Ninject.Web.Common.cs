@@ -92,6 +92,8 @@ namespace Presentation.Start
             kernel.Bind<IFornecedorCnpjAppService>().To<FornecedorCnpjAppService>();
             kernel.Bind<IClienteAppService>().To<ClienteAppService>();
             kernel.Bind<IClienteCnpjAppService>().To<ClienteCnpjAppService>();
+            kernel.Bind<IEquipamentoAppService>().To<EquipamentoAppService>();
+            kernel.Bind<ITransportadoraAppService>().To<TransportadoraAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -117,6 +119,8 @@ namespace Presentation.Start
             kernel.Bind<IFornecedorCnpjService>().To<FornecedorCnpjService>();
             kernel.Bind<IClienteService>().To<ClienteService>();
             kernel.Bind<IClienteCnpjService>().To<ClienteCnpjService>();
+            kernel.Bind<IEquipamentoService>().To<EquipamentoService>();
+            kernel.Bind<ITransportadoraService>().To<TransportadoraService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -162,6 +166,14 @@ namespace Presentation.Start
             kernel.Bind<IClienteReferenciaRepository>().To<ClienteReferenciaRepository>();
             kernel.Bind<IClienteCnpjRepository>().To<ClienteCnpjRepository>();
             kernel.Bind<IClienteTagRepository>().To<ClienteTagRepository>();
+            kernel.Bind<IEquipamentoAnexoRepository>().To<EquipamentoAnexoRepository>();
+            kernel.Bind<IEquipamentoManutencaoRepository>().To<EquipamentoManutencaoRepository>();
+            kernel.Bind<IEquipamentoRepository>().To<EquipamentoRepository>();
+            kernel.Bind<ICategoriaEquipamentoRepository>().To<CategoriaEquipamentoRepository>();
+            kernel.Bind<ITipoVeiculoRepository>().To<TipoVeiculoRepository>();
+            kernel.Bind<ITipoTransporteRepository>().To<TipoTransporteRepository>();
+            kernel.Bind<ITransportadoraAnexoRepository>().To<TransportadoraAnexoRepository>();
+            kernel.Bind<ITransportadoraRepository>().To<TransportadoraRepository>();
 
         }
     }

@@ -21,9 +21,9 @@ namespace ApplicationServices.Services
             _baseService = baseService;
         }
 
-        public List<TRANSPORTADORA> GetAllItens()
+        public List<TRANSPORTADORA> GetAllItens(Int32 idAss)
         {
-            List<TRANSPORTADORA> lista = _baseService.GetAllItens();
+            List<TRANSPORTADORA> lista = _baseService.GetAllItens(idAss);
             return lista;
         }
 
@@ -37,9 +37,9 @@ namespace ApplicationServices.Services
             return _baseService.GetUFbySigla(sigla);
         }
 
-        public List<TRANSPORTADORA> GetAllItensAdm()
+        public List<TRANSPORTADORA> GetAllItensAdm(Int32 idAss)
         {
-            List<TRANSPORTADORA> lista = _baseService.GetAllItensAdm();
+            List<TRANSPORTADORA> lista = _baseService.GetAllItensAdm(idAss);
             return lista;
         }
 
@@ -49,31 +49,31 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public List<TIPO_VEICULO> GetAllTipoVeiculo()
+        public List<TIPO_VEICULO> GetAllTipoVeiculo(Int32 idAss)
         {
-            return _baseService.GetAllTipoVeiculo();
+            return _baseService.GetAllTipoVeiculo(idAss);
         }
 
-        public List<TIPO_TRANSPORTE> GetAllTipoTransporte()
+        public List<TIPO_TRANSPORTE> GetAllTipoTransporte(Int32 idAss)
         {
-            return _baseService.GetAllTipoTransporte();
+            return _baseService.GetAllTipoTransporte(idAss);
         }
 
-        public TRANSPORTADORA GetByEmail(String email)
+        public TRANSPORTADORA GetByEmail(String email, Int32 idAss)
         {
-            TRANSPORTADORA item = _baseService.GetByEmail(email);
+            TRANSPORTADORA item = _baseService.GetByEmail(email, idAss);
             return item;
         }
 
-        public TRANSPORTADORA CheckExist(TRANSPORTADORA conta)
+        public TRANSPORTADORA CheckExist(TRANSPORTADORA conta, Int32 idAss)
         {
-            TRANSPORTADORA item = _baseService.CheckExist(conta);
+            TRANSPORTADORA item = _baseService.CheckExist(conta, idAss);
             return item;
         }
 
-        public List<FILIAL> GetAllFilial()
+        public List<FILIAL> GetAllFilial(Int32 idAss)
         {
-            List<FILIAL> lista = _baseService.GetAllFilial();
+            List<FILIAL> lista = _baseService.GetAllFilial(idAss);
             return lista;
         }
 
@@ -83,7 +83,7 @@ namespace ApplicationServices.Services
             return lista;
         }
 
-        public Int32 ExecuteFilter(String nome, String cnpj, String email, String cidade, String uf, out List<TRANSPORTADORA> objeto)
+        public Int32 ExecuteFilter(Int32? veic, Int32? tran, String nome, String cnpj, String email, String cidade, String uf, Int32 idAss, out List<TRANSPORTADORA> objeto)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilter(nome, cnpj, email, cidade, uf);
+                objeto = _baseService.ExecuteFilter(veic, tran, nome, cnpj, email, cidade, uf, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -109,7 +109,7 @@ namespace ApplicationServices.Services
             try
             {
                 // Verifica existencia prévia
-                if (_baseService.CheckExist(item) != null)
+                if (_baseService.CheckExist(item, usuario.ASSI_CD_ID) != null)
                 {
                     return 1;
                 }
@@ -145,7 +145,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_NM_OPERACAO = "AddTRAN",
                     LOG_IN_ATIVO = 1,
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<TRANSPORTADORA>(item)
@@ -192,7 +192,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_NM_OPERACAO = "EditTRAN",
                     LOG_IN_ATIVO = 1,
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<TRANSPORTADORA>(item),
@@ -258,7 +258,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DelTRAN",
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<TRANSPORTADORA>(item)
@@ -287,7 +287,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatTRAN",
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<TRANSPORTADORA>(item)

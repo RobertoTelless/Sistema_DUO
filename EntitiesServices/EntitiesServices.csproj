@@ -185,6 +185,7 @@
     <Compile Include="EntitiesServices\ClienteService.cs" />
     <Compile Include="EntitiesServices\ConfiguracaoService.cs" />
     <Compile Include="EntitiesServices\ContaBancariaService.cs" />
+    <Compile Include="EntitiesServices\EquipamentoService.cs" />
     <Compile Include="EntitiesServices\FilialService.cs" />
     <Compile Include="EntitiesServices\FornecedorCnpjService.cs" />
     <Compile Include="EntitiesServices\FornecedorService.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="EntitiesServices\TelefoneService.cs" />
     <Compile Include="EntitiesServices\TemplateService.cs" />
     <Compile Include="EntitiesServices\TipoPessoaService.cs" />
+    <Compile Include="EntitiesServices\TransportadoraService.cs" />
     <Compile Include="EntitiesServices\UsuarioService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IAgendaService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IAssinanteService.cs" />
@@ -209,6 +211,7 @@
     <Compile Include="Interfaces\EntitiesServices\IClienteService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IConfiguracaoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IContaBancariaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IEquipamentoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IFilialService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IFornecedorCnpjService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IFornecedorService.cs" />
@@ -225,6 +228,7 @@
     <Compile Include="Interfaces\EntitiesServices\ITemplateService.cs" />
     <Compile Include="Interfaces\EntitiesServices\ITipoContaService.cs" />
     <Compile Include="Interfaces\EntitiesServices\ITipoPessoaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\ITransportadoraService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IUsuarioService.cs" />
     <Compile Include="Interfaces\Repositories\IAgendaAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IAgendaRepository.cs" />
@@ -234,6 +238,7 @@
     <Compile Include="Interfaces\Repositories\ICargoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaAgendaRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaClienteRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICategoriaEquipamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaFornecedorRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaNotificacaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaTelefoneRepository.cs" />
@@ -249,6 +254,9 @@
     <Compile Include="Interfaces\Repositories\IContaBancariaContatoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaLancamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaBancariaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEquipamentoAnexoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEquipamentoManutencaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IEquipamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFilialRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFornecedorAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFornecedorCnpjRepository.cs" />
@@ -273,6 +281,10 @@
     <Compile Include="Interfaces\Repositories\ITipoContaRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITipoPessoaRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITipoTarefaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoTransporteRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoVeiculoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITransportadoraAnexoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITransportadoraRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUFRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsuarioAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />

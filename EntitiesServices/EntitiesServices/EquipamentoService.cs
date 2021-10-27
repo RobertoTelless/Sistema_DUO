@@ -25,7 +25,7 @@ namespace ModelServices.EntitiesServices
         private readonly IEquipamentoManutencaoRepository _manRepository;
         private readonly IPeriodicidadeRepository _perRepository;
 
-        protected ERP_CondominioEntities Db = new ERP_CondominioEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public EquipamentoService(IEquipamentoRepository baseRepository, ILogRepository logRepository, ICategoriaEquipamentoRepository tipoRepository, IEquipamentoAnexoRepository anexoRepository, IPeriodicidadeRepository perRepository, IEquipamentoManutencaoRepository manRepository) : base(baseRepository)
         {

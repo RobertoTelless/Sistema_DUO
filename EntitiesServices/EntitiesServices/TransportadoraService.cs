@@ -25,7 +25,7 @@ namespace ModelServices.EntitiesServices
         private readonly ITipoVeiculoRepository _veicRepository;
         private readonly ITipoTransporteRepository _transRepository;
         private readonly IUFRepository _ufRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public TransportadoraService(ITransportadoraRepository baseRepository, ILogRepository logRepository, ITransportadoraAnexoRepository anexoRepository, IFilialRepository filialRepository, ITipoVeiculoRepository veicRepository, ITipoTransporteRepository transRepository, IUFRepository ufRepository) : base(baseRepository)
         {
@@ -38,9 +38,9 @@ namespace ModelServices.EntitiesServices
             _ufRepository = ufRepository;
         }
 
-        public TRANSPORTADORA CheckExist(TRANSPORTADORA conta)
+        public TRANSPORTADORA CheckExist(TRANSPORTADORA conta, Int32 idAss)
         {
-            TRANSPORTADORA item = _baseRepository.CheckExist(conta);
+            TRANSPORTADORA item = _baseRepository.CheckExist(conta, idAss);
             return item;
         }
 
@@ -60,35 +60,35 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public TRANSPORTADORA GetByEmail(String email)
+        public TRANSPORTADORA GetByEmail(String email, Int32 idAss)
         {
-            TRANSPORTADORA item = _baseRepository.GetByEmail(email);
+            TRANSPORTADORA item = _baseRepository.GetByEmail(email, idAss);
             return item;
         }
 
-        public List<TRANSPORTADORA> GetAllItens()
+        public List<TRANSPORTADORA> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<TRANSPORTADORA> GetAllItensAdm()
+        public List<TRANSPORTADORA> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
-        public List<FILIAL> GetAllFilial()
+        public List<FILIAL> GetAllFilial(Int32 idAss)
         {
-            return _filialRepository.GetAllItens();
+            return _filialRepository.GetAllItens(idAss);
         }
 
-        public List<TIPO_VEICULO> GetAllTipoVeiculo()
+        public List<TIPO_VEICULO> GetAllTipoVeiculo(Int32 idAss)
         {
-            return _veicRepository.GetAllItens();
+            return _veicRepository.GetAllItens(idAss);
         }
 
-        public List<TIPO_TRANSPORTE> GetAllTipoTransporte()
+        public List<TIPO_TRANSPORTE> GetAllTipoTransporte(Int32 idAss)
         {
-            return _transRepository.GetAllItens();
+            return _transRepository.GetAllItens(idAss);
         }
 
         public TRANSPORTADORA_ANEXO GetAnexoById(Int32 id)
@@ -96,9 +96,9 @@ namespace ModelServices.EntitiesServices
             return _anexoRepository.GetItemById(id);
         }
 
-        public List<TRANSPORTADORA> ExecuteFilter(String nome, String cnpj, String email, String cidade, String uf)
+        public List<TRANSPORTADORA> ExecuteFilter(Int32? veic, Int32? tran, String nome, String cnpj, String email, String cidade, String uf, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilter(nome, cnpj, email, cidade, uf);
+            return _baseRepository.ExecuteFilter(veic, tran, nome, cnpj, email, cidade, uf, idAss);
 
         }
 

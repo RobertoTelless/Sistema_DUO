@@ -367,6 +367,33 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Equipamento já cadastrado.
+        /// </summary>
+        internal static string M0048 {
+            get {
+                return ResourceManager.GetString("M0048", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir esse equipamento. Existem informações vinculadas a ele.
+        /// </summary>
+        internal static string M0049 {
+            get {
+                return ResourceManager.GetString("M0049", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Transportadora já cadastrada.
+        /// </summary>
+        internal static string M0050 {
+            get {
+                return ResourceManager.GetString("M0050", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Falha no envio do SMS.
         /// </summary>
         internal static string M0051 {
@@ -381,6 +408,15 @@ namespace SMS_Presentation.App_Start {
         internal static string M0052 {
             get {
                 return ResourceManager.GetString("M0052", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir essa transportadora. Existem informações vinculadas a ela.
+        /// </summary>
+        internal static string M0053 {
+            get {
+                return ResourceManager.GetString("M0053", resourceCulture);
             }
         }
         

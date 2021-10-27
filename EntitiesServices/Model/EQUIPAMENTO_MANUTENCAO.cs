@@ -24,5 +24,6 @@ namespace EntitiesServices.Model
     
         public virtual EQUIPAMENTO EQUIPAMENTO { get; set; }
         public virtual FORNECEDOR FORNECEDOR { get; set; }
+        public virtual ASSINANTE ASSINANTE { get; set; }
     }
 }

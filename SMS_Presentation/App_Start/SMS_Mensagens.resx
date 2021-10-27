@@ -219,11 +219,23 @@
   <data name="M0047" xml:space="preserve">
     <value>Não é possível excluir esse Subgrupo. Existem informações vinculadas a ele</value>
   </data>
+  <data name="M0048" xml:space="preserve">
+    <value>Equipamento já cadastrado</value>
+  </data>
+  <data name="M0049" xml:space="preserve">
+    <value>Não é possível excluir esse equipamento. Existem informações vinculadas a ele</value>
+  </data>
+  <data name="M0050" xml:space="preserve">
+    <value>Transportadora já cadastrada</value>
+  </data>
   <data name="M0051" xml:space="preserve">
     <value>Falha no envio do SMS</value>
   </data>
   <data name="M0052" xml:space="preserve">
     <value>SMS enviado com sucesso</value>
+  </data>
+  <data name="M0053" xml:space="preserve">
+    <value>Não é possível excluir essa transportadora. Existem informações vinculadas a ela</value>
   </data>
   <data name="M0058" xml:space="preserve">
     <value>Tarefa ja cadastrada</value>

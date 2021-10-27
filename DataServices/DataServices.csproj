@@ -175,6 +175,7 @@
     <Compile Include="Repositories\CargoRepository.cs" />
     <Compile Include="Repositories\CategoriaAgendaRepository.cs" />
     <Compile Include="Repositories\CategoriaClienteRepository.cs" />
+    <Compile Include="Repositories\CategoriaEquipamentoRepository.cs" />
     <Compile Include="Repositories\CategoriaFornecedorRepository.cs" />
     <Compile Include="Repositories\CategoriaNotificacaoRepository.cs" />
     <Compile Include="Repositories\CategoriaTelefoneRepository.cs" />
@@ -190,6 +191,9 @@
     <Compile Include="Repositories\ContaBancariaContatoRepository.cs" />
     <Compile Include="Repositories\ContaBancariaLancamentoRepository.cs" />
     <Compile Include="Repositories\ContaBancariaRepository.cs" />
+    <Compile Include="Repositories\EquipamentoAnexoRepository.cs" />
+    <Compile Include="Repositories\EquipamentoManutencaoRepository.cs" />
+    <Compile Include="Repositories\EquipamentoRepository.cs" />
     <Compile Include="Repositories\FilialRepository.cs" />
     <Compile Include="Repositories\FornecedorAnexoRepository.cs" />
     <Compile Include="Repositories\FornecedorCnpjRepository.cs" />
@@ -214,6 +218,10 @@
     <Compile Include="Repositories\TipoContaRepository.cs" />
     <Compile Include="Repositories\TipoPessoaRepository.cs" />
     <Compile Include="Repositories\TipoTarefaRepository.cs" />
+    <Compile Include="Repositories\TipoTransporteRepository.cs" />
+    <Compile Include="Repositories\TipoVeiculoRepository.cs" />
+    <Compile Include="Repositories\TransportadoraAnexoRepository.cs" />
+    <Compile Include="Repositories\TransportadoraRepository.cs" />
     <Compile Include="Repositories\UFRepository.cs" />
     <Compile Include="Repositories\UsuarioAnexoRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />

@@ -9,11 +9,11 @@ namespace ModelServices.Interfaces.Repositories
 {
     public interface ITransportadoraRepository : IRepositoryBase<TRANSPORTADORA>
     {
-        TRANSPORTADORA CheckExist(TRANSPORTADORA item);
-        TRANSPORTADORA GetByEmail(String email);
+        TRANSPORTADORA CheckExist(TRANSPORTADORA item, Int32 idAss);
+        TRANSPORTADORA GetByEmail(String email, Int32 idAss);
         TRANSPORTADORA GetItemById(Int32 id);
-        List<TRANSPORTADORA> GetAllItens();
-        List<TRANSPORTADORA> GetAllItensAdm();
-        List<TRANSPORTADORA> ExecuteFilter(String nome, String cnpj, String email, String cidade, String uf);
+        List<TRANSPORTADORA> GetAllItens(Int32 idAss);
+        List<TRANSPORTADORA> GetAllItensAdm(Int32 idAss);
+        List<TRANSPORTADORA> ExecuteFilter(Int32? veic, Int32? tran, String nome, String cnpj, String email, String cidade, String uf, Int32 idAss);
     }
 }

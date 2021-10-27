@@ -1750,6 +1750,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE">
+          <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="1" />
+          <End Role="EQUIPAMENTO_MANUTENCAO" Type="Self.EQUIPAMENTO_MANUTENCAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="EQUIPAMENTO_MANUTENCAO">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO">
           <End Role="EQUIPAMENTO" Type="Self.EQUIPAMENTO" Multiplicity="1" />
           <End Role="EQUIPAMENTO_MANUTENCAO" Type="Self.EQUIPAMENTO_MANUTENCAO" Multiplicity="*" />
@@ -2982,6 +2994,10 @@
             <End Role="FILIAL" EntitySet="FILIAL" />
             <End Role="EQUIPAMENTO" EntitySet="EQUIPAMENTO" />
           </AssociationSet>
+          <AssociationSet Name="FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" Association="Self.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="EQUIPAMENTO_MANUTENCAO" EntitySet="EQUIPAMENTO_MANUTENCAO" />
+          </AssociationSet>
           <AssociationSet Name="FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO" Association="Self.FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO">
             <End Role="EQUIPAMENTO" EntitySet="EQUIPAMENTO" />
             <End Role="EQUIPAMENTO_MANUTENCAO" EntitySet="EQUIPAMENTO_MANUTENCAO" />
@@ -3417,6 +3433,7 @@
           <NavigationProperty Name="PRODUTO" Relationship="DUO_DatabaseModel.FK_PRODUTO_ASSINANTE" FromRole="ASSINANTE" ToRole="PRODUTO" />
           <NavigationProperty Name="SUBCATEGORIA_PRODUTO" Relationship="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_ASSINANTE" FromRole="ASSINANTE" ToRole="SUBCATEGORIA_PRODUTO" />
           <NavigationProperty Name="TRANSPORTADORA" Relationship="DUO_DatabaseModel.FK_TRANSPORTADORA_ASSINANTE" FromRole="ASSINANTE" ToRole="TRANSPORTADORA" />
+          <NavigationProperty Name="EQUIPAMENTO_MANUTENCAO" Relationship="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" FromRole="ASSINANTE" ToRole="EQUIPAMENTO_MANUTENCAO" />
         </EntityType>
         <EntityType Name="ASSINANTE_ANEXO">
           <Key>
@@ -5441,6 +5458,10 @@
             <End Role="FILIAL" EntitySet="FILIAL" />
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
+          <AssociationSet Name="FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="EQUIPAMENTO_MANUTENCAO" EntitySet="EQUIPAMENTO_MANUTENCAO" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CATEGORIA_CLIENTE">
           <Key>
@@ -6092,6 +6113,7 @@
           <Property Name="EQMA_IN_ATIVO" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EQUIPAMENTO" Relationship="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO" FromRole="EQUIPAMENTO_MANUTENCAO" ToRole="EQUIPAMENTO" />
           <NavigationProperty Name="FORNECEDOR" Relationship="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_FORNECEDOR" FromRole="EQUIPAMENTO_MANUTENCAO" ToRole="FORNECEDOR" />
+          <NavigationProperty Name="ASSINANTE" Relationship="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" FromRole="EQUIPAMENTO_MANUTENCAO" ToRole="ASSINANTE" />
         </EntityType>
         <EntityType Name="MOVIMENTO_ESTOQUE_PRODUTO">
           <Key>
@@ -6862,6 +6884,18 @@
             </Principal>
             <Dependent Role="USUARIO">
               <PropertyRef Name="FILI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE">
+          <End Type="DUO_DatabaseModel.ASSINANTE" Role="ASSINANTE" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.EQUIPAMENTO_MANUTENCAO" Role="EQUIPAMENTO_MANUTENCAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="EQUIPAMENTO_MANUTENCAO">
+              <PropertyRef Name="ASSI_CD_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
