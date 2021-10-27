@@ -281,6 +281,7 @@ namespace SMS_Solution.Controllers
             ViewBag.Filiais = new SelectList(tranApp.GetAllFilial(idAss).OrderBy(p => p.FILI_NM_NOME), "FILI_CD_ID", "FILI_NM_NOME");
             ViewBag.Veics = new SelectList(tranApp.GetAllTipoVeiculo(idAss).OrderBy(p => p.TIVE_NM_NOME), "TIVE_CD_ID", "TIVE_NM_NOME");
             ViewBag.Trans = new SelectList(tranApp.GetAllTipoTransporte(idAss).OrderBy(p => p.TITR_NM_NOME), "TITR_CD_ID", "TITR_NM_NOME");
+            ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_NM_NOME");
             ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
 
             if (Session["MensTransportadora"] != null)
