@@ -12,11 +12,5 @@ namespace ModelServices.Interfaces.EntitiesServices
     {
         Int32 Create(MOVIMENTO_ESTOQUE_PRODUTO perfil, LOG log);
         Int32 Create(MOVIMENTO_ESTOQUE_PRODUTO perfil);
-        //Int32 Edit(PRODUTO_MOVIMENTO_ESTOQUE perfil, LOG log);
-        //Int32 Edit(PRODUTO_MOVIMENTO_ESTOQUE perfil);
-        //Int32 Delete(PRODUTO_MOVIMENTO_ESTOQUE perfil, LOG log);
-        //PRODUTO_MOVIMENTO_ESTOQUE GetItemById(Int32 id);
-        //List<PRODUTO_MOVIMENTO_ESTOQUE> GetAllItens();
-        //List<PRODUTO_MOVIMENTO_ESTOQUE> GetAllItensAdm();
     }
 }

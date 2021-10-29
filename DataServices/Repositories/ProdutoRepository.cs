@@ -10,18 +10,16 @@ namespace DataServices.Repositories
 {
     public class ProdutoRepository : RepositoryBase<PRODUTO>, IProdutoRepository
     {
-        public PRODUTO CheckExist(PRODUTO conta)
+        public PRODUTO CheckExist(PRODUTO conta, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO;
             query = query.Where(p => p.PROD_NM_NOME == conta.PROD_NM_NOME);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             return query.FirstOrDefault();
         }
 
-        public PRODUTO CheckExist(String barcode, String codigo)
+        public PRODUTO CheckExist(String barcode, String codigo, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO;
             if (barcode != null)
             {
@@ -35,9 +33,8 @@ namespace DataServices.Repositories
             return query.FirstOrDefault();
         }
 
-        public PRODUTO GetByNome(String nome)
+        public PRODUTO GetByNome(String nome, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO.Where(p => p.PROD_IN_ATIVO == 1);
             query = query.Where(p => p.PROD_NM_NOME == nome);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
@@ -57,27 +54,24 @@ namespace DataServices.Repositories
             return query.FirstOrDefault();
         }
 
-        public List<PRODUTO> GetAllItens()
+        public List<PRODUTO> GetAllItens(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO.Where(p => p.PROD_IN_ATIVO == 1);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.Include(p => p.MOVIMENTO_ESTOQUE_PRODUTO);
             return query.ToList();
         }
 
-        public List<PRODUTO> GetAllItensAdm()
+        public List<PRODUTO> GetAllItensAdm(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO;
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.Include(p => p.MOVIMENTO_ESTOQUE_PRODUTO);
             return query.ToList();
         }
 
-        public List<PRODUTO> GetPontoPedido()
+        public List<PRODUTO> GetPontoPedido(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO.Where(p => p.PROD_IN_ATIVO == 1);
             query = query.Where(p => p.PROD_QN_ESTOQUE < p.PROD_QN_QUANTIDADE_MINIMA);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
@@ -85,9 +79,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<PRODUTO> GetEstoqueZerado()
+        public List<PRODUTO> GetEstoqueZerado(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO> query = Db.PRODUTO.Where(p => p.PROD_IN_ATIVO == 1);
             query = query.Where(p => p.PROD_QN_ESTOQUE == 0);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
@@ -95,9 +88,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<PRODUTO> ExecuteFilter(Int32? catId, Int32? subId, String nome, String marca, String codigo, String cod, Int32? filial, Int32 ativo)
+        public List<PRODUTO> ExecuteFilter(Int32? catId, Int32? subId, String nome, String marca, String codigo, String cod, Int32? filial, Int32 ativo, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             List<PRODUTO> lista = new List<PRODUTO>();
             IQueryable<PRODUTO> query = Db.PRODUTO;
             query = query.Where(p => p.PROD_IN_ATIVO == ativo);
@@ -138,9 +130,8 @@ namespace DataServices.Repositories
             return lista;
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> ExecuteFilterEstoque(Int32? filial, String nome, String marca, String codigo, String barcode, Int32? categoria)
+        public List<PRODUTO_ESTOQUE_FILIAL> ExecuteFilterEstoque(Int32? filial, String nome, String marca, String codigo, String barcode, Int32? categoria, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             List<PRODUTO_ESTOQUE_FILIAL> lista = new List<PRODUTO_ESTOQUE_FILIAL>();
             IQueryable<PRODUTO_ESTOQUE_FILIAL> query = Db.PRODUTO_ESTOQUE_FILIAL;
             if (filial != null)
@@ -177,9 +168,8 @@ namespace DataServices.Repositories
             return lista;
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> RecuperarQuantidadesFiliais(Int32? idFilial)
+        public List<PRODUTO_ESTOQUE_FILIAL> RecuperarQuantidadesFiliais(Int32? idFilial, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO_ESTOQUE_FILIAL> query = Db.PRODUTO_ESTOQUE_FILIAL.Where(p => p.PREF_IN_ATIVO == 1);
             query = query.Where(p => p.PRODUTO.ASSI_CD_ID == idAss);
             if (idFilial != null)

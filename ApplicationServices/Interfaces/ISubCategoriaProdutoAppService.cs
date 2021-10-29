@@ -14,10 +14,11 @@ namespace ApplicationServices.Interfaces
         Int32 ValidateEdit(SUBCATEGORIA_PRODUTO item, SUBCATEGORIA_PRODUTO itemAntes);
         Int32 ValidateDelete(SUBCATEGORIA_PRODUTO item, USUARIO usuario);
         Int32 ValidateReativar(SUBCATEGORIA_PRODUTO item, USUARIO usuario);
-        SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta);
-        List<SUBCATEGORIA_PRODUTO> GetAllItens();
-        List<SUBCATEGORIA_PRODUTO> GetAllItensAdm();
+
+        SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta, Int32 idAss);
         SUBCATEGORIA_PRODUTO GetItemById(Int32 id);
-        List<CATEGORIA_PRODUTO> GetAllCategorias();
+        List<SUBCATEGORIA_PRODUTO> GetAllItens(Int32 idAss);
+        List<SUBCATEGORIA_PRODUTO> GetAllItensAdm(Int32 idAss);
+        List<CATEGORIA_PRODUTO> GetAllCategorias(Int32 idAss);
     }
 }

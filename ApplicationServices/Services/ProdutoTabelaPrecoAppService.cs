@@ -42,8 +42,6 @@ namespace ApplicationServices.Services
         {
             try
             {
-                // Verifica existencia prévia
-
                 // Completa objeto
 
                 // Persiste

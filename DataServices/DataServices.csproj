@@ -178,6 +178,8 @@
     <Compile Include="Repositories\CategoriaEquipamentoRepository.cs" />
     <Compile Include="Repositories\CategoriaFornecedorRepository.cs" />
     <Compile Include="Repositories\CategoriaNotificacaoRepository.cs" />
+    <Compile Include="Repositories\UnidadeRepository.cs" />
+    <Compile Include="Repositories\CategoriaProdutoRepository.cs" />
     <Compile Include="Repositories\CategoriaTelefoneRepository.cs" />
     <Compile Include="Repositories\CategoriaUsuarioRepository.cs" />
     <Compile Include="Repositories\CentroCustoRepository.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="Repositories\FornecedorRepository.cs" />
     <Compile Include="Repositories\GrupoRepository.cs" />
     <Compile Include="Repositories\LogRepository.cs" />
+    <Compile Include="Repositories\MovimentoEstoqueProdutoRepository.cs" />
     <Compile Include="Repositories\NoticiaComentarioRepository.cs" />
     <Compile Include="Repositories\NoticiaRepository.cs" />
     <Compile Include="Repositories\NotificacaoAnexoRepository.cs" />
@@ -208,7 +211,15 @@
     <Compile Include="Repositories\PerfilRepository.cs" />
     <Compile Include="Repositories\PeriodicidadeTarefaRepository.cs" />
     <Compile Include="Repositories\PeriodicidadeRepository.cs" />
+    <Compile Include="Repositories\ProdutoAnexoRepository.cs" />
+    <Compile Include="Repositories\ProdutoEstoqueFilialRepository.cs" />
+    <Compile Include="Repositories\ProdutoFornecedorRepository.cs" />
+    <Compile Include="Repositories\ProdutoMovimentoEstoqueRepository.cs" />
+    <Compile Include="Repositories\ProdutoOrigemRepository.cs" />
+    <Compile Include="Repositories\ProdutoRepository.cs" />
+    <Compile Include="Repositories\ProdutoTabelaPrecoRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\SubcategoriaProdutoRepository.cs" />
     <Compile Include="Repositories\SubgrupoRepository.cs" />
     <Compile Include="Repositories\TarefaAnexoRepository.cs" />
     <Compile Include="Repositories\TarefaNotificacaoRepository.cs" />

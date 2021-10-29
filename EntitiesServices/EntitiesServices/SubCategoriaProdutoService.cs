@@ -21,7 +21,7 @@ namespace ModelServices.EntitiesServices
         private readonly ISubcategoriaProdutoRepository _baseRepository;
         private readonly ICategoriaProdutoRepository _gruRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public SubcategoriaProdutoService(ISubcategoriaProdutoRepository baseRepository, ILogRepository logRepository, ICategoriaProdutoRepository gruRepository) : base(baseRepository)
         {
@@ -30,9 +30,9 @@ namespace ModelServices.EntitiesServices
             _gruRepository = gruRepository;
         }
 
-        public SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta)
+        public SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta, Int32 idAss)
         {
-            SUBCATEGORIA_PRODUTO item = _baseRepository.CheckExist(conta);
+            SUBCATEGORIA_PRODUTO item = _baseRepository.CheckExist(conta, idAss);
             return item;
         }
 
@@ -42,19 +42,19 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<SUBCATEGORIA_PRODUTO> GetAllItens()
+        public List<SUBCATEGORIA_PRODUTO> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<SUBCATEGORIA_PRODUTO> GetAllItensAdm()
+        public List<SUBCATEGORIA_PRODUTO> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
-        public List<CATEGORIA_PRODUTO> GetAllCategorias()
+        public List<CATEGORIA_PRODUTO> GetAllCategorias(Int32 idAss)
         {
-            return _gruRepository.GetAllItens();
+            return _gruRepository.GetAllItens(idAss);
         }
 
         public Int32 Create(SUBCATEGORIA_PRODUTO item, LOG log)

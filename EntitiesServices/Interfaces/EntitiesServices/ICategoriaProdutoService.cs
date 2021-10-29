@@ -15,9 +15,10 @@ namespace ModelServices.Interfaces.EntitiesServices
         Int32 Edit(CATEGORIA_PRODUTO perfil, LOG log);
         Int32 Edit(CATEGORIA_PRODUTO perfil);
         Int32 Delete(CATEGORIA_PRODUTO perfil, LOG log);
-        CATEGORIA_PRODUTO CheckExist(CATEGORIA_PRODUTO conta);
+
+        CATEGORIA_PRODUTO CheckExist(CATEGORIA_PRODUTO conta, Int32 idAss);
         CATEGORIA_PRODUTO GetItemById(Int32 id);
-        List<CATEGORIA_PRODUTO> GetAllItens();
-        List<CATEGORIA_PRODUTO> GetAllItensAdm();
+        List<CATEGORIA_PRODUTO> GetAllItens(Int32 idAss);
+        List<CATEGORIA_PRODUTO> GetAllItensAdm(Int32 idAss);
     }
 }

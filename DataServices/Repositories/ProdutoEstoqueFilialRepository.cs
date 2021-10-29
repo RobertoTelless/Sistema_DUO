@@ -10,32 +10,29 @@ namespace DataServices.Repositories
 {
     public class ProdutoEstoqueFilialRepository : RepositoryBase<PRODUTO_ESTOQUE_FILIAL>, IProdutoEstoqueFilialRepository
     {
-        public List<PRODUTO_ESTOQUE_FILIAL> GetAllItens()
+        public List<PRODUTO_ESTOQUE_FILIAL> GetAllItens(Int32 idAss)
         {
             IQueryable<PRODUTO_ESTOQUE_FILIAL> query = Db.PRODUTO_ESTOQUE_FILIAL.Where(p => p.PREF_IN_ATIVO == 1);
             return query.ToList<PRODUTO_ESTOQUE_FILIAL>();
         }
 
-        public PRODUTO_ESTOQUE_FILIAL GetByProdFilial(Int32 prod, Int32 fili)
+        public PRODUTO_ESTOQUE_FILIAL GetByProdFilial(Int32 prod, Int32 fili, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO_ESTOQUE_FILIAL> query = Db.PRODUTO_ESTOQUE_FILIAL;
             query = query.Where(p => p.PROD_CD_ID == prod);
             query = query.Where(p => p.FILI_CD_ID == fili);
             return query.FirstOrDefault();
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> GetByProd(Int32 id)
+        public List<PRODUTO_ESTOQUE_FILIAL> GetByProd(Int32 id, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO_ESTOQUE_FILIAL> query = Db.PRODUTO_ESTOQUE_FILIAL;
             query = query.Where(p => p.PROD_CD_ID == id);
             return query.ToList<PRODUTO_ESTOQUE_FILIAL>();
         }
 
-        public PRODUTO_ESTOQUE_FILIAL CheckExist(PRODUTO_ESTOQUE_FILIAL item)
+        public PRODUTO_ESTOQUE_FILIAL CheckExist(PRODUTO_ESTOQUE_FILIAL item, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<PRODUTO_ESTOQUE_FILIAL> query = Db.PRODUTO_ESTOQUE_FILIAL;
             query = query.Where(p => p.PROD_CD_ID == item.PROD_CD_ID);
             query = query.Where(p => p.FILI_CD_ID == item.FILI_CD_ID);

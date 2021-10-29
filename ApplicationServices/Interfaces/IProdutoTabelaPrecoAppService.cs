@@ -13,8 +13,8 @@ namespace ApplicationServices.Interfaces
         Int32 ValidateEdit(PRODUTO_TABELA_PRECO item, PRODUTO_TABELA_PRECO itemAntes);
         Int32 ValidateDelete(PRODUTO_TABELA_PRECO item);
 
-        PRODUTO_TABELA_PRECO GetItemById(Int32 id);
         PRODUTO_TABELA_PRECO CheckExist(PRODUTO_TABELA_PRECO item);
+        PRODUTO_TABELA_PRECO GetItemById(Int32 id);
         PRODUTO_TABELA_PRECO GetByProdFilial(Int32 prod, Int32 fili);
     }
 }

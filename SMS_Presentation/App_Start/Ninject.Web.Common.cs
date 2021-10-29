@@ -94,6 +94,12 @@ namespace Presentation.Start
             kernel.Bind<IClienteCnpjAppService>().To<ClienteCnpjAppService>();
             kernel.Bind<IEquipamentoAppService>().To<EquipamentoAppService>();
             kernel.Bind<ITransportadoraAppService>().To<TransportadoraAppService>();
+            kernel.Bind<ICategoriaProdutoAppService>().To<CategoriaProdutoAppService>();
+            kernel.Bind<ISubcategoriaProdutoAppService>().To<SubcategoriaProdutoAppService>();
+            kernel.Bind<IMovimentoEstoqueProdutoAppService>().To<IMovimentoEstoqueProdutoAppService>();
+            kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
+            kernel.Bind<IProdutoEstoqueFilialAppService>().To<ProdutoEstoqueFilialAppService>();
+            kernel.Bind<IProdutotabelaPrecoAppService>().To<ProdutoTabelaPrecoAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -121,6 +127,13 @@ namespace Presentation.Start
             kernel.Bind<IClienteCnpjService>().To<ClienteCnpjService>();
             kernel.Bind<IEquipamentoService>().To<EquipamentoService>();
             kernel.Bind<ITransportadoraService>().To<TransportadoraService>();
+            kernel.Bind<ICategoriaProdutoService>().To<CategoriaProdutoService>();
+            kernel.Bind<ISubcategoriaProdutoService>().To<SubcategoriaProdutoService>();
+            kernel.Bind<IMovimentoEstoqueProdutoService>().To<MovimentoEstoqueProdutoService>();
+            kernel.Bind<IProdutoEstoqueFilialService>().To<ProdutoEstoqueFilialService>();
+            kernel.Bind<IProdutoMovimentoEstoqueService>().To<ProdutoMovimentoEstoqueService>();
+            kernel.Bind<IProdutoTabelaPrecoService>().To<ProdutoTabelaPrecoService>();
+            kernel.Bind<IProdutoService>().To<ProdutoService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -174,6 +187,15 @@ namespace Presentation.Start
             kernel.Bind<ITipoTransporteRepository>().To<TipoTransporteRepository>();
             kernel.Bind<ITransportadoraAnexoRepository>().To<TransportadoraAnexoRepository>();
             kernel.Bind<ITransportadoraRepository>().To<TransportadoraRepository>();
+            kernel.Bind<ICategoriaProdutoRepository>().To<CategoriaProdutoRepository>();
+            kernel.Bind<ISubcategoriaProdutoRepository>().To<SubcategoriaProdutoRepository>();
+            kernel.Bind<IMovimentoEstoqueProdutoRepository>().To<MovimentoEstoqueProdutoRepository>();
+            kernel.Bind<IProdutoAnexoRepository>().To<ProdutoAnexoRepository>();
+            kernel.Bind<IProdutoEstoqueFilialRepository>().To<ProdutoEstoqueFilialRepository>();
+            kernel.Bind<IProdutoFornecedorRepository>().To<ProdutoFornecedorRepository>();
+            kernel.Bind<IProdutoMovimentoEstoqueRepository>().To<ProdutoMovimentoEstoqueRepository>();
+            kernel.Bind<IProdutoOrigemRepository>().To<ProdutoOrigemRepository>();
+            kernel.Bind<IProdutoRepository>().To<ProdutoRepository>();
 
         }
     }

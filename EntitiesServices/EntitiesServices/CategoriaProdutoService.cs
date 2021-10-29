@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly ICategoriaProdutoRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public CategoriaProdutoService(ICategoriaProdutoRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {
@@ -28,9 +28,9 @@ namespace ModelServices.EntitiesServices
             _logRepository = logRepository;
 
         }
-        public CATEGORIA_PRODUTO CheckExist(CATEGORIA_PRODUTO conta)
+        public CATEGORIA_PRODUTO CheckExist(CATEGORIA_PRODUTO conta, Int32 idAss)
         {
-            CATEGORIA_PRODUTO item = _baseRepository.CheckExist(conta);
+            CATEGORIA_PRODUTO item = _baseRepository.CheckExist(conta, idAss);
             return item;
         }
 
@@ -40,14 +40,14 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<CATEGORIA_PRODUTO> GetAllItens()
+        public List<CATEGORIA_PRODUTO> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<CATEGORIA_PRODUTO> GetAllItensAdm()
+        public List<CATEGORIA_PRODUTO> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
         public Int32 Create(CATEGORIA_PRODUTO item, LOG log)

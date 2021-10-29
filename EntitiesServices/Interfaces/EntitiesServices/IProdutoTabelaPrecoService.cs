@@ -13,6 +13,7 @@ namespace ModelServices.Interfaces.EntitiesServices
         Int32 Create(PRODUTO_TABELA_PRECO item);
         Int32 Edit(PRODUTO_TABELA_PRECO item);
         Int32 Delete(PRODUTO_TABELA_PRECO item);
+
         PRODUTO_TABELA_PRECO CheckExist(PRODUTO_TABELA_PRECO item);
         PRODUTO_TABELA_PRECO GetItemById(Int32 id);
         PRODUTO_TABELA_PRECO GetByProdFilial(Int32 prod, Int32 fili);

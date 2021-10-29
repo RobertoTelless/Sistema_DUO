@@ -25,16 +25,13 @@ namespace ModelServices.EntitiesServices
         private readonly IProdutoFornecedorRepository _fornRepository;
         private readonly IUnidadeRepository _unidRepository;
         private readonly IMovimentoEstoqueProdutoRepository _movRepository;
-        private readonly ITamanhoRepository _tamRepository;
-        private readonly IProdutoGradeRepository _gradeRepository;
-        private readonly IFichaTecnicaDetalheRepository _ftRepository;
         private readonly ISubcategoriaProdutoRepository _subRepository;
         private readonly IProdutoOrigemRepository _poRepository;
         private readonly IProdutoTabelaPrecoRepository _tpRepository;
 
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
-        public ProdutoService(IProdutoRepository baseRepository, ILogRepository logRepository, ICategoriaProdutoRepository tipoRepository, IProdutoAnexoRepository anexoRepository, IUnidadeRepository unidRepository, IMovimentoEstoqueProdutoRepository movRepository, IProdutoFornecedorRepository fornRepository, ITamanhoRepository tamRepository, IProdutoGradeRepository gradeRepository, ISubcategoriaProdutoRepository subRepository, IProdutoOrigemRepository poRepository, IProdutoTabelaPrecoRepository tpRepository) : base(baseRepository)
+        public ProdutoService(IProdutoRepository baseRepository, ILogRepository logRepository, ICategoriaProdutoRepository tipoRepository, IProdutoAnexoRepository anexoRepository, IUnidadeRepository unidRepository, IMovimentoEstoqueProdutoRepository movRepository, IProdutoFornecedorRepository fornRepository, ISubcategoriaProdutoRepository subRepository, IProdutoOrigemRepository poRepository, IProdutoTabelaPrecoRepository tpRepository) : base(baseRepository)
         {
             _baseRepository = baseRepository;
             _logRepository = logRepository;
@@ -43,22 +40,20 @@ namespace ModelServices.EntitiesServices
             _unidRepository = unidRepository;
             _movRepository = movRepository;
             _fornRepository = fornRepository;
-            _tamRepository = tamRepository;
-            _gradeRepository = gradeRepository;
             _subRepository = subRepository;
             _poRepository = poRepository;
             _tpRepository = tpRepository;
         }
 
-        public PRODUTO CheckExist(PRODUTO conta)
+        public PRODUTO CheckExist(PRODUTO conta, Int32 idAss)
         {
-            PRODUTO item = _baseRepository.CheckExist(conta);
+            PRODUTO item = _baseRepository.CheckExist(conta, idAss);
             return item;
         }
 
-        public PRODUTO CheckExist(String barcode, String codigo)
+        public PRODUTO CheckExist(String barcode, String codigo, Int32 idAss )
         {
-            PRODUTO item = _baseRepository.CheckExist(barcode, codigo);
+            PRODUTO item = _baseRepository.CheckExist(barcode, codigo, idAss);
             return item;
         }
 
@@ -68,65 +63,55 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public PRODUTO GetByNome(String nome)
+        public PRODUTO GetByNome(String nome, Int32 idAss)
         {
-            PRODUTO item = _baseRepository.GetByNome(nome);
+            PRODUTO item = _baseRepository.GetByNome(nome, idAss);
             return item;
         }
 
-        public List<PRODUTO> GetAllItens()
+        public List<PRODUTO> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> RecuperarQuantidadesFiliais(Int32? idFilial)
+        public List<PRODUTO_ESTOQUE_FILIAL> RecuperarQuantidadesFiliais(Int32? idFilial, Int32 idAss)
         {
-            return _baseRepository.RecuperarQuantidadesFiliais(idFilial);
+            return _baseRepository.RecuperarQuantidadesFiliais(idFilial, idAss);
         }
 
-        public PRODUTO_GRADE GetGradeById(Int32 id)
+        public List<PRODUTO> GetPontoPedido(Int32 idAss)
         {
-            return _gradeRepository.GetItemById(id);
+            return _baseRepository.GetPontoPedido(idAss);
         }
 
-        public List<PRODUTO> GetPontoPedido()
+        public List<PRODUTO> GetEstoqueZerado(Int32 idAss)
         {
-            return _baseRepository.GetPontoPedido();
+            return _baseRepository.GetEstoqueZerado(idAss);
         }
 
-        public List<PRODUTO> GetEstoqueZerado()
+        public List<PRODUTO> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetEstoqueZerado();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
-        public List<PRODUTO> GetAllItensAdm()
+        public List<CATEGORIA_PRODUTO> GetAllTipos(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _tipoRepository.GetAllItens(idAss);
         }
 
-        public List<CATEGORIA_PRODUTO> GetAllTipos()
-        {
-            return _tipoRepository.GetAllItens();
-        }
-
-        public List<PRODUTO_ORIGEM> GetAllOrigens()
+        public List<PRODUTO_ORIGEM> GetAllOrigens(Int32 idAss)
         {
             return _poRepository.GetAllItens();
         }
 
-        public List<SUBCATEGORIA_PRODUTO> GetAllSubs()
+        public List<SUBCATEGORIA_PRODUTO> GetAllSubs(Int32 idAss)
         {
-            return _subRepository.GetAllItens();
+            return _subRepository.GetAllItens(idAss);
         }
 
-        public List<UNIDADE> GetAllUnidades()
+        public List<UNIDADE> GetAllUnidades(Int32 idAss)
         {
-            return _unidRepository.GetAllItens();
-        }
-
-        public List<TAMANHO> GetAllTamanhos()
-        {
-            return _tamRepository.GetAllItens();
+            return _unidRepository.GetAllItens(idAss);
         }
 
         public PRODUTO_ANEXO GetAnexoById(Int32 id)
@@ -139,15 +124,15 @@ namespace ModelServices.EntitiesServices
             return _fornRepository.GetItemById(id);
         }
 
-        public List<PRODUTO> ExecuteFilter(Int32? catId, Int32? subId, String nome, String marca, String codigo, String cod, Int32? filial, Int32 ativo)
+        public List<PRODUTO> ExecuteFilter(Int32? catId, Int32? subId, String nome, String marca, String codigo, String cod, Int32? filial, Int32 ativo, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilter(catId, subId, nome, marca, codigo, cod, filial, ativo);
+            return _baseRepository.ExecuteFilter(catId, subId, nome, marca, codigo, cod, filial, ativo, idAss);
 
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> ExecuteFilterEstoque(Int32? filial, String nome, String marca, String codigo, String barcode, Int32? categoria)
+        public List<PRODUTO_ESTOQUE_FILIAL> ExecuteFilterEstoque(Int32? filial, String nome, String marca, String codigo, String barcode, Int32? categoria, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilterEstoque(filial, nome, marca, codigo, barcode, categoria);
+            return _baseRepository.ExecuteFilterEstoque(filial, nome, marca, codigo, barcode, categoria, idAss);
 
         }
 
@@ -288,44 +273,6 @@ namespace ModelServices.EntitiesServices
             }
         }
 
-        public Int32 EditGrade(PRODUTO_GRADE item)
-        {
-            using (DbContextTransaction transaction = Db.Database.BeginTransaction(IsolationLevel.ReadCommitted))
-            {
-                try
-                {
-                    PRODUTO_GRADE obj = _gradeRepository.GetById(item.PRGR_CD_ID);
-                    _gradeRepository.Detach(obj);
-                    _gradeRepository.Update(item);
-                    transaction.Commit();
-                    return 0;
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    throw ex;
-                }
-            }
-        }
-
-        public Int32 CreateGrade(PRODUTO_GRADE item)
-        {
-            using (DbContextTransaction transaction = Db.Database.BeginTransaction(IsolationLevel.ReadCommitted))
-            {
-                try
-                {
-                    _gradeRepository.Add(item);
-                    transaction.Commit();
-                    return 0;
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    throw ex;
-                }
-            }
-        }
-
         public Int32 EditTabelaPreco(PRODUTO_TABELA_PRECO item)
         {
             using (DbContextTransaction transaction = Db.Database.BeginTransaction(IsolationLevel.ReadCommitted))
@@ -356,6 +303,5 @@ namespace ModelServices.EntitiesServices
         {
             return _fornRepository.GetByProdForn(forn, prod);
         }
-
     }
 }

@@ -15,10 +15,11 @@ namespace ModelServices.Interfaces.EntitiesServices
         Int32 Edit(SUBCATEGORIA_PRODUTO item, LOG log);
         Int32 Edit(SUBCATEGORIA_PRODUTO item);
         Int32 Delete(SUBCATEGORIA_PRODUTO item, LOG log);
-        SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta);
+
+        SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta, Int32 idAss);
         SUBCATEGORIA_PRODUTO GetItemById(Int32 id);
-        List<SUBCATEGORIA_PRODUTO> GetAllItens();
-        List<SUBCATEGORIA_PRODUTO> GetAllItensAdm();
-        List<CATEGORIA_PRODUTO> GetAllCategorias();
+        List<SUBCATEGORIA_PRODUTO> GetAllItens(Int32 idAss);
+        List<SUBCATEGORIA_PRODUTO> GetAllItensAdm(Int32 idAss);
+        List<CATEGORIA_PRODUTO> GetAllCategorias(Int32 idAss);
     }
 }

@@ -23,14 +23,14 @@ namespace ApplicationServices.Services
             _movService = movService;
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> GetAllItens()
+        public List<PRODUTO_ESTOQUE_FILIAL> GetAllItens(Int32 idAss)
         {
-            return _baseService.GetAllItens();
+            return _baseService.GetAllItens(idAss);
         }
 
-        public PRODUTO_ESTOQUE_FILIAL CheckExist(PRODUTO_ESTOQUE_FILIAL conta)
+        public PRODUTO_ESTOQUE_FILIAL CheckExist(PRODUTO_ESTOQUE_FILIAL conta, Int32 idAss)
         {
-            PRODUTO_ESTOQUE_FILIAL item = _baseService.CheckExist(conta);
+            PRODUTO_ESTOQUE_FILIAL item = _baseService.CheckExist(conta, idAss);
             return item;
         }
 
@@ -46,14 +46,14 @@ namespace ApplicationServices.Services
             return obj;
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> GetByProd(Int32 id)
+        public List<PRODUTO_ESTOQUE_FILIAL> GetByProd(Int32 id, Int32 idAss)
         {
-            return _baseService.GetByProd(id);
+            return _baseService.GetByProd(id, idAss);
         }
 
-        public PRODUTO_ESTOQUE_FILIAL GetByProdFilial(Int32 prod, Int32 fili)
+        public PRODUTO_ESTOQUE_FILIAL GetByProdFilial(Int32 prod, Int32 fili, Int32 idAss)
         {
-            PRODUTO_ESTOQUE_FILIAL item = _baseService.GetByProdFilial(prod, fili);
+            PRODUTO_ESTOQUE_FILIAL item = _baseService.GetByProdFilial(prod, fili, idAss);
             return item;
         }
 
@@ -62,7 +62,7 @@ namespace ApplicationServices.Services
             try
             {
                 // Verifica existencia prévia
-                if (_baseService.CheckExist(item) != null)
+                if (_baseService.CheckExist(item, usuario.ASSI_CD_ID) != null)
                 {
                     return 1;
                 }
@@ -140,7 +140,7 @@ namespace ApplicationServices.Services
                 movto.MOEP_QN_QUANTIDADE = quant;
                 movto.PROD_CD_ID = item.PROD_CD_ID;
                 movto.USUA_CD_ID = usuario.USUA_CD_ID;
-                movto.ASSI_CD_ID = SessionMocks.IdAssinante;
+                movto.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 movto.MOEP_QN_ANTES = item.PREF_QN_ESTOQUE;
                 movto.MOEP_QN_ALTERADA = item.PREF_QN_ESTOQUE - item.PREF_QN_QUANTIDADE_ALTERADA;
                 movto.MOEP_QN_DEPOIS = quant;

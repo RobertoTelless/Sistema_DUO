@@ -170,6 +170,7 @@
     <Compile Include="Interfaces\IAppServiceBase.cs" />
     <Compile Include="Interfaces\IAssinanteAppService.cs" />
     <Compile Include="Interfaces\IBancoAppService.cs" />
+    <Compile Include="Interfaces\ICategoriaProdutoAppService.cs" />
     <Compile Include="Interfaces\ICategoriaTelefoneAppService.cs" />
     <Compile Include="Interfaces\ICentroCustoAppService.cs" />
     <Compile Include="Interfaces\IClienteAppService.cs" />
@@ -182,10 +183,15 @@
     <Compile Include="Interfaces\IFornecedorCnpjAppService.cs" />
     <Compile Include="Interfaces\IGrupoAppService.cs" />
     <Compile Include="Interfaces\ILogAppService.cs" />
+    <Compile Include="Interfaces\IMovimentoEstoqueProdutoAppService.cs" />
     <Compile Include="Interfaces\INoticiaAppService.cs" />
     <Compile Include="Interfaces\INotificacaoAppService.cs" />
     <Compile Include="Interfaces\IPerfilAppService.cs" />
     <Compile Include="Interfaces\IPeriodicidadeAppService.cs" />
+    <Compile Include="Interfaces\IProdutoAppService.cs" />
+    <Compile Include="Interfaces\IProdutoEstoqueFilialAppService.cs" />
+    <Compile Include="Interfaces\IProdutoTabelaPrecoAppService.cs" />
+    <Compile Include="Interfaces\ISubCategoriaProdutoAppService.cs" />
     <Compile Include="Interfaces\ISubgrupoAppService.cs" />
     <Compile Include="Interfaces\ITarefaAppService.cs" />
     <Compile Include="Interfaces\ITelefoneAppService.cs" />
@@ -198,6 +204,7 @@
     <Compile Include="Services\AppServiceBase.cs" />
     <Compile Include="Services\AssinanteAppService.cs" />
     <Compile Include="Services\BancoAppService.cs" />
+    <Compile Include="Services\CategoriaProdutoAppService.cs" />
     <Compile Include="Services\CategoriaTelefoneAppService.cs" />
     <Compile Include="Services\CentroCustoAppService.cs" />
     <Compile Include="Services\ClienteAppService.cs" />
@@ -210,9 +217,14 @@
     <Compile Include="Services\FornecedorCnpjAppService.cs" />
     <Compile Include="Services\GrupoAppService.cs" />
     <Compile Include="Services\LogAppService.cs" />
+    <Compile Include="Services\MovimentoEstoqueProdutoAppService.cs" />
     <Compile Include="Services\NoticiaAppService.cs" />
     <Compile Include="Services\NotificacaoAppService.cs" />
     <Compile Include="Services\PerfilAppService.cs" />
+    <Compile Include="Services\ProdutoAppService.cs" />
+    <Compile Include="Services\ProdutoEstoqueFilialAppService.cs" />
+    <Compile Include="Services\ProdutoTabelaPrecoAppService.cs" />
+    <Compile Include="Services\SubcategoriaProdutoAppService.cs" />
     <Compile Include="Services\SubgrupoAppService.cs" />
     <Compile Include="Services\TarefaAppService.cs" />
     <Compile Include="Services\TelefoneAppService.cs" />

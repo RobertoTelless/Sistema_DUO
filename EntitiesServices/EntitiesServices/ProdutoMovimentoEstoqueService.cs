@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IProdutoMovimentoEstoqueRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBR_DBEntities Db = new SystemBR_DBEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public ProdutoMovimentoEstoqueService(IProdutoMovimentoEstoqueRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {

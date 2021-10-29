@@ -21,21 +21,21 @@ namespace ApplicationServices.Services
             _baseService = baseService;
         }
 
-        public SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta)
+        public SUBCATEGORIA_PRODUTO CheckExist(SUBCATEGORIA_PRODUTO conta, Int32 idAss)
         {
-            SUBCATEGORIA_PRODUTO item = _baseService.CheckExist(conta);
+            SUBCATEGORIA_PRODUTO item = _baseService.CheckExist(conta, idAss);
             return item;
         }
 
-        public List<SUBCATEGORIA_PRODUTO> GetAllItens()
+        public List<SUBCATEGORIA_PRODUTO> GetAllItens(Int32 idAss)
         {
-            List<SUBCATEGORIA_PRODUTO> lista = _baseService.GetAllItens();
+            List<SUBCATEGORIA_PRODUTO> lista = _baseService.GetAllItens(idAss);
             return lista;
         }
 
-        public List<SUBCATEGORIA_PRODUTO> GetAllItensAdm()
+        public List<SUBCATEGORIA_PRODUTO> GetAllItensAdm(Int32 idAss)
         {
-            List<SUBCATEGORIA_PRODUTO> lista = _baseService.GetAllItensAdm();
+            List<SUBCATEGORIA_PRODUTO> lista = _baseService.GetAllItensAdm(idAss);
             return lista;
         }
 
@@ -45,9 +45,9 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public List<CATEGORIA_PRODUTO> GetAllCategorias()
+        public List<CATEGORIA_PRODUTO> GetAllCategorias(Int32 idAss)
         {
-            List<CATEGORIA_PRODUTO> lista = _baseService.GetAllCategorias();
+            List<CATEGORIA_PRODUTO> lista = _baseService.GetAllCategorias(idAss);
             return lista;
         }
 
@@ -56,20 +56,20 @@ namespace ApplicationServices.Services
             try
             {
                 // Verifica existencia prévia
-                if (_baseService.CheckExist(item) != null)
+                if (_baseService.CheckExist(item, usuario.ASSI_CD_ID) != null)
                 {
                     return 1;
                 }
 
                 // Completa objeto
                 item.SCPR_IN_ATIVO = 1;
-                item.ASSI_CD_ID = SessionMocks.IdAssinante;
+                item.ASSI_CD_ID = usuario.ASSI_CD_ID;
 
                 // Monta Log
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddSCPR",
                     LOG_IN_ATIVO = 1,
@@ -94,7 +94,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "EditSCPR",
                     LOG_IN_ATIVO = 1,
@@ -157,7 +157,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DeleSCPR",
@@ -202,7 +202,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatSCPR",

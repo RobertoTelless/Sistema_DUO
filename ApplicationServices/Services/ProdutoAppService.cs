@@ -19,52 +19,46 @@ namespace ApplicationServices.Services
         private readonly IMovimentoEstoqueProdutoService _movService;
         private readonly IProdutoTabelaPrecoService _tbService;
         private readonly IFilialAppService _filService;
-        private readonly IItemPedidoCompraRepository _itemRepository;
+        //private readonly IItemPedidoCompraRepository _itemRepository;
         private readonly IProdutoEstoqueFilialService _estService;
 
-        public ProdutoAppService(IProdutoService baseService, IMovimentoEstoqueProdutoService movService, IProdutoTabelaPrecoService tbService, IFilialAppService filService, IItemPedidoCompraRepository itemRepository, IProdutoEstoqueFilialService estService) : base(baseService)
+        public ProdutoAppService(IProdutoService baseService, IMovimentoEstoqueProdutoService movService, IProdutoTabelaPrecoService tbService, IFilialAppService filService, IProdutoEstoqueFilialService estService) : base(baseService)
         {
             _baseService = baseService;
             _movService = movService;
             _tbService = tbService;
             _filService = filService;
-            _itemRepository = itemRepository;
+            //_itemRepository = itemRepository;
             _estService = estService;
         }
 
-        public List<PRODUTO> GetAllItens()
+        public List<PRODUTO> GetAllItens(Int32 idAss)
         {
-            List<PRODUTO> lista = _baseService.GetAllItens();
+            List<PRODUTO> lista = _baseService.GetAllItens(idAss);
             return lista;
         }
 
-        public List<PRODUTO> GetAllItensAdm()
+        public List<PRODUTO> GetAllItensAdm(Int32 idAss)
         {
-            List<PRODUTO> lista = _baseService.GetAllItensAdm();
+            List<PRODUTO> lista = _baseService.GetAllItensAdm(idAss);
             return lista;
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> RecuperarQuantidadesFiliais(Int32? idFilial)
+        public List<PRODUTO_ESTOQUE_FILIAL> RecuperarQuantidadesFiliais(Int32? idFilial, Int32 idAss)
         {
-            List<PRODUTO_ESTOQUE_FILIAL> lista = _baseService.RecuperarQuantidadesFiliais(idFilial);
+            List<PRODUTO_ESTOQUE_FILIAL> lista = _baseService.RecuperarQuantidadesFiliais(idFilial, idAss);
             return lista;
         }
 
-        public List<PRODUTO> GetPontoPedido()
+        public List<PRODUTO> GetPontoPedido(Int32 idAss)
         {
-            List<PRODUTO> lista = _baseService.GetPontoPedido();
+            List<PRODUTO> lista = _baseService.GetPontoPedido(idAss);
             return lista;
         }
 
-        public List<PRODUTO> GetEstoqueZerado()
+        public List<PRODUTO> GetEstoqueZerado(Int32 idAss)
         {
-            List<PRODUTO> lista = _baseService.GetEstoqueZerado();
-            return lista;
-        }
-
-        public PRODUTO_GRADE GetGradeById(Int32 id)
-        {
-            PRODUTO_GRADE lista = _baseService.GetGradeById(id);
+            List<PRODUTO> lista = _baseService.GetEstoqueZerado(idAss);
             return lista;
         }
 
@@ -74,54 +68,47 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public PRODUTO GetByNome(String nome)
+        public PRODUTO GetByNome(String nome, Int32 idAss)
         {
-            PRODUTO item = _baseService.GetByNome(nome);
+            PRODUTO item = _baseService.GetByNome(nome, idAss);
             return item;
         }
 
-        public PRODUTO CheckExist(PRODUTO conta)
+        public PRODUTO CheckExist(PRODUTO conta, Int32 idAss)
         {
-            PRODUTO item = _baseService.CheckExist(conta);
+            PRODUTO item = _baseService.CheckExist(conta, idAss);
             return item;
         }
 
-        public PRODUTO CheckExist(String barcode, String codigo)
+        public PRODUTO CheckExist(String barcode, String codigo, Int32 idAss)
         {
-            PRODUTO item = _baseService.CheckExist(barcode, codigo);
+            PRODUTO item = _baseService.CheckExist(barcode, codigo, idAss);
             return item;
         }
 
-        public List<CATEGORIA_PRODUTO> GetAllTipos()
+        public List<CATEGORIA_PRODUTO> GetAllTipos(Int32 idAss)
         {
-            List<CATEGORIA_PRODUTO> lista = _baseService.GetAllTipos();
+            List<CATEGORIA_PRODUTO> lista = _baseService.GetAllTipos(idAss);
             return lista;
         }
 
-        public List<PRODUTO_ORIGEM> GetAllOrigens()
+        public List<PRODUTO_ORIGEM> GetAllOrigens(Int32 idAss)
         {
-            List<PRODUTO_ORIGEM> lista = _baseService.GetAllOrigens();
+            List<PRODUTO_ORIGEM> lista = _baseService.GetAllOrigens(idAss);
             return lista;
         }
 
-        public List<SUBCATEGORIA_PRODUTO> GetAllSubs()
+        public List<SUBCATEGORIA_PRODUTO> GetAllSubs(Int32 idAss)
         {
-            List<SUBCATEGORIA_PRODUTO> lista = _baseService.GetAllSubs();
+            List<SUBCATEGORIA_PRODUTO> lista = _baseService.GetAllSubs(idAss);
             return lista;
         }
 
-        public List<UNIDADE> GetAllUnidades()
+        public List<UNIDADE> GetAllUnidades(Int32 idAss)
         {
-            List<UNIDADE> lista = _baseService.GetAllUnidades();
+            List<UNIDADE> lista = _baseService.GetAllUnidades(idAss);
             return lista;
         }
-
-        public List<TAMANHO> GetAllTamanhos()
-        {
-            List<TAMANHO> lista = _baseService.GetAllTamanhos();
-            return lista;
-        }
-
 
         public PRODUTO_ANEXO GetAnexoById(Int32 id)
         {
@@ -135,7 +122,7 @@ namespace ApplicationServices.Services
             return lista;
         }
 
-        public Int32 ExecuteFilter(Int32? catId, Int32? subId, String nome, String marca, String codigo, String cod, Int32? filial, Int32 ativo, out List<PRODUTO> objeto)
+        public Int32 ExecuteFilter(Int32? catId, Int32? subId, String nome, String marca, String codigo, String cod, Int32? filial, Int32 ativo, Int32 idAss, out List<PRODUTO> objeto)
         {
             try
             {
@@ -143,7 +130,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilter(catId, subId, nome, marca, codigo, cod, filial, ativo);
+                objeto = _baseService.ExecuteFilter(catId, subId, nome, marca, codigo, cod, filial, ativo, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -156,7 +143,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ExecuteFilterEstoque(Int32? filial, String nome, String marca, String codigo, String barcode, Int32? categoria, out List<PRODUTO_ESTOQUE_FILIAL> objeto)
+        public Int32 ExecuteFilterEstoque(Int32? filial, String nome, String marca, String codigo, String barcode, Int32? categoria, Int32 idAss, out List<PRODUTO_ESTOQUE_FILIAL> objeto)
         {
             try
             {
@@ -164,7 +151,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilterEstoque(filial, nome, marca, codigo, barcode, categoria);
+                objeto = _baseService.ExecuteFilterEstoque(filial, nome, marca, codigo, barcode, categoria, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -182,14 +169,14 @@ namespace ApplicationServices.Services
             try
             {
                 // Verifica existencia prévia
-                if (_baseService.CheckExist(item) != null)
+                if (_baseService.CheckExist(item, usuario.ASSI_CD_ID) != null)
                 {
                     return 1;
                 }
 
                 // Completa objeto
                 item.PROD_IN_ATIVO = 1;
-                item.ASSI_CD_ID = SessionMocks.IdAssinante;
+                item.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 item.PROD_QN_ESTOQUE = item.PROD_QN_QUANTIDADE_INICIAL;
                 item.PROD_DT_ULTIMA_MOVIMENTACAO = DateTime.Today;
 
@@ -199,7 +186,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddPROD",
                     LOG_IN_ATIVO = 1,
@@ -212,7 +199,7 @@ namespace ApplicationServices.Services
                 Int32 volta = _baseService.Create(item, log, movto);
 
                 // Cria linha de estoque
-                List<FILIAL> filiais = _filService.GetAllItens();
+                List<FILIAL> filiais = _filService.GetAllItens(usuario.ASSI_CD_ID);
                 if (usuario.PERFIL.PERF_SG_SIGLA != "ADM")
                 {
                     filiais = filiais.Where(x => x.FILI_CD_ID == usuario.FILI_CD_ID).ToList();
@@ -246,7 +233,7 @@ namespace ApplicationServices.Services
 
                 // Completa objeto
                 item.PROD_IN_ATIVO = 1;
-                item.ASSI_CD_ID = SessionMocks.IdAssinante;
+                item.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 item.PROD_QN_ESTOQUE = item.PROD_QN_QUANTIDADE_INICIAL;
                 item.PROD_DT_ULTIMA_MOVIMENTACAO = DateTime.Today;
                 MOVIMENTO_ESTOQUE_PRODUTO movto = new MOVIMENTO_ESTOQUE_PRODUTO();
@@ -255,7 +242,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG()
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddPROD",
                     LOG_IN_ATIVO = 1,
@@ -274,7 +261,7 @@ namespace ApplicationServices.Services
                 movto.MOEP_QN_QUANTIDADE = item.PROD_QN_QUANTIDADE_INICIAL;
                 movto.PROD_CD_ID = item.PROD_CD_ID;
                 movto.USUA_CD_ID = usuario.USUA_CD_ID;
-                movto.ASSI_CD_ID = SessionMocks.IdAssinante;
+                movto.ASSI_CD_ID = usuario.ASSI_CD_ID;
 
                 // Persiste estoque
                 volta = _movService.Create(movto);
@@ -295,7 +282,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "EditPROD",
                     LOG_IN_ATIVO = 1,
@@ -344,7 +331,7 @@ namespace ApplicationServices.Services
                     LOG log = new LOG
                     {
                         LOG_DT_DATA = DateTime.Now,
-                        ASSI_CD_ID = SessionMocks.IdAssinante,
+                        ASSI_CD_ID = usuario.ASSI_CD_ID,
                         USUA_CD_ID = usuario.USUA_CD_ID,
                         LOG_NM_OPERACAO = "EditEST",
                         LOG_IN_ATIVO = 1,
@@ -376,7 +363,7 @@ namespace ApplicationServices.Services
                     movto.MOEP_QN_QUANTIDADE = quant;
                     movto.PROD_CD_ID = item.PROD_CD_ID;
                     movto.USUA_CD_ID = usuario.USUA_CD_ID;
-                    movto.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    movto.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     movto.MOEP_DS_JUSTIFICATIVA = item.PROD_DS_JUSTIFICATIVA;
 
                     // Persiste estoque
@@ -405,10 +392,10 @@ namespace ApplicationServices.Services
                     return 1;
                 }
 
-                if (_itemRepository.GetItemByProduto(item.PROD_CD_ID) != null)
-                {
-                    return 2;
-                }
+                //if (_itemRepository.GetItemByProduto(item.PROD_CD_ID) != null)
+                //{
+                //    return 2;
+                //}
 
                 // Acerta campos
                 item.PROD_IN_ATIVO = 0;
@@ -417,7 +404,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DelPROD",
@@ -446,7 +433,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatPROD",
@@ -481,33 +468,6 @@ namespace ApplicationServices.Services
             {
                 // Persiste
                 Int32 volta = _baseService.CreateFornecedor(item);
-                return volta;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        public Int32 ValidateEditGrade(PRODUTO_GRADE item)
-        {
-            try
-            {
-                // Persiste
-                return _baseService.EditGrade(item);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        public Int32 ValidateCreateGrade(PRODUTO_GRADE item)
-        {
-            try
-            {
-                // Persiste
-                Int32 volta = _baseService.CreateGrade(item);
                 return volta;
             }
             catch (Exception ex)

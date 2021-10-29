@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IProdutoEstoqueFilialRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public ProdutoEstoqueFilialService(IProdutoEstoqueFilialRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {
@@ -29,14 +29,14 @@ namespace ModelServices.EntitiesServices
 
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> GetAllItens()
+        public List<PRODUTO_ESTOQUE_FILIAL> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public PRODUTO_ESTOQUE_FILIAL CheckExist(PRODUTO_ESTOQUE_FILIAL prod)
+        public PRODUTO_ESTOQUE_FILIAL CheckExist(PRODUTO_ESTOQUE_FILIAL prod, Int32 idAss)
         {
-            PRODUTO_ESTOQUE_FILIAL item = _baseRepository.CheckExist(prod);
+            PRODUTO_ESTOQUE_FILIAL item = _baseRepository.CheckExist(prod, idAss);
             return item;
         }
 
@@ -52,14 +52,14 @@ namespace ModelServices.EntitiesServices
             return obj;
         }
 
-        public List<PRODUTO_ESTOQUE_FILIAL> GetByProd(Int32 id)
+        public List<PRODUTO_ESTOQUE_FILIAL> GetByProd(Int32 id, Int32 idAss)
         {
-            return _baseRepository.GetByProd(id);
+            return _baseRepository.GetByProd(id, idAss);
         }
 
-        public PRODUTO_ESTOQUE_FILIAL GetByProdFilial(Int32 prod, Int32 fili)
+        public PRODUTO_ESTOQUE_FILIAL GetByProdFilial(Int32 prod, Int32 fili, Int32 idAss)
         {
-            PRODUTO_ESTOQUE_FILIAL item = _baseRepository.GetByProdFilial(prod, fili);
+            PRODUTO_ESTOQUE_FILIAL item = _baseRepository.GetByProdFilial(prod, fili, idAss);
             return item;
         }
 
