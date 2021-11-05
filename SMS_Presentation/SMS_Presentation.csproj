@@ -326,8 +326,6 @@
     <Compile Include="Extensions\HMTLHelperExtensions.cs" />
     <Compile Include="Extensions\MVCButtonExtensions.cs" />
     <Compile Include="Extensions\WebMvcExtensions.cs" />
-    <Compile Include="Filters\LoginAuthenticationFilter.cs" />
-    <Compile Include="Filters\ProfileAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -703,9 +701,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Imagens\1\Assinante\1\Fotos\FotoBase.jpg" />
+    <Content Include="Imagens\1\Noticias\1\Fotos\pazola.jpg" />
+    <Content Include="Imagens\1\Usuario\1\Fotos\FotoBase.jpg" />
     <Content Include="Imagens\Base\favicon_SystemBR.jpg" />
     <Content Include="Imagens\Base\FotoBase.jpg" />
     <Content Include="Imagens\Base\icone_imagem.jpg" />
+    <Content Include="Imagens\Base\qrcodebase.png" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\1.png" />
     <Content Include="Images\5.png" />
@@ -3070,17 +3071,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
     <Folder Include="Imagens\1\Agenda\" />
     <Folder Include="Imagens\1\Assinante\1\Anexos\" />
     <Folder Include="Imagens\1\Clientes\" />
     <Folder Include="Imagens\1\Equipamento\" />
     <Folder Include="Imagens\1\Fornecedores\" />
-    <Folder Include="Imagens\1\Noticias\" />
-    <Folder Include="Imagens\1\Notificacao\" />
+    <Folder Include="Imagens\1\Notificacao\1\Anexos\" />
     <Folder Include="Imagens\1\Produtos\" />
     <Folder Include="Imagens\1\Tarefa\" />
     <Folder Include="Imagens\1\Transportadoras\" />
-    <Folder Include="Imagens\1\Usuario\" />
+    <Folder Include="Imagens\1\Usuario\1\Anexos\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

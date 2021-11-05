@@ -16,7 +16,6 @@ namespace DataServices.Repositories
     {
         public CLIENTE_QUADRO_SOCIETARIO CheckExist(CLIENTE_QUADRO_SOCIETARIO cqs)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE_QUADRO_SOCIETARIO> query = Db.CLIENTE_QUADRO_SOCIETARIO;
             query = query.Where(p => p.CLIE_CD_ID == cqs.CLIE_CD_ID && p.CLQS_NM_NOME == cqs.CLQS_NM_NOME);
             return query.FirstOrDefault();
@@ -24,14 +23,12 @@ namespace DataServices.Repositories
 
         public List<CLIENTE_QUADRO_SOCIETARIO> GetAllItens()
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE_QUADRO_SOCIETARIO> query = Db.CLIENTE_QUADRO_SOCIETARIO;
             return query.ToList();
         }
 
         public List<CLIENTE_QUADRO_SOCIETARIO> GetByCliente(CLIENTE cliente)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CLIENTE_QUADRO_SOCIETARIO> query = Db.CLIENTE_QUADRO_SOCIETARIO;
             query = query.Where(p => p.CLIE_CD_ID == cliente.CLIE_CD_ID);
              return query.ToList();
