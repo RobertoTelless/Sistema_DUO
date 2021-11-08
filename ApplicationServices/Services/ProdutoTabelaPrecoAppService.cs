@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace ApplicationServices.Services
 {
-    public class ProdutoTabelaPrecoAppService : AppServiceBase<PRODUTO_TABELA_PRECO>, IProdutotabelaPrecoAppService
+    public class ProdutoTabelaPrecoAppService : AppServiceBase<PRODUTO_TABELA_PRECO>, IProdutoTabelaPrecoAppService
     {
         private readonly IProdutoTabelaPrecoService _baseService;
 

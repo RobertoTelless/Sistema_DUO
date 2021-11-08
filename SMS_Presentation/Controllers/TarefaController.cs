@@ -256,7 +256,7 @@ namespace SMS_Solution.Controllers
             ViewBag.TarefasEncerradas = baseApp.GetTarefaStatus(usuario.USUA_CD_ID, 2).Count;
 
             ViewBag.Usuarios = new SelectList(usuApp.GetAllItens(idAss), "USUA_CD_ID", "USUA_NM_NOME");
-            ViewBag.Perfil = usuario.PERF_CD_ID;
+            ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
 
             List<SelectListItem> status = new List<SelectListItem>();
             status.Add(new SelectListItem() { Text = "Pendente", Value = "1" });
@@ -394,7 +394,7 @@ namespace SMS_Solution.Controllers
             ViewBag.Prioridade = new SelectList(prior, "Value", "Text");
 
             // Prepara view
-            ViewBag.Perfil = usuario.PERF_CD_ID;
+            ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
 
             TAREFA item = new TAREFA();
             TarefaViewModel vm = Mapper.Map<TAREFA, TarefaViewModel>(item);

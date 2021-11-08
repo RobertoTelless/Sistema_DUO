@@ -26,7 +26,6 @@ using EntitiesServices.Attributes;
 using OfficeOpenXml.Table;
 using EntitiesServices.WorkClasses;
 using System.Threading.Tasks;
-using SystemBRPresentation.Filters;
 using System.Data.Entity;
 
 namespace SMS_Presentation.Controllers
@@ -38,7 +37,7 @@ namespace SMS_Presentation.Controllers
         private readonly ICategoriaProdutoAppService cpApp;
         private readonly IFilialAppService filApp;
         private readonly IFornecedorAppService fornApp;
-        private readonly IProdutotabelaPrecoAppService tpApp;
+        private readonly IProdutoTabelaPrecoAppService tpApp;
         private readonly ISubcategoriaProdutoAppService scpApp;
         //private readonly IPedidoVendaAppService pvApp;
         private readonly IProdutoEstoqueFilialAppService pefApp;
@@ -59,7 +58,7 @@ namespace SMS_Presentation.Controllers
             , ICategoriaProdutoAppService cpApps
             , IFilialAppService filApps
             , IFornecedorAppService fornApps
-            , IProdutotabelaPrecoAppService tpApps
+            , IProdutoTabelaPrecoAppService tpApps
             , ISubcategoriaProdutoAppService scpApps
             , IProdutoEstoqueFilialAppService pefApps)
         {
@@ -296,6 +295,7 @@ namespace SMS_Presentation.Controllers
             Session["VoltaProduto"] = 1;
             Session["VoltaConsulta"] = 1;
             Session["FlagVoltaProd"] = 1;
+            Session["VoltaEstoque"] = 0;
             Session["Clonar"] = 0;
             return View(objetoProd);
         }

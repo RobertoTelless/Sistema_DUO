@@ -58,7 +58,7 @@
                         {
             <div class="form-group">
                 <button style="margin-left: 15px;" class="btnSubmit btn btn-sm btn-success" id="basictoast" type="button">Confirma Inclusão de Filial</button>
-                @Html.ButtonLinkIndex(text: "Cancelar", action: "VoltarBaseFilial", controller: "MatrizFilial")
+                @Html.ButtonLinkIndex(text: "Voltar", action: "VoltarBaseFilial", controller: "Filial")
             </div>
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#tab-1">Dados Gerais</a></li>
@@ -70,7 +70,7 @@
                                                 <div id="tab-1" class="tab-pane active">
                                                     <div class="panel-body">
                                                         <div class="row">
-                                                                <div class="form-group" style=" margin-left: -15px; margin-right: -15px;" id="PJ">
+                                                                <div class="form-group" style=" margin-left: -15px; margin-right: -15px;">
                                                                     <div class="col-lg-4 col-md-4 col-xs-12">
                                                                         CNPJ
                                                                         @Html.HiddenFor(m => m.FILI_DT_CADASTRO)
@@ -399,7 +399,7 @@
                 $('#btnBuscaCep').attr("disabled", "disabled");
 
                 $.ajax({
-                    url: '../MatrizFilial/PesquisaCEP_Javascript'
+                    url: '../Filial/PesquisaCEP_Javascript'
                     , type: 'POST'
                     , data: data
                     , success: function (r) {
@@ -426,7 +426,7 @@
 
                 if (cnpj != "") {
                     $.ajax({
-                        url: '../MatrizFilial/PesquisaCNPJ'
+                        url: '../Filial/PesquisaCNPJ'
                         , type: 'POST'
                         , data: data
                         , async: false

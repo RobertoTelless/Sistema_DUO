@@ -15,7 +15,7 @@ namespace SMS_Solution.ViewModels
         [Required(ErrorMessage = "Campo NOME obrigatorio")]
         [StringLength(50, MinimumLength = 1, ErrorMessage = "O NOME deve conter no minimo 1 caracteres e no máximo 50.")]
         public string FILI_NM_NOME { get; set; }
-        [StringLength(50, ErrorMessage = "A RAZÃO SOCIAL deve conter no máximo 50.")]
+        [StringLength(100, ErrorMessage = "A RAZÃO SOCIAL deve conter no máximo 100.")]
         public string FILI_NM_RAZAO { get; set; }
         [StringLength(20, MinimumLength = 14, ErrorMessage = "O CNPJ deve conter no minimo 14 caracteres e no máximo 20.")]
         [CustomValidationCNPJ(ErrorMessage = "CNPJ inválido")]

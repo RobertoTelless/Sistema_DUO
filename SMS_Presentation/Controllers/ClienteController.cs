@@ -26,7 +26,6 @@ using EntitiesServices.Attributes;
 using OfficeOpenXml.Table;
 using EntitiesServices.WorkClasses;
 using System.Threading.Tasks;
-using SystemBRPresentation.Filters;
 
 namespace SMS_Solution.Controllers
 {
@@ -593,9 +592,9 @@ namespace SMS_Solution.Controllers
             ViewBag.Usuarios = new SelectList((List<USUARIO>)Session["Usuarios"], "USUA_CD_ID", "USUA_NM_NOME");
 
             List<SelectListItem> sexo = new List<SelectListItem>();
-            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "1" });
-            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "2" });
-            sexo.Add(new SelectListItem() { Text = "Outros", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "2" });
+            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Outros", Value = "4" });
             ViewBag.sexo = new SelectList(sexo, "Value", "Text");
 
             List<SelectListItem> situacao = new List<SelectListItem>();
@@ -630,9 +629,9 @@ namespace SMS_Solution.Controllers
             ViewBag.Usuarios = new SelectList((List<USUARIO>)Session["Usuarios"], "USUA_CD_ID", "USUA_NM_NOME");
 
             List<SelectListItem> sexo = new List<SelectListItem>();
-            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "1" });
-            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "2" });
-            sexo.Add(new SelectListItem() { Text = "Outros", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "2" });
+            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Outros", Value = "4" });
             ViewBag.sexo = new SelectList(sexo, "Value", "Text");
 
             List<SelectListItem> situacao = new List<SelectListItem>();
@@ -684,6 +683,7 @@ namespace SMS_Solution.Controllers
                     }
 
                     Session["IdVolta"] = item.CLIE_CD_ID;
+                    Session["IdCliente"] = item.CLIE_CD_ID;
                     if (Session["FileQueueCliente"] != null)
                     {
                         List<FileQueue> fq = (List<FileQueue>)Session["FileQueueCliente"];
@@ -771,9 +771,9 @@ namespace SMS_Solution.Controllers
             ViewBag.Usuarios = new SelectList((List<USUARIO>)Session["Usuarios"], "USUA_CD_ID", "USUA_NM_NOME");
 
             List<SelectListItem> sexo = new List<SelectListItem>();
-            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "1" });
-            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "2" });
-            sexo.Add(new SelectListItem() { Text = "Outros", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "2" });
+            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Outros", Value = "4" });
             ViewBag.sexo = new SelectList(sexo, "Value", "Text");
 
             List<SelectListItem> situacao = new List<SelectListItem>();
@@ -811,6 +811,7 @@ namespace SMS_Solution.Controllers
             objetoAntes = item;
             Session["Cliente"] = item;
             Session["IdCliente"] = id;
+            Session["IdVolta"] = id;
             Session["VoltaCEP"] = 1;
             ClienteViewModel vm = Mapper.Map<CLIENTE, ClienteViewModel>(item);
             return View(vm);
@@ -828,9 +829,9 @@ namespace SMS_Solution.Controllers
             ViewBag.Usuarios = new SelectList((List<USUARIO>)Session["Usuarios"], "USUA_CD_ID", "USUA_NM_NOME");
 
             List<SelectListItem> sexo = new List<SelectListItem>();
-            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "1" });
-            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "2" });
-            sexo.Add(new SelectListItem() { Text = "Outros", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Masculino", Value = "2" });
+            sexo.Add(new SelectListItem() { Text = "Feminino", Value = "3" });
+            sexo.Add(new SelectListItem() { Text = "Outros", Value = "4" });
             ViewBag.sexo = new SelectList(sexo, "Value", "Text");
 
             List<SelectListItem> situacao = new List<SelectListItem>();
@@ -1352,7 +1353,7 @@ namespace SMS_Solution.Controllers
             // Chama servico ECT
             //Address end = ExternalServices.ECT_Services.GetAdressCEP(item.CLIE_NR_CEP_BUSCA);
             //Endereco end = ExternalServices.ECT_Services.GetAdressCEPService(item.CLIE_NR_CEP_BUSCA);
-            CLIENTE cli = baseApp.GetItemById((Int32)Session["IdCliente"]);
+            //CLIENTE cli = baseApp.GetItemById((Int32)Session["IdCliente"]);
 
             ZipCodeLoad zipLoad = new ZipCodeLoad();
             ZipCodeInfo end = new ZipCodeInfo();

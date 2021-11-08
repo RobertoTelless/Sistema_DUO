@@ -26,7 +26,6 @@ using EntitiesServices.Attributes;
 using OfficeOpenXml.Table;
 using EntitiesServices.WorkClasses;
 using System.Threading.Tasks;
-using SystemBRPresentation.Filters;
 
 namespace SMS_Solution.Controllers
 {
@@ -113,7 +112,8 @@ namespace SMS_Solution.Controllers
 
             // Recupera numero de usuarios do assinante
             Session["NumUsuarios"] = listaUsu.Count;
-            Int32 usuariosPossiveis = ((Int32)Session["MaxUsuarios"]) - listaUsu.Count;
+            //Int32 usuariosPossiveis = ((Int32)Session["MaxUsuarios"]) - listaUsu.Count;
+            Int32 usuariosPossiveis = 200;
             ViewBag.UsuariosPossiveis = usuariosPossiveis;
 
 
@@ -383,9 +383,9 @@ namespace SMS_Solution.Controllers
                     volta = baseApp.ValidateEdit(item, usuarioLogado);
 
                     // Cria pastas
-                    String caminho = "/Imagens/" + item.ASSI_CD_ID.ToString() + "/Usuarios/" + item.USUA_CD_ID.ToString() + "/Fotos/";
+                    String caminho = "/Imagens/" + item.ASSI_CD_ID.ToString() + "/Usuario/" + item.USUA_CD_ID.ToString() + "/Fotos/";
                     Directory.CreateDirectory(Server.MapPath(caminho));
-                    caminho = "/Imagens/" + item.ASSI_CD_ID.ToString() + "/Usuarios/" + item.USUA_CD_ID.ToString() + "/Anexos/";
+                    caminho = "/Imagens/" + item.ASSI_CD_ID.ToString() + "/Usuario/" + item.USUA_CD_ID.ToString() + "/Anexos/";
                     Directory.CreateDirectory(Server.MapPath(caminho));
 
                     // Sucesso

@@ -24,6 +24,7 @@ namespace SMS_Solution.Controllers
     {
         private readonly IAgendaAppService baseApp;
         private readonly ILogAppService logApp;
+
         private readonly IUsuarioAppService usuApp;
 
         private String msg;

@@ -12,7 +12,6 @@ namespace SMS_Solution.ViewModels
         [Key]
         public int EQUI_CD_ID { get; set; }
         public int ASSI_CD_ID { get; set; }
-        [Required(ErrorMessage = "Campo FILIAL obrigatorio")]
         public Nullable<int> FILI_CD_ID { get; set; }
         public Nullable<int> PERI_CD_ID { get; set; }
         [Required(ErrorMessage = "Campo CATEGORIA obrigatorio")]

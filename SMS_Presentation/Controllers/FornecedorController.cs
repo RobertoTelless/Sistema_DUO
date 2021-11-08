@@ -32,6 +32,7 @@ namespace SMS_Presentation.Controllers
         private readonly ITipoPessoaAppService tpApp;
         private readonly IFornecedorCnpjAppService fcnpjApp;
         private readonly IConfiguracaoAppService confApp;
+        private readonly IFilialAppService filApp;
 
         private String msg;
         private Exception exception;
@@ -43,13 +44,14 @@ namespace SMS_Presentation.Controllers
         List<LOG> listaMasterLog = new List<LOG>();
         String extensao;
 
-        public FornecedorController(IFornecedorAppService fornApps, ILogAppService logApps, ITipoPessoaAppService tpApps, IFornecedorCnpjAppService fcnpjApps, IConfiguracaoAppService confApps)
+        public FornecedorController(IFornecedorAppService fornApps, ILogAppService logApps, ITipoPessoaAppService tpApps, IFornecedorCnpjAppService fcnpjApps, IConfiguracaoAppService confApps, IFilialAppService filApps)
         {
             fornApp = fornApps;
             logApp = logApps;
             tpApp = tpApps;
             fcnpjApp = fcnpjApps;
             confApp = confApps;
+            filApp = filApps;
         }
 
         [HttpGet]
@@ -388,6 +390,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Title = "Fornecedores";
             ViewBag.Cats = new SelectList(fornApp.GetAllTipos(idAss).OrderBy(x => x.CAFO_NM_NOME), "CAFO_CD_ID", "CAFO_NM_NOME");
             ViewBag.Tipos = new SelectList((List<TIPO_PESSOA>)Session["TiposPessoas"], "TIPE_CD_ID", "TIPE_NM_NOME");
+            ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss), "FILI_CD_ID", "FILI_NM_NOME");
             ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_NM_NOME");
             Session["IncluirForn"] = 0;
 
@@ -395,11 +398,11 @@ namespace SMS_Presentation.Controllers
             ViewBag.Fornecedores = ((List<FORNECEDOR>)Session["ListaFornecedor"]).Count;
             //SessionMocks.listaCP = cpApp.GetItensAtrasoFornecedor().ToList();
             //ViewBag.Atrasos = SessionMocks.listaCP.Select(x => x.FORN_CD_ID).Distinct().ToList().Count;
-            ViewBag.Atrasos = 1;
+            ViewBag.Atrasos = 0;
             ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
             ViewBag.Inativos = fornApp.GetAllItensAdm(idAss).Where(p => p.FORN_IN_ATIVO == 0).ToList().Count;
             //ViewBag.SemPedidos = fornApp.GetAllItens().Where(p => p.ITEM_PEDIDO_COMPRA.Count == 0 || p.ITEM_PEDIDO_COMPRA == null).ToList().Count;
-            ViewBag.SemPedidos = 2;
+            ViewBag.SemPedidos = 0;
             List<SelectListItem> ativo = new List<SelectListItem>();
             ativo.Add(new SelectListItem() { Text = "Ativo", Value = "1" });
             ativo.Add(new SelectListItem() { Text = "Inativo", Value = "0" });
@@ -542,6 +545,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Cats = new SelectList(fornApp.GetAllTipos(idAss).OrderBy(x => x.CAFO_NM_NOME), "CAFO_CD_ID", "CAFO_NM_NOME");
             ViewBag.Tipos = new SelectList((List<TIPO_PESSOA>)Session["TiposPessoas"], "TIPE_CD_ID", "TIPE_NM_NOME");
             ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_NM_NOME");
+            ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss), "FILI_CD_ID", "FILI_NM_NOME");
             Session["VoltaProp"] = 4;
 
             // Prepara view
@@ -564,6 +568,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Cats = new SelectList(fornApp.GetAllTipos(idAss).OrderBy(x => x.CAFO_NM_NOME), "CAFO_CD_ID", "CAFO_NM_NOME");
             ViewBag.Tipos = new SelectList((List<TIPO_PESSOA>)Session["TiposPessoas"], "TIPE_CD_ID", "TIPE_NM_NOME");
             ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_NM_NOME");
+            ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss), "FILI_CD_ID", "FILI_NM_NOME");
             if (ModelState.IsValid)
             {
                 try
@@ -689,6 +694,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Cats = new SelectList(fornApp.GetAllTipos(idAss).OrderBy(x => x.CAFO_NM_NOME), "CAFO_CD_ID", "CAFO_NM_NOME");
             ViewBag.Tipos = new SelectList((List<TIPO_PESSOA>)Session["TiposPessoas"], "TIPE_CD_ID", "TIPE_NM_NOME");
             ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_NM_NOME");
+            ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss), "FILI_CD_ID", "FILI_NM_NOME");
             ViewBag.Incluir = (Int32)Session["IncluirForn"];
 
             FORNECEDOR item = fornApp.GetItemById(id);
@@ -714,6 +720,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Cats = new SelectList(fornApp.GetAllTipos(idAss).OrderBy(x => x.CAFO_NM_NOME), "CAFO_CD_ID", "CAFO_NM_NOME");
             ViewBag.Tipos = new SelectList((List<TIPO_PESSOA>)Session["TiposPessoas"], "TIPE_CD_ID", "TIPE_NM_NOME");
             ViewBag.UF = new SelectList(fornApp.GetAllUF(), "UF_CD_ID", "UF_NM_NOME");
+            ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss), "FILI_CD_ID", "FILI_NM_NOME");
             if (ModelState.IsValid)
             {
                 try
@@ -1381,7 +1388,7 @@ namespace SMS_Presentation.Controllers
             // Chama servico ECT
             //Address end = ExternalServices.ECT_Services.GetAdressCEP(item.CLIE_NR_CEP_BUSCA);
             //Endereco end = ExternalServices.ECT_Services.GetAdressCEPService(item.CLIE_NR_CEP_BUSCA);
-            FORNECEDOR cli = fornApp.GetItemById((Int32)Session["IdVolta"]);
+            //FORNECEDOR cli = fornApp.GetItemById((Int32)Session["IdVolta"]);
 
             ZipCodeLoad zipLoad = new ZipCodeLoad();
             ZipCodeInfo end = new ZipCodeInfo();

@@ -128,7 +128,7 @@
                                 Status
                                 @Html.DropDownListFor(m => m.TARE_IN_STATUS, (SelectList)ViewBag.Status, "Selecionar", new { @class = "form-control" })
                             </div>
-                            @if (ViewBag.Perfil == 1)
+                            @if (ViewBag.Perfil == "ADM" || ViewBag.Perfil == "GER") 
                             {
                                 <div class="col-lg-5ths col-md-5ths col-xs-5ths">
                                     Usuario

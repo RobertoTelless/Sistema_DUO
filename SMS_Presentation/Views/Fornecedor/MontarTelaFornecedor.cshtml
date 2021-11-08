@@ -287,7 +287,7 @@
                                                     {
                                                         @Html.TableLinkDetails(cond.FORN_CD_ID, "EditarFornecedor","fa-edit", "Editar/Consultar")
                                                         <span style="cursor: pointer; color: #337ab7;" class="fa fa-send" onclick="MudaIdForn('@cond.FORN_CD_ID')" data-toggle="modal" data-target="#exampleModal" title="Enivar SMS"> </span>
-                                                        @if (cond.FORN_IN_ATIVO == 1)
+                                                        if (cond.FORN_IN_ATIVO == 1)
 	                                                    {
                                                             @Html.TableLinkDetails(cond.FORN_CD_ID, "ExcluirFornecedor","fa-trash-o", "Desativar")
                                                         }

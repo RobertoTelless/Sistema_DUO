@@ -94,7 +94,7 @@
                                                                     @Html.DropDownListFor(m => m.TARE_IN_PRIORIDADE, (SelectList)ViewBag.Prioridade, "Selecionar", new { @class = "form-control", autofocus = true })
                                                                     @Html.ValidationMessageFor(m => m.TARE_IN_PRIORIDADE, "", new { @style = "color:red" })
                                                                 </div>
-                                                                @if (ViewBag.Perfil == 1)
+                                                                @if (ViewBag.Perfil == "ADM" || ViewBag.Perfil == "GER") 
                                                                 {
                                                                     <div class="col-lg-3 col-md-3 col-xs-12">
                                                                         Atribuído a

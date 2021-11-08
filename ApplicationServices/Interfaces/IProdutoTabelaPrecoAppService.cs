@@ -7,7 +7,7 @@ using EntitiesServices.Model;
 
 namespace ApplicationServices.Interfaces
 {
-    public interface IProdutotabelaPrecoAppService : IAppServiceBase<PRODUTO_TABELA_PRECO>
+    public interface IProdutoTabelaPrecoAppService : IAppServiceBase<PRODUTO_TABELA_PRECO>
     {
         Int32 ValidateCreate(PRODUTO_TABELA_PRECO item);
         Int32 ValidateEdit(PRODUTO_TABELA_PRECO item, PRODUTO_TABELA_PRECO itemAntes);

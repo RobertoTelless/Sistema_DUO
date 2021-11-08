@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-10">
-                                            <div class="col-lg-4 col-md-4 col-xs-12">
+                                            <div class="col-lg-2 col-md-2 col-xs-12">
                                                 CNPJ
                                                 @*<div class="input-group">*@
                                                     @Html.TextBoxFor(m => m.FILI_NR_CNPJ, new { @class = "form-control", autofocus = true, @id = "cnpj", @readonly = "readonly" })
@@ -442,7 +442,7 @@
             $('#btnBuscaCep').attr("disabled", "disabled");
 
             $.ajax({
-                url: '../PesquisaCEP_Javascript'
+                url: '../Filial/PesquisaCEP_Javascript'
                 , type: 'POST'
                 , data: data
                 , success: function (r) {

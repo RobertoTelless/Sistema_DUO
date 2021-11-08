@@ -67,6 +67,8 @@ namespace ApplicationServices.Services
 
                 // Completa objeto
                 item.FILI_IN_ATIVO = 1;
+                item.ASSINANTE = null;
+                item.ASSI_CD_ID = usuario.ASSI_CD_ID;
 
                 // Monta Log
                 LOG log = new LOG

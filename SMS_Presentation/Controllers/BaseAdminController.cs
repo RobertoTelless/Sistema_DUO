@@ -28,6 +28,7 @@ namespace SMS_Solution.Controllers
         private readonly IAgendaAppService ageApp;
         private readonly IConfiguracaoAppService confApp;
         private readonly ITipoPessoaAppService tpApp;
+        private readonly IClienteAppService cliApp;
 
         private String msg;
         private Exception exception;
@@ -35,7 +36,7 @@ namespace SMS_Solution.Controllers
         USUARIO objetoAntes = new USUARIO();
         List<USUARIO> listaMaster = new List<USUARIO>();
 
-        public BaseAdminController(IUsuarioAppService baseApps, ILogAppService logApps, INoticiaAppService notApps, ITarefaAppService tarApps, INotificacaoAppService notfApps, IUsuarioAppService usuApps, IAgendaAppService ageApps, IConfiguracaoAppService confApps, ITipoPessoaAppService tpApps)
+        public BaseAdminController(IUsuarioAppService baseApps, ILogAppService logApps, INoticiaAppService notApps, ITarefaAppService tarApps, INotificacaoAppService notfApps, IUsuarioAppService usuApps, IAgendaAppService ageApps, IConfiguracaoAppService confApps, ITipoPessoaAppService tpApps, IClienteAppService cliApps)
         {
             baseApp = baseApps;
             logApp = logApps;
@@ -46,6 +47,7 @@ namespace SMS_Solution.Controllers
             ageApp = ageApps;
             confApp = confApps;
             tpApp = tpApps;
+            cliApp = cliApps;
         }
 
         public ActionResult CarregarAdmin()
@@ -109,7 +111,7 @@ namespace SMS_Solution.Controllers
                 Session["Perfis"] = baseApp.GetAllPerfis();
                 Session["Usuarios"] = usuApp.GetAllUsuarios(idAss);
                 Session["TiposPessoas"] = tpApp.GetAllItens();
-                Session["UFs"] = tpApp.GetAllItens();
+                Session["UFs"] = cliApp.GetAllUF();
             }
 
             Session["MensTarefa"] = 0;
