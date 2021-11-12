@@ -135,6 +135,7 @@ namespace SMS_Solution.Controllers
             Session["MensSMSTrans"] = 0;
             Session["MensTransportadora"] = 0;
             Session["MensProduto"] = 0;
+            Session["MensEstoque"] = 0;
 
             Session["VoltaNotificacao"] = 3;
             Session["VoltaNoticia"] = 1;
@@ -262,6 +263,10 @@ namespace SMS_Solution.Controllers
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
             }
             if ((Int32)Session["MensProduto"] == 2)
+            {
+                ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
+            }
+            if ((Int32)Session["MensEstoque"] == 2)
             {
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0011", CultureInfo.CurrentCulture));
             }

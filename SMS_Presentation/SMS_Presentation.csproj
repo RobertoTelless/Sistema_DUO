@@ -311,6 +311,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ControleAcessoController.cs" />
     <Compile Include="Controllers\EquipamentoController.cs" />
+    <Compile Include="Controllers\EstoqueController.cs" />
     <Compile Include="Controllers\FilialController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
@@ -350,8 +351,11 @@
     <Compile Include="ViewModels\FornecedorViewModel.cs" />
     <Compile Include="ViewModels\GrupoViewModel.cs" />
     <Compile Include="ViewModels\FilialViewModel.cs" />
+    <Compile Include="ViewModels\InventarioViewModel.cs" />
     <Compile Include="ViewModels\LogViewModel.cs" />
     <Compile Include="ViewModels\FornecedorComentarioViewModel.cs" />
+    <Compile Include="ViewModels\MovimentacaoAvulsaGridViewModel.cs" />
+    <Compile Include="ViewModels\MovimentacaoAvulsaViewModel.cs" />
     <Compile Include="ViewModels\NoticiaComentarioViewModel.cs" />
     <Compile Include="ViewModels\NoticiaViewModel.cs" />
     <Compile Include="ViewModels\NotificacaoAnexoViewModel.cs" />
@@ -3085,6 +3089,12 @@
     <Content Include="Views\Produto\VerProdutosEstoqueNegativo.cshtml" />
     <Content Include="Views\Produto\EditarProdutoFornecedor.cshtml" />
     <Content Include="Views\Produto\IncluirProdutoFornecedor.cshtml" />
+    <Content Include="Views\Estoque\MontarTelaEstoqueProduto.cshtml" />
+    <Content Include="Views\Estoque\AcertoManualProduto.cshtml" />
+    <Content Include="Views\Estoque\VerMovimentacaoEstoqueProduto.cshtml" />
+    <Content Include="Views\Estoque\MontarTelaInventario.cshtml" />
+    <Content Include="Views\Estoque\MontarTelaMovimentacaoAvulsa.cshtml" />
+    <Content Include="Views\Estoque\IncluirMovimentacaoAvulsa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
