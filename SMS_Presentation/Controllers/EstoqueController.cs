@@ -145,10 +145,14 @@ namespace SMS_Presentation.Controllers
             Int32 idAss = (Int32)Session["IdAssinante"];
 
             // Carrega listas
-            if ((List<PRODUTO>)Session["ListaProdEstoqueFilial"] == null || ((List<PRODUTO>)Session["ListaProdEstoqueFilial"]).Count == 0)
+            if ((List<PRODUTO_ESTOQUE_FILIAL>)Session["ListaProdEstoqueFilial"] == null || ((List<PRODUTO_ESTOQUE_FILIAL>)Session["ListaProdEstoqueFilial"]).Count == 0)
             {
                 listaMasterProdFili = pefApp.GetAllItens(idAss);
                 Session["ListaProdEstoqueFilial"] = listaMasterProdFili;
+            }
+            else
+            {
+                listaMasterProdFili = (List<PRODUTO_ESTOQUE_FILIAL>)Session["ListaProdEstoqueFilial"];
             }
 
             if (usuario.PERFIL.PERF_SG_SIGLA != "ADM")
@@ -184,6 +188,7 @@ namespace SMS_Presentation.Controllers
             // Abre view
             Session["VoltaEstoque"] = 0;
             Session["MensEstoque"] = 0;
+            Session["FiltroMvmtProd"] = false;
             objetoProd = new PRODUTO();
             if (Session["FiltroProduto"] != null)
             {
@@ -1428,6 +1433,8 @@ namespace SMS_Presentation.Controllers
             ViewBag.Saidas = GetTipoSaida();
             ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
             ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss), "FILI_CD_ID", "FILI_NM_NOME");
+            ViewBag.Produtos = new SelectList(prodApp.GetAllItens(idAss).OrderBy(x => x.PROD_NM_NOME).ToList<PRODUTO>(), "PROD_CD_ID", "PROD_NM_NOME");
+            ViewBag.ListaMovimento = ((List<MOVIMENTO_ESTOQUE_PRODUTO>)Session["ListaMovimentoProduto"]).Where(x => x.PRODUTO != null && x.PRODUTO.PROD_IN_COMPOSTO == 0).Where(x => x.MOEP_IN_CHAVE_ORIGEM == 1 || x.MOEP_IN_CHAVE_ORIGEM == 5).ToList<MOVIMENTO_ESTOQUE_PRODUTO>();
             if (Session["FlagMovmtAvulsa"] != null)
             {
                 if ((Int32)Session["FlagMovmtAvulsa"] == 1)
@@ -1436,7 +1443,7 @@ namespace SMS_Presentation.Controllers
                     ViewBag.ListaMovimento = ((List<MOVIMENTO_ESTOQUE_PRODUTO>)Session["ListaMovimentoProduto"]).Where(x => x.PRODUTO != null && x.PRODUTO.PROD_IN_COMPOSTO == 0).Where(x => x.MOEP_IN_CHAVE_ORIGEM == 1 || x.MOEP_IN_CHAVE_ORIGEM == 5).ToList<MOVIMENTO_ESTOQUE_PRODUTO>();
                 }
             }
-            ViewBag.LstProd = new SelectList(prodApp.GetAllItens(idAss).Where(x => x.PROD_IN_COMPOSTO == 0).OrderBy(x => x.PROD_NM_NOME).ToList<PRODUTO>(), "PROD_CD_ID", "PROD_NM_NOME");
+            //ViewBag.LstProd = new SelectList(prodApp.GetAllItens(idAss).Where(x => x.PROD_IN_COMPOSTO == 0).OrderBy(x => x.PROD_NM_NOME).ToList<PRODUTO>(), "PROD_CD_ID", "PROD_NM_NOME");
 
             if (Session["MensAvulsa"] != null)
             {
@@ -1665,7 +1672,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Entradas = GetTipoEntrada();
             ViewBag.Saidas = GetTipoSaida();
             ViewBag.Filiais = new SelectList(filApp.GetAllItens(idAss).OrderBy(x => x.FILI_NM_NOME).ToList<FILIAL>(), "FILI_CD_ID", "FILI_NM_NOME");
-            ViewBag.ListaProdutos = new SelectList(prodApp.GetAllItens(idAss).Where(x => x.PROD_IN_COMPOSTO == 0).OrderBy(x => x.PROD_NM_NOME).ToList<PRODUTO>(), "PROD_CD_ID", "PROD_NM_NOME");
+            ViewBag.ListaProdutos = new SelectList(prodApp.GetAllItens(idAss).OrderBy(x => x.PROD_NM_NOME).ToList<PRODUTO>(), "PROD_CD_ID", "PROD_NM_NOME");
             ViewBag.Perfil = usuario.PERFIL.PERF_SG_SIGLA;
             ViewBag.Fornecedores = new SelectList(fornApp.GetAllItens(idAss).OrderBy(x => x.FORN_NM_NOME).ToList<FORNECEDOR>(), "FORN_CD_ID", "FORN_NM_NOME");
 
@@ -1880,7 +1887,8 @@ namespace SMS_Presentation.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("MontarTelaMovimentacaoAvulsa");
+                    //return RedirectToAction("MontarTelaMovimentacaoAvulsa");
+                    return RedirectToAction("MontarTelaEstoqueProduto");
                 }
             }
             else

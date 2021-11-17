@@ -96,7 +96,7 @@ namespace Presentation.Start
             kernel.Bind<ITransportadoraAppService>().To<TransportadoraAppService>();
             kernel.Bind<ICategoriaProdutoAppService>().To<CategoriaProdutoAppService>();
             kernel.Bind<ISubcategoriaProdutoAppService>().To<SubcategoriaProdutoAppService>();
-            kernel.Bind<IMovimentoEstoqueProdutoAppService>().To<IMovimentoEstoqueProdutoAppService>();
+            kernel.Bind<IMovimentoEstoqueProdutoAppService>().To<MovimentoEstoqueProdutoAppService>();
             kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
             kernel.Bind<IProdutoEstoqueFilialAppService>().To<ProdutoEstoqueFilialAppService>();
             kernel.Bind<IProdutoTabelaPrecoAppService>().To<ProdutoTabelaPrecoAppService>();

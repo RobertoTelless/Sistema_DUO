@@ -86,22 +86,17 @@
                     @using (Html.BeginForm("FiltrarInventario", "Estoque", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" }))
                     {
 
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-xs-12">
-                                    Produto/Insumo*
-                                    @Html.DropDownListFor(x => x.TIPO, (SelectList)ViewBag.ProdutoInsumo, "Selecionar", new { @class = "form-control", id = "filtroPM", onchange = "FiltrarModal($(this).val())" })
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-
                         @*Filtro Produto*@
                         <div class="container-fluid" id="prodContainer">
                             <div class="row">
                                 <h3>Produto</h3>
                             </div>
                             <div class="row">
+                                <div class="col-lg-2 col-md-2 col-xs-12">
+                                    Tipo*
+                                    @Html.DropDownListFor(x => x.TIPO, (SelectList)ViewBag.ProdutoInsumo, "Selecionar", new { @class = "form-control", id = "filtroPM", onchange = "FiltrarModal($(this).val())" })
+                                    <br />
+                                </div>
                                 <div class="col-lg-2 col-md-2 col-xs-12">
                                     Código de Barras
                                     @Html.TextBoxFor(x => x.PRODUTO.PROD_NR_BARCODE, new { @class = "form-control", id = "cdBarras" })

@@ -100,12 +100,12 @@
                                     @Html.DropDownListFor(x => x.MOVMT_IN_TIPO_MOVIMENTO, (SelectList)ViewBag.Saidas, "Selecionar", new { @class = "form-control" })
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-xs-12">
-                                    Produto/Insumo
+                                    Tipo
                                     @Html.DropDownListFor(x => x.ProdutoInsumo, (SelectList)ViewBag.ProdutoInsumo, new { @class = "form-control", onchange = "ShowProdutoInsumo($(this).val())" })
                                 </div>
                                 <div id="lstProd" class="col-lg-4 col-md-4 col-xs-12">
-                                    Produtos
-                                    @Html.DropDownListFor(x => x.PROD_CD_ID, (SelectList)ViewBag.LstProd, "Selecionar", new { @class = "form-control" })
+                                    Produto
+                                    @Html.DropDownListFor(x => x.PROD_CD_ID, (SelectList)ViewBag.Produtos, "Selecionar", new { @class = "form-control" })
                                 </div>
                             </div>
                         </div>
@@ -264,17 +264,57 @@
 @section Styles {
     <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
     <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
     @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
     @Styles.Render("~/plugins/jasnyBootstrapStyles")
+    @Styles.Render("~/plugins/toastrStyles")
+    @*@Styles.Render("~/Content/plugins/summernote/summernote.css")*@
+    <link href="~/Content/jquery-ui-timepicker-addon.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/select2/select2.min.css" rel="stylesheet" />
+    @Styles.Render("~/plugins/summernoteStyles")
 }
 
 @section Scripts {
+    <script src="~/Scripts/jquery.datetimepicker.full.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.datetimepicker"></script>
+    <script src="~/Scripts/jquery-ui-timepicker-addon.min.js"></script>
+    @Scripts.Render("~/plugins/toastr")
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     @Scripts.Render("~/plugins/dataTables")
     @Scripts.Render("~/bundles/inputmask")
     @Scripts.Render("~/plugins/jasnyBootstrap")
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    @Scripts.Render("~/plugins/sparkline")
+    @*@Scripts.Render("~/Scripts/plugins/summernote/summernote.min.js")*@
+    <script src="~/Scripts/plugins/select2/select2.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>    
+    <script src="~/Scripts/uploadAnexo.js"></script>
+    @Scripts.Render("~/plugins/summernote")
 
+    <script>
+        $("#lstProduto").select2({
+            //data: filterSelect,
+            ajax: {
+                url: '../Produto/BuscaNome',
+                type: 'POST',
+                data: function (params) {
+                    var query = {
+                        nome: params.term
+                    }
+                    return query
+                },
+                processResults: function (data) {
+                    console.log(data);
+                    return {
+                        results: data
+                    }
+                }
+            },
+            placeholder: 'Busque por NOME do PRODUTO',
+            minimumInputLength: 1
+        });
+    </script>
     <script>
         $(function () {
             $('input[name=ativo]').each(function (i, e) {

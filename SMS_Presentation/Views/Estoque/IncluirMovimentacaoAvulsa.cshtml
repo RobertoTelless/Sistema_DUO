@@ -60,12 +60,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-3 col-md-3 col-xs-12">
-                                Produto/Insumo*
+                            <div class="col-lg-2 col-md-2 col-xs-12">
+                                Tipo*
                                 @Html.DropDownListFor(x => x.ProdutoInsumo, (SelectList)ViewBag.ProdutoInsumo, new { @class = "form-control", onchange = "FiltroProdIns($(this).val())", id = "prodIns" })
                                 @Html.ValidationMessageFor(m => m.ProdutoInsumo, "", new { @style = "color:red" })
                             </div>
-                            <div class="col-lg-2 col-md-2 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-xs-12">
                                 Operação*
                                 @Html.DropDownListFor(x => x.MOVMT_IN_OPERACAO, (SelectList)ViewBag.Lista, "Selecionar", new { @class = "form-control", onchange = "FiltrarTipo($(this).val())", id = "operacao" })
                                 @Html.ValidationMessageFor(m => m.MOVMT_IN_OPERACAO, "", new { @style = "color:red" })
@@ -87,12 +87,12 @@
                             </div>
                             @if (ViewBag.Perfil == "ADM")
                             {
-                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                <div class="col-lg-2 col-md-2 col-xs-12">
                                     Filial*
                                     @Html.DropDownListFor(x => x.FILI_CD_ID, (SelectList)ViewBag.Filiais, "Selecionar", new { @class = "form-control", id = "filial" })
                                     @Html.ValidationMessageFor(m => m.FILI_CD_ID, "", new { @style = "color:red" })
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-xs-12" style="display:none" id="filialDestino">
+                                <div class="col-lg-2 col-md-2 col-xs-12" style="display:none" id="filialDestino">
                                     <br />
                                     Filial Destino*
                                     @Html.DropDownListFor(x => x.FILI_DESTINO_CD_ID, (SelectList)ViewBag.Filiais, "Selecionar", new { @class = "form-control", id = "filialDestino" })
@@ -144,28 +144,16 @@
                                     Produtos*
                                     @Html.DropDownList("reg", (SelectList)ViewBag.ListaProdutos, "Selecionar", new { @class = "form-control", id = "reg" })
                                 </div>
+                                @*<div class="col-lg-5 col-md-5 col-xs-12">
+                                    Produto*
+                                    @Html.DropDownListFor(x => x.PROD_CD_ID, (SelectList)ViewBag.ListaProdutos, "Selecionar", new { @class = "form-control" })
+                                </div>*@ 
                                 <div class="col-lg-2 col-md-2 col-xs-12">
                                     Quantidade*
                                     @Html.TextBox("qtde", "", new { @class = "form-control", id = "qtde" })
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-xs-12">
                                     <span style="margin-top: 20px;" class="btn btn-warning btn-sm" onclick="AddRegistro(1)">Confirmar</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="containerInsumo" style="display: none">
-                            <div class="form-group">
-                                <div class="col-lg-8 col-md-8 col-xs-12">
-                                    Insumos*
-                                    @Html.DropDownList("reg", (SelectList)ViewBag.ListaInsumos, "Selecionar", new { @class = "form-control", id = "reg" })
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12">
-                                    Quantidade*
-                                    @Html.TextBox("qtde", "", new { @class = "form-control", id = "qtde" })
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12">
-                                    <span style="margin-top: 20px;" class="btn btn-warning btn-sm" onclick="AddRegistro(2)">Confirmar</span>
                                 </div>
                             </div>
                         </div>
@@ -267,19 +255,6 @@
                                 <div class="col-lg-2 col-md-2 col-xs-12">
                                     Quantidade*
                                     @Html.TextBoxFor(x => x.QTDE_PROD, new { @class = "form-control", id = "qtdeProd" })
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="containerInsumoEx" style="display: none">
-                            <div class="form-group">
-                                <div class="col-lg-8 col-md-8 col-xs-12">
-                                    Insumos*
-                                    @Html.DropDownListFor(x => x.MAPR_CD_ID, (SelectList)ViewBag.ListaInsumos, "Selecionar", new { @class = "form-control", id = "insEx" })
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-xs-12">
-                                    Quantidade*
-                                    @Html.TextBoxFor(x => x.QTDE_MAPR, new { @class = "form-control", id = "qtdeIns" })
                                 </div>
                             </div>
                         </div>
@@ -386,37 +361,6 @@
                                         }
                                     }
                                 }
-                                else
-                                {
-                                    if (ViewBag.ListaMovimento != null && (ViewBag.ListaMovimento as List<EntitiesServices.Model.MOVIMENTO_ESTOQUE_MATERIA_PRIMA>).Count > 0)
-                                    {
-                                        foreach (var cond in (ViewBag.ListaMovimento as List<EntitiesServices.Model.MOVIMENTO_ESTOQUE_MATERIA_PRIMA>))
-                                        {
-                                            <tr>
-                                                <td>@cond.MATERIA_PRIMA.MAPR_NM_NOME</td>
-                                                <td>-</td>
-                                                <td>@cond.FILIAL.FILI_NM_NOME</td>
-                                                <td>@cond.MOEM_DT_MOVIMENTO</td>
-                                                <td>@cond.MOEM_QN_ANTES</td>
-                                                <td>@cond.MOEM_QN_QUANTIDADE</td>
-                                                <td>@cond.MOEM_QN_DEPOIS</td>
-                                                @if (cond.MOEM_IN_TIPO_MOVIMENTO == 1)
-                                                {
-                                                    <td>Entrada</td>
-                                                }
-                                                else if (cond.MOEM_IN_TIPO_MOVIMENTO == 2)
-                                                {
-                                                    <td>Saída</td>
-                                                }
-                                                else
-                                                {
-                                                    <td>-</td>
-                                                }
-                                            </tr>
-                                        }
-                                    }
-
-                                }
                             </tbody>
                         </table>
                     </div>
@@ -449,6 +393,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
     <script src="~/Scripts/uploadAnexo.js"></script>
 
+    <script>
+        $("#lstProduto").select2({
+            //data: filterSelect,
+            ajax: {
+                url: '../Produto/BuscaNome',
+                type: 'POST',
+                data: function (params) {
+                    var query = {
+                        nome: params.term
+                    }
+                    return query
+                },
+                processResults: function (data) {
+                    console.log(data);
+                    return {
+                        results: data
+                    }
+                }
+            },
+            placeholder: 'Busque por NOME do PRODUTO',
+            minimumInputLength: 1
+        });
+    </script>
     <script>
         function FiltroProdIns(val) {
             if (val == 1) {
