@@ -178,6 +178,12 @@
     <Compile Include="Repositories\CategoriaEquipamentoRepository.cs" />
     <Compile Include="Repositories\CategoriaFornecedorRepository.cs" />
     <Compile Include="Repositories\CategoriaNotificacaoRepository.cs" />
+    <Compile Include="Repositories\ContaPagarAnexoRepository.cs" />
+    <Compile Include="Repositories\ContaPagarParcelaRepository.cs" />
+    <Compile Include="Repositories\ContaPagarRateioRepository.cs" />
+    <Compile Include="Repositories\ContaPagarRepository.cs" />
+    <Compile Include="Repositories\ContaPagarTagRepository.cs" />
+    <Compile Include="Repositories\FormaPagamentoRepository.cs" />
     <Compile Include="Repositories\UnidadeRepository.cs" />
     <Compile Include="Repositories\CategoriaProdutoRepository.cs" />
     <Compile Include="Repositories\CategoriaTelefoneRepository.cs" />

@@ -211,6 +211,55 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_USUARIO" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_FILIAL" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR" Width="1.5" PointX="18" PointY="17.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_ANEXO" Width="1.5" PointX="20.25" PointY="25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_PARCELA" Width="1.5" PointX="28.25" PointY="26.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_RATEIO" Width="1.5" PointX="20.25" PointY="45.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_TAG" Width="1.5" PointX="20.25" PointY="21" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER" Width="1.5" PointX="26" PointY="30.5" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_ANEXO" Width="1.5" PointX="28.25" PointY="40.375" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_PARCELA" Width="1.5" PointX="28.25" PointY="32.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_RATEIO" Width="1.5" PointX="28.25" PointY="45" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_TAG" Width="1.5" PointX="31.25" PointY="35.125" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_PAGAMENTO" Width="1.5" PointX="23.75" PointY="30.75" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_FAVORECIDO" Width="1.5" PointX="23.75" PointY="36.875" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TAG" Width="1.5" PointX="23.75" PointY="25.875" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TIPO_TAG_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CENTRO_CUSTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_RATEIO_CENTRO_CUSTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CENTRO_CUSTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CENTRO_CUSTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CONTA_BANCO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CONTA_BANCO1" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_CONTA_BANCO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CONTA_BANCO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_CONTA_BANCO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_ANEXO_CONTA_PAGAR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_FORMA_PAGAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_CONTA_PAGAR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PERIODICIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_RATEIO_CONTA_PAGAR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TAG_CONTA_PAGAR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TIPO_FAVORECIDO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TIPO_TAG" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_FORMA_PAGAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TAG_TIPO_TAG" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_ANEXO_CONTA_RECEBER" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_FORMA_PAGAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_PARCELA_CONTA_RECEBER" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_PERIODICIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CONTA_RECEBER" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_CONTA_RECEBER" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_FAVORECIDO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_TAG" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_TIPO_TAG" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

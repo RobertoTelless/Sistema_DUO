@@ -12,23 +12,19 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PERIODICIDADE
+    public partial class TIPO_FAVORECIDO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PERIODICIDADE()
+        public TIPO_FAVORECIDO()
         {
-            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
             this.CONTA_PAGAR = new HashSet<CONTA_PAGAR>();
             this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
         }
     
-        public int PERI_CD_ID { get; set; }
-        public string PERI_NM_NOME { get; set; }
-        public int PERI_NR_DIAS { get; set; }
-        public int PERI_IN_ATIVO { get; set; }
+        public int TIFA_CD_ID { get; set; }
+        public string TIFA_NM_NOME { get; set; }
+        public Nullable<int> TIFA_IN_ATIVO { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_PAGAR> CONTA_PAGAR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

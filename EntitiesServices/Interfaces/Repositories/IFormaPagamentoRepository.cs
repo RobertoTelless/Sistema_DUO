@@ -9,9 +9,9 @@ namespace ModelServices.Interfaces.Repositories
 {
     public interface IFormaPagamentoRepository : IRepositoryBase<FORMA_PAGAMENTO>
     {
-        List<FORMA_PAGAMENTO> GetAllItens(Int32 tipo);
-        List<FORMA_PAGAMENTO> GetAllItensAdm();
+        List<FORMA_PAGAMENTO> GetAllItensTipo(Int32 tipo, Int32 idAss);
+        List<FORMA_PAGAMENTO> GetAllItensAdm(Int32 idAss);
         FORMA_PAGAMENTO GetItemById(Int32 id);
-        List<FORMA_PAGAMENTO> GetAllItens();
+        List<FORMA_PAGAMENTO> GetAllItens(Int32 idAss);
     }
 }

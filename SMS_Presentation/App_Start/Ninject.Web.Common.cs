@@ -100,6 +100,7 @@ namespace Presentation.Start
             kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
             kernel.Bind<IProdutoEstoqueFilialAppService>().To<ProdutoEstoqueFilialAppService>();
             kernel.Bind<IProdutoTabelaPrecoAppService>().To<ProdutoTabelaPrecoAppService>();
+            kernel.Bind<IFormaPagamentoAppService>().To<FormaPagamentoAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -134,6 +135,7 @@ namespace Presentation.Start
             kernel.Bind<IProdutoMovimentoEstoqueService>().To<ProdutoMovimentoEstoqueService>();
             kernel.Bind<IProdutoTabelaPrecoService>().To<ProdutoTabelaPrecoService>();
             kernel.Bind<IProdutoService>().To<ProdutoService>();
+            kernel.Bind<IFormaPagamentoService>().To<FormaPagamentoService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -202,6 +204,8 @@ namespace Presentation.Start
             kernel.Bind<ITipoContaRepository>().To<TipoContaRepository>();
             kernel.Bind<IUnidadeRepository>().To<UnidadeRepository>();
             kernel.Bind<IProdutoTabelaPrecoRepository>().To<ProdutoTabelaPrecoRepository>();
+            kernel.Bind<IFormaPagamentoRepository>().To<FormaPagamentoRepository>();
+
         }
     }
 }

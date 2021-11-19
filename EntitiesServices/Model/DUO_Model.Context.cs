@@ -104,5 +104,18 @@ namespace EntitiesServices.Model
         public virtual DbSet<FORNECEDOR_COMENTARIO> FORNECEDOR_COMENTARIO { get; set; }
         public virtual DbSet<FORNECEDOR_MENSAGEM> FORNECEDOR_MENSAGEM { get; set; }
         public virtual DbSet<TIPO_MENSAGEM> TIPO_MENSAGEM { get; set; }
+        public virtual DbSet<CONTA_PAGAR> CONTA_PAGAR { get; set; }
+        public virtual DbSet<CONTA_PAGAR_ANEXO> CONTA_PAGAR_ANEXO { get; set; }
+        public virtual DbSet<CONTA_PAGAR_PARCELA> CONTA_PAGAR_PARCELA { get; set; }
+        public virtual DbSet<CONTA_PAGAR_RATEIO> CONTA_PAGAR_RATEIO { get; set; }
+        public virtual DbSet<CONTA_PAGAR_TAG> CONTA_PAGAR_TAG { get; set; }
+        public virtual DbSet<CONTA_RECEBER> CONTA_RECEBER { get; set; }
+        public virtual DbSet<CONTA_RECEBER_ANEXO> CONTA_RECEBER_ANEXO { get; set; }
+        public virtual DbSet<CONTA_RECEBER_PARCELA> CONTA_RECEBER_PARCELA { get; set; }
+        public virtual DbSet<CONTA_RECEBER_RATEIO> CONTA_RECEBER_RATEIO { get; set; }
+        public virtual DbSet<CONTA_RECEBER_TAG> CONTA_RECEBER_TAG { get; set; }
+        public virtual DbSet<FORMA_PAGAMENTO> FORMA_PAGAMENTO { get; set; }
+        public virtual DbSet<TIPO_FAVORECIDO> TIPO_FAVORECIDO { get; set; }
+        public virtual DbSet<TIPO_TAG> TIPO_TAG { get; set; }
     }
 }

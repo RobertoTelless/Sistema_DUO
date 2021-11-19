@@ -19,6 +19,11 @@ namespace EntitiesServices.Model
         {
             this.CONTA_BANCO_CONTATO = new HashSet<CONTA_BANCO_CONTATO>();
             this.CONTA_BANCO_LANCAMENTO = new HashSet<CONTA_BANCO_LANCAMENTO>();
+            this.CONTA_PAGAR = new HashSet<CONTA_PAGAR>();
+            this.CONTA_PAGAR1 = new HashSet<CONTA_PAGAR>();
+            this.CONTA_PAGAR_PARCELA = new HashSet<CONTA_PAGAR_PARCELA>();
+            this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
+            this.FORMA_PAGAMENTO = new HashSet<FORMA_PAGAMENTO>();
         }
     
         public int COBA_CD_ID { get; set; }
@@ -53,5 +58,15 @@ namespace EntitiesServices.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_BANCO_LANCAMENTO> CONTA_BANCO_LANCAMENTO { get; set; }
         public virtual TIPO_CONTA TIPO_CONTA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_PAGAR> CONTA_PAGAR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_PAGAR> CONTA_PAGAR1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_PAGAR_PARCELA> CONTA_PAGAR_PARCELA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FORMA_PAGAMENTO> FORMA_PAGAMENTO { get; set; }
     }
 }

@@ -25,6 +25,7 @@ namespace EntitiesServices.Model
         public Nullable<int> ASSI_CD_ID { get; set; }
         public string CAPR_NM_NOME { get; set; }
         public Nullable<int> CAPR_IN_ATIVO { get; set; }
+        public Nullable<int> CAPR_IN_EXPEDICAO { get; set; }
     
         public virtual ASSINANTE ASSINANTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

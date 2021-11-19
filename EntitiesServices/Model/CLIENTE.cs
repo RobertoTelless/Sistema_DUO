@@ -22,6 +22,7 @@ namespace EntitiesServices.Model
             this.CLIENTE_QUADRO_SOCIETARIO = new HashSet<CLIENTE_QUADRO_SOCIETARIO>();
             this.CLIENTE_REFERENCIA = new HashSet<CLIENTE_REFERENCIA>();
             this.CLIENTE_TAG = new HashSet<CLIENTE_TAG>();
+            this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
         }
     
         public int CLIE_CD_ID { get; set; }
@@ -96,5 +97,7 @@ namespace EntitiesServices.Model
         public virtual UF UF { get; set; }
         public virtual UF UF1 { get; set; }
         public virtual USUARIO USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
     }
 }

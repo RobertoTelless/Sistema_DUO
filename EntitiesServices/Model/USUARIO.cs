@@ -32,6 +32,8 @@ namespace EntitiesServices.Model
             this.CLIENTE = new HashSet<CLIENTE>();
             this.FORNECEDOR_COMENTARIO = new HashSet<FORNECEDOR_COMENTARIO>();
             this.FORNECEDOR_MENSAGEM = new HashSet<FORNECEDOR_MENSAGEM>();
+            this.CONTA_PAGAR = new HashSet<CONTA_PAGAR>();
+            this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
         }
     
         public int USUA_CD_ID { get; set; }
@@ -114,5 +116,9 @@ namespace EntitiesServices.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FORNECEDOR_MENSAGEM> FORNECEDOR_MENSAGEM { get; set; }
         public virtual FILIAL FILIAL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_PAGAR> CONTA_PAGAR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
     }
 }

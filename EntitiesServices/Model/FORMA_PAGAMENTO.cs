@@ -12,38 +12,37 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class CENTRO_CUSTO
+    public partial class FORMA_PAGAMENTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CENTRO_CUSTO()
+        public FORMA_PAGAMENTO()
         {
             this.CONTA_PAGAR = new HashSet<CONTA_PAGAR>();
-            this.CONTA_PAGAR_RATEIO = new HashSet<CONTA_PAGAR_RATEIO>();
+            this.CONTA_PAGAR_PARCELA = new HashSet<CONTA_PAGAR_PARCELA>();
             this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
-            this.CONTA_RECEBER_RATEIO = new HashSet<CONTA_RECEBER_RATEIO>();
         }
     
-        public int CECU_CD_ID { get; set; }
-        public int ASSI_CD_ID { get; set; }
-        public string CECU_NR_NUMERO { get; set; }
-        public string CECU_NM_NOME { get; set; }
-        public int CECU_IN_ATIVO { get; set; }
-        public Nullable<int> GRUP_CD_ID { get; set; }
-        public Nullable<int> SUBG_CD_ID { get; set; }
-        public Nullable<int> CECU_IN_TIPO { get; set; }
-        public Nullable<int> CECU_IN_MOVTO { get; set; }
-        public string CECU_NM_EXIBE { get; set; }
+        public int FOPA_CD_ID { get; set; }
+        public Nullable<int> ASSI_CD_ID { get; set; }
+        public Nullable<int> COBA_CD_ID { get; set; }
+        public Nullable<int> FOPA_IN_CHEQUE { get; set; }
+        public string FOPA_NM_NOME { get; set; }
+        public Nullable<int> FOPA_IN_ATIVO { get; set; }
+        public Nullable<int> FOPA_IN_TIPO { get; set; }
+        public Nullable<int> FOPA_NR_DIAS_CREDITO { get; set; }
+        public Nullable<decimal> FOPA_VL_TAXA { get; set; }
+        public Nullable<decimal> FOPA_VL_TED { get; set; }
+        public Nullable<decimal> FOPA_VL_DOC { get; set; }
+        public string FOPA_NM_TAXA_EXTRA { get; set; }
+        public Nullable<decimal> FOPA_VL_TAXA_EXTRA { get; set; }
     
         public virtual ASSINANTE ASSINANTE { get; set; }
-        public virtual GRUPO GRUPO { get; set; }
-        public virtual SUBGRUPO SUBGRUPO { get; set; }
+        public virtual CONTA_BANCO CONTA_BANCO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_PAGAR> CONTA_PAGAR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CONTA_PAGAR_RATEIO> CONTA_PAGAR_RATEIO { get; set; }
+        public virtual ICollection<CONTA_PAGAR_PARCELA> CONTA_PAGAR_PARCELA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CONTA_RECEBER_RATEIO> CONTA_RECEBER_RATEIO { get; set; }
     }
 }

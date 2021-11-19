@@ -439,6 +439,15 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível excluir essa forma de pagamento. Existem informações vinculadas a ela.
+        /// </summary>
+        internal static string M0056 {
+            get {
+                return ResourceManager.GetString("M0056", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Tarefa ja cadastrada.
         /// </summary>
         internal static string M0058 {

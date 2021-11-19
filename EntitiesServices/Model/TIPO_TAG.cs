@@ -12,26 +12,32 @@ namespace EntitiesServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PERIODICIDADE
+    public partial class TIPO_TAG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PERIODICIDADE()
+        public TIPO_TAG()
         {
-            this.EQUIPAMENTO = new HashSet<EQUIPAMENTO>();
             this.CONTA_PAGAR = new HashSet<CONTA_PAGAR>();
+            this.CONTA_PAGAR_TAG = new HashSet<CONTA_PAGAR_TAG>();
             this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
+            this.CONTA_RECEBER_TAG = new HashSet<CONTA_RECEBER_TAG>();
         }
     
-        public int PERI_CD_ID { get; set; }
-        public string PERI_NM_NOME { get; set; }
-        public int PERI_NR_DIAS { get; set; }
-        public int PERI_IN_ATIVO { get; set; }
+        public int TITA_CD_ID { get; set; }
+        public int ASSI_CD_ID { get; set; }
+        public string TITA_NM_NOME { get; set; }
+        public Nullable<int> TITA_IN_TIPO { get; set; }
+        public string TITA_NM_NOME_EXIBE { get; set; }
+        public Nullable<int> TITA_IN_ATIVO { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        public virtual ASSINANTE ASSINANTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_PAGAR> CONTA_PAGAR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_PAGAR_TAG> CONTA_PAGAR_TAG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_RECEBER_TAG> CONTA_RECEBER_TAG { get; set; }
     }
 }

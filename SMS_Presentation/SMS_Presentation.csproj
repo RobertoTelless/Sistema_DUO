@@ -313,6 +313,7 @@
     <Compile Include="Controllers\EquipamentoController.cs" />
     <Compile Include="Controllers\EstoqueController.cs" />
     <Compile Include="Controllers\FilialController.cs" />
+    <Compile Include="Controllers\FormaPagamentoController.cs" />
     <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -345,8 +346,12 @@
     <Compile Include="ViewModels\ContaBancariaContatoViewModel.cs" />
     <Compile Include="ViewModels\ContaBancariaLancamentoViewModel.cs" />
     <Compile Include="ViewModels\ContaBancariaViewModel.cs" />
+    <Compile Include="ViewModels\ContaPagarParcelaviewModel.cs" />
+    <Compile Include="ViewModels\ContaPagarRateioViewModel.cs" />
+    <Compile Include="ViewModels\ContaPagarViewModel.cs" />
     <Compile Include="ViewModels\EquipamentoManutencaoViewModel.cs" />
     <Compile Include="ViewModels\EquipamentoViewModel.cs" />
+    <Compile Include="ViewModels\FormaPagamentoViewModel.cs" />
     <Compile Include="ViewModels\FornecedorContatoViewModel.cs" />
     <Compile Include="ViewModels\FornecedorViewModel.cs" />
     <Compile Include="ViewModels\GrupoViewModel.cs" />
@@ -3095,6 +3100,9 @@
     <Content Include="Views\Estoque\MontarTelaInventario.cshtml" />
     <Content Include="Views\Estoque\MontarTelaMovimentacaoAvulsa.cshtml" />
     <Content Include="Views\Estoque\IncluirMovimentacaoAvulsa.cshtml" />
+    <Content Include="Views\FormaPagamento\IncluirFormaPagamento.cshtml" />
+    <Content Include="Views\FormaPagamento\MontarTelaFormaPagamento.cshtml" />
+    <Content Include="Views\FormaPagamento\EditarFormaPagamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

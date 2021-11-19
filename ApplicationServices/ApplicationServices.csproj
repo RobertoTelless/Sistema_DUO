@@ -177,8 +177,13 @@
     <Compile Include="Interfaces\IClienteCnpjAppService.cs" />
     <Compile Include="Interfaces\IConfiguracaoAppService.cs" />
     <Compile Include="Interfaces\IContaBancariaAppService.cs" />
+    <Compile Include="Interfaces\IContaPagarAppService.cs" />
+    <Compile Include="Interfaces\IContaPagarParcelaAppService.cs" />
+    <Compile Include="Interfaces\IContaPagarRateioAppService.cs" />
+    <Compile Include="Interfaces\IContaPagarTagAppService.cs" />
     <Compile Include="Interfaces\IEquipamentoAppService.cs" />
     <Compile Include="Interfaces\IFilialAppService.cs" />
+    <Compile Include="Interfaces\IFormaPagamentoAppService.cs" />
     <Compile Include="Interfaces\IFornecedorAppService.cs" />
     <Compile Include="Interfaces\IFornecedorCnpjAppService.cs" />
     <Compile Include="Interfaces\IGrupoAppService.cs" />
@@ -211,8 +216,13 @@
     <Compile Include="Services\ClienteCnpjAppService.cs" />
     <Compile Include="Services\ConfiguracaoAppService.cs" />
     <Compile Include="Services\ContaBancariaAppService.cs" />
+    <Compile Include="Services\ContaPagarAppService.cs" />
+    <Compile Include="Services\ContaPagarParcelaAppService.cs" />
+    <Compile Include="Services\ContaPagarRateioAppService.cs" />
+    <Compile Include="Services\ContaPagarTagAppService.cs" />
     <Compile Include="Services\EquipamentoAppService.cs" />
     <Compile Include="Services\FilialAppService.cs" />
+    <Compile Include="Services\FormaPagamentoAppService.cs" />
     <Compile Include="Services\FornecedorAppService.cs" />
     <Compile Include="Services\FornecedorCnpjAppService.cs" />
     <Compile Include="Services\GrupoAppService.cs" />

@@ -243,6 +243,9 @@
   <data name="M0055" xml:space="preserve">
     <value>Não é possível excluir esse produto. Existem informações vinculadas a ele</value>
   </data>
+  <data name="M0056" xml:space="preserve">
+    <value>Não é possível excluir essa forma de pagamento. Existem informações vinculadas a ela</value>
+  </data>
   <data name="M0058" xml:space="preserve">
     <value>Tarefa ja cadastrada</value>
   </data>

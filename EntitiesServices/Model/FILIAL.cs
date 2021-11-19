@@ -27,6 +27,7 @@ namespace EntitiesServices.Model
             this.PRODUTO_TABELA_PRECO = new HashSet<PRODUTO_TABELA_PRECO>();
             this.TRANSPORTADORA = new HashSet<TRANSPORTADORA>();
             this.USUARIO = new HashSet<USUARIO>();
+            this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
         }
     
         public int FILI_CD_ID { get; set; }
@@ -76,5 +77,7 @@ namespace EntitiesServices.Model
         public virtual ICollection<TRANSPORTADORA> TRANSPORTADORA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USUARIO> USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
     }
 }

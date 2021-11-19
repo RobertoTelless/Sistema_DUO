@@ -53,6 +53,9 @@ namespace EntitiesServices.Model
             this.SUBCATEGORIA_PRODUTO = new HashSet<SUBCATEGORIA_PRODUTO>();
             this.TRANSPORTADORA = new HashSet<TRANSPORTADORA>();
             this.EQUIPAMENTO_MANUTENCAO = new HashSet<EQUIPAMENTO_MANUTENCAO>();
+            this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
+            this.FORMA_PAGAMENTO = new HashSet<FORMA_PAGAMENTO>();
+            this.TIPO_TAG = new HashSet<TIPO_TAG>();
         }
     
         public int ASSI_CD_ID { get; set; }
@@ -148,5 +151,11 @@ namespace EntitiesServices.Model
         public virtual ICollection<TRANSPORTADORA> TRANSPORTADORA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EQUIPAMENTO_MANUTENCAO> EQUIPAMENTO_MANUTENCAO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FORMA_PAGAMENTO> FORMA_PAGAMENTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TIPO_TAG> TIPO_TAG { get; set; }
     }
 }

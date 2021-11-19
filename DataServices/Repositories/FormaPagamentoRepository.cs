@@ -21,18 +21,16 @@ namespace DataServices.Repositories
             return query.FirstOrDefault();
         }
 
-        public List<FORMA_PAGAMENTO> GetAllItensAdm()
+        public List<FORMA_PAGAMENTO> GetAllItensAdm(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<FORMA_PAGAMENTO> query = Db.FORMA_PAGAMENTO;
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.Include(p => p.CONTA_BANCO);
             return query.ToList();
         }
 
-        public List<FORMA_PAGAMENTO> GetAllItens(Int32 tipo)
+        public List<FORMA_PAGAMENTO> GetAllItensTipo(Int32 tipo, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<FORMA_PAGAMENTO> query = Db.FORMA_PAGAMENTO.Where(p => p.FOPA_IN_ATIVO == 1);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             if (tipo == 1)
@@ -47,9 +45,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<FORMA_PAGAMENTO> GetAllItens()
+        public List<FORMA_PAGAMENTO> GetAllItens(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<FORMA_PAGAMENTO> query = Db.FORMA_PAGAMENTO.Where(p => p.FOPA_IN_ATIVO == 1);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
             query = query.Include(p => p.CONTA_BANCO);

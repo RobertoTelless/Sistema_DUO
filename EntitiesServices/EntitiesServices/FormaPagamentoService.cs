@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IFormaPagamentoRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public FormaPagamentoService(IFormaPagamentoRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {
@@ -35,19 +35,19 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<FORMA_PAGAMENTO> GetAllItens(Int32 tipo)
+        public List<FORMA_PAGAMENTO> GetAllItensTipo(Int32 tipo, Int32 idAss)
         {
-            return _baseRepository.GetAllItens(tipo);
+            return _baseRepository.GetAllItensTipo(tipo, idAss);
         }
 
-        public List<FORMA_PAGAMENTO> GetAllItens()
+        public List<FORMA_PAGAMENTO> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<FORMA_PAGAMENTO> GetAllItensAdm()
+        public List<FORMA_PAGAMENTO> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
         public Int32 Create(FORMA_PAGAMENTO item, LOG log)
