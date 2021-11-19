@@ -3112,7 +3112,7 @@
     <Content Include="Views\ContaPagar\VerParcelaCP.cshtml" />
     <Content Include="Views\ContaPagar\IncluirCP.cshtml" />
     <Content Include="Views\ContaPagar\LiquidarParcelaCP.cshtml" />
-    <Content Include="Views\ContaPagar\IncluirTagCP.cshtml" />
+    <Content Include="Views\ContaPagar\EditarCP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
