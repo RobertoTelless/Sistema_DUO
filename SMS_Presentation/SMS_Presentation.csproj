@@ -309,6 +309,7 @@
     <Compile Include="Controllers\BaseAdminController.cs" />
     <Compile Include="Controllers\CentroCustoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ContaPagarController.cs" />
     <Compile Include="Controllers\ControleAcessoController.cs" />
     <Compile Include="Controllers\EquipamentoController.cs" />
     <Compile Include="Controllers\EstoqueController.cs" />
@@ -3103,6 +3104,15 @@
     <Content Include="Views\FormaPagamento\IncluirFormaPagamento.cshtml" />
     <Content Include="Views\FormaPagamento\MontarTelaFormaPagamento.cshtml" />
     <Content Include="Views\FormaPagamento\EditarFormaPagamento.cshtml" />
+    <Content Include="Views\ContaPagar\MontarTelaCP.cshtml" />
+    <Content Include="Views\ContaPagar\VerPagamentosMes.cshtml" />
+    <Content Include="Views\ContaPagar\VerAPagarMes.cshtml" />
+    <Content Include="Views\ContaPagar\VerLancamentosAtrasoCP.cshtml" />
+    <Content Include="Views\ContaPagar\VerAnexoLancamentoCP.cshtml" />
+    <Content Include="Views\ContaPagar\VerParcelaCP.cshtml" />
+    <Content Include="Views\ContaPagar\IncluirCP.cshtml" />
+    <Content Include="Views\ContaPagar\LiquidarParcelaCP.cshtml" />
+    <Content Include="Views\ContaPagar\IncluirTagCP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3163,6 +3173,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SMS_Mensagens.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="App_Start\SystemBR_Resource.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -35,9 +35,9 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public List<CONTA_PAGAR_PARCELA> GetAllItens()
+        public List<CONTA_PAGAR_PARCELA> GetAllItens(Int32 idAss)
         {
-            return _baseService.GetAllItens();
+            return _baseService.GetAllItens(idAss);
         }
 
         public Int32 ValidateCreate(CONTA_PAGAR_PARCELA item, USUARIO usuario)
@@ -53,7 +53,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddCPPA",
                     LOG_IN_ATIVO = 1,
@@ -117,11 +117,10 @@ namespace ApplicationServices.Services
                     noti.NOTI_IN_VISTA = 0;
                     noti.NOTI_NM_TITULO = "Contas a Pagar - Liquidação de Parcela";
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_TX_TEXTO = "A parcela " + item.CPPA_NR_PARCELA + " do lançamento " + SessionMocks.contaPagar.CAPA_DS_DESCRICAO + " foi liquidada em " + DateTime.Today.Date.ToLongDateString();
+                    noti.NOTI_TX_TEXTO = "A parcela " + item.CPPA_NR_PARCELA + " do lançamento " + item.CONTA_PAGAR.CAPA_DS_DESCRICAO + " foi liquidada em " + DateTime.Today.Date.ToLongDateString();
                     noti.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.CANO_CD_ID = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 0;
 
                     // Envia notificação
@@ -157,15 +156,15 @@ namespace ApplicationServices.Services
                 item.CPPA_IN_ATIVO = 0;
 
                 // Monta Log
-                //LOG log = new LOG
-                //{
-                //    LOG_DT_DATA = DateTime.Now,
-                //    USUA_CD_ID = usuario.USUA_CD_ID,
-                //    ASSI_CD_ID = SessionMocks.IdAssinante,
-                //    LOG_IN_ATIVO = 1,
-                //    LOG_NM_OPERACAO = "DelCARE",
-                //    LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_RECEBER>(item)
-                //};
+                LOG log = new LOG
+                {
+                    LOG_DT_DATA = DateTime.Now,
+                    USUA_CD_ID = usuario.USUA_CD_ID,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
+                    LOG_IN_ATIVO = 1,
+                    LOG_NM_OPERACAO = "DelCPPC",
+                    LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_PAGAR_PARCELA>(item)
+                };
 
                 // Persiste
                 return _baseService.Edit(item);
@@ -186,15 +185,15 @@ namespace ApplicationServices.Services
                 item.CPPA_IN_ATIVO = 1;
 
                 // Monta Log
-                //LOG log = new LOG
-                //{
-                //    LOG_DT_DATA = DateTime.Now,
-                //    USUA_CD_ID = usuario.USUA_CD_ID,
-                //    ASSI_CD_ID = SessionMocks.IdAssinante,
-                //    LOG_IN_ATIVO = 1,
-                //    LOG_NM_OPERACAO = "ReatCARE",
-                //    LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_RECEBER>(item)
-                //};
+                LOG log = new LOG
+                {
+                    LOG_DT_DATA = DateTime.Now,
+                    USUA_CD_ID = usuario.USUA_CD_ID,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
+                    LOG_IN_ATIVO = 1,
+                    LOG_NM_OPERACAO = "ReatCPPC",
+                    LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_PAGAR_PARCELA>(item)
+                };
 
                 // Persiste
                 return _baseService.Edit(item);

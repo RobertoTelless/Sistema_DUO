@@ -46,6 +46,9 @@ namespace MvcMapping.Mappers
             CreateMap<ProdutoTabelaPrecoViewModel, PRODUTO_TABELA_PRECO>();
             CreateMap<ProdutoViewModel, PRODUTO>();
             CreateMap<FormaPagamentoViewModel, FORMA_PAGAMENTO>();
+            CreateMap<ContaPagarViewModel, CONTA_PAGAR>();
+            CreateMap<ContaPagarParcelaViewModel, CONTA_PAGAR_PARCELA>();
+            CreateMap<ContaPagarRateioViewModel, CONTA_PAGAR_RATEIO>();
 
         }
     }

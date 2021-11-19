@@ -33,9 +33,9 @@ namespace ApplicationServices.Services
             _fpService = fpService;
         }
 
-        public List<CONTA_PAGAR> GetItensAtraso()
+        public List<CONTA_PAGAR> GetItensAtraso(Int32 idAss)
         {
-            List<CONTA_PAGAR> lista = _baseService.GetItensAtraso();
+            List<CONTA_PAGAR> lista = _baseService.GetItensAtraso(idAss);
             return lista;
         }
 
@@ -45,21 +45,20 @@ namespace ApplicationServices.Services
             return lista;
         }
 
-        public List<CONTA_PAGAR> GetItensAtrasoFornecedor()
+        public List<CONTA_PAGAR> GetItensAtrasoFornecedor(Int32 idAss)
         {
-            return _baseService.GetItensAtrasoFornecedor();
+            return _baseService.GetItensAtrasoFornecedor(idAss);
         }
 
-        public List<CONTA_PAGAR> GetPagamentosMes(DateTime mes)
+        public List<CONTA_PAGAR> GetPagamentosMes(DateTime mes, Int32 idAss)
         {
-            return _baseService.GetPagamentosMes(mes);
+            return _baseService.GetPagamentosMes(mes, idAss);
         }
 
-        public List<CONTA_PAGAR> GetAPagarMes(DateTime mes)
+        public List<CONTA_PAGAR> GetAPagarMes(DateTime mes, Int32 idAss)
         {
-            return _baseService.GetAPagarMes(mes);
+            return _baseService.GetAPagarMes(mes, idAss);
         }
-
 
         public CONTA_PAGAR_ANEXO GetAnexoById(Int32 id)
         {
@@ -73,32 +72,27 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public List<CONTA_PAGAR> GetAllItens()
+        public List<CONTA_PAGAR> GetAllItens(Int32 idAss)
         {
-            return _baseService.GetAllItens();
+            return _baseService.GetAllItens(idAss);
         }
 
-        public List<TIPO_TAG> GetAllTags()
+        public List<CONTA_PAGAR> GetAllItensAdm(Int32 idAss)
         {
-            return _baseService.GetAllTags();
+            return _baseService.GetAllItensAdm(idAss);
         }
 
-        public List<CONTA_PAGAR> GetAllItensAdm()
+        public Decimal GetTotalPagoMes(DateTime mes, Int32 idAss)
         {
-            return _baseService.GetAllItensAdm();
+            return _baseService.GetTotalPagoMes(mes, idAss);
         }
 
-        public Decimal GetTotalPagoMes(DateTime mes)
+        public Decimal GetTotalAPagarMes(DateTime mes, Int32 idAss)
         {
-            return _baseService.GetTotalPagoMes(mes);
-        }
-
-        public Decimal GetTotalAPagarMes(DateTime mes)
-        {
-            return _baseService.GetTotalAPagarMes(mes);
+            return _baseService.GetTotalAPagarMes(mes, idAss);
         }
         
-        public Int32 ExecuteFilter(Int32? forId, Int32? ccId, DateTime? data, String descricao, Int32? aberto, DateTime? vencimento, DateTime? vencFinal, DateTime? quitacao, Int32? atraso, Int32? conta, out List<CONTA_PAGAR> objeto)
+        public Int32 ExecuteFilter(Int32? forId, Int32? ccId, DateTime? data, String descricao, Int32? aberto, DateTime? vencimento, DateTime? vencFinal, DateTime? quitacao, Int32? atraso, Int32? conta, Int32 idAss, out List<CONTA_PAGAR> objeto)
         {
             try
             {
@@ -106,7 +100,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilter(forId, ccId, data, descricao, aberto, vencimento, vencFinal, quitacao, atraso, conta);
+                objeto = _baseService.ExecuteFilter(forId, ccId, data, descricao, aberto, vencimento, vencFinal, quitacao, atraso, conta, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -119,7 +113,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ExecuteFilterAtraso(String nome, DateTime? vencimento, out List<CONTA_PAGAR> objeto)
+        public Int32 ExecuteFilterAtraso(String nome, DateTime? vencimento, Int32 idAss, out List<CONTA_PAGAR> objeto)
         {
             try
             {
@@ -127,7 +121,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilterAtraso(nome, vencimento);
+                objeto = _baseService.ExecuteFilterAtraso(nome, vencimento, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -156,7 +150,7 @@ namespace ApplicationServices.Services
                 item.CAPA_VL_TAXAS = 0;
                 item.CAPA_VL_VALOR_PAGO = 0;
                 //item.CAPA_IN_PARCELADA = 0;
-                item.ASSI_CD_ID = SessionMocks.IdAssinante;
+                item.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 if (item.CAPA_IN_PARCELAS > 1)
                 {
                     item.CAPA_IN_PARCELADA = 1;
@@ -172,7 +166,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddCAPA",
                     LOG_IN_ATIVO = 1,
@@ -239,10 +233,8 @@ namespace ApplicationServices.Services
                     noti2.NOTI_IN_ATIVO = 1;
                     noti2.NOTI_TX_TEXTO = "O lançamento recorrente " + item.CAPA_NR_DOCUMENTO + " foi criado em " + DateTime.Today.Date.ToLongDateString() + " com " + recorrente.ToString() +  " ocorrências,  sob sua responsabilidade.";
                     noti2.USUA_CD_ID = item.USUA_CD_ID.Value;
-                    noti2.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti2.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti2.CANO_CD_ID = 1;
-                    noti2.NOTI_DT_DATA = DateTime.Today.Date;
-                    noti2.NOTI_IN_ENVIADA = 1;
                     noti2.NOTI_IN_STATUS = 0;
 
                     // Persiste notificação
@@ -283,7 +275,6 @@ namespace ApplicationServices.Services
                         cp.FORN_CD_ID = item.FORN_CD_ID;
                         cp.PECO_CD_ID = item.PECO_CD_ID;
                         cp.PERI_CD_ID = item.PERI_CD_ID;
-                        cp.PLCO_CD_ID = item.PLCO_CD_ID;
                         cp.TIFA_CD_ID = item.TIFA_CD_ID;
                         cp.TITA_CD_ID = item.TITA_CD_ID;
                         cp.USUA_CD_ID = item.USUA_CD_ID;
@@ -297,7 +288,7 @@ namespace ApplicationServices.Services
                         cp.CAPA_VL_TAXAS = 0;
                         cp.CAPA_VL_VALOR_PAGO = 0;
                         cp.CAPA_IN_PARCELADA = 0;
-                        cp.ASSI_CD_ID = SessionMocks.IdAssinante;
+                        cp.ASSI_CD_ID = usuario.ASSI_CD_ID;
                         volta = _baseService.Create(cp);
                         dataParcela = dataParcela.AddDays(30);
                     }
@@ -314,10 +305,8 @@ namespace ApplicationServices.Services
                     noti2.NOTI_IN_ATIVO = 1;
                     noti2.NOTI_TX_TEXTO = "O lançamento " + item.CAPA_NR_DOCUMENTO + " foi criado em " + DateTime.Today.Date.ToLongDateString() + " sob sua responsabilidade.";
                     noti2.USUA_CD_ID = item.USUA_CD_ID.Value;
-                    noti2.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti2.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti2.CANO_CD_ID = 1;
-                    noti2.NOTI_DT_DATA = DateTime.Today.Date;
-                    noti2.NOTI_IN_ENVIADA = 1;
                     noti2.NOTI_IN_STATUS = 0;
 
                     // Persiste Lancamento CP
@@ -364,7 +353,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateEdit(CONTA_PAGAR item, CONTA_PAGAR itemAntes, USUARIO usuario)
+        public Int32 ValidateEdit(CONTA_PAGAR item, CONTA_PAGAR itemAntes, USUARIO usuario, Int32 liquida, Int32 eParcela)
         {
             try
             {
@@ -389,17 +378,13 @@ namespace ApplicationServices.Services
                 {
                     item.FORNECEDOR = null;
                 }
-                if (item.PEDIDO_COMPRA != null)
-                {
-                    item.PEDIDO_COMPRA = null;
-                }
+                //if (item.PEDIDO_COMPRA != null)
+                //{
+                //    item.PEDIDO_COMPRA = null;
+                //}
                 if (item.PERIODICIDADE != null)
                 {
                     item.PERIODICIDADE = null;
-                }
-                if (item.PLANO_CONTA != null)
-                {
-                    item.PLANO_CONTA = null;
                 }
                 if (item.TIPO_FAVORECIDO != null)
                 {
@@ -416,7 +401,7 @@ namespace ApplicationServices.Services
 
 
                 //  ****** Se for Liquidação
-                if (SessionMocks.liquidaCP == 1)
+                if (liquida == 1)
                 {
                     // Verifica se é parcelada
                     if (item.CAPA_IN_PARCELADA == 1)
@@ -481,7 +466,7 @@ namespace ApplicationServices.Services
                     {
                         LOG_DT_DATA = DateTime.Now,
                         USUA_CD_ID = usuario.USUA_CD_ID,
-                        ASSI_CD_ID = SessionMocks.IdAssinante,
+                        ASSI_CD_ID = usuario.ASSI_CD_ID,
                         LOG_NM_OPERACAO = "LiquiCAPA",
                         LOG_IN_ATIVO = 1,
                         LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_PAGAR>(item),
@@ -497,9 +482,8 @@ namespace ApplicationServices.Services
                     noti.NOTI_IN_ATIVO = 1;
                     noti.NOTI_TX_TEXTO = "O lançamento " + item.CAPA_NR_DOCUMENTO + " foi liquidado em " + DateTime.Today.Date.ToLongDateString();
                     noti.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.CANO_CD_ID = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 0;
 
                     // Envia notificação
@@ -512,8 +496,7 @@ namespace ApplicationServices.Services
                     item.FORMA_PAGAMENTO = null;
                     volta = _baseService.Edit(item);
 
-                    SessionMocks.liquidaCP = 0;
-
+                    //SessionMocks.liquidaCP = 0;
                     return 0;
                 }
 
@@ -574,7 +557,7 @@ namespace ApplicationServices.Services
                     {
                         LOG_DT_DATA = DateTime.Now,
                         USUA_CD_ID = usuario.USUA_CD_ID,
-                        ASSI_CD_ID = SessionMocks.IdAssinante,
+                        ASSI_CD_ID = usuario.ASSI_CD_ID,
                         LOG_NM_OPERACAO = "ParcCAPA",
                         LOG_IN_ATIVO = 1,
                         LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_PAGAR>(item),
@@ -590,9 +573,8 @@ namespace ApplicationServices.Services
                     noti1.NOTI_IN_ATIVO = 1;
                     noti1.NOTI_TX_TEXTO = "O lançamento " + item.CAPA_NR_DOCUMENTO + " foi parcialmente liquidado em " + DateTime.Today.Date.ToLongDateString();
                     noti1.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti1.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti1.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti1.CANO_CD_ID = 1;
-                    noti1.NOTI_IN_ENVIADA = 1;
                     noti1.NOTI_IN_STATUS = 0;
 
                     // Envia notificação
@@ -670,9 +652,8 @@ namespace ApplicationServices.Services
                     noti3.NOTI_IN_ATIVO = 1;
                     noti3.NOTI_TX_TEXTO = "O lançamento " + item.CAPA_NR_DOCUMENTO + " foi parcelado em " + DateTime.Today.Date.ToLongDateString();
                     noti3.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti3.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti3.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti3.CANO_CD_ID = 1;
-                    noti3.NOTI_IN_ENVIADA = 1;
                     noti3.NOTI_IN_STATUS = 0;
 
                     // Envia notificação
@@ -713,7 +694,7 @@ namespace ApplicationServices.Services
                 // ***** Se for Alteração comum
                 // Acerta objeto
                 item.CAPA_IN_ATIVO = 1;
-                if (SessionMocks.eParcela == 0)
+                if (eParcela == 0)
                 {
                     item.CAPA_VL_SALDO = item.CAPA_VL_VALOR;
                 }
@@ -740,9 +721,8 @@ namespace ApplicationServices.Services
                 noti2.NOTI_IN_ATIVO = 1;
                 noti2.NOTI_TX_TEXTO = "O lançamento " + item.CAPA_NR_DOCUMENTO + " foi alterado em " + DateTime.Today.Date.ToLongDateString();
                 noti2.USUA_CD_ID = usuario.USUA_CD_ID;
-                noti2.ASSI_CD_ID = SessionMocks.IdAssinante;
+                noti2.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 noti2.CANO_CD_ID = 1;
-                noti2.NOTI_IN_ENVIADA = 1;
                 noti2.NOTI_IN_STATUS = 0;
 
                 // Persiste notificação
@@ -800,9 +780,8 @@ namespace ApplicationServices.Services
                 noti.NOTI_IN_ATIVO = 1;
                 noti.NOTI_TX_TEXTO = "O lançamento " + item.CAPA_NR_DOCUMENTO + " com vencimento em " + item.CAPA_DT_VENCIMENTO.Value.ToLongDateString() + " de " + item.CAPA_NM_FAVORECIDO + " foi liquidado em " + item.CAPA_DT_LIQUIDACAO.Value.ToLongDateString() + " sendo pago R$" + item.CAPA_VL_VALOR_PAGO.Value.ToString() + " - Valor original a pagar R$" + item.CAPA_VL_VALOR.ToString();
                 noti.USUA_CD_ID = usuario.USUA_CD_ID;
-                noti.ASSI_CD_ID = SessionMocks.IdAssinante;
+                noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 noti.CANO_CD_ID = 1;
-                noti.NOTI_IN_ENVIADA = 1;
                 noti.NOTI_IN_STATUS = 0;
 
                 //// Recupera template e-mail
@@ -864,7 +843,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DelCAPA",
@@ -893,7 +872,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatCAPA",

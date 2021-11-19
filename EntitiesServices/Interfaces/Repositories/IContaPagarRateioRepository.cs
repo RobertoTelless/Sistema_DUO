@@ -13,4 +13,5 @@ namespace ModelServices.Interfaces.Repositories
         List<CONTA_PAGAR_RATEIO> GetAllItens();
         CONTA_PAGAR_RATEIO GetItemById(Int32 id);
     }
+
 }

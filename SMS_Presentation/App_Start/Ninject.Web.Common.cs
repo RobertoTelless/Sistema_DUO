@@ -101,6 +101,10 @@ namespace Presentation.Start
             kernel.Bind<IProdutoEstoqueFilialAppService>().To<ProdutoEstoqueFilialAppService>();
             kernel.Bind<IProdutoTabelaPrecoAppService>().To<ProdutoTabelaPrecoAppService>();
             kernel.Bind<IFormaPagamentoAppService>().To<FormaPagamentoAppService>();
+            kernel.Bind<IContaPagarAppService>().To<ContaPagarAppService>();
+            kernel.Bind<IContaPagarParcelaAppService>().To<ContaPagarParcelaAppService>();
+            kernel.Bind<IContaPagarRateioAppService>().To<ContaPagarRateioAppService>();
+            kernel.Bind<IContaPagarTagAppService>().To<ContaPagarTagAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -136,6 +140,10 @@ namespace Presentation.Start
             kernel.Bind<IProdutoTabelaPrecoService>().To<ProdutoTabelaPrecoService>();
             kernel.Bind<IProdutoService>().To<ProdutoService>();
             kernel.Bind<IFormaPagamentoService>().To<FormaPagamentoService>();
+            kernel.Bind<IContaPagarService>().To<ContaPagarService>();
+            kernel.Bind<IContaPagarParcelaService>().To<ContaPagarParcelaService>();
+            kernel.Bind<IContaPagarRateioService>().To<ContaPagarRateioService>();
+            kernel.Bind<IContaPagarTagService>().To<ContaPagarTagService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -205,6 +213,11 @@ namespace Presentation.Start
             kernel.Bind<IUnidadeRepository>().To<UnidadeRepository>();
             kernel.Bind<IProdutoTabelaPrecoRepository>().To<ProdutoTabelaPrecoRepository>();
             kernel.Bind<IFormaPagamentoRepository>().To<FormaPagamentoRepository>();
+            kernel.Bind<IContaPagarAnexoRepository>().To<ContaPagarAnexoRepository>();
+            kernel.Bind<IContaPagarParcelaRepository>().To<ContaPagarParcelaRepository>();
+            kernel.Bind<IContaPagarRateioRepository>().To<ContaPagarRateioRepository>();
+            kernel.Bind<IContaPagarRepository>().To<ContaPagarRepository>();
+            kernel.Bind<IContaPagarTagRepository>().To<ContaPagarTagRepository>();
 
         }
     }

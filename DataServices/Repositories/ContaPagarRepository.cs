@@ -22,17 +22,14 @@ namespace DataServices.Repositories
             query = query.Include(p => p.CONTA_PAGAR_ANEXO);
             query = query.Include(p => p.CONTA_PAGAR_PARCELA);
             query = query.Include(p => p.CONTA_PAGAR_RATEIO);
-            query = query.Include(p => p.PLANO_CONTA);
-            query = query.Include(p => p.TIPO_FAVORECIDO);
             query = query.Include(p => p.USUARIO);
             query = query.Include(p => p.CONTA_PAGAR_PARCELA);
             query = query.Include(p => p.CONTA_PAGAR_TAG);
             return query.FirstOrDefault();
         }
 
-        public List<CONTA_PAGAR> GetItensAtraso()
+        public List<CONTA_PAGAR> GetItensAtraso(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Where(p => DbFunctions.TruncateTime(p.CAPA_DT_VENCIMENTO) < DateTime.Today.Date);
             query = query.Where(p => p.CAPA_NR_ATRASO > 0);
@@ -40,9 +37,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public Decimal GetTotalPagoMes(DateTime mes)
+        public Decimal GetTotalPagoMes(DateTime mes, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Where(p => DbFunctions.TruncateTime(p.CAPA_DT_LIQUIDACAO).Value.Month == mes.Month);
             query = query.Where(p => p.CAPA_IN_LIQUIDADA == 1);
@@ -52,9 +48,8 @@ namespace DataServices.Repositories
             return soma;
         }
 
-        public Decimal GetTotalAPagarMes(DateTime mes)
+        public Decimal GetTotalAPagarMes(DateTime mes, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Where(p => DbFunctions.TruncateTime(p.CAPA_DT_VENCIMENTO).Value.Month == mes.Month);
             query = query.Where(p => p.CAPA_IN_LIQUIDADA == 0);
@@ -64,9 +59,8 @@ namespace DataServices.Repositories
             return soma;
         }
 
-        public List<CONTA_PAGAR> GetPagamentosMes(DateTime mes)
+        public List<CONTA_PAGAR> GetPagamentosMes(DateTime mes, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Where(p => DbFunctions.TruncateTime(p.CAPA_DT_LIQUIDACAO).Value.Month == mes.Month);
             query = query.Where(p => p.CAPA_IN_LIQUIDADA == 1);
@@ -74,9 +68,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<CONTA_PAGAR> GetAPagarMes(DateTime mes)
+        public List<CONTA_PAGAR> GetAPagarMes(DateTime mes, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Where(p => DbFunctions.TruncateTime(p.CAPA_DT_VENCIMENTO).Value.Month == mes.Month);
             query = query.Where(p => p.CAPA_IN_LIQUIDADA == 0);
@@ -84,9 +77,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<CONTA_PAGAR> GetAllItens()
+        public List<CONTA_PAGAR> GetAllItens(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Include(p => p.CENTRO_CUSTO);
             query = query.Include(p => p.FORNECEDOR);
@@ -94,9 +86,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<CONTA_PAGAR> GetItensAtrasoFornecedor()
+        public List<CONTA_PAGAR> GetItensAtrasoFornecedor(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR.Where(p => p.CAPA_IN_ATIVO == 1);
             query = query.Where(p => DbFunctions.TruncateTime(p.CAPA_DT_VENCIMENTO) < DateTime.Today.Date);
             query = query.Where(p => p.CAPA_NR_ATRASO > 0);
@@ -105,7 +96,6 @@ namespace DataServices.Repositories
             query = query.Include(p => p.CONTA_BANCO);
             query = query.Include(p => p.CONTA_PAGAR_ANEXO);
             query = query.Include(p => p.CONTA_PAGAR_RATEIO);
-            query = query.Include(p => p.PLANO_CONTA);
             query = query.Include(p => p.TIPO_FAVORECIDO);
             query = query.Include(p => p.USUARIO);
             query = query.Include(p => p.CONTA_PAGAR_PARCELA);
@@ -113,9 +103,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<CONTA_PAGAR> GetAllItensAdm()
+        public List<CONTA_PAGAR> GetAllItensAdm(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR;
             query = query.Include(p => p.CENTRO_CUSTO);
             query = query.Where(p => p.ASSI_CD_ID == idAss);
@@ -123,9 +112,8 @@ namespace DataServices.Repositories
             return query.ToList();
         }
 
-        public List<CONTA_PAGAR> ExecuteFilter(Int32? forId, Int32? ccId, DateTime? data, String descricao, Int32? aberto, DateTime? vencimento, DateTime? vencFinal, DateTime? quitacao, Int32? atraso, Int32? conta)
+        public List<CONTA_PAGAR> ExecuteFilter(Int32? forId, Int32? ccId, DateTime? data, String descricao, Int32? aberto, DateTime? vencimento, DateTime? vencFinal, DateTime? quitacao, Int32? atraso, Int32? conta, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             List<CONTA_PAGAR> lista = new List<CONTA_PAGAR>();
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR;
             if (forId != null)
@@ -191,9 +179,8 @@ namespace DataServices.Repositories
             return lista;
         }
 
-        public List<CONTA_PAGAR> ExecuteFilterAtraso(String nome, DateTime? vencimento)
+        public List<CONTA_PAGAR> ExecuteFilterAtraso(String nome, DateTime? vencimento, Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             List<CONTA_PAGAR> lista = new List<CONTA_PAGAR>();
             IQueryable<CONTA_PAGAR> query = Db.CONTA_PAGAR;
             if (nome != null)

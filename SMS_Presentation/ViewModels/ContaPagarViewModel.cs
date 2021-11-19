@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using EntitiesServices.Model;
 
-namespace SystemBRPresentation.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class ContaPagarViewModel
     {
@@ -153,9 +153,8 @@ namespace SystemBRPresentation.ViewModels
         public virtual FORNECEDOR FORNECEDOR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_PAGAR_PARCELA> CONTA_PAGAR_PARCELA { get; set; }
-        public virtual PEDIDO_COMPRA PEDIDO_COMPRA { get; set; }
+        //public virtual PEDIDO_COMPRA PEDIDO_COMPRA { get; set; }
         public virtual PERIODICIDADE PERIODICIDADE { get; set; }
-        public virtual PLANO_CONTA PLANO_CONTA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_PAGAR_RATEIO> CONTA_PAGAR_RATEIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

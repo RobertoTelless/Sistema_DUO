@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using EntitiesServices.Model;
 
-namespace LeveGestao_Presentation.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class ContaPagarRateioViewModel
     {

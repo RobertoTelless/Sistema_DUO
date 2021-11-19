@@ -17,6 +17,6 @@ namespace ModelServices.Interfaces.EntitiesServices
         Int32 Delete(CONTA_PAGAR_PARCELA item, LOG log);
 
         CONTA_PAGAR_PARCELA GetItemById(Int32 id);
-        List<CONTA_PAGAR_PARCELA> GetAllItens();
+        List<CONTA_PAGAR_PARCELA> GetAllItens(Int32 idAss);
     }
 }

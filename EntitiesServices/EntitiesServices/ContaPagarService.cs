@@ -25,10 +25,9 @@ namespace ModelServices.EntitiesServices
         private readonly IUsuarioRepository _colRepository;
         private readonly ITemplateRepository _tempRepository;
         private readonly IContaPagarParcelaRepository _parRepository;
-        private readonly ITipoTagRepository _tagRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
-        public ContaPagarService(IContaPagarRepository baseRepository, ILogRepository logRepository, IContaPagarAnexoRepository anexoRepository, IConfiguracaoRepository confRepository, IUsuarioRepository colRepository, ITemplateRepository tempRepository, IContaPagarParcelaRepository parRepository, ITipoTagRepository tagRepository) : base(baseRepository)
+        public ContaPagarService(IContaPagarRepository baseRepository, ILogRepository logRepository, IContaPagarAnexoRepository anexoRepository, IConfiguracaoRepository confRepository, IUsuarioRepository colRepository, ITemplateRepository tempRepository, IContaPagarParcelaRepository parRepository) : base(baseRepository)
         {
             _baseRepository = baseRepository;
             _logRepository = logRepository;
@@ -37,7 +36,6 @@ namespace ModelServices.EntitiesServices
             _colRepository = colRepository;
             _tempRepository = tempRepository;
             _parRepository = parRepository;
-            _tagRepository = tagRepository;
         }
         
         public CONFIGURACAO CarregaConfiguracao(Int32 id)
@@ -58,19 +56,19 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<CONTA_PAGAR> GetItensAtrasoFornecedor()
+        public List<CONTA_PAGAR> GetItensAtrasoFornecedor(Int32 idAss)
         {
-            return _baseRepository.GetItensAtrasoFornecedor();
+            return _baseRepository.GetItensAtrasoFornecedor(idAss);
         }
 
-        public List<CONTA_PAGAR> GetPagamentosMes(DateTime mes)
+        public List<CONTA_PAGAR> GetPagamentosMes(DateTime mes, Int32 idAss)
         {
-            return _baseRepository.GetPagamentosMes(mes);
+            return _baseRepository.GetPagamentosMes(mes, idAss);
         }
 
-        public List<CONTA_PAGAR> GetAPagarMes(DateTime mes)
+        public List<CONTA_PAGAR> GetAPagarMes(DateTime mes, Int32 idAss)
         {
-            return _baseRepository.GetAPagarMes(mes);
+            return _baseRepository.GetAPagarMes(mes, idAss);
         }
 
         public TEMPLATE GetTemplateBySigla(String sigla)
@@ -90,19 +88,14 @@ namespace ModelServices.EntitiesServices
             return _parRepository.GetItemById(id);
         }
 
-        public List<TIPO_TAG> GetAllTags()
+        public List<CONTA_PAGAR> GetAllItens(Int32 idAss)
         {
-            return _tagRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<CONTA_PAGAR> GetAllItens()
+        public List<CONTA_PAGAR> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
-        }
-
-        public List<CONTA_PAGAR> GetAllItensAdm()
-        {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
         public CONTA_PAGAR_ANEXO GetAnexoById(Int32 id)
@@ -110,30 +103,30 @@ namespace ModelServices.EntitiesServices
             return _anexoRepository.GetItemById(id);
         }
 
-        public List<CONTA_PAGAR> GetItensAtraso()
+        public List<CONTA_PAGAR> GetItensAtraso(Int32 idAss)
         {
-            return _baseRepository.GetItensAtraso();
+            return _baseRepository.GetItensAtraso(idAss);
         }
 
-        public Decimal GetTotalPagoMes(DateTime mes)
+        public Decimal GetTotalPagoMes(DateTime mes, Int32 idAss)
         {
-            return _baseRepository.GetTotalPagoMes(mes);
+            return _baseRepository.GetTotalPagoMes(mes, idAss);
         }
 
-        public Decimal GetTotalAPagarMes(DateTime mes)
+        public Decimal GetTotalAPagarMes(DateTime mes, Int32 idAss)
         {
-            return _baseRepository.GetTotalAPagarMes(mes);
+            return _baseRepository.GetTotalAPagarMes(mes, idAss);
         }
 
-        public List<CONTA_PAGAR> ExecuteFilter(Int32? forId, Int32? ccId, DateTime? data, String descricao, Int32? aberto, DateTime? vencimento, DateTime? vencFinal, DateTime? quitacao, Int32? atraso, Int32? conta)
+        public List<CONTA_PAGAR> ExecuteFilter(Int32? forId, Int32? ccId, DateTime? data, String descricao, Int32? aberto, DateTime? vencimento, DateTime? vencFinal, DateTime? quitacao, Int32? atraso, Int32? conta, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilter(forId, ccId, data, descricao, aberto, vencimento, vencFinal, quitacao, atraso, conta);
+            return _baseRepository.ExecuteFilter(forId, ccId, data, descricao, aberto, vencimento, vencFinal, quitacao, atraso, conta, idAss);
 
         }
 
-        public List<CONTA_PAGAR> ExecuteFilterAtraso(String nome, DateTime? vencimento)
+        public List<CONTA_PAGAR> ExecuteFilterAtraso(String nome, DateTime? vencimento, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilterAtraso(nome, vencimento);
+            return _baseRepository.ExecuteFilterAtraso(nome, vencimento, idAss);
         }
 
         public Int32 Create(CONTA_PAGAR item, LOG log)

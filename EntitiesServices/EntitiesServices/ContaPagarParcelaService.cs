@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IContaPagarParcelaRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public ContaPagarParcelaService(IContaPagarParcelaRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {
@@ -34,9 +34,9 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<CONTA_PAGAR_PARCELA> GetAllItens()
+        public List<CONTA_PAGAR_PARCELA> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
         public Int32 Create(CONTA_PAGAR_PARCELA item, LOG log)

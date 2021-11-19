@@ -13,9 +13,8 @@ namespace DataServices.Repositories
 {
     public class ContaPagarParcelaRepository : RepositoryBase<CONTA_PAGAR_PARCELA>, IContaPagarParcelaRepository
     {
-        public List<CONTA_PAGAR_PARCELA> GetAllItens()
+        public List<CONTA_PAGAR_PARCELA> GetAllItens(Int32 idAss)
         {
-            Int32? idAss = SessionMocks.IdAssinante;
             IQueryable<CONTA_PAGAR_PARCELA> query = Db.CONTA_PAGAR_PARCELA.Where(p => p.CPPA_IN_ATIVO == 1);
             query = query.Include(p => p.CONTA_PAGAR);
             query = query.Where(p => p.CONTA_PAGAR.ASSI_CD_ID == idAss);

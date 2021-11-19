@@ -12,4 +12,5 @@ namespace ModelServices.Interfaces.Repositories
         List<CONTA_PAGAR_TAG> GetAllItens();
         CONTA_PAGAR_TAG GetItemById(Int32 id);
     }
+
 }

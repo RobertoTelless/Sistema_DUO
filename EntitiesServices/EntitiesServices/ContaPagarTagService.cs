@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IContaPagarTagRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public ContaPagarTagService(IContaPagarTagRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {

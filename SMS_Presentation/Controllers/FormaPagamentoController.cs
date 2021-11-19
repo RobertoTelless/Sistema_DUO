@@ -384,7 +384,7 @@ namespace SMS_Presentation.Controllers
             FORMA_PAGAMENTO item = fpApp.GetItemById(id);
             objetoFPAntes = (FORMA_PAGAMENTO)Session["Forma"];
             item.FOPA_IN_ATIVO = 1;
-            Int32 volta = fpApp.ValidateDelete(item, usuario);
+            Int32 volta = fpApp.ValidateReativar(item, usuario);
             listaMasterFP = new List<FORMA_PAGAMENTO>();
             Session["ListaForma"] = null;
             return RedirectToAction("MontarTelaFormaPagamento");
