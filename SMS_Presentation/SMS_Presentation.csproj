@@ -310,6 +310,7 @@
     <Compile Include="Controllers\CentroCustoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ContaPagarController.cs" />
+    <Compile Include="Controllers\ContaReceberController.cs" />
     <Compile Include="Controllers\ControleAcessoController.cs" />
     <Compile Include="Controllers\EquipamentoController.cs" />
     <Compile Include="Controllers\EstoqueController.cs" />
@@ -350,6 +351,8 @@
     <Compile Include="ViewModels\ContaPagarParcelaviewModel.cs" />
     <Compile Include="ViewModels\ContaPagarRateioViewModel.cs" />
     <Compile Include="ViewModels\ContaPagarViewModel.cs" />
+    <Compile Include="ViewModels\ContaReceberParcelaViewModel.cs" />
+    <Compile Include="ViewModels\ContaReceberViewModel.cs" />
     <Compile Include="ViewModels\EquipamentoManutencaoViewModel.cs" />
     <Compile Include="ViewModels\EquipamentoViewModel.cs" />
     <Compile Include="ViewModels\FormaPagamentoViewModel.cs" />
@@ -3113,6 +3116,17 @@
     <Content Include="Views\ContaPagar\IncluirCP.cshtml" />
     <Content Include="Views\ContaPagar\LiquidarParcelaCP.cshtml" />
     <Content Include="Views\ContaPagar\EditarCP.cshtml" />
+    <Content Include="Views\ContaReceber\MontarTelaCR.cshtml" />
+    <Content Include="Views\ContaReceber\VerRecebimentosMes.cshtml" />
+    <Content Include="Views\ContaReceber\VerAReceberMes.cshtml" />
+    <Content Include="Views\ContaReceber\VerCR.cshtml" />
+    <Content Include="Views\ContaReceber\VerAnexoLancamentoCR.cshtml" />
+    <Content Include="Views\ContaReceber\VerParcelaCR.cshtml" />
+    <Content Include="Views\ContaReceber\IncluirCR.cshtml" />
+    <Content Include="Views\ContaReceber\EditarCR.cshtml" />
+    <Content Include="Views\ContaReceber\ParcelarCR.cshtml" />
+    <Content Include="Views\ContaReceber\LiquidarParcelaCR.cshtml" />
+    <Content Include="Views\ContaReceber\LiquidarCR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

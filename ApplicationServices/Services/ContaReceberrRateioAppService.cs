@@ -16,6 +16,7 @@ namespace ApplicationServices.Services
     {
         private readonly IContaReceberRateioService _baseService;
 
+
         public ContaReceberRateioAppService(IContaReceberRateioService baseService) : base(baseService)
         {
             _baseService = baseService;
@@ -55,7 +56,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddCRRA",
                     LOG_IN_ATIVO = 1,

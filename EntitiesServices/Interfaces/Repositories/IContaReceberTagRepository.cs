@@ -11,5 +11,6 @@ namespace ModelServices.Interfaces.Repositories
     {
         List<CONTA_RECEBER_TAG> GetAllItens();
         CONTA_RECEBER_TAG GetItemById(Int32 id);
+
     }
 }

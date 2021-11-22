@@ -105,6 +105,10 @@ namespace Presentation.Start
             kernel.Bind<IContaPagarParcelaAppService>().To<ContaPagarParcelaAppService>();
             kernel.Bind<IContaPagarRateioAppService>().To<ContaPagarRateioAppService>();
             kernel.Bind<IContaPagarTagAppService>().To<ContaPagarTagAppService>();
+            kernel.Bind<IContaReceberAppService>().To<ContaReceberAppService>();
+            kernel.Bind<IContaReceberParcelaAppService>().To<ContaReceberParcelaAppService>();
+            kernel.Bind<IContaReceberRateioAppService>().To<ContaReceberRateioAppService>();
+            kernel.Bind<IContaReceberTagAppService>().To<ContaReceberTagAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -144,6 +148,10 @@ namespace Presentation.Start
             kernel.Bind<IContaPagarParcelaService>().To<ContaPagarParcelaService>();
             kernel.Bind<IContaPagarRateioService>().To<ContaPagarRateioService>();
             kernel.Bind<IContaPagarTagService>().To<ContaPagarTagService>();
+            kernel.Bind<IContaReceberParcelaService>().To<ContaReceberParcelaService>();
+            kernel.Bind<IContaReceberRateioService>().To<ContaReceberRateioService>();
+            kernel.Bind<IContaReceberService>().To<ContaReceberService>();
+            kernel.Bind<IContaReceberTagService>().To<ContaReceberTagService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -218,6 +226,11 @@ namespace Presentation.Start
             kernel.Bind<IContaPagarRateioRepository>().To<ContaPagarRateioRepository>();
             kernel.Bind<IContaPagarRepository>().To<ContaPagarRepository>();
             kernel.Bind<IContaPagarTagRepository>().To<ContaPagarTagRepository>();
+            kernel.Bind<IContaReceberAnexoRepository>().To<ContaReceberAnexoRepository>();
+            kernel.Bind<IContaReceberParcelaRepository>().To<ContaReceberParcelaRepository>();
+            kernel.Bind<IContaReceberRateioRepository>().To<ContaReceberRateioRepository>();
+            kernel.Bind<IContaReceberRepository>().To<ContaReceberRepository>();
+            kernel.Bind<IContaReceberTagRepository>().To<ContaReceberTagRepository>();
 
         }
     }

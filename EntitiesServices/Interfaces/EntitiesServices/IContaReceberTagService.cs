@@ -18,5 +18,6 @@ namespace ModelServices.Interfaces.EntitiesServices
 
         CONTA_RECEBER_TAG GetItemById(Int32 id);
         List<CONTA_RECEBER_TAG> GetAllItens();
+
     }
 }

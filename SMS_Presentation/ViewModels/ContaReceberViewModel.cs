@@ -5,20 +5,18 @@ using System.Linq;
 using System.Web;
 using EntitiesServices.Model;
 
-namespace SystemBRPresentation.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class ContaReceberViewModel
     {
         [Key]
         public int CARE_CD_ID { get; set; }
         public int ASSI_CD_ID { get; set; }
-        public Nullable<int> MATR_CD_ID { get; set; }
         public Nullable<int> FILI_CD_ID { get; set; }
         public Nullable<int> USUA_CD_ID { get; set; }
         [Required(ErrorMessage = "Campo CLIENTE obrigatorio")]
         public Nullable<int> CLIE_CD_ID { get; set; }
-        public int PLCO_CD_ID { get; set; }
-        public Nullable<int> PEVE_CD_ID { get; set; }
+        //public Nullable<int> PEVE_CD_ID { get; set; }
         public Nullable<int> TIFA_CD_ID { get; set; }
         public Nullable<int> COBA_CD_ID { get; set; }
 
@@ -138,10 +136,9 @@ namespace SystemBRPresentation.ViewModels
         public virtual ICollection<CONTA_RECEBER_ANEXO> CONTA_RECEBER_ANEXO { get; set; }
         public virtual FILIAL FILIAL { get; set; }
         public virtual FORMA_PAGAMENTO FORMA_PAGAMENTO { get; set; }
-        public virtual MATRIZ MATRIZ { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_RECEBER_PARCELA> CONTA_RECEBER_PARCELA { get; set; }
-        public virtual PEDIDO_VENDA PEDIDO_VENDA { get; set; }
+        //public virtual PEDIDO_VENDA PEDIDO_VENDA { get; set; }
         public virtual PERIODICIDADE PERIODICIDADE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_RECEBER_TAG> CONTA_RECEBER_TAG { get; set; }

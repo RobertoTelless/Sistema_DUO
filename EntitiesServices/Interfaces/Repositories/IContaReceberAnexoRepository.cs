@@ -11,5 +11,6 @@ namespace ModelServices.Interfaces.Repositories
     {
         List<CONTA_RECEBER_ANEXO> GetAllItens();
         CONTA_RECEBER_ANEXO GetItemById(Int32 id);
+
     }
 }

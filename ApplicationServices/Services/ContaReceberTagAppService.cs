@@ -16,6 +16,7 @@ namespace ApplicationServices.Services
     {
         private readonly IContaReceberTagService _baseService;
 
+
         public ContaReceberTagAppService(IContaReceberTagService baseService, IContaBancariaService cbService, INotificacaoService notiService) : base(baseService)
         {
             _baseService = baseService;

@@ -181,6 +181,10 @@
     <Compile Include="Interfaces\IContaPagarParcelaAppService.cs" />
     <Compile Include="Interfaces\IContaPagarRateioAppService.cs" />
     <Compile Include="Interfaces\IContaPagarTagAppService.cs" />
+    <Compile Include="Interfaces\IContaReceberAppService.cs" />
+    <Compile Include="Interfaces\IContaReceberParcelaAppService.cs" />
+    <Compile Include="Interfaces\IContaReceberRateioAppService.cs" />
+    <Compile Include="Interfaces\IContaReceberTagAppService.cs" />
     <Compile Include="Interfaces\IEquipamentoAppService.cs" />
     <Compile Include="Interfaces\IFilialAppService.cs" />
     <Compile Include="Interfaces\IFormaPagamentoAppService.cs" />
@@ -220,6 +224,10 @@
     <Compile Include="Services\ContaPagarParcelaAppService.cs" />
     <Compile Include="Services\ContaPagarRateioAppService.cs" />
     <Compile Include="Services\ContaPagarTagAppService.cs" />
+    <Compile Include="Services\ContaReceberAppService.cs" />
+    <Compile Include="Services\ContaReceberParcelaAppService.cs" />
+    <Compile Include="Services\ContaReceberrRateioAppService.cs" />
+    <Compile Include="Services\ContaReceberTagAppService.cs" />
     <Compile Include="Services\EquipamentoAppService.cs" />
     <Compile Include="Services\FilialAppService.cs" />
     <Compile Include="Services\FormaPagamentoAppService.cs" />

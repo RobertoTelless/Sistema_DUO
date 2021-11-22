@@ -54,6 +54,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_NM_OPERACAO = "AddCRPA",
                     LOG_IN_ATIVO = 1,
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<CONTA_RECEBER_PARCELA>(item)
@@ -120,11 +121,10 @@ namespace ApplicationServices.Services
                     noti.NOTI_IN_VISTA = 0;
                     noti.NOTI_NM_TITULO = "Contas a Receber - Liquidação de Parcela";
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_TX_TEXTO = "A parcela " + item.CRPA_NR_PARCELA + " do lançamento " + SessionMocks.contaReceber.CARE_DS_DESCRICAO + " foi liquidada em " + DateTime.Today.Date.ToLongDateString();
+                    noti.NOTI_TX_TEXTO = "A parcela " + item.CRPA_NR_PARCELA + " do lançamento " + item.CONTA_RECEBER.CARE_DS_DESCRICAO + " foi liquidada em " + DateTime.Today.Date.ToLongDateString();
                     noti.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.CANO_CD_ID = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 0;
 
                     // Envia notificação

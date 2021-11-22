@@ -253,7 +253,7 @@
     <value>Tarefa ja cadastrada</value>
   </data>
   <data name="M0059" xml:space="preserve">
-    <value>Não é possível excluir esse lançamento de conta a pagar. Existem informações vinculadas a ele</value>
+    <value>Não é possível excluir esse lançamento. Existem informações vinculadas a ele</value>
   </data>
   <data name="M0060" xml:space="preserve">
     <value>Data de inicio de parcelamento menor que a data corrente</value>
@@ -309,11 +309,68 @@
   <data name="M0077" xml:space="preserve">
     <value>Soma dos percentuais de rateio maior do que 100</value>
   </data>
+  <data name="M0078" xml:space="preserve">
+    <value>Não há nenhum registro com data de vencimento para a data atual</value>
+  </data>
+  <data name="M0079" xml:space="preserve">
+    <value>Sua pesquisa não retornou nenhum resultado - Tente outras opções de pesquisa</value>
+  </data>
+  <data name="M0080" xml:space="preserve">
+    <value>Recebimento recorrente não pode ser parcelado</value>
+  </data>
+  <data name="M0081" xml:space="preserve">
+    <value>Data inicial das ocorrências não definida</value>
+  </data>
+  <data name="M0082" xml:space="preserve">
+    <value>A data nao pode ser maior do que a data corrente</value>
+  </data>
+  <data name="M0083" xml:space="preserve">
+    <value>A soma das parcelas nao bate com o valor total informado</value>
+  </data>
+  <data name="M0084" xml:space="preserve">
+    <value>Um lancamento parcelado nao pode ter pagamento parcial</value>
+  </data>
+  <data name="M0085" xml:space="preserve">
+    <value>O valor do pagamento parcial nao pode ser maior que o valor do lancamento</value>
+  </data>
+  <data name="M0086" xml:space="preserve">
+    <value>Valor parcial igual ao valor do lancamento. Va para liquidacao de lancamento ao inves de pagamento parcial</value>
+  </data>
+  <data name="M0087" xml:space="preserve">
+    <value>A data de inicio nao pode ser menor que a data corrente</value>
+  </data>
+  <data name="M0088" xml:space="preserve">
+    <value>O numero de parcelas nao pode ser menor do que 2</value>
+  </data>
+  <data name="M0089" xml:space="preserve">
+    <value>Impossivel liquidar direto um lançamento parcelado. As parcelas devem ser liquidadas uma a uma.</value>
+  </data>
+  <data name="M0090" xml:space="preserve">
+    <value>Impossivel fazer pagamento parcial de um lancamento parcelado</value>
+  </data>
+  <data name="M0091" xml:space="preserve">
+    <value>Impossivel parcelar um lancamento com pagamento parcial</value>
+  </data>
+  <data name="M0092" xml:space="preserve">
+    <value>A data nao pode ser maior do que a data corrente</value>
+  </data>
   <data name="M0093" xml:space="preserve">
     <value>Você tem notificações não lidas até esta data</value>
   </data>
   <data name="M0094" xml:space="preserve">
     <value>Você tem tarefas pendentes até esta data</value>
+  </data>
+  <data name="M0095" xml:space="preserve">
+    <value>Forma de pagamento não informada</value>
+  </data>
+  <data name="M0096" xml:space="preserve">
+    <value>Soma dos percentuais de rateio maior do que 100</value>
+  </data>
+  <data name="M0097" xml:space="preserve">
+    <value>Impossivel liquidar um lancamento parcelado. As parcelas devem ser liquidadas individualmente</value>
+  </data>
+  <data name="M0098" xml:space="preserve">
+    <value>Impossivel excluir esta conta. Existem lancamentos de CONTAS A RECEBER vinculados a ela</value>
   </data>
   <data name="M0109" xml:space="preserve">
     <value>O login não pode ficar em branco</value>
