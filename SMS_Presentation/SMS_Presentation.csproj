@@ -3119,7 +3119,6 @@
     <Content Include="Views\ContaReceber\MontarTelaCR.cshtml" />
     <Content Include="Views\ContaReceber\VerRecebimentosMes.cshtml" />
     <Content Include="Views\ContaReceber\VerAReceberMes.cshtml" />
-    <Content Include="Views\ContaReceber\VerCR.cshtml" />
     <Content Include="Views\ContaReceber\VerAnexoLancamentoCR.cshtml" />
     <Content Include="Views\ContaReceber\VerParcelaCR.cshtml" />
     <Content Include="Views\ContaReceber\IncluirCR.cshtml" />
@@ -3127,6 +3126,7 @@
     <Content Include="Views\ContaReceber\ParcelarCR.cshtml" />
     <Content Include="Views\ContaReceber\LiquidarParcelaCR.cshtml" />
     <Content Include="Views\ContaReceber\LiquidarCR.cshtml" />
+    <Content Include="Views\ContaReceber\VerLancamentosAtraso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

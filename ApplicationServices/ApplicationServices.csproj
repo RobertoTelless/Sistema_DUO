@@ -238,6 +238,7 @@
     <Compile Include="Services\MovimentoEstoqueProdutoAppService.cs" />
     <Compile Include="Services\NoticiaAppService.cs" />
     <Compile Include="Services\NotificacaoAppService.cs" />
+    <Compile Include="Services\PedidoCompraAppService.cs" />
     <Compile Include="Services\PerfilAppService.cs" />
     <Compile Include="Services\ProdutoAppService.cs" />
     <Compile Include="Services\ProdutoEstoqueFilialAppService.cs" />

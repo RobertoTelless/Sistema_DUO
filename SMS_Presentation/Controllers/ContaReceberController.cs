@@ -2236,17 +2236,17 @@ namespace SMS_Presentation.Controllers
             if (Session["ErroSoma"] != null && (Int32)Session["ErroSoma"] == 1)
             {
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0096", CultureInfo.CurrentCulture));
-                Session["IdVoltaTrab"] = 3;
+                Session["IdVoltaTab"] = 3;
             }
             if (Session["ErroSoma"] != null && (Int32)Session["ErroSoma"] == 3)
             {
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0097", CultureInfo.CurrentCulture));
-                Session["IdVoltaTrab"] = 1;
+                Session["IdVoltaTab"] = 1;
             }
             if (Session["ErroSoma"] != null && (Int32)Session["ErroSoma"] == 4)
             {
                 ModelState.AddModelError("", SMS_Mensagens.ResourceManager.GetString("M0098", CultureInfo.CurrentCulture));
-                Session["IdVoltaTrab"] = 1;
+                Session["IdVoltaTab"] = 1;
             }
 
             if (Session["MensCr"] != null)
