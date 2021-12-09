@@ -189,6 +189,10 @@
     <Compile Include="Repositories\ContaReceberRepository.cs" />
     <Compile Include="Repositories\ContaReceberTagRepository.cs" />
     <Compile Include="Repositories\FormaPagamentoRepository.cs" />
+    <Compile Include="Repositories\ItemPedidoCompraRepository.cs" />
+    <Compile Include="Repositories\PedidoCompraAcompanhamentoRepository.cs" />
+    <Compile Include="Repositories\PedidoCompraAnexoRepository.cs" />
+    <Compile Include="Repositories\PedidoCompraRepository.cs" />
     <Compile Include="Repositories\UnidadeRepository.cs" />
     <Compile Include="Repositories\CategoriaProdutoRepository.cs" />
     <Compile Include="Repositories\CategoriaTelefoneRepository.cs" />

@@ -11,5 +11,6 @@ namespace ModelServices.Interfaces.Repositories
     {
         List<PEDIDO_COMPRA_ANEXO> GetAllItens();
         PEDIDO_COMPRA_ANEXO GetItemById(Int32 id);
+    
     }
 }

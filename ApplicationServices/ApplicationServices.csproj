@@ -195,6 +195,7 @@
     <Compile Include="Interfaces\IMovimentoEstoqueProdutoAppService.cs" />
     <Compile Include="Interfaces\INoticiaAppService.cs" />
     <Compile Include="Interfaces\INotificacaoAppService.cs" />
+    <Compile Include="Interfaces\IPedidoCompraAppService.cs" />
     <Compile Include="Interfaces\IPerfilAppService.cs" />
     <Compile Include="Interfaces\IPeriodicidadeAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />

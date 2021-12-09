@@ -117,5 +117,9 @@ namespace EntitiesServices.Model
         public virtual DbSet<FORMA_PAGAMENTO> FORMA_PAGAMENTO { get; set; }
         public virtual DbSet<TIPO_FAVORECIDO> TIPO_FAVORECIDO { get; set; }
         public virtual DbSet<TIPO_TAG> TIPO_TAG { get; set; }
+        public virtual DbSet<ITEM_PEDIDO_COMPRA> ITEM_PEDIDO_COMPRA { get; set; }
+        public virtual DbSet<PEDIDO_COMPRA> PEDIDO_COMPRA { get; set; }
+        public virtual DbSet<PEDIDO_COMPRA_ACOMPANHAMENTO> PEDIDO_COMPRA_ACOMPANHAMENTO { get; set; }
+        public virtual DbSet<PEDIDO_COMPRA_ANEXO> PEDIDO_COMPRA_ANEXO { get; set; }
     }
 }

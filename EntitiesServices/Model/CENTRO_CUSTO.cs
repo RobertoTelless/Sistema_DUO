@@ -21,6 +21,7 @@ namespace EntitiesServices.Model
             this.CONTA_PAGAR_RATEIO = new HashSet<CONTA_PAGAR_RATEIO>();
             this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
             this.CONTA_RECEBER_RATEIO = new HashSet<CONTA_RECEBER_RATEIO>();
+            this.PEDIDO_COMPRA = new HashSet<PEDIDO_COMPRA>();
         }
     
         public int CECU_CD_ID { get; set; }
@@ -45,5 +46,7 @@ namespace EntitiesServices.Model
         public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_RECEBER_RATEIO> CONTA_RECEBER_RATEIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PEDIDO_COMPRA> PEDIDO_COMPRA { get; set; }
     }
 }

@@ -260,6 +260,23 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_TAG" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_USUARIO" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_TIPO_TAG" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.ITEM_PEDIDO_COMPRA" Width="1.5" PointX="33.25" PointY="49.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA" Width="1.5" PointX="31" PointY="45.875" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA_ACOMPANHAMENTO" Width="1.5" PointX="33.25" PointY="55.625" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA_ANEXO" Width="1.5" PointX="33.25" PointY="46.125" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_CENTRO_CUSTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORMA_PAGAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORNECEDOR" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PEDIDO_COMPRA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_UNIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_PEDIDO_COMPRA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ANEXO_PEDIDO_COMPRA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_USUARIO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
