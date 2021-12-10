@@ -309,6 +309,7 @@
     <Compile Include="Controllers\BaseAdminController.cs" />
     <Compile Include="Controllers\CentroCustoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\ContaPagarController.cs" />
     <Compile Include="Controllers\ContaReceberController.cs" />
     <Compile Include="Controllers\ControleAcessoController.cs" />
@@ -361,6 +362,8 @@
     <Compile Include="ViewModels\GrupoViewModel.cs" />
     <Compile Include="ViewModels\FilialViewModel.cs" />
     <Compile Include="ViewModels\InventarioViewModel.cs" />
+    <Compile Include="ViewModels\ItemPedidoCompraViewModel.cs" />
+    <Compile Include="ViewModels\ItemPedidoVendaViewModel.cs" />
     <Compile Include="ViewModels\LogViewModel.cs" />
     <Compile Include="ViewModels\FornecedorComentarioViewModel.cs" />
     <Compile Include="ViewModels\MovimentacaoAvulsaGridViewModel.cs" />
@@ -369,6 +372,9 @@
     <Compile Include="ViewModels\NoticiaViewModel.cs" />
     <Compile Include="ViewModels\NotificacaoAnexoViewModel.cs" />
     <Compile Include="ViewModels\NotificacaoViewModel.cs" />
+    <Compile Include="ViewModels\PedidoCompraAcompanhamentoViewModel.cs" />
+    <Compile Include="ViewModels\PedidoCompraViewModel.cs" />
+    <Compile Include="ViewModels\PedidoVendaViewModel.cs" />
     <Compile Include="ViewModels\ProdutoFornecedorViewModel.cs" />
     <Compile Include="ViewModels\ProdutoTabelaPrecoViewModel.cs" />
     <Compile Include="ViewModels\ProdutoViewModel.cs" />
@@ -3127,6 +3133,31 @@
     <Content Include="Views\ContaReceber\LiquidarParcelaCR.cshtml" />
     <Content Include="Views\ContaReceber\LiquidarCR.cshtml" />
     <Content Include="Views\ContaReceber\VerLancamentosAtraso.cshtml" />
+    <Content Include="Views\Compra\MontarTelaPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\IncluirPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\EditarPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ExcluirPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ReativarPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\VerAnexoPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ProcessarCotacaoPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\AprovarPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ReprovarPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ProcessarReceberPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ReceberPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ReceberItemPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\CancelarPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\VerPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\VerItemPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\VerAtrasados.cshtml" />
+    <Content Include="Views\Compra\VerEncerrados.cshtml" />
+    <Content Include="Views\Compra\VerCancelados.cshtml" />
+    <Content Include="Views\Compra\EditarItemPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ExcluirItemPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ReativarItemPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\IncluirItemPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\EnviarCotacaoPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\ProcessarEnviarAprovacaoPedidoCompra.cshtml" />
+    <Content Include="Views\Compra\IncluirAcompanhamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3142,6 +3173,7 @@
     <Folder Include="Imagens\1\Clientes\6\Anexos\" />
     <Folder Include="Imagens\1\Filial\7\Logo\" />
     <Folder Include="Imagens\1\Notificacao\1\Anexos\" />
+    <Folder Include="Imagens\1\PedidoCompra\" />
     <Folder Include="Imagens\1\Produtos\1\QR\" />
     <Folder Include="Imagens\1\Tarefa\" />
     <Folder Include="Imagens\1\Transportadoras\1\Logos\" />

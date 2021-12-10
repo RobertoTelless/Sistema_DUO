@@ -1244,6 +1244,16 @@
           <Property Name="PRTP_NR_MARKUP" Type="decimal" Precision="18" Scale="2" />
           <Property Name="PRTP_VL_CUSTO" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="RESUMO_VENDA">
+          <Key>
+            <PropertyRef Name="REVE_CD_ID" />
+          </Key>
+          <Property Name="REVE_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ASSI_CD_ID" Type="int" Nullable="false" />
+          <Property Name="REVE_DT_DATA" Type="date" />
+          <Property Name="REVE_NR_NUMERO" Type="int" />
+          <Property Name="REVE_VL_VALOR" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
         <EntityType Name="SEXO">
           <Key>
             <PropertyRef Name="SEXO_CD_ID" />
@@ -3569,6 +3579,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RESUMO_VENDA_ASSINANTE">
+          <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="1" />
+          <End Role="RESUMO_VENDA" Type="Self.RESUMO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="RESUMO_VENDA">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SUBCATEGORIA_PRODUTO_ASSINANTE">
           <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="1" />
           <End Role="SUBCATEGORIA_PRODUTO" Type="Self.SUBCATEGORIA_PRODUTO" Multiplicity="*" />
@@ -4065,6 +4087,7 @@
           <EntitySet Name="PRODUTO_FORNECEDOR" EntityType="Self.PRODUTO_FORNECEDOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUTO_ORIGEM" EntityType="Self.PRODUTO_ORIGEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUTO_TABELA_PRECO" EntityType="Self.PRODUTO_TABELA_PRECO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESUMO_VENDA" EntityType="Self.RESUMO_VENDA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SEXO" EntityType="Self.SEXO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUBCATEGORIA_PRODUTO" EntityType="Self.SUBCATEGORIA_PRODUTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUBGRUPO" EntityType="Self.SUBGRUPO" Schema="dbo" store:Type="Tables" />
@@ -4737,6 +4760,10 @@
             <End Role="UNIDADE" EntitySet="UNIDADE" />
             <End Role="PRODUTO" EntitySet="PRODUTO" />
           </AssociationSet>
+          <AssociationSet Name="FK_RESUMO_VENDA_ASSINANTE" Association="Self.FK_RESUMO_VENDA_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="RESUMO_VENDA" EntitySet="RESUMO_VENDA" />
+          </AssociationSet>
           <AssociationSet Name="FK_SUBCATEGORIA_PRODUTO_ASSINANTE" Association="Self.FK_SUBCATEGORIA_PRODUTO_ASSINANTE">
             <End Role="ASSINANTE" EntitySet="ASSINANTE" />
             <End Role="SUBCATEGORIA_PRODUTO" EntitySet="SUBCATEGORIA_PRODUTO" />
@@ -4996,6 +5023,7 @@
           <NavigationProperty Name="FORMA_ENVIO" Relationship="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE" FromRole="ASSINANTE" ToRole="FORMA_ENVIO" />
           <NavigationProperty Name="FORMA_FRETE" Relationship="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE" FromRole="ASSINANTE" ToRole="FORMA_FRETE" />
           <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE" FromRole="ASSINANTE" ToRole="PEDIDO_VENDA" />
+          <NavigationProperty Name="RESUMO_VENDA" Relationship="DUO_DatabaseModel.FK_RESUMO_VENDA_ASSINANTE" FromRole="ASSINANTE" ToRole="RESUMO_VENDA" />
         </EntityType>
         <EntityType Name="ASSINANTE_ANEXO">
           <Key>
@@ -7345,6 +7373,11 @@
           <AssociationSet Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" EntitySet="PEDIDO_VENDA_ACOMPANHAMENTO" />
+          </AssociationSet>
+          <EntitySet Name="RESUMO_VENDA" EntityType="DUO_DatabaseModel.RESUMO_VENDA" />
+          <AssociationSet Name="FK_RESUMO_VENDA_ASSINANTE" Association="DUO_DatabaseModel.FK_RESUMO_VENDA_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="RESUMO_VENDA" EntitySet="RESUMO_VENDA" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CATEGORIA_CLIENTE">
@@ -10147,6 +10180,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RESUMO_VENDA">
+          <Key>
+            <PropertyRef Name="REVE_CD_ID" />
+          </Key>
+          <Property Name="REVE_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ASSI_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="REVE_DT_DATA" Type="DateTime" Precision="0" />
+          <Property Name="REVE_NR_NUMERO" Type="Int32" />
+          <Property Name="REVE_VL_VALOR" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="ASSINANTE" Relationship="DUO_DatabaseModel.FK_RESUMO_VENDA_ASSINANTE" FromRole="RESUMO_VENDA" ToRole="ASSINANTE" />
+        </EntityType>
+        <Association Name="FK_RESUMO_VENDA_ASSINANTE">
+          <End Type="DUO_DatabaseModel.ASSINANTE" Role="ASSINANTE" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.RESUMO_VENDA" Role="RESUMO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="RESUMO_VENDA">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -11885,6 +11941,17 @@
                 <ScalarProperty Name="PVPC_DT_VENCIMENTO_PARCELA" ColumnName="PVPC_DT_VENCIMENTO_PARCELA" />
                 <ScalarProperty Name="PEVE_CD_ID" ColumnName="PEVE_CD_ID" />
                 <ScalarProperty Name="PVPC_CD_ID" ColumnName="PVPC_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESUMO_VENDA">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.RESUMO_VENDA">
+              <MappingFragment StoreEntitySet="RESUMO_VENDA">
+                <ScalarProperty Name="REVE_VL_VALOR" ColumnName="REVE_VL_VALOR" />
+                <ScalarProperty Name="REVE_NR_NUMERO" ColumnName="REVE_NR_NUMERO" />
+                <ScalarProperty Name="REVE_DT_DATA" ColumnName="REVE_DT_DATA" />
+                <ScalarProperty Name="ASSI_CD_ID" ColumnName="ASSI_CD_ID" />
+                <ScalarProperty Name="REVE_CD_ID" ColumnName="REVE_CD_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

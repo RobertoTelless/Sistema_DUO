@@ -304,6 +304,8 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.RESUMO_VENDA" Width="1.5" PointX="5.25" PointY="75.125" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_RESUMO_VENDA_ASSINANTE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

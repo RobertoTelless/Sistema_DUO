@@ -10,5 +10,6 @@ namespace ModelServices.Interfaces.Repositories
     public interface IPedidoVendaParcelaRepository : IRepositoryBase<PEDIDO_VENDA_PARCELA>
     {
 
+
     }
 }

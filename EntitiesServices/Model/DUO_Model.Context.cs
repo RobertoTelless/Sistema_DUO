@@ -128,5 +128,6 @@ namespace EntitiesServices.Model
         public virtual DbSet<PEDIDO_VENDA_ACOMPANHAMENTO> PEDIDO_VENDA_ACOMPANHAMENTO { get; set; }
         public virtual DbSet<PEDIDO_VENDA_ANEXO> PEDIDO_VENDA_ANEXO { get; set; }
         public virtual DbSet<PEDIDO_VENDA_PARCELA> PEDIDO_VENDA_PARCELA { get; set; }
+        public virtual DbSet<RESUMO_VENDA> RESUMO_VENDA { get; set; }
     }
 }

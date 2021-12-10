@@ -6,14 +6,13 @@ using System.Web;
 using EntitiesServices.Model;
 using EntitiesServices.Attributes;
 
-namespace SystemBRPresentation.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class PedidoVendaViewModel
     {
         [Key]
         public int PEVE_CD_ID { get; set; }
         public int ASSI_CD_ID { get; set; }
-        public Nullable<int> MATR_CD_ID { get; set; }
         public Nullable<int> FILI_CD_ID { get; set; }
         public int USUA_CD_ID { get; set; }
         [Required(ErrorMessage = "Campo CLIENTE obrigatorio")]
@@ -106,14 +105,11 @@ namespace SystemBRPresentation.ViewModels
         public virtual CENTRO_CUSTO CENTRO_CUSTO { get; set; }
         public virtual CLIENTE CLIENTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COMISSAO_VENDA> COMISSAO_VENDA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONTA_RECEBER> CONTA_RECEBER { get; set; }
         public virtual FILIAL FILIAL { get; set; }
         public virtual FORMA_PAGAMENTO FORMA_PAGAMENTO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ITEM_PEDIDO_VENDA> ITEM_PEDIDO_VENDA { get; set; }
-        public virtual MATRIZ MATRIZ { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO_VENDA_ANEXO> PEDIDO_VENDA_ANEXO { get; set; }
         public virtual USUARIO USUARIO { get; set; }

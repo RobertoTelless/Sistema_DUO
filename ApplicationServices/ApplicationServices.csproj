@@ -196,6 +196,8 @@
     <Compile Include="Interfaces\INoticiaAppService.cs" />
     <Compile Include="Interfaces\INotificacaoAppService.cs" />
     <Compile Include="Interfaces\IPedidoCompraAppService.cs" />
+    <Compile Include="Interfaces\IPedidoVendaAppService.cs" />
+    <Compile Include="Interfaces\IPedidoVendaParcelaAppService.cs" />
     <Compile Include="Interfaces\IPerfilAppService.cs" />
     <Compile Include="Interfaces\IPeriodicidadeAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />
@@ -240,6 +242,8 @@
     <Compile Include="Services\NoticiaAppService.cs" />
     <Compile Include="Services\NotificacaoAppService.cs" />
     <Compile Include="Services\PedidoCompraAppService.cs" />
+    <Compile Include="Services\PedidoVendaAppService.cs" />
+    <Compile Include="Services\PedidoVendaParcelaAppService.cs" />
     <Compile Include="Services\PerfilAppService.cs" />
     <Compile Include="Services\ProdutoAppService.cs" />
     <Compile Include="Services\ProdutoEstoqueFilialAppService.cs" />

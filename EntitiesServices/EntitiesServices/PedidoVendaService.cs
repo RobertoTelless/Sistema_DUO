@@ -26,9 +26,12 @@ namespace ModelServices.EntitiesServices
         private readonly IFilialRepository _filialRepository;
         private readonly IUnidadeRepository _unidRepository;
         private readonly IResumoVendaRepository _rvRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        private readonly IFormaEnvioRepository _feRepository;
+        private readonly IFormaFreteRepository _ffRepository;
 
-        public PedidoVendaService(IPedidoVendaRepository baseRepository, ILogRepository logRepository, IFormaPagamentoRepository forRepository, IPedidoVendaAnexoRepository anexoRepository, IFilialRepository filialRepository, IUnidadeRepository unidRepository, IItemPedidoVendaRepository itemRepository, IResumoVendaRepository rvRepository) : base(baseRepository)
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
+
+        public PedidoVendaService(IPedidoVendaRepository baseRepository, ILogRepository logRepository, IFormaPagamentoRepository forRepository, IPedidoVendaAnexoRepository anexoRepository, IFilialRepository filialRepository, IUnidadeRepository unidRepository, IItemPedidoVendaRepository itemRepository, IResumoVendaRepository rvRepository, IFormaEnvioRepository feRepository, IFormaFreteRepository ffRepository) : base(baseRepository)
         {
             _baseRepository = baseRepository;
             _logRepository = logRepository;
@@ -38,11 +41,13 @@ namespace ModelServices.EntitiesServices
             _unidRepository = unidRepository;
             _itemRepository = itemRepository;
             _rvRepository = rvRepository;
+            _feRepository = feRepository;
+            _ffRepository = ffRepository;
         }
 
-        public PEDIDO_VENDA CheckExist(PEDIDO_VENDA objeto)
+        public PEDIDO_VENDA CheckExist(PEDIDO_VENDA objeto, Int32 idAss)
         {
-            PEDIDO_VENDA item = _baseRepository.CheckExist(objeto);
+            PEDIDO_VENDA item = _baseRepository.CheckExist(objeto, idAss);
             return item;
         }
 
@@ -58,55 +63,65 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public PEDIDO_VENDA GetByNome(String nome)
+        public PEDIDO_VENDA GetByNome(String nome, Int32 idAss)
         {
-            PEDIDO_VENDA item = _baseRepository.GetByNome(nome);
+            PEDIDO_VENDA item = _baseRepository.GetByNome(nome, idAss);
             return item;
         }
 
-        public List<PEDIDO_VENDA> GetAllItens()
+        public List<PEDIDO_VENDA> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<PEDIDO_VENDA> GetAtrasados()
+        public List<PEDIDO_VENDA> GetAtrasados(Int32 idAss)
         {
-            return _baseRepository.GetAtrasados();
+            return _baseRepository.GetAtrasados(idAss);
         }
 
-        public List<PEDIDO_VENDA> GetEncerrados()
+        public List<PEDIDO_VENDA> GetEncerrados(Int32 idAss)
         {
-            return _baseRepository.GetEncerrados();
+            return _baseRepository.GetEncerrados(idAss);
         }
 
-        public List<PEDIDO_VENDA> GetCancelados()
+        public List<PEDIDO_VENDA> GetCancelados(Int32 idAss)
         {
-            return _baseRepository.GetCancelados();
+            return _baseRepository.GetCancelados(idAss);
         }
 
-        public List<PEDIDO_VENDA> GetAllItensAdm()
+        public List<PEDIDO_VENDA> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
-        public List<PEDIDO_VENDA> GetAllItensAdmUser(Int32 id)
+        public List<PEDIDO_VENDA> GetAllItensAdmUser(Int32 id, Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdmUser(id);
+            return _baseRepository.GetAllItensAdmUser(id, idAss);
         }
 
-        public List<FORMA_PAGAMENTO> GetAllFormas()
+        public List<FORMA_PAGAMENTO> GetAllFormas(Int32 idAss)
         {
-            return _forRepository.GetAllItens();
+            return _forRepository.GetAllItens(idAss);
         }
 
-        public List<UNIDADE> GetAllUnidades()
+        public List<FORMA_ENVIO> GetAllFormaEnvio(Int32 idAss)
         {
-            return _unidRepository.GetAllItens();
+            return _feRepository.GetAllItens(idAss);
         }
 
-        public List<FILIAL> GetAllFilial()
+        public List<FORMA_FRETE> GetAllFormaFrete(Int32 idAss)
         {
-            return _filialRepository.GetAllItens();
+            return _ffRepository.GetAllItens(idAss);
+        }
+
+        public List<UNIDADE> GetAllUnidades(Int32 idAss)
+        {
+            return _unidRepository.GetAllItens(idAss);
+        }
+
+        public List<FILIAL> GetAllFilial(Int32 idAss)
+        {
+            return _filialRepository.GetAllItens(idAss);
         }
 
         public PEDIDO_VENDA_ANEXO GetAnexoById(Int32 id)
@@ -119,9 +134,9 @@ namespace ModelServices.EntitiesServices
             return _itemRepository.GetItemById(id);
         }
 
-        public List<PEDIDO_VENDA> ExecuteFilter(Int32? usuaId, String nome, String numero,DateTime? data, Int32? status)
+        public List<PEDIDO_VENDA> ExecuteFilter(Int32? usuaId, String nome, String numero,DateTime? data, Int32? status, Int32 idAss)
         {
-            return _baseRepository.ExecuteFilter(usuaId, nome, numero,data, status);
+            return _baseRepository.ExecuteFilter(usuaId, nome, numero,data, status, idAss);
 
         }
 
@@ -297,9 +312,9 @@ namespace ModelServices.EntitiesServices
             }
         }
 
-        public List<RESUMO_VENDA> GetResumos()
+        public List<RESUMO_VENDA> GetResumos(Int32 idAss)
         {
-            return _rvRepository.GetAllItens();
+            return _rvRepository.GetAllItens(idAss);
         }
     }
 }

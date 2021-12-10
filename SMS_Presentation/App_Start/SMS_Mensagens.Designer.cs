@@ -142,6 +142,15 @@ namespace SMS_Presentation.App_Start {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sua pesquisa não retornou nenhum resultado - Tente outras opções de pesquisa.
+        /// </summary>
+        internal static string M0010 {
+            get {
+                return ResourceManager.GetString("M0010", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Você não tem acesso a essa funcionalidade.
         /// </summary>
         internal static string M0011 {
@@ -822,6 +831,69 @@ namespace SMS_Presentation.App_Start {
         internal static string M0098 {
             get {
                 return ResourceManager.GetString("M0098", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Pedido de compra já cadastrado.
+        /// </summary>
+        internal static string M0099 {
+            get {
+                return ResourceManager.GetString("M0099", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Impossível excluir esse pedido de compra. Existem registros vinculados a ele.
+        /// </summary>
+        internal static string M0100 {
+            get {
+                return ResourceManager.GetString("M0100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O arquivo anexado não pode ter nome maoir que 250 caracteres.
+        /// </summary>
+        internal static string M0101 {
+            get {
+                return ResourceManager.GetString("M0101", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Existem itens sem preço no pedido.
+        /// </summary>
+        internal static string M0103 {
+            get {
+                return ResourceManager.GetString("M0103", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Existem itens sem quantidade no pedido.
+        /// </summary>
+        internal static string M0104 {
+            get {
+                return ResourceManager.GetString("M0104", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Existem itens sem data de cotação no pedido.
+        /// </summary>
+        internal static string M0105 {
+            get {
+                return ResourceManager.GetString("M0105", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A justificativa de cancelamento e obrigatória.
+        /// </summary>
+        internal static string M0106 {
+            get {
+                return ResourceManager.GetString("M0106", resourceCulture);
             }
         }
         

@@ -60,6 +60,7 @@ namespace EntitiesServices.Model
             this.FORMA_ENVIO = new HashSet<FORMA_ENVIO>();
             this.FORMA_FRETE = new HashSet<FORMA_FRETE>();
             this.PEDIDO_VENDA = new HashSet<PEDIDO_VENDA>();
+            this.RESUMO_VENDA = new HashSet<RESUMO_VENDA>();
         }
     
         public int ASSI_CD_ID { get; set; }
@@ -169,5 +170,7 @@ namespace EntitiesServices.Model
         public virtual ICollection<FORMA_FRETE> FORMA_FRETE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO_VENDA> PEDIDO_VENDA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RESUMO_VENDA> RESUMO_VENDA { get; set; }
     }
 }

@@ -109,6 +109,9 @@ namespace Presentation.Start
             kernel.Bind<IContaReceberParcelaAppService>().To<ContaReceberParcelaAppService>();
             kernel.Bind<IContaReceberRateioAppService>().To<ContaReceberRateioAppService>();
             kernel.Bind<IContaReceberTagAppService>().To<ContaReceberTagAppService>();
+            kernel.Bind<IPedidoCompraAppService>().To<PedidoCompraAppService>();
+            kernel.Bind<IPedidoVendaAppService>().To<PedidoVendaAppService>();
+            kernel.Bind<IPedidoVendaParcelaAppService>().To<PedidoVendaParcelaAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -152,6 +155,9 @@ namespace Presentation.Start
             kernel.Bind<IContaReceberRateioService>().To<ContaReceberRateioService>();
             kernel.Bind<IContaReceberService>().To<ContaReceberService>();
             kernel.Bind<IContaReceberTagService>().To<ContaReceberTagService>();
+            kernel.Bind<IPedidoCompraService>().To<PedidoCompraService>();
+            kernel.Bind<IPedidoVendaService>().To<PedidoVendaService>();
+            kernel.Bind<IPedidoVendaParcelaService>().To<PedidoVendaParcelaService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();
@@ -231,6 +237,14 @@ namespace Presentation.Start
             kernel.Bind<IContaReceberRateioRepository>().To<ContaReceberRateioRepository>();
             kernel.Bind<IContaReceberRepository>().To<ContaReceberRepository>();
             kernel.Bind<IContaReceberTagRepository>().To<ContaReceberTagRepository>();
+            kernel.Bind<IItemPedidoCompraRepository>().To<ItemPedidoCompraRepository>();
+            kernel.Bind<IItemPedidoVendaRepository>().To<ItemPedidoVendaRepository>();
+            kernel.Bind<IPedidoCompraAcompanhamentoRepository>().To<PedidoCompraAcompanhamentoRepository>();
+            kernel.Bind<IPedidoCompraAnexoRepository>().To<PedidoCompraAnexoRepository>();
+            kernel.Bind<IPedidoCompraRepository>().To<PedidoCompraRepository>();
+            kernel.Bind<IPedidoVendaAnexoRepository>().To<PedidoVendaAnexoRepository>();
+            kernel.Bind<IPedidoVendaParcelaRepository>().To<PedidoVendaParcelaRepository>();
+            kernel.Bind<IPedidoVendaRepository>().To<PedidoVendaRepository>();
 
         }
     }

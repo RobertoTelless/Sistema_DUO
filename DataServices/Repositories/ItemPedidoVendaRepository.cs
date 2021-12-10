@@ -20,5 +20,6 @@ namespace DataServices.Repositories
             IQueryable<ITEM_PEDIDO_VENDA> query = Db.ITEM_PEDIDO_VENDA.Where(p => p.ITPE_CD_ID == id);
             return query.FirstOrDefault();
         }
+
     }
 }

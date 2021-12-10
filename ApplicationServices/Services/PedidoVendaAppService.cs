@@ -25,13 +25,10 @@ namespace ApplicationServices.Services
         private readonly ICentroCustoAppService _ccService;
         private readonly IContaBancariaService _cbService;
         private readonly IProdutoService _proService;
-        private readonly IMateriaPrimaService _insService;
-        private readonly IMovimentoEstoqueMateriaService _inmService;
         private readonly IPeriodicidadeService _perService;
         private readonly IPedidoVendaParcelaService _pvpcService;
-        private readonly IServicoService _servService;
 
-        public PedidoVendaAppService(IPedidoVendaService baseService, IMovimentoEstoqueProdutoService movService, IUsuarioService usuService, INotificacaoService notiService, IConfiguracaoService confService, IClienteService cliService, IContaReceberService cpService, ICentroCustoAppService ccService, IContaBancariaService cbService, IProdutoService proService, IMateriaPrimaService insService, IMovimentoEstoqueMateriaService inmService, IPeriodicidadeService perService, IPedidoVendaParcelaService pvpcService, IServicoService servService) : base(baseService)
+        public PedidoVendaAppService(IPedidoVendaService baseService, IMovimentoEstoqueProdutoService movService, IUsuarioService usuService, INotificacaoService notiService, IConfiguracaoService confService, IClienteService cliService, IContaReceberService cpService, ICentroCustoAppService ccService, IContaBancariaService cbService, IProdutoService proService, IPeriodicidadeService perService, IPedidoVendaParcelaService pvpcService) : base(baseService)
         {
             _baseService = baseService;
             _movService = movService;
@@ -43,46 +40,43 @@ namespace ApplicationServices.Services
             _ccService = ccService;
             _cbService = cbService;
             _proService = proService;
-            _insService = insService;
-            _inmService = inmService;
             _perService = perService;
             _pvpcService = pvpcService;
-            _servService = servService;
         }
 
-        public List<PEDIDO_VENDA> GetAllItens()
+        public List<PEDIDO_VENDA> GetAllItens(Int32 idAss)
         {
-            List<PEDIDO_VENDA> lista = _baseService.GetAllItens();
+            List<PEDIDO_VENDA> lista = _baseService.GetAllItens(idAss);
             return lista;
         }
 
-        public List<PEDIDO_VENDA> GetAllItensAdm()
+        public List<PEDIDO_VENDA> GetAllItensAdm(Int32 idAss)
         {
-            List<PEDIDO_VENDA> lista = _baseService.GetAllItensAdm();
+            List<PEDIDO_VENDA> lista = _baseService.GetAllItensAdm(idAss);
             return lista;
         }
 
-        public List<PEDIDO_VENDA> GetAllItensAdmUser(Int32 id)
+        public List<PEDIDO_VENDA> GetAllItensAdmUser(Int32 id, Int32 idAss)
         {
-            List<PEDIDO_VENDA> lista = _baseService.GetAllItensAdmUser(id);
+            List<PEDIDO_VENDA> lista = _baseService.GetAllItensAdmUser(id, idAss);
             return lista;
         }
 
-        public List<PEDIDO_VENDA> GetAtrasados()
+        public List<PEDIDO_VENDA> GetAtrasados(Int32 idAss)
         {
-            List<PEDIDO_VENDA> lista = _baseService.GetAtrasados();
+            List<PEDIDO_VENDA> lista = _baseService.GetAtrasados(idAss);
             return lista;
         }
 
-        public List<PEDIDO_VENDA> GetEncerrados()
+        public List<PEDIDO_VENDA> GetEncerrados(Int32 idAss)
         {
-            List<PEDIDO_VENDA> lista = _baseService.GetEncerrados();
+            List<PEDIDO_VENDA> lista = _baseService.GetEncerrados(idAss);
             return lista;
         }
 
-        public List<PEDIDO_VENDA> GetCancelados()
+        public List<PEDIDO_VENDA> GetCancelados(Int32 idAss)
         {
-            List<PEDIDO_VENDA> lista = _baseService.GetCancelados();
+            List<PEDIDO_VENDA> lista = _baseService.GetCancelados(idAss);
             return lista;
         }
 
@@ -98,33 +92,45 @@ namespace ApplicationServices.Services
             return item;
         }
 
-        public PEDIDO_VENDA GetByNome(String nome)
+        public PEDIDO_VENDA GetByNome(String nome, Int32 idAss)
         {
-            PEDIDO_VENDA item = _baseService.GetByNome(nome);
+            PEDIDO_VENDA item = _baseService.GetByNome(nome, idAss);
             return item;
         }
 
-        public PEDIDO_VENDA CheckExist(PEDIDO_VENDA conta)
+        public PEDIDO_VENDA CheckExist(PEDIDO_VENDA conta, Int32 idAss)
         {
-            PEDIDO_VENDA item = _baseService.CheckExist(conta);
+            PEDIDO_VENDA item = _baseService.CheckExist(conta, idAss);
             return item;
         }
 
-        public List<FORMA_PAGAMENTO> GetAllFormas()
+        public List<FORMA_PAGAMENTO> GetAllFormas(Int32 idAss)
         {
-            List<FORMA_PAGAMENTO> lista = _baseService.GetAllFormas();
+            List<FORMA_PAGAMENTO> lista = _baseService.GetAllFormas(idAss);
             return lista;
         }
 
-        public List<UNIDADE> GetAllUnidades()
+        public List<FORMA_ENVIO> GetAllFormaEnvio(Int32 idAss)
         {
-            List<UNIDADE> lista = _baseService.GetAllUnidades();
+            List<FORMA_ENVIO> lista = _baseService.GetAllFormaEnvio(idAss);
             return lista;
         }
 
-        public List<FILIAL> GetAllFilial()
+        public List<FORMA_FRETE> GetAllFormaFrete(Int32 idAss)
         {
-            List<FILIAL> lista = _baseService.GetAllFilial();
+            List<FORMA_FRETE> lista = _baseService.GetAllFormaFrete(idAss);
+            return lista;
+        }
+
+        public List<UNIDADE> GetAllUnidades(Int32 idAss)
+        {
+            List<UNIDADE> lista = _baseService.GetAllUnidades(idAss);
+            return lista;
+        }
+
+        public List<FILIAL> GetAllFilial(Int32 idAss)
+        {
+            List<FILIAL> lista = _baseService.GetAllFilial(idAss);
             return lista;
         }
 
@@ -140,7 +146,7 @@ namespace ApplicationServices.Services
             return lista;
         }
 
-        public Int32 ExecuteFilter(Int32? usuaId, String nome, String numero, DateTime? data, Int32? status, out List<PEDIDO_VENDA> objeto)
+        public Int32 ExecuteFilter(Int32? usuaId, String nome, String numero, DateTime? data, Int32? status, Int32 idAss, out List<PEDIDO_VENDA> objeto)
         {
             try
             {
@@ -148,7 +154,7 @@ namespace ApplicationServices.Services
                 Int32 volta = 0;
 
                 // Processa filtro
-                objeto = _baseService.ExecuteFilter(usuaId, nome, numero, data, status);
+                objeto = _baseService.ExecuteFilter(usuaId, nome, numero, data, status, idAss);
                 if (objeto.Count == 0)
                 {
                     volta = 1;
@@ -166,22 +172,22 @@ namespace ApplicationServices.Services
             try
             {
                 // Verifica existencia prévia
-                if (_baseService.CheckExist(item) != null)
+                if (_baseService.CheckExist(item, usuario.ASSI_CD_ID) != null)
                 {
                     return 1;
                 }
 
                 // Completa objeto
                 item.PEVE_IN_ATIVO = 1;
-                item.ASSI_CD_ID = SessionMocks.IdAssinante;
-                item.USUA_CD_ID = SessionMocks.UserCredentials.USUA_CD_ID;
+                item.ASSI_CD_ID = usuario.ASSI_CD_ID;
+                item.USUA_CD_ID = usuario.USUA_CD_ID;
 
                 // Monta Log
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_NM_OPERACAO = "AddPEVE",
                     LOG_IN_ATIVO = 1,
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<PEDIDO_VENDA>(item)
@@ -195,13 +201,11 @@ namespace ApplicationServices.Services
                     // Notifica comprador
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
-                    noti.USUA_CD_ID = _usuService.GetComprador().USUA_CD_ID;
+                    noti.USUA_CD_ID = _usuService.GetComprador(usuario.ASSI_CD_ID).USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
                     noti.NOTI_IN_NIVEL = 1;
                     noti.NOTI_IN_VISTA = 0;
@@ -210,64 +214,9 @@ namespace ApplicationServices.Services
 
                     // Persiste notificação 
                     Int32 volta1 = _notiService.Create(noti);
-
-                    //// Recupera template e-mail
-                    //String header = _usuService.GetTemplate("ORCVENDA").TEMP_TX_CABECALHO;
-                    //String body = _usuService.GetTemplate("ORCVENDA").TEMP_TX_CORPO;
-                    //String data = _usuService.GetTemplate("ORCVENDA").TEMP_TX_DADOS;
-
-                    //// Prepara dados do e-mail - header
-                    //header = header.Replace("{NomeCliente}", item.CLIENTE.CLIE_NM_NOME);
-
-                    //// Prepara dados do e-mail - Body
-                    //Decimal? valor = item.ITEM_PEDIDO_VENDA.Sum(a => (a.PRODUTO.PROD_VL_PRECO_VENDA * a.ITPE_QN_QUANTIDADE));
-
-                    //body = body.Replace("{NumPedido}", item.PEVE_NR_NUMERO);
-                    //body = body.Replace("{NomePedido}", item.PEVE_NM_NOME);
-                    //body = body.Replace("{DataPedido}", item.PEVE_DT_DATA.ToShortDateString());
-                    //body = body.Replace("{DataValidade}", item.PEVE_DT_VALIDADE.Value.ToShortDateString());
-                    //body = body.Replace("{DataPrevista}", item.PEVE_DT_PREVISTA.Value.ToShortDateString());
-
-                    //// Prepara dados do e-mail - Dados
-                    //data = data.Replace("{NumPedido}", item.PEVE_NR_NUMERO);
-                    //data = data.Replace("{NomePedido}", item.PEVE_NM_NOME);
-                    //data = data.Replace("{DataPedido}", item.PEVE_DT_DATA.ToShortDateString());
-                    //data = data.Replace("{ValorTotal}", Formatters.DecimalFormatter(valor.Value));
-                    //String itemPedido = String.Empty;
-                    //foreach (var itemPed in item.ITEM_PEDIDO_VENDA)
-                    //{
-                    //    itemPedido += "Produto: " + itemPed.PRODUTO.PROD_NM_NOME + "/r/n";
-                    //    itemPedido += "Quantidade: " + itemPed.ITPE_QN_QUANTIDADE + "/r/n";
-                    //    itemPedido += "Unidade: " + itemPed.UNIDADE.UNID_NM_NOME + "/r/n";
-                    //    itemPedido += "Tipo de Impressão: " + itemPed.TIPO_IMPRESSAO.TIIM_NM_NOME + "/r/n";
-                    //    itemPedido += "Cor de Impressão: " + itemPed.COR_IMPRESSAO.COIM_NM_NOME + "/r/n";
-                    //    itemPedido += "==================================================" + "r/n";
-                    //}
-                    //data = data.Replace("{ItemPedido}", itemPedido);
-
-                    //// Concatena
-                    //String emailBody = header + body + data;
-
-                    //// Monta e-mail
-                    //Email mensagem = new Email();
-                    //CONFIGURACAO conf = _usuService.CarregaConfiguracao();
-                    //mensagem.ASSUNTO = "Orçamento - Pedido Num: " + item.PEVE_NR_NUMERO;
-                    //mensagem.CORPO = emailBody;
-                    //mensagem.DEFAULT_CREDENTIALS = false;
-                    //mensagem.EMAIL_DESTINO = item.CLIENTE.CLIE_NM_EMAIL;
-                    //mensagem.EMAIL_EMISSOR = conf.CONF_NM_EMAIL_EMISSOO;
-                    //mensagem.ENABLE_SSL = true;
-                    //mensagem.NOME_EMISSOR = "Sistema";
-                    //mensagem.PORTA = conf.CONF_NM_PORTA_SMTP;
-                    //mensagem.PRIORIDADE = System.Net.Mail.MailPriority.High;
-                    //mensagem.SENHA_EMISSOR = conf.CONF_NM_SENHA_EMISSOR;
-                    //mensagem.SMTP = conf.CONF_NM_HOST_SMTP;
-
-                    //// Envia e-mail
-                    //Int32 voltaMail = CommunicationPackage.SendEmail(mensagem);
                 }
 
-                if (item.PEVE_IN_PARCELAS == 1 && item.PEDIDO_VENDA_PARCELA1.Count != 0)
+                if (item.PEVE_IN_PARCELAS == 1 && item.PEDIDO_VENDA_PARCELA.Count != 0)
                 {
                     // Checa data
                     if (item.PEVE_DT_INICIO_PARCELAS < DateTime.Now.Date)
@@ -295,9 +244,8 @@ namespace ApplicationServices.Services
                     noti3.NOTI_IN_ATIVO = 1;
                     noti3.NOTI_TX_TEXTO = "O lançamento " + item.PEVE_CD_ID.ToString() + " foi parcelado em " + DateTime.Today.Date.ToLongDateString();
                     noti3.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti3.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti3.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti3.CANO_CD_ID = 1;
-                    noti3.NOTI_IN_ENVIADA = 1;
                     noti3.NOTI_IN_STATUS = 0;
 
                     // Envia notificação
@@ -359,10 +307,6 @@ namespace ApplicationServices.Services
                 {
                     item.FORMA_PAGAMENTO = null; 
                 }
-                if (item.MATRIZ != null)
-                {
-                    item.MATRIZ = null; 
-                }
                 if (item.USUARIO != null)
                 {
                     item.USUARIO = null; 
@@ -379,7 +323,7 @@ namespace ApplicationServices.Services
                 // Acerta campos
                 item.PEVE_DT_ALTERACAO = DateTime.Today.Date;
 
-                if (item.PEVE_IN_PARCELAS == 1 && item.PEDIDO_VENDA_PARCELA1.Count != 0)
+                if (item.PEVE_IN_PARCELAS == 1 && item.PEDIDO_VENDA_PARCELA.Count != 0)
                 {
                     // Checa data
                     if (item.PEVE_DT_INICIO_PARCELAS < DateTime.Now.Date)
@@ -407,9 +351,8 @@ namespace ApplicationServices.Services
                     noti3.NOTI_IN_ATIVO = 1;
                     noti3.NOTI_TX_TEXTO = "O lançamento " + item.PEVE_CD_ID.ToString() + " foi parcelado em " + DateTime.Today.Date.ToLongDateString();
                     noti3.USUA_CD_ID = usuario.USUA_CD_ID;
-                    noti3.ASSI_CD_ID = SessionMocks.IdAssinante;
+                    noti3.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti3.CANO_CD_ID = 1;
-                    noti3.NOTI_IN_ENVIADA = 1;
                     noti3.NOTI_IN_STATUS = 0;
 
                     // Envia notificação
@@ -445,7 +388,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_NM_OPERACAO = "EditPEVE",
                     LOG_IN_ATIVO = 1,
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<PEDIDO_VENDA>(item),
@@ -484,10 +427,6 @@ namespace ApplicationServices.Services
                 if (item.FORMA_PAGAMENTO != null)
                 {
                     item.FORMA_PAGAMENTO = null;
-                }
-                if (item.MATRIZ != null)
-                {
-                    item.MATRIZ = null;
                 }
                 if (item.USUARIO != null)
                 {
@@ -532,7 +471,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DelPEVE",
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<PEDIDO_VENDA>(item)
@@ -546,11 +485,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -585,7 +522,7 @@ namespace ApplicationServices.Services
                 {
                     LOG_DT_DATA = DateTime.Now,
                     USUA_CD_ID = usuario.USUA_CD_ID,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatPEVE",
                     LOG_TX_REGISTRO = Serialization.SerializeJSON<PEDIDO_VENDA>(item)
@@ -599,11 +536,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -657,15 +592,6 @@ namespace ApplicationServices.Services
                         item.PROD_VL_PRECO = prod.PRODUTO_TABELA_PRECO.Any(x => x.FILI_CD_ID == _baseService.GetItemById(item.PEVE_CD_ID).FILI_CD_ID) ? prod.PRODUTO_TABELA_PRECO.First(x => x.FILI_CD_ID == _baseService.GetItemById(item.PEVE_CD_ID).FILI_CD_ID).PRTP_VL_PRECO : 0;
                     }
                 }
-                else if (item.SERV_CD_ID != null)
-                {
-                    SERVICO serv = _servService.GetItemById(item.SERV_CD_ID.Value);
-                    item.UNID_CD_ID = serv.UNID_CD_ID;
-                    if (item.SERV_VL_PRECO == null || item.SERV_VL_PRECO == 0)
-                    {
-                        item.SERV_VL_PRECO = serv.SERVICO_TABELA_PRECO.Any(x => x.FILI_CD_ID == _baseService.GetItemById(item.PEVE_CD_ID).FILI_CD_ID) ? serv.SERVICO_TABELA_PRECO.First(x => x.FILI_CD_ID == _baseService.GetItemById(item.PEVE_CD_ID).FILI_CD_ID).SETP_VL_PRECO : 0;
-                    }
-                }
 
                 // Persiste
                 return _baseService.CreateItemVenda(item);
@@ -677,7 +603,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateEnvioAprovacao(PEDIDO_VENDA item)
+        public Int32 ValidateEnvioAprovacao(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -716,7 +642,6 @@ namespace ApplicationServices.Services
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
-                USUARIO usuario = SessionMocks.UserCredentials;
 
                 // Verificação
                 List<ITEM_PEDIDO_VENDA> ipc = ped.ITEM_PEDIDO_VENDA.Where(a => a.ITPE_QN_QUANTIDADE == 0).ToList();
@@ -726,10 +651,10 @@ namespace ApplicationServices.Services
                 }
 
                 // Recupera aprovador
-                USUARIO aprov = _usuService.GetAprovador();
+                USUARIO aprov = _usuService.GetAprovador(usuario.ASSI_CD_ID);
                 if (aprov == null)
                 {
-                    aprov = _usuService.GetAdministrador();
+                    aprov = _usuService.GetAdministrador(usuario.ASSI_CD_ID);
                 }
 
                 item.PEVE_IN_STATUS = 7;
@@ -738,11 +663,9 @@ namespace ApplicationServices.Services
                 // Notifica aprovador
                 NOTIFICACAO noti = new NOTIFICACAO();
                 noti.CANO_CD_ID = 1;
-                noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                noti.NOTI_DT_DATA = DateTime.Today;
+                noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 noti.NOTI_DT_EMISSAO = DateTime.Today;
                 noti.NOTI_IN_ATIVO = 1;
-                noti.NOTI_IN_ENVIADA = 1;
                 noti.NOTI_IN_STATUS = 1;
                 noti.USUA_CD_ID = aprov.USUA_CD_ID;
                 noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -823,7 +746,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateReprovacao(PEDIDO_VENDA item)
+        public Int32 ValidateReprovacao(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -874,11 +797,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -899,7 +820,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateProcessamento(PEDIDO_VENDA item)
+        public Int32 ValidateProcessamento(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -950,11 +871,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -975,7 +894,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateFaturamento(PEDIDO_VENDA item)
+        public Int32 ValidateFaturamento(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1026,11 +945,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1050,7 +967,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateExpedicao(PEDIDO_VENDA item)
+        public Int32 ValidateExpedicao(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1101,11 +1018,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1125,7 +1040,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateAprovacao(PEDIDO_VENDA item)
+        public Int32 ValidateAprovacao(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1176,11 +1091,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1201,7 +1114,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateAprovacaoOportunidade(PEDIDO_VENDA item)
+        public Int32 ValidateAprovacaoOportunidade(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1252,11 +1165,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1277,7 +1188,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateAprovacaoProposta(PEDIDO_VENDA item)
+        public Int32 ValidateAprovacaoProposta(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1328,11 +1239,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1353,7 +1262,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateCancelamento(PEDIDO_VENDA item)
+        public Int32 ValidateCancelamento(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1407,11 +1316,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1431,7 +1338,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateCancelamentoOportunidade(PEDIDO_VENDA item)
+        public Int32 ValidateCancelamentoOportunidade(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1485,11 +1392,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1509,7 +1414,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateCancelamentoProposta(PEDIDO_VENDA item)
+        public Int32 ValidateCancelamentoProposta(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1563,11 +1468,9 @@ namespace ApplicationServices.Services
                     // Notifica responsavel
                     NOTIFICACAO noti = new NOTIFICACAO();
                     noti.CANO_CD_ID = 1;
-                    noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                    noti.NOTI_DT_DATA = DateTime.Today;
+                    noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
-                    noti.NOTI_IN_ENVIADA = 1;
                     noti.NOTI_IN_STATUS = 1;
                     noti.USUA_CD_ID = item.USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1587,7 +1490,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateEncerramento(PEDIDO_VENDA item)
+        public Int32 ValidateEncerramento(PEDIDO_VENDA item, USUARIO usuario)
         {
             try
             {
@@ -1645,9 +1548,8 @@ namespace ApplicationServices.Services
                     if (itpc.PROD_CD_ID != null)
                     {
                         MOVIMENTO_ESTOQUE_PRODUTO mov = new MOVIMENTO_ESTOQUE_PRODUTO();
-                        mov.ASSI_CD_ID = SessionMocks.IdAssinante;
+                        mov.ASSI_CD_ID = usuario.ASSI_CD_ID;
                         mov.FILI_CD_ID = item.FILI_CD_ID;
-                        mov.MATR_CD_ID = item.MATR_CD_ID;
                         mov.MOEP_DT_MOVIMENTO = DateTime.Today.Date;
                         mov.MOEP_IN_ATIVO = 1;
                         mov.MOEP_IN_CHAVE_ORIGEM = 1;
@@ -1668,7 +1570,7 @@ namespace ApplicationServices.Services
                 Decimal? valor = item.ITEM_PEDIDO_VENDA.Sum(a => (a.PRODUTO.PROD_VL_PRECO_VENDA * a.ITPE_QN_QUANTIDADE));
 
                 CONTA_RECEBER cp = new CONTA_RECEBER();
-                cp.ASSI_CD_ID = SessionMocks.IdAssinante;
+                cp.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 cp.CARE_DS_DESCRICAO = "Lançamento a receber referente ao pedido de venda " + item.PEVE_NM_NOME + " de número " + item.PEVE_NR_NUMERO;
                 cp.CARE_DT_COMPETENCIA = DateTime.Today.Date;
                 cp.CARE_DT_LANCAMENTO = DateTime.Today.Date;
@@ -1693,18 +1595,16 @@ namespace ApplicationServices.Services
                 cp.CLIE_CD_ID = item.CLIE_CD_ID;
                 cp.PEVE_CD_ID = item.PEVE_CD_ID;
                 cp.USUA_CD_ID = item.USUA_CD_ID;
-                cp.COBA_CD_ID = _cbService.GetContaPadrao().COBA_CD_ID;
+                cp.COBA_CD_ID = _cbService.GetContaPadrao(usuario.ASSI_CD_ID).COBA_CD_ID;
 
                 Int32 volta4 = _cpService.Create(cp);
 
                 // Notifica usuario
                 NOTIFICACAO noti = new NOTIFICACAO();
                 noti.CANO_CD_ID = 1;
-                noti.ASSI_CD_ID = SessionMocks.IdAssinante;
-                noti.NOTI_DT_DATA = DateTime.Today;
+                noti.ASSI_CD_ID = usuario.ASSI_CD_ID;
                 noti.NOTI_DT_EMISSAO = DateTime.Today;
                 noti.NOTI_IN_ATIVO = 1;
-                noti.NOTI_IN_ENVIADA = 1;
                 noti.NOTI_IN_STATUS = 1;
                 noti.USUA_CD_ID = item.USUA_CD_ID;
                 noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
@@ -1723,13 +1623,10 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 CreateResumoVenda(RESUMO_VENDA item)
+        public Int32 CreateResumoVenda(RESUMO_VENDA item, USUARIO usuario)
         {
             try
             {
-                // Completa Campos
-                item.ASSI_CD_ID = SessionMocks.IdAssinante;
-
                 // Persiste
                 Int32 volta = _baseService.CreateResumoVenda(item);
                 return volta;
@@ -1754,9 +1651,9 @@ namespace ApplicationServices.Services
             }
         }
 
-        public List<RESUMO_VENDA> GetResumos()
+        public List<RESUMO_VENDA> GetResumos(USUARIO usuario)
         {
-            List<RESUMO_VENDA> lista = _baseService.GetResumos();
+            List<RESUMO_VENDA> lista = _baseService.GetResumos(usuario.ASSI_CD_ID);
             return lista;
         }
     }

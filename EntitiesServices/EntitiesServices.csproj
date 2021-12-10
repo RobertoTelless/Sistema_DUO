@@ -206,6 +206,8 @@
     <Compile Include="EntitiesServices\NoticiaService.cs" />
     <Compile Include="EntitiesServices\NotificacaoService.cs" />
     <Compile Include="EntitiesServices\PedidoCompraService.cs" />
+    <Compile Include="EntitiesServices\PedidoVendaParcelaService.cs" />
+    <Compile Include="EntitiesServices\PedidoVendaService.cs" />
     <Compile Include="EntitiesServices\PerfilService.cs" />
     <Compile Include="EntitiesServices\ProdutoEstoqueFilialService.cs" />
     <Compile Include="EntitiesServices\ProdutoMovimentoEstoqueService.cs" />
@@ -249,6 +251,8 @@
     <Compile Include="Interfaces\EntitiesServices\INoticiaService.cs" />
     <Compile Include="Interfaces\EntitiesServices\INotificacaoService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IPedidoCompraService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IPedidoVendaParcelaService.cs" />
+    <Compile Include="Interfaces\EntitiesServices\IPedidoVendaService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IPerfilService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IPeriodicidadeService.cs" />
     <Compile Include="Interfaces\EntitiesServices\IProdutoEstoqueFilialService.cs" />
@@ -286,6 +290,8 @@
     <Compile Include="Interfaces\Repositories\IContaReceberRateioRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaReceberRepository.cs" />
     <Compile Include="Interfaces\Repositories\IContaReceberTagRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFormaEnvioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IFormaFreteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFormaPagamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IItemPedidoCompraRepository.cs" />
     <Compile Include="Interfaces\Repositories\IItemPedidoVendaRepository.cs" />
@@ -295,6 +301,7 @@
     <Compile Include="Interfaces\Repositories\IPedidoVendaAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPedidoVendaParcelaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPedidoVendaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IResumoVendaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUnidadeRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaProdutoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaTelefoneRepository.cs" />
@@ -591,6 +598,9 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PRODUTO_TABELA_PRECO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RESUMO_VENDA.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SEXO.cs">

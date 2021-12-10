@@ -144,6 +144,9 @@
   <data name="M0009" xml:space="preserve">
     <value>A nova senha nao foi confirmada corretamente</value>
   </data>
+  <data name="M0010" xml:space="preserve">
+    <value>Sua pesquisa não retornou nenhum resultado - Tente outras opções de pesquisa</value>
+  </data>
   <data name="M0011" xml:space="preserve">
     <value>Você não tem acesso a essa funcionalidade</value>
   </data>
@@ -371,6 +374,27 @@
   </data>
   <data name="M0098" xml:space="preserve">
     <value>Impossivel excluir esta conta. Existem lancamentos de CONTAS A RECEBER vinculados a ela</value>
+  </data>
+  <data name="M0099" xml:space="preserve">
+    <value>Pedido de compra já cadastrado</value>
+  </data>
+  <data name="M0100" xml:space="preserve">
+    <value>Impossível excluir esse pedido de compra. Existem registros vinculados a ele</value>
+  </data>
+  <data name="M0101" xml:space="preserve">
+    <value>O arquivo anexado não pode ter nome maoir que 250 caracteres</value>
+  </data>
+  <data name="M0103" xml:space="preserve">
+    <value>Existem itens sem preço no pedido</value>
+  </data>
+  <data name="M0104" xml:space="preserve">
+    <value>Existem itens sem quantidade no pedido</value>
+  </data>
+  <data name="M0105" xml:space="preserve">
+    <value>Existem itens sem data de cotação no pedido</value>
+  </data>
+  <data name="M0106" xml:space="preserve">
+    <value>A justificativa de cancelamento e obrigatória</value>
   </data>
   <data name="M0109" xml:space="preserve">
     <value>O login não pode ficar em branco</value>

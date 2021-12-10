@@ -6,7 +6,7 @@ using System.Web;
 using EntitiesServices.Model;
 using EntitiesServices.Attributes;
 
-namespace SystemBRPresentation.ViewModels
+namespace SMS_Solution.ViewModels
 {
     public class ItemPedidoVendaViewModel
     {
@@ -20,20 +20,14 @@ namespace SystemBRPresentation.ViewModels
         public int ITPE_IN_ATIVO { get; set; }
         public string ITPE_TX_OBSERVACOES { get; set; }
         public Nullable<int> UNID_CD_ID { get; set; }
-        public Nullable<int> TIIM_CD_ID { get; set; }
-        public Nullable<int> COIM_CD_ID { get; set; }
         public Nullable<decimal> PEVE_VL_VALOR { get; set; }
         public string PEVE_DS_JUSTIFICATIVA { get; set; }
         public Nullable<System.DateTime> PEVE_DT_DATA_JUSTIFICATIVA { get; set; }
-        public Nullable<int> SERV_CD_ID { get; set; }
         public Nullable<decimal> PROD_VL_PRECO { get; set; }
         public Nullable<decimal> SERV_VL_PRECO { get; set; }
 
         public virtual PEDIDO_VENDA PEDIDO_VENDA { get; set; }
         public virtual PRODUTO PRODUTO { get; set; }
         public virtual UNIDADE UNIDADE { get; set; }
-        public virtual COR_IMPRESSAO COR_IMPRESSAO { get; set; }
-        public virtual TIPO_IMPRESSAO TIPO_IMPRESSAO { get; set; }
-        public virtual SERVICO SERVICO { get; set; }
     }
 }

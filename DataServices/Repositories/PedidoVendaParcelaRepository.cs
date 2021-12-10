@@ -15,5 +15,6 @@ namespace DataServices.Repositories
     public class PedidoVendaParcelaRepository : RepositoryBase<PEDIDO_VENDA_PARCELA>, IPedidoVendaParcelaRepository
     {
 
+
     }
 }

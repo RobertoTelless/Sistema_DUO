@@ -11,4 +11,5 @@ namespace ApplicationServices.Interfaces
     {
         Int32 ValidateCreate(PEDIDO_VENDA_PARCELA item, USUARIO usuario);
     }
+
 }

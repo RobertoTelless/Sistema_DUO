@@ -19,7 +19,7 @@ namespace ModelServices.EntitiesServices
     public class PedidoVendaParcelaService : ServiceBase<PEDIDO_VENDA_PARCELA>, IPedidoVendaParcelaService
     {
         private readonly IPedidoVendaParcelaRepository _baseRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public PedidoVendaParcelaService(IPedidoVendaParcelaRepository baseRepository) : base(baseRepository)
         {
