@@ -38,5 +38,7 @@ namespace ApplicationServices.Interfaces
         List<NOTICIA> GetAllNoticias(Int32 idAss);
         USUARIO GetAdministrador(Int32 idAss);
         List<CARGO> GetAllCargos(Int32 idAss);
+        USUARIO GetComprador(Int32 idAss);
+        USUARIO GetAprovador(Int32 idAss);
     }
 }

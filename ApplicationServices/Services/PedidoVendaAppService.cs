@@ -367,6 +367,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null; 
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Acerta campos
                 item.PEVE_DT_ALTERACAO = DateTime.Today.Date;
@@ -484,6 +492,14 @@ namespace ApplicationServices.Services
                 if (item.USUARIO != null)
                 {
                     item.USUARIO = null;
+                }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
                 }
 
                 // Acerta campos
@@ -689,6 +705,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
@@ -827,6 +851,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
@@ -894,6 +926,14 @@ namespace ApplicationServices.Services
                 if (item.USUARIO != null)
                 {
                     item.USUARIO = null;
+                }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
                 }
 
                 // Preparação
@@ -963,6 +1003,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
@@ -1030,6 +1078,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
@@ -1096,6 +1152,14 @@ namespace ApplicationServices.Services
                 if (item.USUARIO != null)
                 {
                     item.USUARIO = null;
+                }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
                 }
 
                 // Preparação
@@ -1165,6 +1229,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
@@ -1233,6 +1305,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Preparação
                 PEDIDO_VENDA ped = _baseService.GetItemById(item.PEVE_CD_ID);
@@ -1300,6 +1380,14 @@ namespace ApplicationServices.Services
                 if (item.USUARIO != null)
                 {
                     item.USUARIO = null;
+                }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
                 }
 
                 // Critica
@@ -1371,6 +1459,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Critica
                 if (String.IsNullOrEmpty(item.PEVE_DS_JUSTIFICATIVA))
@@ -1441,6 +1537,14 @@ namespace ApplicationServices.Services
                 {
                     item.USUARIO = null;
                 }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
+                }
 
                 // Critica
                 if (String.IsNullOrEmpty(item.PEVE_DS_JUSTIFICATIVA))
@@ -1510,6 +1614,14 @@ namespace ApplicationServices.Services
                 if (item.USUARIO != null)
                 {
                     item.USUARIO = null;
+                }
+                if (item.FORMA_ENVIO != null)
+                {
+                    item.FORMA_ENVIO = null;
+                }
+                if (item.FORMA_FRETE != null)
+                {
+                    item.FORMA_FRETE = null;
                 }
 
                 // Preparação

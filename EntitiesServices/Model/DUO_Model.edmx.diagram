@@ -277,6 +277,33 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ANEXO_PEDIDO_COMPRA" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_USUARIO" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_USUARIO" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_ENVIO" Width="1.5" PointX="31.75" PointY="41.875" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_FRETE" Width="1.5" PointX="31.75" PointY="38.875" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" Width="1.5" PointX="36.25" PointY="51.25" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA" Width="1.5" PointX="34" PointY="32" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO" Width="1.5" PointX="36.25" PointY="47" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ANEXO" Width="1.5" PointX="36.25" PointY="38.875" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA" Width="1.5" PointX="36.25" PointY="35.5" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CENTRO_CUSTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CLIENTE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FILIAL" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_ENVIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_FRETE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FORMA_PAGAMENTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PRODUTO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_UNIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PERIODICIDADE" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -121,5 +121,12 @@ namespace EntitiesServices.Model
         public virtual DbSet<PEDIDO_COMPRA> PEDIDO_COMPRA { get; set; }
         public virtual DbSet<PEDIDO_COMPRA_ACOMPANHAMENTO> PEDIDO_COMPRA_ACOMPANHAMENTO { get; set; }
         public virtual DbSet<PEDIDO_COMPRA_ANEXO> PEDIDO_COMPRA_ANEXO { get; set; }
+        public virtual DbSet<FORMA_ENVIO> FORMA_ENVIO { get; set; }
+        public virtual DbSet<FORMA_FRETE> FORMA_FRETE { get; set; }
+        public virtual DbSet<ITEM_PEDIDO_VENDA> ITEM_PEDIDO_VENDA { get; set; }
+        public virtual DbSet<PEDIDO_VENDA> PEDIDO_VENDA { get; set; }
+        public virtual DbSet<PEDIDO_VENDA_ACOMPANHAMENTO> PEDIDO_VENDA_ACOMPANHAMENTO { get; set; }
+        public virtual DbSet<PEDIDO_VENDA_ANEXO> PEDIDO_VENDA_ANEXO { get; set; }
+        public virtual DbSet<PEDIDO_VENDA_PARCELA> PEDIDO_VENDA_PARCELA { get; set; }
     }
 }

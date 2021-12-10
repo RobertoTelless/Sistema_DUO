@@ -219,7 +219,7 @@ namespace ApplicationServices.Services
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
                     noti.NOTI_IN_STATUS = 1;
-                    noti.USUA_CD_ID = _usuService.GetComprador().USUA_CD_ID;
+                    noti.USUA_CD_ID = _usuService.GetComprador(usuario.ASSI_CD_ID).USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
                     noti.NOTI_IN_NIVEL = 1;
                     noti.NOTI_IN_VISTA = 0;
@@ -311,10 +311,10 @@ namespace ApplicationServices.Services
                 if (volta == 0)
                 {
                     // Recupera comprador
-                    USUARIO aprov = _usuService.GetComprador();
+                    USUARIO aprov = _usuService.GetComprador(usuario.ASSI_CD_ID);
                     if (aprov == null)
                     {
-                        aprov = _usuService.GetAdministrador();
+                        aprov = _usuService.GetAdministrador(usuario.ASSI_CD_ID);
                     }
 
                     // Notifica comprador
@@ -395,7 +395,7 @@ namespace ApplicationServices.Services
                     noti.NOTI_DT_EMISSAO = DateTime.Today;
                     noti.NOTI_IN_ATIVO = 1;
                     noti.NOTI_IN_STATUS = 1;
-                    noti.USUA_CD_ID = _usuService.GetComprador().USUA_CD_ID;
+                    noti.USUA_CD_ID = _usuService.GetComprador(usuario.ASSI_CD_ID).USUA_CD_ID;
                     noti.NOTI_DT_VALIDADE = DateTime.Today.AddDays(30);
                     noti.NOTI_IN_NIVEL = 1;
                     noti.NOTI_IN_VISTA = 0;
@@ -627,7 +627,7 @@ namespace ApplicationServices.Services
                         mensagem.EMAIL_DESTINO = forn.FORN_NM_EMAIL;
                         mensagem.EMAIL_EMISSOR = conf.CONF_NM_EMAIL_EMISSOO;
                         mensagem.ENABLE_SSL = true;
-                        mensagem.NOME_EMISSOR = _usuService.GetComprador().USUA_NM_NOME;
+                        mensagem.NOME_EMISSOR = _usuService.GetComprador(usuario.ASSI_CD_ID).USUA_NM_NOME;
                         mensagem.PORTA = conf.CONF_NM_PORTA_SMTP;
                         mensagem.PRIORIDADE = System.Net.Mail.MailPriority.High;
                         mensagem.SENHA_EMISSOR = conf.CONF_NM_SENHA_EMISSOR;
@@ -750,7 +750,7 @@ namespace ApplicationServices.Services
                     mensagem.EMAIL_DESTINO = forn.FORN_NM_EMAIL;
                     mensagem.EMAIL_EMISSOR = conf.CONF_NM_EMAIL_EMISSOO;
                     mensagem.ENABLE_SSL = true;
-                    mensagem.NOME_EMISSOR = _usuService.GetComprador().USUA_NM_NOME;
+                    mensagem.NOME_EMISSOR = _usuService.GetComprador(usuario.ASSI_CD_ID).USUA_NM_NOME;
                     mensagem.PORTA = conf.CONF_NM_PORTA_SMTP;
                     mensagem.PRIORIDADE = System.Net.Mail.MailPriority.High;
                     mensagem.SENHA_EMISSOR = conf.CONF_NM_SENHA_EMISSOR;
@@ -877,10 +877,10 @@ namespace ApplicationServices.Services
                 item.PECO_IN_STATUS = 4;
 
                 // Recupera aprovador
-                USUARIO aprov = _usuService.GetAprovador();
+                USUARIO aprov = _usuService.GetAprovador(item.ASSI_CD_ID);
                 if (aprov == null)
                 {
-                    aprov = _usuService.GetAdministrador();
+                    aprov = _usuService.GetAdministrador(item.ASSI_CD_ID);
                 }
 
                 // Persiste
@@ -939,10 +939,10 @@ namespace ApplicationServices.Services
                 item.PECO_DT_APROVACAO = DateTime.Today.Date;
 
                 // Recupera comprador
-                USUARIO aprov = _usuService.GetComprador();
+                USUARIO aprov = _usuService.GetComprador(item.ASSI_CD_ID);
                 if (aprov == null)
                 {
-                    aprov = _usuService.GetAdministrador();
+                    aprov = _usuService.GetAdministrador(item.ASSI_CD_ID);
                 }
 
                 // Persiste
@@ -1003,10 +1003,10 @@ namespace ApplicationServices.Services
                 item.PECO_DT_APROVACAO = DateTime.Today.Date;
 
                 // Recupera comprador
-                USUARIO aprov = _usuService.GetComprador();
+                USUARIO aprov = _usuService.GetComprador(item.ASSI_CD_ID);
                 if (aprov == null)
                 {
-                    aprov = _usuService.GetAdministrador();
+                    aprov = _usuService.GetAdministrador(item.ASSI_CD_ID);
                 }
 
                 // Persiste
@@ -1334,10 +1334,10 @@ namespace ApplicationServices.Services
                 item.PECO_DT_CANCELAMENTO = DateTime.Today.Date;
 
                 // Recupera comprador
-                USUARIO aprov = _usuService.GetComprador();
+                USUARIO aprov = _usuService.GetComprador(item.ASSI_CD_ID);
                 if (aprov == null)
                 {
-                    aprov = _usuService.GetAdministrador();
+                    aprov = _usuService.GetAdministrador(item.ASSI_CD_ID);
                 }
 
                 // Persiste

@@ -50,8 +50,20 @@ namespace DataServices.Repositories
         {
             IQueryable<USUARIO> query = Db.USUARIO.Where(p => p.USUA_IN_ATIVO == 1);
             query = query.Where(p => p.PERFIL.PERF_SG_SIGLA == "ADM");
-            query = query.Include(p => p.ASSINANTE);
-            query = query.Include(p => p.PERFIL);
+            return query.FirstOrDefault();
+        }
+        
+        public USUARIO GetComprador(Int32 idAss)
+        {
+            IQueryable<USUARIO> query = Db.USUARIO.Where(p => p.USUA_IN_ATIVO == 1);
+            query = query.Where(p => p.USUA_IN_PROPRIETARIO == 1);
+            return query.FirstOrDefault();
+        }
+
+        public USUARIO GetAprovador(Int32 idAss)
+        {
+            IQueryable<USUARIO> query = Db.USUARIO.Where(p => p.USUA_IN_ATIVO == 1);
+            query = query.Where(p => p.USUA_IN_MORADOR == 1);
             return query.FirstOrDefault();
         }
 

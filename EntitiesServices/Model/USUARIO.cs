@@ -36,6 +36,9 @@ namespace EntitiesServices.Model
             this.CONTA_RECEBER = new HashSet<CONTA_RECEBER>();
             this.PEDIDO_COMPRA = new HashSet<PEDIDO_COMPRA>();
             this.PEDIDO_COMPRA_ACOMPANHAMENTO = new HashSet<PEDIDO_COMPRA_ACOMPANHAMENTO>();
+            this.PEDIDO_VENDA = new HashSet<PEDIDO_VENDA>();
+            this.PEDIDO_VENDA1 = new HashSet<PEDIDO_VENDA>();
+            this.PEDIDO_VENDA_ACOMPANHAMENTO = new HashSet<PEDIDO_VENDA_ACOMPANHAMENTO>();
         }
     
         public int USUA_CD_ID { get; set; }
@@ -126,5 +129,11 @@ namespace EntitiesServices.Model
         public virtual ICollection<PEDIDO_COMPRA> PEDIDO_COMPRA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO_COMPRA_ACOMPANHAMENTO> PEDIDO_COMPRA_ACOMPANHAMENTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PEDIDO_VENDA> PEDIDO_VENDA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PEDIDO_VENDA> PEDIDO_VENDA1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PEDIDO_VENDA_ACOMPANHAMENTO> PEDIDO_VENDA_ACOMPANHAMENTO { get; set; }
     }
 }

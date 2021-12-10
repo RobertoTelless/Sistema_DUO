@@ -20,5 +20,7 @@ namespace ModelServices.Interfaces.Repositories
         List<USUARIO> ExecuteFilter(Int32? perfilId, Int32? cargoId, String nome, String login, String email, Int32 idAss);
         USUARIO GetAdministrador(Int32 idAss);
         USUARIO GetByEmailOnly(String email);
+        USUARIO GetComprador(Int32 idAss);
+        USUARIO GetAprovador(Int32 idAss);
     }
 }

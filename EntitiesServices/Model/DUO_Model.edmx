@@ -656,6 +656,24 @@
           <Property Name="FILI_NR_CPF" Type="varchar" MaxLength="20" />
           <Property Name="FILI_NR_RG" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="FORMA_ENVIO">
+          <Key>
+            <PropertyRef Name="FOEN_CD_ID" />
+          </Key>
+          <Property Name="FOEN_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ASSI_CD_ID" Type="int" Nullable="false" />
+          <Property Name="FOEN_NM_NOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FOEN_IN_ATIVO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FORMA_FRETE">
+          <Key>
+            <PropertyRef Name="FOFR_CD_ID" />
+          </Key>
+          <Property Name="FOFR_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ASSI_CD_ID" Type="int" Nullable="false" />
+          <Property Name="FOFR_NM_NOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FOFR_IN_ATIVO" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="FORMA_PAGAMENTO">
           <Key>
             <PropertyRef Name="FOPA_CD_ID" />
@@ -797,6 +815,23 @@
           <Property Name="ITPC_IN_TIPO" Type="int" />
           <Property Name="ITPC_DS_JUSTIFICATIVA" Type="varchar" MaxLength="500" />
           <Property Name="ITPC_NR_QUANTIDADE_RECEBIDA" Type="int" />
+        </EntityType>
+        <EntityType Name="ITEM_PEDIDO_VENDA">
+          <Key>
+            <PropertyRef Name="ITPE_CD_ID" />
+          </Key>
+          <Property Name="ITPE_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PEVE_CD_ID" Type="int" Nullable="false" />
+          <Property Name="PROD_CD_ID" Type="int" />
+          <Property Name="ITPE_QN_QUANTIDADE" Type="int" Nullable="false" />
+          <Property Name="ITPE_IN_ATIVO" Type="int" Nullable="false" />
+          <Property Name="ITPE_TX_OBSERVACOES" Type="text" />
+          <Property Name="UNID_CD_ID" Type="int" />
+          <Property Name="PEVE_VL_VALOR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA" Type="varchar" MaxLength="500" />
+          <Property Name="PEVE_DT_DATA_JUSTIFICATIVA" Type="date" />
+          <Property Name="PROD_VL_PRECO" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SERV_VL_PRECO" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="LOG">
           <Key>
@@ -942,6 +977,92 @@
           <Property Name="PECA_IN_TIPO" Type="int" Nullable="false" />
           <Property Name="PECA_AQ_ARQUIVO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="PECA_IN_ATIVO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA">
+          <Key>
+            <PropertyRef Name="PEVE_CD_ID" />
+          </Key>
+          <Property Name="PEVE_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ASSI_CD_ID" Type="int" Nullable="false" />
+          <Property Name="FILI_CD_ID" Type="int" />
+          <Property Name="USUA_CD_ID" Type="int" Nullable="false" />
+          <Property Name="CLIE_CD_ID" Type="int" Nullable="false" />
+          <Property Name="PEVE_NM_NOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PEVE_DT_DATA" Type="date" Nullable="false" />
+          <Property Name="PEVE_IN_STATUS" Type="int" Nullable="false" />
+          <Property Name="PEVE_DT_MUDANCA_STATUS" Type="date" />
+          <Property Name="PEVE_DT_APROVACAO" Type="date" />
+          <Property Name="PEVE_DT_CANCELAMENTO" Type="date" />
+          <Property Name="PEVE_DS_DESCRICAO" Type="varchar" MaxLength="1000" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA" Type="varchar" MaxLength="500" />
+          <Property Name="PEVE_DT_VALIDADE" Type="date" />
+          <Property Name="PEVE_NM_FORMA_PAGAMENTO" Type="varchar" MaxLength="50" />
+          <Property Name="PEVE_TX_OBSERVACOES" Type="text" />
+          <Property Name="PEVE_IN_ATIVO" Type="int" Nullable="false" />
+          <Property Name="PEVE_NR_NUMERO" Type="varchar" MaxLength="50" />
+          <Property Name="FOPA_CD_ID" Type="int" />
+          <Property Name="CECU_CD_ID" Type="int" />
+          <Property Name="PEVE_DT_PREVISTA" Type="date" />
+          <Property Name="PEVE_DT_ALTERACAO" Type="datetime" />
+          <Property Name="PEVE_DT_FINAL" Type="date" />
+          <Property Name="PEVE_VL_VALOR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PEVE_IN_VENDEDOR" Type="int" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA_OPORTUNIDADE" Type="varchar" MaxLength="200" />
+          <Property Name="PEVE_DT_CRIACAO_OPORTUNIDADE" Type="date" />
+          <Property Name="PEVE_DT_PREVISTA_OPORTUNIDADE" Type="date" />
+          <Property Name="PEVE_DT_CRIACAO" Type="date" />
+          <Property Name="PEVE_DT_CRIACAO_PROPOSTA" Type="date" />
+          <Property Name="PEVE_DT_PREVISTA_PROPOSTA" Type="date" />
+          <Property Name="PEVE_NR_NUMERO_PROPOSTA" Type="varchar" MaxLength="50" />
+          <Property Name="PEVE_NR_OPORTUNIDADE" Type="varchar" MaxLength="50" />
+          <Property Name="PV_DT_CANCELAMENTO_OPORTUNIDADE" Type="date" />
+          <Property Name="PEVE_VL_FRETE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PV_DT_CANCELAMENTO_PROPOSTA" Type="date" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA_PROPOSTA" Type="varchar" MaxLength="200" />
+          <Property Name="PEVE_DT_FATURAMENTO" Type="date" />
+          <Property Name="PEVE_DT_VENCIMENTO" Type="date" />
+          <Property Name="PEVE_IN_PARCELAS" Type="int" />
+          <Property Name="PEVE_DT_INICIO_PARCELAS" Type="date" />
+          <Property Name="PEVE_IN_NUMERO_PARCELAS" Type="int" />
+          <Property Name="PERI_CD_ID" Type="int" />
+          <Property Name="PEVE_DS_FORMA_PAGAMENTO" Type="varchar" MaxLength="5000" />
+          <Property Name="PVPC_CD_ID" Type="int" />
+          <Property Name="FOEN_CD_ID" Type="int" />
+          <Property Name="FOFR_CD_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA_ACOMPANHAMENTO">
+          <Key>
+            <PropertyRef Name="PVAC_CD_ID" />
+          </Key>
+          <Property Name="PVAC_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PEVE_CD_ID" Type="int" Nullable="false" />
+          <Property Name="USUA_CD_ID" Type="int" Nullable="false" />
+          <Property Name="PVAC_DS_ACOMPANHAMENTO" Type="varchar" MaxLength="5000" />
+          <Property Name="PVAC_IN_ATIVO" Type="int" Nullable="false" />
+          <Property Name="PVAC_DT_ACOMPANHAMENTO" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA_ANEXO">
+          <Key>
+            <PropertyRef Name="PEVA_CD_ID" />
+          </Key>
+          <Property Name="PEVA_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PEVE_CD_ID" Type="int" Nullable="false" />
+          <Property Name="PEVA_NM_TITULO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PEVA_DT_ANEXO" Type="date" Nullable="false" />
+          <Property Name="PEVA_IN_TIPO" Type="int" Nullable="false" />
+          <Property Name="PEVA_AQ_ARQUIVO" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PEVA_IN_ATIVO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA_PARCELA">
+          <Key>
+            <PropertyRef Name="PVPC_CD_ID" />
+          </Key>
+          <Property Name="PVPC_CD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PEVE_CD_ID" Type="int" Nullable="false" />
+          <Property Name="PVPC_DT_VENCIMENTO_PARCELA" Type="date" />
+          <Property Name="PVPC_IN_PARCELA" Type="int" />
+          <Property Name="PVPC_VL_PARCELA" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PVPC_IN_ATIVO" Type="int" />
         </EntityType>
         <EntityType Name="PERFIL">
           <Key>
@@ -2524,6 +2645,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_FORMA_ENVIO_ASSINANTE">
+          <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="1" />
+          <End Role="FORMA_ENVIO" Type="Self.FORMA_ENVIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="FORMA_ENVIO">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FORMA_FRETE_ASSINANTE">
+          <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="1" />
+          <End Role="FORMA_FRETE" Type="Self.FORMA_FRETE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="FORMA_FRETE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FORMA_PAGAMENTO_ASSINANTE">
           <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="0..1" />
           <End Role="FORMA_PAGAMENTO" Type="Self.FORMA_PAGAMENTO" Multiplicity="*" />
@@ -2772,6 +2917,42 @@
               <PropertyRef Name="UNID_CD_ID" />
             </Principal>
             <Dependent Role="ITEM_PEDIDO_COMPRA">
+              <PropertyRef Name="UNID_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA">
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="1" />
+          <End Role="ITEM_PEDIDO_VENDA" Type="Self.ITEM_PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="ITEM_PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_PEDIDO_VENDA_PRODUTO">
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="0..1" />
+          <End Role="ITEM_PEDIDO_VENDA" Type="Self.ITEM_PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUTO">
+              <PropertyRef Name="PROD_CD_ID" />
+            </Principal>
+            <Dependent Role="ITEM_PEDIDO_VENDA">
+              <PropertyRef Name="PROD_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_PEDIDO_VENDA_UNIDADE">
+          <End Role="UNIDADE" Type="Self.UNIDADE" Multiplicity="0..1" />
+          <End Role="ITEM_PEDIDO_VENDA" Type="Self.ITEM_PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UNIDADE">
+              <PropertyRef Name="UNID_CD_ID" />
+            </Principal>
+            <Dependent Role="ITEM_PEDIDO_VENDA">
               <PropertyRef Name="UNID_CD_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -3025,6 +3206,186 @@
             </Principal>
             <Dependent Role="PEDIDO_COMPRA">
               <PropertyRef Name="USUA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA">
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" Type="Self.PEDIDO_VENDA_ACOMPANHAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_ACOMPANHAMENTO">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" Type="Self.PEDIDO_VENDA_ACOMPANHAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_ACOMPANHAMENTO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA">
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA_ANEXO" Type="Self.PEDIDO_VENDA_ANEXO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_ANEXO">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ASSINANTE">
+          <End Role="ASSINANTE" Type="Self.ASSINANTE" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_CENTRO_CUSTO">
+          <End Role="CENTRO_CUSTO" Type="Self.CENTRO_CUSTO" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_CUSTO">
+              <PropertyRef Name="CECU_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="CECU_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="CLIE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="CLIE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_FILIAL">
+          <End Role="FILIAL" Type="Self.FILIAL" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILIAL">
+              <PropertyRef Name="FILI_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FILI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_Forma_ENVIO">
+          <End Role="FORMA_ENVIO" Type="Self.FORMA_ENVIO" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_ENVIO">
+              <PropertyRef Name="FOEN_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FOEN_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_Forma_FRETE">
+          <End Role="FORMA_FRETE" Type="Self.FORMA_FRETE" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_FRETE">
+              <PropertyRef Name="FOFR_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FOFR_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_FORMA_PAGAMENTO">
+          <End Role="FORMA_PAGAMENTO" Type="Self.FORMA_PAGAMENTO" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_PAGAMENTO">
+              <PropertyRef Name="FOPA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FOPA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA">
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA_PARCELA" Type="Self.PEDIDO_VENDA_PARCELA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_PARCELA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA">
+          <End Role="PEDIDO_VENDA_PARCELA" Type="Self.PEDIDO_VENDA_PARCELA" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA_PARCELA">
+              <PropertyRef Name="PVPC_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="PVPC_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_PERIODICIDADE">
+          <End Role="PERIODICIDADE" Type="Self.PERIODICIDADE" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERIODICIDADE">
+              <PropertyRef Name="PERI_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="PERI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_USUARIO">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_USUARIO1">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+          <End Role="PEDIDO_VENDA" Type="Self.PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_IN_VENDEDOR" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3669,6 +4030,8 @@
           <EntitySet Name="EQUIPAMENTO_ANEXO" EntityType="Self.EQUIPAMENTO_ANEXO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EQUIPAMENTO_MANUTENCAO" EntityType="Self.EQUIPAMENTO_MANUTENCAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FILIAL" EntityType="Self.FILIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FORMA_ENVIO" EntityType="Self.FORMA_ENVIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FORMA_FRETE" EntityType="Self.FORMA_FRETE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FORMA_PAGAMENTO" EntityType="Self.FORMA_PAGAMENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FORNECEDOR" EntityType="Self.FORNECEDOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FORNECEDOR_ANEXO" EntityType="Self.FORNECEDOR_ANEXO" Schema="dbo" store:Type="Tables" />
@@ -3678,6 +4041,7 @@
           <EntitySet Name="FORNECEDOR_QUADRO_SOCIETARIO" EntityType="Self.FORNECEDOR_QUADRO_SOCIETARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GRUPO" EntityType="Self.GRUPO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITEM_PEDIDO_COMPRA" EntityType="Self.ITEM_PEDIDO_COMPRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITEM_PEDIDO_VENDA" EntityType="Self.ITEM_PEDIDO_VENDA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOG" EntityType="Self.LOG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MOVIMENTO_ESTOQUE_PRODUTO" EntityType="Self.MOVIMENTO_ESTOQUE_PRODUTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NOTICIA" EntityType="Self.NOTICIA" Schema="dbo" store:Type="Tables" />
@@ -3687,6 +4051,10 @@
           <EntitySet Name="PEDIDO_COMPRA" EntityType="Self.PEDIDO_COMPRA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PEDIDO_COMPRA_ACOMPANHAMENTO" EntityType="Self.PEDIDO_COMPRA_ACOMPANHAMENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PEDIDO_COMPRA_ANEXO" EntityType="Self.PEDIDO_COMPRA_ANEXO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEDIDO_VENDA" EntityType="Self.PEDIDO_VENDA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEDIDO_VENDA_ACOMPANHAMENTO" EntityType="Self.PEDIDO_VENDA_ACOMPANHAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEDIDO_VENDA_ANEXO" EntityType="Self.PEDIDO_VENDA_ANEXO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEDIDO_VENDA_PARCELA" EntityType="Self.PEDIDO_VENDA_PARCELA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERFIL" EntityType="Self.PERFIL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERIODICIDADE" EntityType="Self.PERIODICIDADE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERIODICIDADE_TAREFA" EntityType="Self.PERIODICIDADE_TAREFA" Schema="dbo" store:Type="Tables" />
@@ -4061,6 +4429,14 @@
             <End Role="UF" EntitySet="UF" />
             <End Role="FILIAL" EntitySet="FILIAL" />
           </AssociationSet>
+          <AssociationSet Name="FK_FORMA_ENVIO_ASSINANTE" Association="Self.FK_FORMA_ENVIO_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="FORMA_ENVIO" EntitySet="FORMA_ENVIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FORMA_FRETE_ASSINANTE" Association="Self.FK_FORMA_FRETE_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="FORMA_FRETE" EntitySet="FORMA_FRETE" />
+          </AssociationSet>
           <AssociationSet Name="FK_FORMA_PAGAMENTO_ASSINANTE" Association="Self.FK_FORMA_PAGAMENTO_ASSINANTE">
             <End Role="ASSINANTE" EntitySet="ASSINANTE" />
             <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
@@ -4145,6 +4521,18 @@
             <End Role="UNIDADE" EntitySet="UNIDADE" />
             <End Role="ITEM_PEDIDO_COMPRA" EntitySet="ITEM_PEDIDO_COMPRA" />
           </AssociationSet>
+          <AssociationSet Name="FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" Association="Self.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="ITEM_PEDIDO_VENDA" EntitySet="ITEM_PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_PEDIDO_VENDA_PRODUTO" Association="Self.FK_ITEM_PEDIDO_VENDA_PRODUTO">
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+            <End Role="ITEM_PEDIDO_VENDA" EntitySet="ITEM_PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_PEDIDO_VENDA_UNIDADE" Association="Self.FK_ITEM_PEDIDO_VENDA_UNIDADE">
+            <End Role="UNIDADE" EntitySet="UNIDADE" />
+            <End Role="ITEM_PEDIDO_VENDA" EntitySet="ITEM_PEDIDO_VENDA" />
+          </AssociationSet>
           <AssociationSet Name="FK_LOG_ASSINANTE" Association="Self.FK_LOG_ASSINANTE">
             <End Role="ASSINANTE" EntitySet="ASSINANTE" />
             <End Role="LOG" EntitySet="LOG" />
@@ -4228,6 +4616,66 @@
           <AssociationSet Name="FK_PEDIDO_COMPRA_USUARIO" Association="Self.FK_PEDIDO_COMPRA_USUARIO">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="PEDIDO_COMPRA" EntitySet="PEDIDO_COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" Association="Self.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" EntitySet="PEDIDO_VENDA_ACOMPANHAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" Association="Self.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" EntitySet="PEDIDO_VENDA_ACOMPANHAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" Association="Self.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="PEDIDO_VENDA_ANEXO" EntitySet="PEDIDO_VENDA_ANEXO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ASSINANTE" Association="Self.FK_PEDIDO_VENDA_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_CENTRO_CUSTO" Association="Self.FK_PEDIDO_VENDA_CENTRO_CUSTO">
+            <End Role="CENTRO_CUSTO" EntitySet="CENTRO_CUSTO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_CLIENTE" Association="Self.FK_PEDIDO_VENDA_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_FILIAL" Association="Self.FK_PEDIDO_VENDA_FILIAL">
+            <End Role="FILIAL" EntitySet="FILIAL" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_Forma_ENVIO" Association="Self.FK_PEDIDO_VENDA_Forma_ENVIO">
+            <End Role="FORMA_ENVIO" EntitySet="FORMA_ENVIO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_Forma_FRETE" Association="Self.FK_PEDIDO_VENDA_Forma_FRETE">
+            <End Role="FORMA_FRETE" EntitySet="FORMA_FRETE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_FORMA_PAGAMENTO" Association="Self.FK_PEDIDO_VENDA_FORMA_PAGAMENTO">
+            <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA" Association="Self.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="PEDIDO_VENDA_PARCELA" EntitySet="PEDIDO_VENDA_PARCELA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA" Association="Self.FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA">
+            <End Role="PEDIDO_VENDA_PARCELA" EntitySet="PEDIDO_VENDA_PARCELA" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_PERIODICIDADE" Association="Self.FK_PEDIDO_VENDA_PERIODICIDADE">
+            <End Role="PERIODICIDADE" EntitySet="PERIODICIDADE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_USUARIO" Association="Self.FK_PEDIDO_VENDA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_USUARIO1" Association="Self.FK_PEDIDO_VENDA_USUARIO1">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
           </AssociationSet>
           <AssociationSet Name="FK_PERIODICIDADE_TAREFA_ASSINANTE" Association="Self.FK_PERIODICIDADE_TAREFA_ASSINANTE">
             <End Role="ASSINANTE" EntitySet="ASSINANTE" />
@@ -4545,6 +4993,9 @@
           <NavigationProperty Name="FORMA_PAGAMENTO" Relationship="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_ASSINANTE" FromRole="ASSINANTE" ToRole="FORMA_PAGAMENTO" />
           <NavigationProperty Name="TIPO_TAG" Relationship="DUO_DatabaseModel.FK_TIPO_TAG_ASSINANTE" FromRole="ASSINANTE" ToRole="TIPO_TAG" />
           <NavigationProperty Name="PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ASSINANTE" FromRole="ASSINANTE" ToRole="PEDIDO_COMPRA" />
+          <NavigationProperty Name="FORMA_ENVIO" Relationship="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE" FromRole="ASSINANTE" ToRole="FORMA_ENVIO" />
+          <NavigationProperty Name="FORMA_FRETE" Relationship="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE" FromRole="ASSINANTE" ToRole="FORMA_FRETE" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE" FromRole="ASSINANTE" ToRole="PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="ASSINANTE_ANEXO">
           <Key>
@@ -4682,6 +5133,7 @@
           <NavigationProperty Name="CONTA_RECEBER" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_CENTRO_CUSTO" FromRole="CENTRO_CUSTO" ToRole="CONTA_RECEBER" />
           <NavigationProperty Name="CONTA_RECEBER_RATEIO" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CENTRO_CUSTO" FromRole="CENTRO_CUSTO" ToRole="CONTA_RECEBER_RATEIO" />
           <NavigationProperty Name="PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_PEDIDO_COMPRA_CENTRO_CUSTO" FromRole="CENTRO_CUSTO" ToRole="PEDIDO_COMPRA" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_CENTRO_CUSTO" FromRole="CENTRO_CUSTO" ToRole="PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="CONFIGURACAO">
           <Key>
@@ -4893,6 +5345,7 @@
           <NavigationProperty Name="EQUIPAMENTO" Relationship="DUO_DatabaseModel.FK_EQUIPAMENTO_PERIODICIDADE" FromRole="PERIODICIDADE" ToRole="EQUIPAMENTO" />
           <NavigationProperty Name="CONTA_PAGAR" Relationship="DUO_DatabaseModel.FK_CONTA_PAGAR_PERIODICIDADE" FromRole="PERIODICIDADE" ToRole="CONTA_PAGAR" />
           <NavigationProperty Name="CONTA_RECEBER" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_PERIODICIDADE" FromRole="PERIODICIDADE" ToRole="CONTA_RECEBER" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_PERIODICIDADE" FromRole="PERIODICIDADE" ToRole="PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="PERIODICIDADE_TAREFA">
           <Key>
@@ -5178,6 +5631,9 @@
           <NavigationProperty Name="CONTA_RECEBER" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_USUARIO" FromRole="USUARIO" ToRole="CONTA_RECEBER" />
           <NavigationProperty Name="PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_PEDIDO_COMPRA_USUARIO" FromRole="USUARIO" ToRole="PEDIDO_COMPRA" />
           <NavigationProperty Name="PEDIDO_COMPRA_ACOMPANHAMENTO" Relationship="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_USUARIO" FromRole="USUARIO" ToRole="PEDIDO_COMPRA_ACOMPANHAMENTO" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO" FromRole="USUARIO" ToRole="PEDIDO_VENDA" />
+          <NavigationProperty Name="PEDIDO_VENDA1" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1" FromRole="USUARIO" ToRole="PEDIDO_VENDA" />
+          <NavigationProperty Name="PEDIDO_VENDA_ACOMPANHAMENTO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" FromRole="USUARIO" ToRole="PEDIDO_VENDA_ACOMPANHAMENTO" />
         </EntityType>
         <EntityType Name="USUARIO_ANEXO">
           <Key>
@@ -6803,6 +7259,93 @@
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="PEDIDO_COMPRA_ACOMPANHAMENTO" EntitySet="PEDIDO_COMPRA_ACOMPANHAMENTO" />
           </AssociationSet>
+          <EntitySet Name="FORMA_ENVIO" EntityType="DUO_DatabaseModel.FORMA_ENVIO" />
+          <EntitySet Name="FORMA_FRETE" EntityType="DUO_DatabaseModel.FORMA_FRETE" />
+          <EntitySet Name="ITEM_PEDIDO_VENDA" EntityType="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" />
+          <EntitySet Name="PEDIDO_VENDA" EntityType="DUO_DatabaseModel.PEDIDO_VENDA" />
+          <EntitySet Name="PEDIDO_VENDA_ACOMPANHAMENTO" EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO" />
+          <EntitySet Name="PEDIDO_VENDA_ANEXO" EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ANEXO" />
+          <EntitySet Name="PEDIDO_VENDA_PARCELA" EntityType="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA" />
+          <AssociationSet Name="FK_FORMA_ENVIO_ASSINANTE" Association="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="FORMA_ENVIO" EntitySet="FORMA_ENVIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FORMA_FRETE_ASSINANTE" Association="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="FORMA_FRETE" EntitySet="FORMA_FRETE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ASSINANTE" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE">
+            <End Role="ASSINANTE" EntitySet="ASSINANTE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_CENTRO_CUSTO" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CENTRO_CUSTO">
+            <End Role="CENTRO_CUSTO" EntitySet="CENTRO_CUSTO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_CLIENTE" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_FILIAL" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FILIAL">
+            <End Role="FILIAL" EntitySet="FILIAL" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_Forma_ENVIO" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_ENVIO">
+            <End Role="FORMA_ENVIO" EntitySet="FORMA_ENVIO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_Forma_FRETE" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_FRETE">
+            <End Role="FORMA_FRETE" EntitySet="FORMA_FRETE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_FORMA_PAGAMENTO" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FORMA_PAGAMENTO">
+            <End Role="FORMA_PAGAMENTO" EntitySet="FORMA_PAGAMENTO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="ITEM_PEDIDO_VENDA" EntitySet="ITEM_PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_PEDIDO_VENDA_PRODUTO" Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PRODUTO">
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+            <End Role="ITEM_PEDIDO_VENDA" EntitySet="ITEM_PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ITEM_PEDIDO_VENDA_UNIDADE" Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_UNIDADE">
+            <End Role="UNIDADE" EntitySet="UNIDADE" />
+            <End Role="ITEM_PEDIDO_VENDA" EntitySet="ITEM_PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" EntitySet="PEDIDO_VENDA_ACOMPANHAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="PEDIDO_VENDA_ANEXO" EntitySet="PEDIDO_VENDA_ANEXO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA">
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+            <End Role="PEDIDO_VENDA_PARCELA" EntitySet="PEDIDO_VENDA_PARCELA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA">
+            <End Role="PEDIDO_VENDA_PARCELA" EntitySet="PEDIDO_VENDA_PARCELA" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_PERIODICIDADE" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PERIODICIDADE">
+            <End Role="PERIODICIDADE" EntitySet="PERIODICIDADE" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_USUARIO" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_USUARIO1" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="PEDIDO_VENDA" EntitySet="PEDIDO_VENDA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="PEDIDO_VENDA_ACOMPANHAMENTO" EntitySet="PEDIDO_VENDA_ACOMPANHAMENTO" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CATEGORIA_CLIENTE">
           <Key>
@@ -6886,6 +7429,7 @@
           <NavigationProperty Name="UF1" Relationship="DUO_DatabaseModel.FK_CLIENTE_UF1" FromRole="CLIENTE" ToRole="UF" />
           <NavigationProperty Name="USUARIO" Relationship="DUO_DatabaseModel.FK_CLIENTE_USUARIO" FromRole="CLIENTE" ToRole="USUARIO" />
           <NavigationProperty Name="CONTA_RECEBER" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_CLIENTE" FromRole="CLIENTE" ToRole="CONTA_RECEBER" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_CLIENTE" FromRole="CLIENTE" ToRole="PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="CLIENTE_ANEXO">
           <Key>
@@ -6993,6 +7537,7 @@
           <NavigationProperty Name="USUARIO" Relationship="DUO_DatabaseModel.FK_USUARIO_FILIAL" FromRole="FILIAL" ToRole="USUARIO" />
           <NavigationProperty Name="CONTA_RECEBER" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_FILIAL" FromRole="FILIAL" ToRole="CONTA_RECEBER" />
           <NavigationProperty Name="PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FILIAL" FromRole="FILIAL" ToRole="PEDIDO_COMPRA" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_FILIAL" FromRole="FILIAL" ToRole="PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="FORNECEDOR">
           <Key>
@@ -7594,6 +8139,7 @@
           <NavigationProperty Name="PRODUTO_TABELA_PRECO" Relationship="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_PRODUTO" FromRole="PRODUTO" ToRole="PRODUTO_TABELA_PRECO" />
           <NavigationProperty Name="UNIDADE" Relationship="DUO_DatabaseModel.FK_PRODUTO_UNIDADE" FromRole="PRODUTO" ToRole="UNIDADE" />
           <NavigationProperty Name="ITEM_PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PRODUTO" FromRole="PRODUTO" ToRole="ITEM_PEDIDO_COMPRA" />
+          <NavigationProperty Name="ITEM_PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PRODUTO" FromRole="PRODUTO" ToRole="ITEM_PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="PRODUTO_ANEXO">
           <Key>
@@ -7753,6 +8299,7 @@
           <Property Name="UNID_IN_TIPO_UNIDADE" Type="Int32" />
           <NavigationProperty Name="PRODUTO" Relationship="DUO_DatabaseModel.FK_PRODUTO_UNIDADE" FromRole="UNIDADE" ToRole="PRODUTO" />
           <NavigationProperty Name="ITEM_PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_UNIDADE" FromRole="UNIDADE" ToRole="ITEM_PEDIDO_COMPRA" />
+          <NavigationProperty Name="ITEM_PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_UNIDADE" FromRole="UNIDADE" ToRole="ITEM_PEDIDO_VENDA" />
         </EntityType>
         <Association Name="FK_EQUIPAMENTO_ASSINANTE">
           <End Type="DUO_DatabaseModel.ASSINANTE" Role="ASSINANTE" Multiplicity="1" />
@@ -8511,6 +9058,7 @@
           <NavigationProperty Name="CONTA_PAGAR_PARCELA" Relationship="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_FORMA_PAGAMENTO" FromRole="FORMA_PAGAMENTO" ToRole="CONTA_PAGAR_PARCELA" />
           <NavigationProperty Name="CONTA_RECEBER" Relationship="DUO_DatabaseModel.FK_CONTA_RECEBER_FORMA_PAGAMENTO" FromRole="FORMA_PAGAMENTO" ToRole="CONTA_RECEBER" />
           <NavigationProperty Name="PEDIDO_COMPRA" Relationship="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORMA_PAGAMENTO" FromRole="FORMA_PAGAMENTO" ToRole="PEDIDO_COMPRA" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_FORMA_PAGAMENTO" FromRole="FORMA_PAGAMENTO" ToRole="PEDIDO_VENDA" />
         </EntityType>
         <EntityType Name="TIPO_FAVORECIDO">
           <Key>
@@ -9207,6 +9755,394 @@
               <PropertyRef Name="USUA_CD_ID" />
             </Principal>
             <Dependent Role="PEDIDO_COMPRA_ACOMPANHAMENTO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FORMA_ENVIO">
+          <Key>
+            <PropertyRef Name="FOEN_CD_ID" />
+          </Key>
+          <Property Name="FOEN_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ASSI_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="FOEN_NM_NOME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOEN_IN_ATIVO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ASSINANTE" Relationship="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE" FromRole="FORMA_ENVIO" ToRole="ASSINANTE" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_ENVIO" FromRole="FORMA_ENVIO" ToRole="PEDIDO_VENDA" />
+        </EntityType>
+        <EntityType Name="FORMA_FRETE">
+          <Key>
+            <PropertyRef Name="FOFR_CD_ID" />
+          </Key>
+          <Property Name="FOFR_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ASSI_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="FOFR_NM_NOME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOFR_IN_ATIVO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ASSINANTE" Relationship="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE" FromRole="FORMA_FRETE" ToRole="ASSINANTE" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_FRETE" FromRole="FORMA_FRETE" ToRole="PEDIDO_VENDA" />
+        </EntityType>
+        <EntityType Name="ITEM_PEDIDO_VENDA">
+          <Key>
+            <PropertyRef Name="ITPE_CD_ID" />
+          </Key>
+          <Property Name="ITPE_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PEVE_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="PROD_CD_ID" Type="Int32" />
+          <Property Name="ITPE_QN_QUANTIDADE" Type="Int32" Nullable="false" />
+          <Property Name="ITPE_IN_ATIVO" Type="Int32" Nullable="false" />
+          <Property Name="ITPE_TX_OBSERVACOES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UNID_CD_ID" Type="Int32" />
+          <Property Name="PEVE_VL_VALOR" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_DT_DATA_JUSTIFICATIVA" Type="DateTime" Precision="0" />
+          <Property Name="PROD_VL_PRECO" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SERV_VL_PRECO" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" FromRole="ITEM_PEDIDO_VENDA" ToRole="PEDIDO_VENDA" />
+          <NavigationProperty Name="PRODUTO" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PRODUTO" FromRole="ITEM_PEDIDO_VENDA" ToRole="PRODUTO" />
+          <NavigationProperty Name="UNIDADE" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_UNIDADE" FromRole="ITEM_PEDIDO_VENDA" ToRole="UNIDADE" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA">
+          <Key>
+            <PropertyRef Name="PEVE_CD_ID" />
+          </Key>
+          <Property Name="PEVE_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ASSI_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="FILI_CD_ID" Type="Int32" />
+          <Property Name="USUA_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="CLIE_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="PEVE_NM_NOME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_DT_DATA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PEVE_IN_STATUS" Type="Int32" Nullable="false" />
+          <Property Name="PEVE_DT_MUDANCA_STATUS" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_APROVACAO" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_CANCELAMENTO" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DS_DESCRICAO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_DT_VALIDADE" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_NM_FORMA_PAGAMENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_TX_OBSERVACOES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_IN_ATIVO" Type="Int32" Nullable="false" />
+          <Property Name="PEVE_NR_NUMERO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOPA_CD_ID" Type="Int32" />
+          <Property Name="CECU_CD_ID" Type="Int32" />
+          <Property Name="PEVE_DT_PREVISTA" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_ALTERACAO" Type="DateTime" Precision="3" />
+          <Property Name="PEVE_DT_FINAL" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_VL_VALOR" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PEVE_IN_VENDEDOR" Type="Int32" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA_OPORTUNIDADE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_DT_CRIACAO_OPORTUNIDADE" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_PREVISTA_OPORTUNIDADE" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_CRIACAO" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_CRIACAO_PROPOSTA" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_PREVISTA_PROPOSTA" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_NR_NUMERO_PROPOSTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_NR_OPORTUNIDADE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PV_DT_CANCELAMENTO_OPORTUNIDADE" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_VL_FRETE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PV_DT_CANCELAMENTO_PROPOSTA" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DS_JUSTIFICATIVA_PROPOSTA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PEVE_DT_FATURAMENTO" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_DT_VENCIMENTO" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_IN_PARCELAS" Type="Int32" />
+          <Property Name="PEVE_DT_INICIO_PARCELAS" Type="DateTime" Precision="0" />
+          <Property Name="PEVE_IN_NUMERO_PARCELAS" Type="Int32" />
+          <Property Name="PERI_CD_ID" Type="Int32" />
+          <Property Name="PEVE_DS_FORMA_PAGAMENTO" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="PVPC_CD_ID" Type="Int32" />
+          <Property Name="FOEN_CD_ID" Type="Int32" />
+          <Property Name="FOFR_CD_ID" Type="Int32" />
+          <NavigationProperty Name="ASSINANTE" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE" FromRole="PEDIDO_VENDA" ToRole="ASSINANTE" />
+          <NavigationProperty Name="CENTRO_CUSTO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_CENTRO_CUSTO" FromRole="PEDIDO_VENDA" ToRole="CENTRO_CUSTO" />
+          <NavigationProperty Name="CLIENTE" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_CLIENTE" FromRole="PEDIDO_VENDA" ToRole="CLIENTE" />
+          <NavigationProperty Name="FILIAL" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_FILIAL" FromRole="PEDIDO_VENDA" ToRole="FILIAL" />
+          <NavigationProperty Name="FORMA_ENVIO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_ENVIO" FromRole="PEDIDO_VENDA" ToRole="FORMA_ENVIO" />
+          <NavigationProperty Name="FORMA_FRETE" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_FRETE" FromRole="PEDIDO_VENDA" ToRole="FORMA_FRETE" />
+          <NavigationProperty Name="FORMA_PAGAMENTO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_FORMA_PAGAMENTO" FromRole="PEDIDO_VENDA" ToRole="FORMA_PAGAMENTO" />
+          <NavigationProperty Name="ITEM_PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" FromRole="PEDIDO_VENDA" ToRole="ITEM_PEDIDO_VENDA" />
+          <NavigationProperty Name="PEDIDO_VENDA_ACOMPANHAMENTO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" FromRole="PEDIDO_VENDA" ToRole="PEDIDO_VENDA_ACOMPANHAMENTO" />
+          <NavigationProperty Name="PEDIDO_VENDA_ANEXO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" FromRole="PEDIDO_VENDA" ToRole="PEDIDO_VENDA_ANEXO" />
+          <NavigationProperty Name="PEDIDO_VENDA_PARCELA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA" FromRole="PEDIDO_VENDA" ToRole="PEDIDO_VENDA_PARCELA" />
+          <NavigationProperty Name="PEDIDO_VENDA_PARCELA1" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA" FromRole="PEDIDO_VENDA" ToRole="PEDIDO_VENDA_PARCELA" />
+          <NavigationProperty Name="PERIODICIDADE" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_PERIODICIDADE" FromRole="PEDIDO_VENDA" ToRole="PERIODICIDADE" />
+          <NavigationProperty Name="USUARIO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO" FromRole="PEDIDO_VENDA" ToRole="USUARIO" />
+          <NavigationProperty Name="USUARIO1" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1" FromRole="PEDIDO_VENDA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA_ACOMPANHAMENTO">
+          <Key>
+            <PropertyRef Name="PVAC_CD_ID" />
+          </Key>
+          <Property Name="PVAC_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PEVE_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="USUA_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="PVAC_DS_ACOMPANHAMENTO" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="PVAC_IN_ATIVO" Type="Int32" Nullable="false" />
+          <Property Name="PVAC_DT_ACOMPANHAMENTO" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" FromRole="PEDIDO_VENDA_ACOMPANHAMENTO" ToRole="PEDIDO_VENDA" />
+          <NavigationProperty Name="USUARIO" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" FromRole="PEDIDO_VENDA_ACOMPANHAMENTO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA_ANEXO">
+          <Key>
+            <PropertyRef Name="PEVA_CD_ID" />
+          </Key>
+          <Property Name="PEVA_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PEVE_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="PEVA_NM_TITULO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PEVA_DT_ANEXO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PEVA_IN_TIPO" Type="Int32" Nullable="false" />
+          <Property Name="PEVA_AQ_ARQUIVO" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="PEVA_IN_ATIVO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" FromRole="PEDIDO_VENDA_ANEXO" ToRole="PEDIDO_VENDA" />
+        </EntityType>
+        <EntityType Name="PEDIDO_VENDA_PARCELA">
+          <Key>
+            <PropertyRef Name="PVPC_CD_ID" />
+          </Key>
+          <Property Name="PVPC_CD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PEVE_CD_ID" Type="Int32" Nullable="false" />
+          <Property Name="PVPC_DT_VENCIMENTO_PARCELA" Type="DateTime" Precision="0" />
+          <Property Name="PVPC_IN_PARCELA" Type="Int32" />
+          <Property Name="PVPC_VL_PARCELA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PVPC_IN_ATIVO" Type="Int32" />
+          <NavigationProperty Name="PEDIDO_VENDA" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA" FromRole="PEDIDO_VENDA_PARCELA" ToRole="PEDIDO_VENDA" />
+          <NavigationProperty Name="PEDIDO_VENDA1" Relationship="DUO_DatabaseModel.FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA" FromRole="PEDIDO_VENDA_PARCELA" ToRole="PEDIDO_VENDA" />
+        </EntityType>
+        <Association Name="FK_FORMA_ENVIO_ASSINANTE">
+          <End Type="DUO_DatabaseModel.ASSINANTE" Role="ASSINANTE" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.FORMA_ENVIO" Role="FORMA_ENVIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="FORMA_ENVIO">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FORMA_FRETE_ASSINANTE">
+          <End Type="DUO_DatabaseModel.ASSINANTE" Role="ASSINANTE" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.FORMA_FRETE" Role="FORMA_FRETE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="FORMA_FRETE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ASSINANTE">
+          <End Type="DUO_DatabaseModel.ASSINANTE" Role="ASSINANTE" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASSINANTE">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="ASSI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_CENTRO_CUSTO">
+          <End Type="DUO_DatabaseModel.CENTRO_CUSTO" Role="CENTRO_CUSTO" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_CUSTO">
+              <PropertyRef Name="CECU_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="CECU_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_CLIENTE">
+          <End Type="DUO_DatabaseModel.CLIENTE" Role="CLIENTE" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="CLIE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="CLIE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_FILIAL">
+          <End Type="DUO_DatabaseModel.FILIAL" Role="FILIAL" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILIAL">
+              <PropertyRef Name="FILI_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FILI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_Forma_ENVIO">
+          <End Type="DUO_DatabaseModel.FORMA_ENVIO" Role="FORMA_ENVIO" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_ENVIO">
+              <PropertyRef Name="FOEN_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FOEN_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_Forma_FRETE">
+          <End Type="DUO_DatabaseModel.FORMA_FRETE" Role="FORMA_FRETE" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_FRETE">
+              <PropertyRef Name="FOFR_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FOFR_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_FORMA_PAGAMENTO">
+          <End Type="DUO_DatabaseModel.FORMA_PAGAMENTO" Role="FORMA_PAGAMENTO" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORMA_PAGAMENTO">
+              <PropertyRef Name="FOPA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="FOPA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA">
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" Role="ITEM_PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="ITEM_PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_PEDIDO_VENDA_PRODUTO">
+          <End Type="DUO_DatabaseModel.PRODUTO" Role="PRODUTO" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" Role="ITEM_PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUTO">
+              <PropertyRef Name="PROD_CD_ID" />
+            </Principal>
+            <Dependent Role="ITEM_PEDIDO_VENDA">
+              <PropertyRef Name="PROD_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ITEM_PEDIDO_VENDA_UNIDADE">
+          <End Type="DUO_DatabaseModel.UNIDADE" Role="UNIDADE" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" Role="ITEM_PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UNIDADE">
+              <PropertyRef Name="UNID_CD_ID" />
+            </Principal>
+            <Dependent Role="ITEM_PEDIDO_VENDA">
+              <PropertyRef Name="UNID_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA">
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO" Role="PEDIDO_VENDA_ACOMPANHAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_ACOMPANHAMENTO">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA">
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA_ANEXO" Role="PEDIDO_VENDA_ANEXO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_ANEXO">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA">
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA" Role="PEDIDO_VENDA_PARCELA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_PARCELA">
+              <PropertyRef Name="PEVE_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA">
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA" Role="PEDIDO_VENDA_PARCELA" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO_VENDA_PARCELA">
+              <PropertyRef Name="PVPC_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="PVPC_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_PERIODICIDADE">
+          <End Type="DUO_DatabaseModel.PERIODICIDADE" Role="PERIODICIDADE" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERIODICIDADE">
+              <PropertyRef Name="PERI_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="PERI_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_USUARIO">
+          <End Type="DUO_DatabaseModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_USUARIO1">
+          <End Type="DUO_DatabaseModel.USUARIO" Role="USUARIO" Multiplicity="0..1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA" Role="PEDIDO_VENDA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA">
+              <PropertyRef Name="PEVE_IN_VENDEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO">
+          <End Type="DUO_DatabaseModel.USUARIO" Role="USUARIO" Multiplicity="1" />
+          <End Type="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO" Role="PEDIDO_VENDA_ACOMPANHAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="USUA_CD_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO_VENDA_ACOMPANHAMENTO">
               <PropertyRef Name="USUA_CD_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -10821,6 +11757,134 @@
                 <ScalarProperty Name="PECA_DT_ANEXO" ColumnName="PECA_DT_ANEXO" />
                 <ScalarProperty Name="PECO_CD_ID" ColumnName="PECO_CD_ID" />
                 <ScalarProperty Name="PECA_CD_ID" ColumnName="PECA_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORMA_ENVIO">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.FORMA_ENVIO">
+              <MappingFragment StoreEntitySet="FORMA_ENVIO">
+                <ScalarProperty Name="FOEN_IN_ATIVO" ColumnName="FOEN_IN_ATIVO" />
+                <ScalarProperty Name="FOEN_NM_NOME" ColumnName="FOEN_NM_NOME" />
+                <ScalarProperty Name="ASSI_CD_ID" ColumnName="ASSI_CD_ID" />
+                <ScalarProperty Name="FOEN_CD_ID" ColumnName="FOEN_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORMA_FRETE">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.FORMA_FRETE">
+              <MappingFragment StoreEntitySet="FORMA_FRETE">
+                <ScalarProperty Name="FOFR_IN_ATIVO" ColumnName="FOFR_IN_ATIVO" />
+                <ScalarProperty Name="FOFR_NM_NOME" ColumnName="FOFR_NM_NOME" />
+                <ScalarProperty Name="ASSI_CD_ID" ColumnName="ASSI_CD_ID" />
+                <ScalarProperty Name="FOFR_CD_ID" ColumnName="FOFR_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM_PEDIDO_VENDA">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.ITEM_PEDIDO_VENDA">
+              <MappingFragment StoreEntitySet="ITEM_PEDIDO_VENDA">
+                <ScalarProperty Name="SERV_VL_PRECO" ColumnName="SERV_VL_PRECO" />
+                <ScalarProperty Name="PROD_VL_PRECO" ColumnName="PROD_VL_PRECO" />
+                <ScalarProperty Name="PEVE_DT_DATA_JUSTIFICATIVA" ColumnName="PEVE_DT_DATA_JUSTIFICATIVA" />
+                <ScalarProperty Name="PEVE_DS_JUSTIFICATIVA" ColumnName="PEVE_DS_JUSTIFICATIVA" />
+                <ScalarProperty Name="PEVE_VL_VALOR" ColumnName="PEVE_VL_VALOR" />
+                <ScalarProperty Name="UNID_CD_ID" ColumnName="UNID_CD_ID" />
+                <ScalarProperty Name="ITPE_TX_OBSERVACOES" ColumnName="ITPE_TX_OBSERVACOES" />
+                <ScalarProperty Name="ITPE_IN_ATIVO" ColumnName="ITPE_IN_ATIVO" />
+                <ScalarProperty Name="ITPE_QN_QUANTIDADE" ColumnName="ITPE_QN_QUANTIDADE" />
+                <ScalarProperty Name="PROD_CD_ID" ColumnName="PROD_CD_ID" />
+                <ScalarProperty Name="PEVE_CD_ID" ColumnName="PEVE_CD_ID" />
+                <ScalarProperty Name="ITPE_CD_ID" ColumnName="ITPE_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDO_VENDA">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.PEDIDO_VENDA">
+              <MappingFragment StoreEntitySet="PEDIDO_VENDA">
+                <ScalarProperty Name="FOFR_CD_ID" ColumnName="FOFR_CD_ID" />
+                <ScalarProperty Name="FOEN_CD_ID" ColumnName="FOEN_CD_ID" />
+                <ScalarProperty Name="PVPC_CD_ID" ColumnName="PVPC_CD_ID" />
+                <ScalarProperty Name="PEVE_DS_FORMA_PAGAMENTO" ColumnName="PEVE_DS_FORMA_PAGAMENTO" />
+                <ScalarProperty Name="PERI_CD_ID" ColumnName="PERI_CD_ID" />
+                <ScalarProperty Name="PEVE_IN_NUMERO_PARCELAS" ColumnName="PEVE_IN_NUMERO_PARCELAS" />
+                <ScalarProperty Name="PEVE_DT_INICIO_PARCELAS" ColumnName="PEVE_DT_INICIO_PARCELAS" />
+                <ScalarProperty Name="PEVE_IN_PARCELAS" ColumnName="PEVE_IN_PARCELAS" />
+                <ScalarProperty Name="PEVE_DT_VENCIMENTO" ColumnName="PEVE_DT_VENCIMENTO" />
+                <ScalarProperty Name="PEVE_DT_FATURAMENTO" ColumnName="PEVE_DT_FATURAMENTO" />
+                <ScalarProperty Name="PEVE_DS_JUSTIFICATIVA_PROPOSTA" ColumnName="PEVE_DS_JUSTIFICATIVA_PROPOSTA" />
+                <ScalarProperty Name="PV_DT_CANCELAMENTO_PROPOSTA" ColumnName="PV_DT_CANCELAMENTO_PROPOSTA" />
+                <ScalarProperty Name="PEVE_VL_FRETE" ColumnName="PEVE_VL_FRETE" />
+                <ScalarProperty Name="PV_DT_CANCELAMENTO_OPORTUNIDADE" ColumnName="PV_DT_CANCELAMENTO_OPORTUNIDADE" />
+                <ScalarProperty Name="PEVE_NR_OPORTUNIDADE" ColumnName="PEVE_NR_OPORTUNIDADE" />
+                <ScalarProperty Name="PEVE_NR_NUMERO_PROPOSTA" ColumnName="PEVE_NR_NUMERO_PROPOSTA" />
+                <ScalarProperty Name="PEVE_DT_PREVISTA_PROPOSTA" ColumnName="PEVE_DT_PREVISTA_PROPOSTA" />
+                <ScalarProperty Name="PEVE_DT_CRIACAO_PROPOSTA" ColumnName="PEVE_DT_CRIACAO_PROPOSTA" />
+                <ScalarProperty Name="PEVE_DT_CRIACAO" ColumnName="PEVE_DT_CRIACAO" />
+                <ScalarProperty Name="PEVE_DT_PREVISTA_OPORTUNIDADE" ColumnName="PEVE_DT_PREVISTA_OPORTUNIDADE" />
+                <ScalarProperty Name="PEVE_DT_CRIACAO_OPORTUNIDADE" ColumnName="PEVE_DT_CRIACAO_OPORTUNIDADE" />
+                <ScalarProperty Name="PEVE_DS_JUSTIFICATIVA_OPORTUNIDADE" ColumnName="PEVE_DS_JUSTIFICATIVA_OPORTUNIDADE" />
+                <ScalarProperty Name="PEVE_IN_VENDEDOR" ColumnName="PEVE_IN_VENDEDOR" />
+                <ScalarProperty Name="PEVE_VL_VALOR" ColumnName="PEVE_VL_VALOR" />
+                <ScalarProperty Name="PEVE_DT_FINAL" ColumnName="PEVE_DT_FINAL" />
+                <ScalarProperty Name="PEVE_DT_ALTERACAO" ColumnName="PEVE_DT_ALTERACAO" />
+                <ScalarProperty Name="PEVE_DT_PREVISTA" ColumnName="PEVE_DT_PREVISTA" />
+                <ScalarProperty Name="CECU_CD_ID" ColumnName="CECU_CD_ID" />
+                <ScalarProperty Name="FOPA_CD_ID" ColumnName="FOPA_CD_ID" />
+                <ScalarProperty Name="PEVE_NR_NUMERO" ColumnName="PEVE_NR_NUMERO" />
+                <ScalarProperty Name="PEVE_IN_ATIVO" ColumnName="PEVE_IN_ATIVO" />
+                <ScalarProperty Name="PEVE_TX_OBSERVACOES" ColumnName="PEVE_TX_OBSERVACOES" />
+                <ScalarProperty Name="PEVE_NM_FORMA_PAGAMENTO" ColumnName="PEVE_NM_FORMA_PAGAMENTO" />
+                <ScalarProperty Name="PEVE_DT_VALIDADE" ColumnName="PEVE_DT_VALIDADE" />
+                <ScalarProperty Name="PEVE_DS_JUSTIFICATIVA" ColumnName="PEVE_DS_JUSTIFICATIVA" />
+                <ScalarProperty Name="PEVE_DS_DESCRICAO" ColumnName="PEVE_DS_DESCRICAO" />
+                <ScalarProperty Name="PEVE_DT_CANCELAMENTO" ColumnName="PEVE_DT_CANCELAMENTO" />
+                <ScalarProperty Name="PEVE_DT_APROVACAO" ColumnName="PEVE_DT_APROVACAO" />
+                <ScalarProperty Name="PEVE_DT_MUDANCA_STATUS" ColumnName="PEVE_DT_MUDANCA_STATUS" />
+                <ScalarProperty Name="PEVE_IN_STATUS" ColumnName="PEVE_IN_STATUS" />
+                <ScalarProperty Name="PEVE_DT_DATA" ColumnName="PEVE_DT_DATA" />
+                <ScalarProperty Name="PEVE_NM_NOME" ColumnName="PEVE_NM_NOME" />
+                <ScalarProperty Name="CLIE_CD_ID" ColumnName="CLIE_CD_ID" />
+                <ScalarProperty Name="USUA_CD_ID" ColumnName="USUA_CD_ID" />
+                <ScalarProperty Name="FILI_CD_ID" ColumnName="FILI_CD_ID" />
+                <ScalarProperty Name="ASSI_CD_ID" ColumnName="ASSI_CD_ID" />
+                <ScalarProperty Name="PEVE_CD_ID" ColumnName="PEVE_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDO_VENDA_ACOMPANHAMENTO">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO">
+              <MappingFragment StoreEntitySet="PEDIDO_VENDA_ACOMPANHAMENTO">
+                <ScalarProperty Name="PVAC_DT_ACOMPANHAMENTO" ColumnName="PVAC_DT_ACOMPANHAMENTO" />
+                <ScalarProperty Name="PVAC_IN_ATIVO" ColumnName="PVAC_IN_ATIVO" />
+                <ScalarProperty Name="PVAC_DS_ACOMPANHAMENTO" ColumnName="PVAC_DS_ACOMPANHAMENTO" />
+                <ScalarProperty Name="USUA_CD_ID" ColumnName="USUA_CD_ID" />
+                <ScalarProperty Name="PEVE_CD_ID" ColumnName="PEVE_CD_ID" />
+                <ScalarProperty Name="PVAC_CD_ID" ColumnName="PVAC_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDO_VENDA_ANEXO">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.PEDIDO_VENDA_ANEXO">
+              <MappingFragment StoreEntitySet="PEDIDO_VENDA_ANEXO">
+                <ScalarProperty Name="PEVA_IN_ATIVO" ColumnName="PEVA_IN_ATIVO" />
+                <ScalarProperty Name="PEVA_AQ_ARQUIVO" ColumnName="PEVA_AQ_ARQUIVO" />
+                <ScalarProperty Name="PEVA_IN_TIPO" ColumnName="PEVA_IN_TIPO" />
+                <ScalarProperty Name="PEVA_DT_ANEXO" ColumnName="PEVA_DT_ANEXO" />
+                <ScalarProperty Name="PEVA_NM_TITULO" ColumnName="PEVA_NM_TITULO" />
+                <ScalarProperty Name="PEVE_CD_ID" ColumnName="PEVE_CD_ID" />
+                <ScalarProperty Name="PEVA_CD_ID" ColumnName="PEVA_CD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDO_VENDA_PARCELA">
+            <EntityTypeMapping TypeName="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA">
+              <MappingFragment StoreEntitySet="PEDIDO_VENDA_PARCELA">
+                <ScalarProperty Name="PVPC_IN_ATIVO" ColumnName="PVPC_IN_ATIVO" />
+                <ScalarProperty Name="PVPC_VL_PARCELA" ColumnName="PVPC_VL_PARCELA" />
+                <ScalarProperty Name="PVPC_IN_PARCELA" ColumnName="PVPC_IN_PARCELA" />
+                <ScalarProperty Name="PVPC_DT_VENCIMENTO_PARCELA" ColumnName="PVPC_DT_VENCIMENTO_PARCELA" />
+                <ScalarProperty Name="PEVE_CD_ID" ColumnName="PEVE_CD_ID" />
+                <ScalarProperty Name="PVPC_CD_ID" ColumnName="PVPC_CD_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

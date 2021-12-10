@@ -57,6 +57,9 @@ namespace EntitiesServices.Model
             this.FORMA_PAGAMENTO = new HashSet<FORMA_PAGAMENTO>();
             this.TIPO_TAG = new HashSet<TIPO_TAG>();
             this.PEDIDO_COMPRA = new HashSet<PEDIDO_COMPRA>();
+            this.FORMA_ENVIO = new HashSet<FORMA_ENVIO>();
+            this.FORMA_FRETE = new HashSet<FORMA_FRETE>();
+            this.PEDIDO_VENDA = new HashSet<PEDIDO_VENDA>();
         }
     
         public int ASSI_CD_ID { get; set; }
@@ -160,5 +163,11 @@ namespace EntitiesServices.Model
         public virtual ICollection<TIPO_TAG> TIPO_TAG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO_COMPRA> PEDIDO_COMPRA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FORMA_ENVIO> FORMA_ENVIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FORMA_FRETE> FORMA_FRETE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PEDIDO_VENDA> PEDIDO_VENDA { get; set; }
     }
 }

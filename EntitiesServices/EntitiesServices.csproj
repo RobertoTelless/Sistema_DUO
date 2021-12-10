@@ -288,9 +288,13 @@
     <Compile Include="Interfaces\Repositories\IContaReceberTagRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFormaPagamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IItemPedidoCompraRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IItemPedidoVendaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPedidoCompraAcompanhamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPedidoCompraAnexoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPedidoCompraRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPedidoVendaAnexoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPedidoVendaParcelaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPedidoVendaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUnidadeRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaProdutoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICategoriaTelefoneRepository.cs" />
@@ -484,6 +488,12 @@
     <Compile Include="Model\FILIAL.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\FORMA_ENVIO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FORMA_FRETE.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\FORMA_PAGAMENTO.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
@@ -511,6 +521,9 @@
     <Compile Include="Model\ITEM_PEDIDO_COMPRA.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ITEM_PEDIDO_VENDA.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\LOG.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
@@ -536,6 +549,18 @@
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PEDIDO_COMPRA_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PEDIDO_VENDA.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PEDIDO_VENDA_ACOMPANHAMENTO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PEDIDO_VENDA_ANEXO.cs">
+      <DependentUpon>DUO_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PEDIDO_VENDA_PARCELA.cs">
       <DependentUpon>DUO_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PERFIL.cs">

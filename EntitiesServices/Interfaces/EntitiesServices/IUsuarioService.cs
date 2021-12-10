@@ -38,5 +38,7 @@ namespace ModelServices.Interfaces.EntitiesServices
         List<NOTICIA> GetAllNoticias(Int32 idAss);
         TEMPLATE GetTemplate(String code);
         USUARIO GetAdministrador(Int32 idAss);
+        USUARIO GetComprador(Int32 idAss);
+        USUARIO GetAprovador(Int32 idAss);
     }
 }
