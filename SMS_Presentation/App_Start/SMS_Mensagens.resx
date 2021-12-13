@@ -405,4 +405,22 @@
   <data name="M0111" xml:space="preserve">
     <value>Login já cadastrado</value>
   </data>
+  <data name="M0112" xml:space="preserve">
+    <value>Pedido de venda já cadastrado</value>
+  </data>
+  <data name="M0113" xml:space="preserve">
+    <value>Impossível excluir esse pedido de venda. Existem informações vinculadas a ele.</value>
+  </data>
+  <data name="M0114" xml:space="preserve">
+    <value>Nenhum item incluído no pedido ou existem itens sem dados de cotação</value>
+  </data>
+  <data name="M0115" xml:space="preserve">
+    <value>A justificativa de cancelamento e obrigatória</value>
+  </data>
+  <data name="M0116" xml:space="preserve">
+    <value>Existem itens sem preço no pedido</value>
+  </data>
+  <data name="M0117" xml:space="preserve">
+    <value>Existem itens sem quantidade no pedido</value>
+  </data>
 </root>

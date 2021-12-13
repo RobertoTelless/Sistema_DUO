@@ -923,5 +923,59 @@ namespace SMS_Presentation.App_Start {
                 return ResourceManager.GetString("M0111", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Pedido de venda já cadastrado.
+        /// </summary>
+        internal static string M0112 {
+            get {
+                return ResourceManager.GetString("M0112", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Impossível excluir esse pedido de venda. Existem informações vinculadas a ele..
+        /// </summary>
+        internal static string M0113 {
+            get {
+                return ResourceManager.GetString("M0113", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nenhum item incluído no pedido ou existem itens sem dados de cotação.
+        /// </summary>
+        internal static string M0114 {
+            get {
+                return ResourceManager.GetString("M0114", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A justificativa de cancelamento e obrigatória.
+        /// </summary>
+        internal static string M0115 {
+            get {
+                return ResourceManager.GetString("M0115", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Existem itens sem preço no pedido.
+        /// </summary>
+        internal static string M0116 {
+            get {
+                return ResourceManager.GetString("M0116", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Existem itens sem quantidade no pedido.
+        /// </summary>
+        internal static string M0117 {
+            get {
+                return ResourceManager.GetString("M0117", resourceCulture);
+            }
+        }
     }
 }

@@ -328,6 +328,7 @@
     <Compile Include="Controllers\TelefoneController.cs" />
     <Compile Include="Controllers\TransportadoraController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VendaController.cs" />
     <Compile Include="Extensions\HMTLHelperExtensions.cs" />
     <Compile Include="Extensions\MVCButtonExtensions.cs" />
     <Compile Include="Extensions\WebMvcExtensions.cs" />
@@ -3158,6 +3159,38 @@
     <Content Include="Views\Compra\EnviarCotacaoPedidoCompra.cshtml" />
     <Content Include="Views\Compra\ProcessarEnviarAprovacaoPedidoCompra.cshtml" />
     <Content Include="Views\Compra\IncluirAcompanhamento.cshtml" />
+    <Content Include="Views\Venda\MontarTelaPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\IncluirPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\EditarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\ExcluirPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\ReativarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\VerAnexoPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\EnviarOrcamentoPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\EnviarAprovacaoPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\ReprovarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\AprovarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\ProcessarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\FaturarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\ExpedirPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\AprovarOportunidade.cshtml" />
+    <Content Include="Views\Venda\AprovarProposta.cshtml" />
+    <Content Include="Views\Venda\EncerrarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\CancelarPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\CancelarOportunidade.cshtml" />
+    <Content Include="Views\Venda\CancelarProposta.cshtml" />
+    <Content Include="Views\Venda\VerPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\VerPedidoVendaUsuario.cshtml" />
+    <Content Include="Views\Venda\VerItemPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\VerItemPedidoVendaUsuario.cshtml" />
+    <Content Include="Views\Venda\VerAtrasados.cshtml" />
+    <Content Include="Views\Venda\VerEncerrados.cshtml" />
+    <Content Include="Views\Venda\VerCancelados.cshtml" />
+    <Content Include="Views\Venda\EditarItemPedidoVendaUsuario.cshtml" />
+    <Content Include="Views\Venda\IncluirItemPedidoVendaUsuario.cshtml" />
+    <Content Include="Views\Venda\EditarItemPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\IncluirItemPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\ProcessarEnviarAprovacaoPedidoVenda.cshtml" />
+    <Content Include="Views\Venda\AcompanhamentoPedidoVenda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3174,6 +3207,7 @@
     <Folder Include="Imagens\1\Filial\7\Logo\" />
     <Folder Include="Imagens\1\Notificacao\1\Anexos\" />
     <Folder Include="Imagens\1\PedidoCompra\" />
+    <Folder Include="Imagens\1\PedidoVenda\" />
     <Folder Include="Imagens\1\Produtos\1\QR\" />
     <Folder Include="Imagens\1\Tarefa\" />
     <Folder Include="Imagens\1\Transportadoras\1\Logos\" />
