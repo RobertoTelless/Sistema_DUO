@@ -209,6 +209,7 @@
     <Compile Include="EntitiesServices\PedidoVendaParcelaService.cs" />
     <Compile Include="EntitiesServices\PedidoVendaService.cs" />
     <Compile Include="EntitiesServices\PerfilService.cs" />
+    <Compile Include="EntitiesServices\PeriodicidadeService.cs" />
     <Compile Include="EntitiesServices\ProdutoEstoqueFilialService.cs" />
     <Compile Include="EntitiesServices\ProdutoMovimentoEstoqueService.cs" />
     <Compile Include="EntitiesServices\ProdutoService.cs" />

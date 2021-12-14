@@ -728,7 +728,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Usuarios = new SelectList(usuApp.GetAllItens(idAss), "USUA_CD_ID", "USUA_NM_NOME");
             ViewBag.Contas = new SelectList(cpApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss).OrderBy(x => x.FOPA_NM_NOME).ToList<FORMA_PAGAMENTO>(), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoPag = new List<SelectListItem>();
             tipoPag.Add(new SelectListItem() { Text = "Pagamento Recorrente", Value = "1" });
             tipoPag.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -809,7 +809,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Usuarios = new SelectList(usuApp.GetAllItens(idAss), "USUA_CD_ID", "USUA_NM_NOME");
             ViewBag.Contas = new SelectList(cpApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss).OrderBy(x => x.FOPA_NM_NOME).ToList<FORMA_PAGAMENTO>(), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoPag = new List<SelectListItem>();
             tipoPag.Add(new SelectListItem() { Text = "Pagamento Recorrente", Value = "1" });
             tipoPag.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -944,7 +944,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Usuarios = new SelectList(usuApp.GetAllItens(idAss), "USUA_CD_ID", "USUA_NM_NOME");
             ViewBag.Contas = new SelectList(cpApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss).OrderBy(x => x.FOPA_NM_NOME).ToList<FORMA_PAGAMENTO>(), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             ViewBag.Liquida = 0;
             List<SelectListItem> tipoDoc = new List<SelectListItem>();
             tipoDoc.Add(new SelectListItem() { Text = "Boleto", Value = "1" });
@@ -1048,7 +1048,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.Usuarios = new SelectList(usuApp.GetAllItens(idAss), "USUA_CD_ID", "USUA_NM_NOME");
             ViewBag.Contas = new SelectList(cpApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss).OrderBy(x => x.FOPA_NM_NOME).ToList<FORMA_PAGAMENTO>(), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             ViewBag.Liquida = 0;
             List<SelectListItem> tipoDoc = new List<SelectListItem>();
             tipoDoc.Add(new SelectListItem() { Text = "Boleto", Value = "1" });

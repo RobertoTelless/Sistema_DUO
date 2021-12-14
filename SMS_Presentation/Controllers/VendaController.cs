@@ -500,7 +500,7 @@ namespace SMS_Presentation.Controllers
             
             ViewBag.CentroCusto = new SelectList(ccApp.GetAllItens(idAss), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.FormaPagamento = new SelectList(fopaApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             ViewBag.FormaEnvio = new SelectList(baseApp.GetAllFormaEnvio(idAss), "FOEN_CD_ID", "FOEN_NM_NOME");
             ViewBag.FormaFrete = new SelectList(baseApp.GetAllFormaFrete(idAss), "FOFR_CD_ID", "FOFR_NM_NOME");
             ViewBag.Transportadoras = new SelectList(tranApp.GetAllItens(idAss), "TRAN_CD_ID", "TRAN_NM_NOME");
@@ -574,7 +574,7 @@ namespace SMS_Presentation.Controllers
 
             ViewBag.CentroCusto = new SelectList(ccApp.GetAllItens(idAss), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.FormaPagamento = new SelectList(fopaApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             ViewBag.FormaEnvio = new SelectList(baseApp.GetAllFormaEnvio(idAss), "FOEN_CD_ID", "FOEN_NM_NOME");
             ViewBag.FormaFrete = new SelectList(baseApp.GetAllFormaFrete(idAss), "FOFR_CD_ID", "FOFR_NM_NOME");
             ViewBag.Transportadoras = new SelectList(tranApp.GetAllItens(idAss), "TRAN_CD_ID", "TRAN_NM_NOME");
@@ -728,7 +728,7 @@ namespace SMS_Presentation.Controllers
 
             ViewBag.CentroCusto = new SelectList(ccApp.GetAllItens(idAss), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.FormaPagamento = new SelectList(fopaApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             ViewBag.FormaEnvio = new SelectList(baseApp.GetAllFormaEnvio(idAss), "FOEN_CD_ID", "FOEN_NM_NOME");
             ViewBag.FormaFrete = new SelectList(baseApp.GetAllFormaFrete(idAss), "FOFR_CD_ID", "FOFR_NM_NOME");
             ViewBag.Transportadoras = new SelectList(tranApp.GetAllItens(idAss), "TRAN_CD_ID", "TRAN_NM_NOME");
@@ -864,7 +864,7 @@ namespace SMS_Presentation.Controllers
 
             ViewBag.CentroCusto = new SelectList(ccApp.GetAllItens(idAss), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.FormaPagamento = new SelectList(fopaApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             ViewBag.FormaEnvio = new SelectList(baseApp.GetAllFormaEnvio(idAss), "FOEN_CD_ID", "FOEN_NM_NOME");
             ViewBag.FormaFrete = new SelectList(baseApp.GetAllFormaFrete(idAss), "FOFR_CD_ID", "FOFR_NM_NOME");
             ViewBag.Transportadoras = new SelectList(tranApp.GetAllItens(idAss), "TRAN_CD_ID", "TRAN_NM_NOME");

@@ -141,6 +141,14 @@ namespace SMS_Solution.Controllers
             Session["MensCR"] = 0;
             Session["MensCompra"] = 0;
             Session["MensVenda"] = 0;
+            Session["ErroSoma"] = 0;
+            Session["IdCP"] = 0;
+            Session["VoltaCP"] = 0;
+            Session["VoltaCompra"] = 0;
+            Session["MensvencimentoCR"] = 0;
+            Session["VoltaCR"] = 0;
+            Session["IdVoltaTab"] = 0;
+            Session["SMSEMailEnvio"] = 0;
 
             Session["VoltaNotificacao"] = 3;
             Session["VoltaNoticia"] = 1;

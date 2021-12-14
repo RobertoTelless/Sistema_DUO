@@ -111,7 +111,6 @@
                         <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "Financeiro", cssClass: "in")">
                             <li class="@Html.IsSelected(action: "MontarTelaCP")"><a href="@Url.Action("MontarTelaCP", "ContaPagar")">Pagar</a></li>
                             <li class="@Html.IsSelected(action: "MontarTelaCR")"><a href="@Url.Action("MontarTelaCR", "ContaReceber")">Receber</a></li>
-                            <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Conciliação Bancária</a></li>
                         </ul>
                     </li>
                     <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Comissões</a></li>

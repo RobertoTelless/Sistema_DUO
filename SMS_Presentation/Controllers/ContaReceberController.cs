@@ -2070,7 +2070,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.CC = new SelectList(ccApp.GetAllItens(idAss).Where(x => x.CECU_IN_TIPO == 1).OrderBy(x => x.CECU_NM_NOME).ToList<CENTRO_CUSTO>(), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.Contas = new SelectList(cbApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoRec = new List<SelectListItem>();
             tipoRec.Add(new SelectListItem() { Text = "Recebimento Recorrente", Value = "1" });
             tipoRec.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -2107,7 +2107,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.CC = new SelectList(ccApp.GetAllItens(idAss).Where(x => x.CECU_IN_TIPO == 1).OrderBy(x => x.CECU_NM_NOME).ToList<CENTRO_CUSTO>(), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.Contas = new SelectList(cbApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoRec = new List<SelectListItem>();
             tipoRec.Add(new SelectListItem() { Text = "Recebimento Recorrente", Value = "1" });
             tipoRec.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -2210,7 +2210,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.CC = new SelectList(ccApp.GetAllItens(idAss).Where(x => x.CECU_IN_TIPO == 1).OrderBy(x => x.CECU_NM_NOME).ToList<CENTRO_CUSTO>(), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.Contas = new SelectList(cbApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoRec = new List<SelectListItem>();
             tipoRec.Add(new SelectListItem() { Text = "Recebimento Recorrente", Value = "1" });
             tipoRec.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -2311,7 +2311,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.CC = new SelectList(ccApp.GetAllItens(idAss).Where(x => x.CECU_IN_TIPO == 1).OrderBy(x => x.CECU_NM_NOME).ToList<CENTRO_CUSTO>(), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.Contas = new SelectList(cbApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoRec = new List<SelectListItem>();
             tipoRec.Add(new SelectListItem() { Text = "Recebimento Recorrente", Value = "1" });
             tipoRec.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -2439,7 +2439,7 @@ namespace SMS_Presentation.Controllers
             Int32 idAss = (Int32)Session["IdAssinante"];
 
             // Prepara view
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             CONTA_RECEBER item = crApp.GetItemById(id);
             objetoCRAntes = item;
             Session["ContaReceber"] = item;
@@ -2462,7 +2462,7 @@ namespace SMS_Presentation.Controllers
             }
             Int32 idAss = (Int32)Session["IdAssinante"];
 
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             if (ModelState.IsValid)
             {
                 try
@@ -2767,7 +2767,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.CC = new SelectList(ccApp.GetAllItens(idAss).Where(x => x.CECU_IN_TIPO == 1).OrderBy(x => x.CECU_NM_NOME).ToList<CENTRO_CUSTO>(), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.Contas = new SelectList(cbApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoRec = new List<SelectListItem>();
             tipoRec.Add(new SelectListItem() { Text = "Recebimento Recorrente", Value = "1" });
             tipoRec.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });
@@ -2851,7 +2851,7 @@ namespace SMS_Presentation.Controllers
             ViewBag.CC = new SelectList(ccApp.GetAllItens(idAss).Where(x => x.CECU_IN_TIPO == 1).OrderBy(x => x.CECU_NM_NOME).ToList<CENTRO_CUSTO>(), "CECU_CD_ID", "CECU_NM_NOME");
             ViewBag.Contas = new SelectList(cbApp.GetAllItens(idAss), "COBA_CD_ID", "COBA_NM_NOME_EXIBE");
             ViewBag.Formas = new SelectList(fpApp.GetAllItens(idAss), "FOPA_CD_ID", "FOPA_NM_NOME");
-            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(), "PERI_CD_ID", "PERI_NM_NOME");
+            ViewBag.Periodicidade = new SelectList(perApp.GetAllItens(idAss), "PERI_CD_ID", "PERI_NM_NOME");
             List<SelectListItem> tipoRec = new List<SelectListItem>();
             tipoRec.Add(new SelectListItem() { Text = "Recebimento Recorrente", Value = "1" });
             tipoRec.Add(new SelectListItem() { Text = "Parcelamento", Value = "2" });

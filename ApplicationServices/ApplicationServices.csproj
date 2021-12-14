@@ -245,6 +245,7 @@
     <Compile Include="Services\PedidoVendaAppService.cs" />
     <Compile Include="Services\PedidoVendaParcelaAppService.cs" />
     <Compile Include="Services\PerfilAppService.cs" />
+    <Compile Include="Services\PeriodicidadeAppService.cs" />
     <Compile Include="Services\ProdutoAppService.cs" />
     <Compile Include="Services\ProdutoEstoqueFilialAppService.cs" />
     <Compile Include="Services\ProdutoTabelaPrecoAppService.cs" />

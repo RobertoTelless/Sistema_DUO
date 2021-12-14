@@ -112,6 +112,7 @@ namespace Presentation.Start
             kernel.Bind<IPedidoCompraAppService>().To<PedidoCompraAppService>();
             kernel.Bind<IPedidoVendaAppService>().To<PedidoVendaAppService>();
             kernel.Bind<IPedidoVendaParcelaAppService>().To<PedidoVendaParcelaAppService>();
+            kernel.Bind<IPeriodicidadeAppService>().To<PeriodicidadeAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IUsuarioService>().To<UsuarioService>();
@@ -158,6 +159,7 @@ namespace Presentation.Start
             kernel.Bind<IPedidoCompraService>().To<PedidoCompraService>();
             kernel.Bind<IPedidoVendaService>().To<PedidoVendaService>();
             kernel.Bind<IPedidoVendaParcelaService>().To<PedidoVendaParcelaService>();
+            kernel.Bind<IPeriodicidadeService>().To<PeriodicidadeService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IConfiguracaoRepository>().To<ConfiguracaoRepository>();

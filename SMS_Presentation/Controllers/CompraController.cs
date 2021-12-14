@@ -2334,7 +2334,7 @@ namespace SMS_Presentation.Controllers
                     attachmentForn.AddRange(GeraAnexoProd(vm, ped, prodFornecedores));
                 }
 
-                Int32 volta = baseApp.ValidateEnvioCotacao(item, attachmentForn, emailPers, usuario);
+                Int32 volta = baseApp.ValidateEnvioCotacao(item, attachmentForn, emailPers, usuario, forn);
 
                 // Verifica retorno
                 if (volta == 1)

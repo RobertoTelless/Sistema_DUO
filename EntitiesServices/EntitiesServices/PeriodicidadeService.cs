@@ -20,7 +20,7 @@ namespace ModelServices.EntitiesServices
     {
         private readonly IPeriodicidadeRepository _baseRepository;
         private readonly ILogRepository _logRepository;
-        protected SystemBRDatabaseEntities Db = new SystemBRDatabaseEntities();
+        protected DUO_DatabaseEntities Db = new DUO_DatabaseEntities();
 
         public PeriodicidadeService(IPeriodicidadeRepository baseRepository, ILogRepository logRepository) : base(baseRepository)
         {
@@ -35,14 +35,14 @@ namespace ModelServices.EntitiesServices
             return item;
         }
 
-        public List<PERIODICIDADE> GetAllItens()
+        public List<PERIODICIDADE> GetAllItens(Int32 idAss)
         {
-            return _baseRepository.GetAllItens();
+            return _baseRepository.GetAllItens(idAss);
         }
 
-        public List<PERIODICIDADE> GetAllItensAdm()
+        public List<PERIODICIDADE> GetAllItensAdm(Int32 idAss)
         {
-            return _baseRepository.GetAllItensAdm();
+            return _baseRepository.GetAllItensAdm(idAss);
         }
 
         public Int32 Create(PERIODICIDADE item, LOG log)

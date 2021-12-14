@@ -21,15 +21,15 @@ namespace ApplicationServices.Services
             _baseService = baseService;
         }
 
-        public List<PERIODICIDADE> GetAllItens()
+        public List<PERIODICIDADE> GetAllItens(Int32 idAss)
         {
-            List<PERIODICIDADE> lista = _baseService.GetAllItens();
+            List<PERIODICIDADE> lista = _baseService.GetAllItens(idAss);
             return lista;
         }
 
-        public List<PERIODICIDADE> GetAllItensAdm()
+        public List<PERIODICIDADE> GetAllItensAdm(Int32 idAss)
         {
-            List<PERIODICIDADE> lista = _baseService.GetAllItensAdm();
+            List<PERIODICIDADE> lista = _baseService.GetAllItensAdm(idAss);
             return lista;
         }
 
@@ -50,7 +50,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "AddPERI",
                     LOG_IN_ATIVO = 1,
@@ -75,7 +75,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_NM_OPERACAO = "EditPERI",
                     LOG_IN_ATIVO = 1,
@@ -109,7 +109,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "DelPERI",
@@ -138,7 +138,7 @@ namespace ApplicationServices.Services
                 LOG log = new LOG
                 {
                     LOG_DT_DATA = DateTime.Now,
-                    ASSI_CD_ID = SessionMocks.IdAssinante,
+                    ASSI_CD_ID = usuario.ASSI_CD_ID,
                     USUA_CD_ID = usuario.USUA_CD_ID,
                     LOG_IN_ATIVO = 1,
                     LOG_NM_OPERACAO = "ReatPERI",

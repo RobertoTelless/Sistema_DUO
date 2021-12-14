@@ -16,7 +16,7 @@ namespace ModelServices.Interfaces.EntitiesServices
         Int32 Edit(PERIODICIDADE perfil);
         Int32 Delete(PERIODICIDADE perfil, LOG log);
         PERIODICIDADE GetItemById(Int32 id);
-        List<PERIODICIDADE> GetAllItens();
-        List<PERIODICIDADE> GetAllItensAdm();
+        List<PERIODICIDADE> GetAllItens(Int32 idAss);
+        List<PERIODICIDADE> GetAllItensAdm(Int32 idAss);
     }
 }

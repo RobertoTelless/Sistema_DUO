@@ -1,5 +1,5 @@
 ﻿@using Presentation.Extensions
-@model SystemBRPresentation.ViewModels.PedidoCompraViewModel
+@model SMS_Solution.ViewModels.PedidoCompraViewModel
 @{ Layout = "~/Views/Shared/_Layout_Admin.cshtml"; }
 
 <style>
@@ -129,14 +129,10 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="form-group" style=" margin-left: -15px; margin-right: -15px;">
-                                                <div class="col-lg-2 col-md-2 col-xs-12">
+                                                <div class="col-lg-5 col-md-5 col-xs-12">
                                                     @Html.HiddenFor(m => m.PECO_CD_ID)
-                                                    Tipo de Compra*
-                                                    @Html.DropDownList("Tipo", (SelectList)ViewBag.Tipo, "Selecionar", new { @class = "form-control", @id = "tipo", onchange = "DesativaInsProd()" })
-                                                </div>
-                                                <div id="prodContainer" class="col-lg-3 col-md-3 col-xs-12">
                                                     Produto*
-                                                    @Html.DropDownList("Produto", (SelectList)ViewBag.Produtos, "Selecionar", new { @class = "form-control", @id = "prod", onchange = "DesativaInsumo()" })
+                                                    @Html.DropDownList("Produto", (SelectList)ViewBag.Produtos, "Selecionar", new { @class = "form-control", @id = "prod" })
                                                 </div>
                                                 <div class="col-lg-2 col-md-2 col-xs-12">
                                                     Quantidade*
