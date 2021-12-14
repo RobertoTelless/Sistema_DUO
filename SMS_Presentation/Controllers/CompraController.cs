@@ -1417,7 +1417,7 @@ namespace SMS_Presentation.Controllers
                         }
                     }
                     ViewBag.CustoTotal = custo;
-                    Int32 volta = baseApp.ValidateRecebido(item);
+                    Int32 volta = baseApp.ValidateRecebido(item, usuario);
 
                     // Verifica retorno
 
@@ -1475,7 +1475,7 @@ namespace SMS_Presentation.Controllers
 
                 // Executa a operação
                 ITEM_PEDIDO_COMPRA item = Mapper.Map<ItemPedidoCompraViewModel, ITEM_PEDIDO_COMPRA>(vm);
-                Int32 volta = baseApp.ValidateItemRecebido(item);
+                Int32 volta = baseApp.ValidateItemRecebido(item, usuario);
 
                 // Verifica retorno
                 if (volta == 2)
@@ -2250,6 +2250,7 @@ namespace SMS_Presentation.Controllers
             Int32 idAss = (Int32)Session["IdAssinante"];
             USUARIO usuario = (USUARIO)Session["UserCredentials"];
 
+            List<Int32> forn = (List<Int32>)Session["ITPCForn"];
             ViewBag.Fornecedores = (List<FORNECEDOR>)Session["ITPCForn"];
             try
             {

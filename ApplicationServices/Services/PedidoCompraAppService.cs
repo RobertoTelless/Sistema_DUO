@@ -513,13 +513,13 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateEnvioCotacao(PEDIDO_COMPRA item, List<AttachmentForn> anexo, String emailPersonalizado, USUARIO usuario)
+        public Int32 ValidateEnvioCotacao(PEDIDO_COMPRA item, List<AttachmentForn> anexo, String emailPersonalizado, USUARIO usuario, List<Int32> listaForn)
         {
             try
             {
                 // Preparação
                 PEDIDO_COMPRA ped = _baseService.GetItemById(item.PECO_CD_ID);
-                var lstFornecedores = SessionMocks.listaEmailForn;
+                var lstFornecedores = listaForn;
 
                 // Acerta campos
                 item.PECO_IN_STATUS = 2;
@@ -1110,7 +1110,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateRecebido(PEDIDO_COMPRA item)
+        public Int32 ValidateRecebido(PEDIDO_COMPRA item, USUARIO usuario)
         {
             try
             {
@@ -1146,7 +1146,7 @@ namespace ApplicationServices.Services
                         Int32 volta2 = _movService.Create(mov);
 
                         PRODUTO_ESTOQUE_FILIAL pef = new PRODUTO_ESTOQUE_FILIAL();
-                        pef.FILI_CD_ID = ped.FILI_CD_ID == null ? SessionMocks.idFilial : (Int32)ped.FILI_CD_ID;
+                        pef.FILI_CD_ID = ped.FILI_CD_ID == null ? usuario.FILI_CD_ID.Value : (Int32)ped.FILI_CD_ID;
                         pef.PROD_CD_ID = (Int32)itpc.PROD_CD_ID;
 
                         if (_pefService.CheckExist(pef, item.ASSI_CD_ID) != null)
@@ -1213,7 +1213,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateItemRecebido(ITEM_PEDIDO_COMPRA item)
+        public Int32 ValidateItemRecebido(ITEM_PEDIDO_COMPRA item, USUARIO usuario)
         {
             try
             {
@@ -1246,7 +1246,7 @@ namespace ApplicationServices.Services
                     Int32 volta2 = _movService.Create(mov);
 
                     PRODUTO_ESTOQUE_FILIAL pef = new PRODUTO_ESTOQUE_FILIAL();
-                    pef.FILI_CD_ID = ped.FILI_CD_ID == null ? SessionMocks.idFilial : (Int32)ped.FILI_CD_ID;
+                    pef.FILI_CD_ID = ped.FILI_CD_ID == null ? usuario.FILI_CD_ID.Value : (Int32)ped.FILI_CD_ID;
                     pef.PROD_CD_ID = (Int32)item.PROD_CD_ID;
 
                     if (_pefService.CheckExist(pef, item.PEDIDO_COMPRA.ASSI_CD_ID) != null)
