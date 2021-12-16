@@ -2123,6 +2123,7 @@
     <Content Include="Imagens\1\Fornecedores\2\Anexos\Contato5_04102021.pdf" />
     <Content Include="Imagens\1\Produtos\1\Anexos\Contato5_04102021 %281%29.pdf" />
     <Content Include="Imagens\1\Transportadoras\1\Anexos\Contato5_04102021.pdf" />
+    <Content Include="Imagens\1\Agenda\2\Anexos\Contato5_04102021 %281%29.pdf" />
     <None Include="Properties\PublishProfiles\ERPCondominio - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SistemaDUO - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -3195,7 +3196,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
-    <Folder Include="Imagens\1\Agenda\" />
+    <Folder Include="Imagens\1\Agenda\10\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\11\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\1\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\3\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\4\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\5\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\6\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\7\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\8\Anexos\" />
+    <Folder Include="Imagens\1\Agenda\9\Anexos\" />
     <Folder Include="Imagens\1\Assinante\1\Anexos\" />
     <Folder Include="Imagens\1\Clientes\3\Anexos\" />
     <Folder Include="Imagens\1\Clientes\3\Fotos\" />
@@ -3204,12 +3214,20 @@
     <Folder Include="Imagens\1\Clientes\5\Anexos\" />
     <Folder Include="Imagens\1\Clientes\5\Fotos\" />
     <Folder Include="Imagens\1\Clientes\6\Anexos\" />
+    <Folder Include="Imagens\1\ContaPagar\1\Anexos\" />
+    <Folder Include="Imagens\1\ContaPagar\2\Anexos\" />
+    <Folder Include="Imagens\1\ContaReceber\1\Anexos\" />
+    <Folder Include="Imagens\1\ContaReceber\2\Anexos\" />
     <Folder Include="Imagens\1\Filial\7\Logo\" />
     <Folder Include="Imagens\1\Notificacao\1\Anexos\" />
+    <Folder Include="Imagens\1\Notificacao\4\Anexos\" />
     <Folder Include="Imagens\1\PedidoCompra\" />
     <Folder Include="Imagens\1\PedidoVenda\" />
     <Folder Include="Imagens\1\Produtos\1\QR\" />
-    <Folder Include="Imagens\1\Tarefa\" />
+    <Folder Include="Imagens\1\Tarefa\1\Anexos\" />
+    <Folder Include="Imagens\1\Tarefa\2\Anexos\" />
+    <Folder Include="Imagens\1\Tarefa\3\Anexos\" />
+    <Folder Include="Imagens\1\Tarefa\6\Anexos\" />
     <Folder Include="Imagens\1\Transportadoras\1\Logos\" />
     <Folder Include="Imagens\1\Usuario\1\Anexos\" />
     <Folder Include="Imagens\1\Usuario\2\Anexos\" />

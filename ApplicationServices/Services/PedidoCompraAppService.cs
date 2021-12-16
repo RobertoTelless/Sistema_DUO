@@ -513,7 +513,7 @@ namespace ApplicationServices.Services
             }
         }
 
-        public Int32 ValidateEnvioCotacao(PEDIDO_COMPRA item, List<AttachmentForn> anexo, String emailPersonalizado, USUARIO usuario, List<Int32> listaForn)
+        public Int32 ValidateEnvioCotacao(PEDIDO_COMPRA item, List<AttachmentForn> anexo, String emailPersonalizado, USUARIO usuario, List<FORNECEDOR> listaForn)
         {
             try
             {
@@ -561,7 +561,7 @@ namespace ApplicationServices.Services
                     foreach (var f in lstFornecedores)
                     {
                         // Recupera fornecedor
-                        FORNECEDOR forn = _fornService.GetItemById(f);
+                        FORNECEDOR forn = f;
 
                         // Recupera template e-mail
                         String header = _usuService.GetTemplate("COTFORN").TEMP_TX_CABECALHO;
@@ -577,40 +577,31 @@ namespace ApplicationServices.Services
                         body = body.Replace("{Numero}", item.PECO_NR_NUMERO);
                         body = body.Replace("{Frase}", "");
 
-                        String table = String.Empty;
+                        //String table = String.Empty;
 
-                        //String table = "<table>"
-                        //        + "<thead style=\"background-color:lightsteelblue\">"
-                        //        + "<tr>"
-                        //        + "<th style=\"width:30%\">Produto</th>"
-                        //        + "<th style=\"width:60%\">Descrição</th>"
-                        //        + "<th style=\"width: 10%;\">Quantidade</th>"
-                        //        + "</tr>"
-                        //        + "</thead>"
-                        //        + "<tbody>";
+                        String table = "<table>"
+                                + "<thead style=\"background-color:lightsteelblue\">"
+                                + "<tr>"
+                                + "<th style=\"width:30%\">Produto</th>"
+                                + "<th style=\"width:60%\">Descrição</th>"
+                                + "<th style=\"width: 10%;\">Quantidade</th>"
+                                + "</tr>"
+                                + "</thead>"
+                                + "<tbody>";
 
                         String tableContent = String.Empty;
 
-                        //foreach (var pi in ped.ITEM_PEDIDO_COMPRA.Where(x => x.FORN_CD_ID == f).ToList<ITEM_PEDIDO_COMPRA>())
-                        //{
-                        //    if (pi.ITPC_IN_TIPO == 1)
-                        //    {
-                        //        tableContent += "<tr>"
-                        //        + "<td style=\"width:30%\">" + pi.PRODUTO.PROD_NM_NOME + "</td>"
-                        //        + "<td style=\"width:60%\">" + pi.ITPC_TX_OBSERVACOES + "</td>"
-                        //        + "<td style=\"width: 10%\">" + pi.ITPC_QN_QUANTIDADE + "</td>"
-                        //        + "</tr>";
-                        //    }
-                        //    else if (pi.ITPC_IN_TIPO == 2)
-                        //    {
-                        //        tableContent += "<tr>"
-                        //        + "<td style=\"width:30%\">" + pi.MATERIA_PRIMA.MAPR_NM_NOME + "</td>"
-                        //        + "<td style=\"width:60%\">" + pi.ITPC_TX_OBSERVACOES + "</td>"
-                        //        + "<td style=\"width: 10%\">" + pi.ITPC_QN_QUANTIDADE + "</td>"
-                        //        + "</tr>";
-                        //    }
-                        //}
-
+                        foreach (var pi in ped.ITEM_PEDIDO_COMPRA.Where(x => x.FORN_CD_ID == f.FORN_CD_ID).ToList<ITEM_PEDIDO_COMPRA>())
+                        {
+                            if (pi.ITPC_IN_TIPO == 1)
+                            {
+                                tableContent += "<tr>"
+                                + "<td style=\"width:30%\">" + pi.PRODUTO.PROD_NM_NOME + "</td>"
+                                + "<td style=\"width:60%\">" + pi.ITPC_TX_OBSERVACOES + "</td>"
+                                + "<td style=\"width: 10%\">" + pi.ITPC_QN_QUANTIDADE + "</td>"
+                                + "</tr>";
+                            }
+                        }
                         footer = table + tableContent + "</tbody>";
 
                         // Concatena
@@ -633,8 +624,8 @@ namespace ApplicationServices.Services
                         mensagem.SENHA_EMISSOR = conf.CONF_NM_SENHA_EMISSOR;
                         mensagem.SMTP = conf.CONF_NM_HOST_SMTP;
                         mensagem.NETWORK_CREDENTIAL = net;
-                        mensagem.ATTACHMENT = new List<Attachment>();
-                        mensagem.ATTACHMENT.Add(anexo.First(x => x.FORN_CD_ID == f).ATTACHMENT);
+                        //mensagem.ATTACHMENT = new List<Attachment>();
+                        //mensagem.ATTACHMENT.Add(anexo.First(x => x.FORN_CD_ID == f.FORN_CD_ID).ATTACHMENT);
 
                         // Envia mensagem
                         Int32 voltaMail = CommunicationPackage.SendEmail(mensagem);

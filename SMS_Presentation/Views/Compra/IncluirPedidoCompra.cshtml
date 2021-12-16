@@ -56,7 +56,7 @@
                         {
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#tab-1">Dados Gerais</a></li>
-                <li class=""><a data-toggle="tab" href="#tab-2">Itens do Pedido</a></li>
+                @*<li class=""><a data-toggle="tab" href="#tab-2">Itens do Pedido</a></li>*@
                 <li class=""><a data-toggle="tab" href="#tab-3">Imagens - Foto e Anexos</a></li>
                 <li class=""><a data-toggle="tab" href="#tab-4">Observações</a></li>
             </ul>
@@ -125,7 +125,7 @@
                                 </div>
 
                                 @*Itens do Pedido*@
-                                <div id="tab-2" class="tab-pane">
+                                @*<div id="tab-2" class="tab-pane">
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="form-group" style=" margin-left: -15px; margin-right: -15px;">
@@ -175,7 +175,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>*@
 
                                 @*Imagens - Foto e Anexos*@
                                 <div id="tab-3" class="tab-pane">
@@ -221,7 +221,7 @@
                                 <div class="form-group">
                                     <br />
                                     @Html.ButtonActionSubmit(text: "BtnSubmit", htmlAttributes: new { id = "submit", style = "display: none;" })
-                                    <button class="btnSubmit btn btn-sm btn-success" id="basictoast" type="button">Confirma inclusão do pedido</button>
+                                    <button class="btnSubmit btn btn-sm btn-success" id="basictoast" type="button">Confirma inclusão e iniciar inclusão de itens</button>
                                     @Html.ButtonLinkIndex(text: "Cancelar", action: "VoltarBaseMontarTelaPedidoCompra", controller: "Compra")
                                 </div>
                             </div>}
@@ -255,13 +255,6 @@
     <script src="~/Scripts/plugins/select2/select2.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
     <script src="~/Scripts/uploadAnexo.js"></script>
-
-    <script>
-        $(function () {
-            $('#prod').select2();
-            $('#ins').select2();
-        });
-    </script>
 
     <script type="text/javascript" language="javascript">
         $(function () {
@@ -528,21 +521,6 @@
     </script>
 
     <script>
-        function DesativaInsumo() {
-            //$('button.close').click();
-            var optProd = $('#prod option:selected').val();
-
-            if (optProd != "") {
-                $('#insContainer').css("display", "none");
-                $("#ins").val($("#ins option:first").val());
-                $('#tipo').val(1);
-            } else {
-                $('#insContainer').css("display", "block");
-                $("#prod").val($("#prod option:first").val());
-                $('#tipo').val(2);
-            }
-        }
-
         function DesativaProduto() {
             //$('button.close').click();
             var optIns = $('#ins option:selected').val();
@@ -558,34 +536,10 @@
             }
         }
 
-        function DesativaInsProd() {
-            var optTipo = $('#tipo option:selected').val();
-
-            if (optTipo != "") {
-                if (optTipo == 1) {
-                    $('#insContainer').css("display", "none");
-                    $('#prodContainer').css("display", "block");
-                    $("#ins").val($("#ins option:first").val());
-                } else {
-                    $('#prodContainer').css("display", "none");
-                    $('#insContainer').css("display", "block");
-                    $("#prod").val($("#prod option:first").val());
-                }
-            } else {
-                $('#prodContainer').css("display", "block");
-                $('#insContainer').css("display", "block");
-            }
-        }
-
         function IncluirItemPedidoTabela() {
             if ($('#prod option:selected').val() != "") {
                 $('#prod option:selected').css('display', 'none');
             }
-
-            if ($('#ins option:selected').val() != "") {
-                $('#ins option:selected').prop('disabled', true);
-            }
-
             var custo = 0;
             var unidade = "";
             var markup = 0;
@@ -617,55 +571,6 @@
                     $('#containerAlert').html(alert);
                 }
             }
-            else if ($('#ins').val() != "") {
-                if ($('#qtde').val() != "") {
-                    $.ajax({
-                        url: '../Compra/GetCustoInsumo'
-                        , type: 'POST'
-                        , data: {
-                            id: $('#ins option:selected').val()
-                            , fili: $('#fili option:selected').val()
-                        }
-                        , async: false
-                        , success: function (r) {
-                            custo = r.custo;
-                            unidade = r.unidade;
-                            markup = 0;
-                        }
-                    });
-                } else {
-                    var alert = '<div class="alert alert-danger text-danger">'
-                        + '<button type="button" class="close" data-dismiss="alert">Fechar</button>'
-                        + '<ul>'
-                        + '<li>Campo QUANTIDADE obrigatório</li>'
-                        + '</ul>'
-                        + '</div>';
-
-                    $('#containerAlert').html(alert);
-                }
-            } else {
-                if ($('#qtde').val() == "") {
-                    var alert = '<div class="alert alert-danger text-danger">'
-                        + '<button type="button" class="close" data-dismiss="alert">Fechar</button>'
-                        + '<ul>'
-                        + '<li>Campo PRODUTO/INSUMO obrigatório</li>'
-                        + '<li>Campo QUANTIDADE obrigatório</li>'
-                        + '</ul>'
-                        + '</div>';
-
-                    $('#containerAlert').html(alert);
-                }
-                else {
-                    var alert = '<div class="alert alert-danger text-danger">'
-                        + '<button type="button" class="close" data-dismiss="alert">Fechar</button>'
-                        + '<ul>'
-                        + '<li>Campo PRODUTO/INSUMO obrigatório</li>'
-                        + '</ul>'
-                        + '</div>';
-
-                    $('#containerAlert').html(alert);
-                }
-            }
 
             if (isValidForm()) {
                 $('button.close').click();
@@ -679,7 +584,6 @@
                     '<tr>'
                     + '<td><input name="rowTipo" type="hidden" value="' + $('#tipo').val() + '" />' + $('#tipo option:selected').text() + '</td>'
                     + '<td><input name="rowProd" type="hidden" value="' + $('#prod option:selected').val() + '" />' + ($('#prod').val() == "" ? ' ' : $('#prod option:selected').text()) + '</td>'
-                    + '<td><input name="rowIns" type="hidden" value="' + $('#ins option:selected').val() + '" />' + ($('#ins').val() == "" ? ' ' : $('#ins option:selected').text()) + '</td>'
                     + '<td>' + unidade + '</td>'
                     + '<td><input name="rowQtde" type="hidden" value="' + $('#qtde').val() + '" />' + $('#qtde').val() + '</td>'
                     + '<td>' + parseFloat(custo == null ? 0 : custo) + '</td>'
@@ -692,7 +596,6 @@
                 var data = {
                     "ITPC_IN_TIPO": $('#tipo').val()
                     , "PROD_CD_ID": $('#prod option:selected').val()
-                    , "MAPR_CD_ID": $('#ins option:selected').val()
                     , "ITPC_QN_QUANTIDADE": $('#qtde').val()
                     , "ITPC_TX_OBSERVACOES": $('#obs').val()
                 }
@@ -704,12 +607,10 @@
                 });
 
                 $("#prod").val($("#prod option:first").val());
-                $("#ins").val($("#ins option:first").val());
                 $("#und").val($("#und option:first").val());
                 $('#qtde').val('');
                 $('#obs').val('');
                 $('#prod').attr("disabled", false);
-                $('#ins').attr("disabled", false);
             }
         }
 
@@ -742,28 +643,6 @@
                 prod.css('background', '');
             }
 
-            if (tipo == 2) {
-
-                var data = {
-                    "ITPC_IN_TIPO": tr.find($('input[type=hidden][name=rowTipo]')).val()
-                    , "MAPR_CD_ID": tr.find($('input[type=hidden][name=rowIns]')).val()
-                }
-
-                $.ajax({
-                    url: '../Compra/RemoveItpcTabela' //'../Compra/UploadFileToSession'
-                    , async: false
-                    , data: data
-                    , type: 'POST'
-                    , cache: false
-                    , processData: false
-                    , contentType: false
-                });
-
-                var ins = $('#ins option[value="' + tr.find($('input[type=hidden][name=rowIns]')).val() + '"]');
-                ins.prop('disabled', false);
-                ins.css('background', '');
-            }
-
             td.closest('tr').remove();
 
             if ($('table#itemPedido tr').length == 1) {
@@ -778,13 +657,6 @@
                 } else {
                     return false;
                 }
-            } else if ($('#tipo').val() == 2) {
-                if ($("#tipo").val() != "" && $("#ins").val() != "" && $("#und").val() != "" && $('#qtde').val() != "") {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
         }
     </script>
 

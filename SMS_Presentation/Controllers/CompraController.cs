@@ -367,8 +367,8 @@ namespace SMS_Presentation.Controllers
             status.Add(new SelectListItem() { Text = "Encerrada", Value = "5" });
             status.Add(new SelectListItem() { Text = "Cancelada", Value = "6" });
             ViewBag.Status = new SelectList(status, "Value", "Text");
-            List<PRODUTO> lista = proApp.GetAllItens(idAss).OrderBy(x => x.PROD_NM_NOME).Where(p => p.PROD_IN_COMPOSTO == 0).ToList();
-            ViewBag.Produtos = new SelectList(lista, "PROD_CD_ID", "PROD_NM_NOME");
+            //List<PRODUTO> lista = proApp.GetAllItens(idAss).OrderBy(x => x.PROD_NM_NOME).Where(p => p.PROD_IN_COMPOSTO == 0).ToList();
+            //ViewBag.Produtos = new SelectList(lista, "PROD_CD_ID", "PROD_NM_NOME");
 
             // Prepara view
             Session["VoltaPop"] = 1;
@@ -411,17 +411,17 @@ namespace SMS_Presentation.Controllers
             status.Add(new SelectListItem() { Text = "Encerrada", Value = "5" });
             status.Add(new SelectListItem() { Text = "Cancelada", Value = "6" });
             ViewBag.Status = new SelectList(status, "Value", "Text");
-            List<PRODUTO> lista = proApp.GetAllItens(idAss).OrderBy(x => x.PROD_NM_NOME).Where(p => p.PROD_IN_COMPOSTO == 0).ToList();
-            ViewBag.Produtos = new SelectList(lista, "PROD_CD_ID", "PROD_NM_NOME");
+            //List<PRODUTO> lista = proApp.GetAllItens(idAss).OrderBy(x => x.PROD_NM_NOME).Where(p => p.PROD_IN_COMPOSTO == 0).ToList();
+            //ViewBag.Produtos = new SelectList(lista, "PROD_CD_ID", "PROD_NM_NOME");
             Hashtable result = new Hashtable();
 
             if (ModelState.IsValid)
             {
-                if (Session["ListaITPC"] == null)
-                {
-                    ModelState.AddModelError("", "Nenhum Item de Pedido cadastrado no pedido");
-                    return View(vm);
-                }
+                //if (Session["ListaITPC"] == null)
+                //{
+                //    ModelState.AddModelError("", "Nenhum Item de Pedido cadastrado no pedido");
+                //    return View(vm);
+                //}
 
                 try
                 {
@@ -448,20 +448,20 @@ namespace SMS_Presentation.Controllers
                     listaMaster = new List<PEDIDO_COMPRA>();
                     Session["ListaCompra"] = null;
 
-                    foreach (var itpc in (List<ITEM_PEDIDO_COMPRA>)Session["ListaITPC"])
-                    {
-                        itpc.ITPC_NR_QUANTIDADE_REVISADA = itpc.ITPC_QN_QUANTIDADE;
-                        itpc.ITPC_IN_ATIVO = 1;
-                        itpc.PECO_CD_ID = item.PECO_CD_ID;
+                    //foreach (var itpc in (List<ITEM_PEDIDO_COMPRA>)Session["ListaITPC"])
+                    //{
+                    //    itpc.ITPC_NR_QUANTIDADE_REVISADA = itpc.ITPC_QN_QUANTIDADE;
+                    //    itpc.ITPC_IN_ATIVO = 1;
+                    //    itpc.PECO_CD_ID = item.PECO_CD_ID;
 
-                        if (itpc.ITPC_IN_TIPO == 1)
-                        {
-                            PRODUTO prod = proApp.GetItemById((Int32)itpc.PROD_CD_ID);
-                            itpc.UNID_CD_ID = prod.UNID_CD_ID;
-                            itpc.ITPC_VL_PRECO_SELECIONADO = prod.PRODUTO_TABELA_PRECO.Where(x => x.FILI_CD_ID == item.FILI_CD_ID).Count() > 0 ? prod.PRODUTO_TABELA_PRECO.Where(x => x.FILI_CD_ID == item.FILI_CD_ID).First().PRTP_VL_CUSTO : null;
-                        }
-                        Int32 voltaItem = baseApp.ValidateCreateItemCompra(itpc);
-                    }
+                    //    if (itpc.ITPC_IN_TIPO == 1)
+                    //    {
+                    //        PRODUTO prod = proApp.GetItemById((Int32)itpc.PROD_CD_ID);
+                    //        itpc.UNID_CD_ID = prod.UNID_CD_ID;
+                    //        itpc.ITPC_VL_PRECO_SELECIONADO = prod.PRODUTO_TABELA_PRECO.Where(x => x.FILI_CD_ID == item.FILI_CD_ID).Count() > 0 ? prod.PRODUTO_TABELA_PRECO.Where(x => x.FILI_CD_ID == item.FILI_CD_ID).First().PRTP_VL_CUSTO : null;
+                    //    }
+                    //    Int32 voltaItem = baseApp.ValidateCreateItemCompra(itpc);
+                    //}
 
                     Session["ListaITPC"] = null;
                     Session["IdVolta"] = item.PECO_CD_ID;
@@ -478,7 +478,7 @@ namespace SMS_Presentation.Controllers
                     }
 
                     Session["IdCompra"] = item.PECO_CD_ID;
-                    return RedirectToAction("MontarTelaPedidoCompra");
+                    return RedirectToAction("EditarPedidoCompra", new { id = (Int32)Session["IdCompra"] });
                 }
                 catch (Exception ex)
                 {
@@ -1016,6 +1016,7 @@ namespace SMS_Presentation.Controllers
             USUARIO usuario = (USUARIO)Session["UserCredentials"];
 
             ViewBag.Fornecedores = (List<FORNECEDOR>)Session["CotForn"];
+            List<FORNECEDOR> lf = (List<FORNECEDOR>)Session["CotForn"];
             ViewBag.CustoTotal = (Decimal)Session["CustoTotal"];
             try
             {
@@ -1033,7 +1034,8 @@ namespace SMS_Presentation.Controllers
                     return View((PedidoCompraViewModel)Session["VmAntes"]);
                 }
 
-                vm.FORN_CD_ID = (Int32)Session["FornCotacao"];
+                //item.FORN_CD_ID = (Int32)Session["FornCotacao"];
+                item.FORN_CD_ID = lf.First().FORN_CD_ID;
 
                 Decimal custo = 0;
                 foreach (var i in item.ITEM_PEDIDO_COMPRA)
@@ -2250,7 +2252,7 @@ namespace SMS_Presentation.Controllers
             Int32 idAss = (Int32)Session["IdAssinante"];
             USUARIO usuario = (USUARIO)Session["UserCredentials"];
 
-            List<Int32> forn = (List<Int32>)Session["ITPCForn"];
+            List<FORNECEDOR> forn = (List<FORNECEDOR>)Session["ITPCForn"];
             ViewBag.Fornecedores = (List<FORNECEDOR>)Session["ITPCForn"];
             try
             {
@@ -2317,22 +2319,22 @@ namespace SMS_Presentation.Controllers
                     }                    
                 }
 
-                if ((Session["EnviarCotacaoFornProd"] != null && ((List<PRODUTO_FORNECEDOR>)Session["EnviarCotacaoFornProd"]).Count != 0))
-                {
-                    if (Session["EnviarCotacaoFornProd"] != null && ((List<PRODUTO_FORNECEDOR>)Session["EnviarCotacaoFornProd"]).Count != 0)
-                    {
-                        List<PRODUTO_FORNECEDOR> lista = (List<PRODUTO_FORNECEDOR>)Session["EnviarCotacaoFornProd"];
-                        var prodFornecedores = lista.GroupBy(x => x.FORN_CD_ID);
-                        attachmentForn.AddRange(GeraAnexoProd(vm, ped, prodFornecedores));
-                    }
+                //if ((Session["EnviarCotacaoFornProd"] != null && ((List<PRODUTO_FORNECEDOR>)Session["EnviarCotacaoFornProd"]).Count != 0))
+                //{
+                //    if (Session["EnviarCotacaoFornProd"] != null && ((List<PRODUTO_FORNECEDOR>)Session["EnviarCotacaoFornProd"]).Count != 0)
+                //    {
+                //        List<PRODUTO_FORNECEDOR> lista = (List<PRODUTO_FORNECEDOR>)Session["EnviarCotacaoFornProd"];
+                //        var prodFornecedores = lista.GroupBy(x => x.FORN_CD_ID);
+                //        attachmentForn.AddRange(GeraAnexoProd(vm, ped, prodFornecedores));
+                //    }
 
-                    Session["EnviarCotacaoFornProd"] = null;
-                }
-                else
-                {
-                    var prodFornecedores = ped.ITEM_PEDIDO_COMPRA.Where(x => x.PRODUTO != null).SelectMany(x => x.PRODUTO.PRODUTO_FORNECEDOR.Where(y => y.PRFO_IN_ATIVO == 1)).GroupBy(x => x.FORN_CD_ID);
-                    attachmentForn.AddRange(GeraAnexoProd(vm, ped, prodFornecedores));
-                }
+                //    Session["EnviarCotacaoFornProd"] = null;
+                //}
+                //else
+                //{
+                //    var prodFornecedores = ped.ITEM_PEDIDO_COMPRA.Where(x => x.PRODUTO != null).SelectMany(x => x.PRODUTO.PRODUTO_FORNECEDOR.Where(y => y.PRFO_IN_ATIVO == 1)).GroupBy(x => x.FORN_CD_ID);
+                //    attachmentForn.AddRange(GeraAnexoProd(vm, ped, prodFornecedores));
+                //}
 
                 Int32 volta = baseApp.ValidateEnvioCotacao(item, attachmentForn, emailPers, usuario, forn);
 
@@ -2389,6 +2391,7 @@ namespace SMS_Presentation.Controllers
                 // Cria documento
                 Document pdfDoc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
                 MemoryStream ms = new MemoryStream();
+                //PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, ms);
                 PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, ms);
                 pdfDoc.Open();
 

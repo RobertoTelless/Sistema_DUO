@@ -189,19 +189,17 @@
                                     @using (Html.BeginForm("IncluirItemPedidoCompra", "Compra", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", @id="pwd-container1" }))
                                     {
                                         <div class="row">
-                                            <h4>Você poderá escolher entre comprar um PRODUTO ou um INSUMO, no mesmo pedido</h4>
-                                        </div>
-                                        <div class="row">
                                             <div class="form-group" style=" margin-left: -15px; margin-right: -15px;">                
                                                 
                                             </div>
                                             <div class="form-group" style=" margin-left: -15px; margin-right: -15px;">
-                                                <div class="col-lg-2 col-md-2 col-xs-12">
+                                                @*<div class="col-lg-2 col-md-2 col-xs-12">
                                                     @Html.HiddenFor(m => m.PECO_CD_ID)
                                                     Tipo de Compra*
                                                     @Html.DropDownList("ITPC_IN_TIPO", (SelectList)ViewBag.Tipo, "Selecionar", new { @class = "form-control", @id = "tipo", onchange = "DesativaInsProd()" })
-                                                </div>
-                                                <div id="prodContainer" class="col-lg-3 col-md-3 col-xs-12">
+                                                </div>*@
+                                                <div id="prodContainer" class="col-lg-6 col-md-6 col-xs-12">
+                                                    @Html.HiddenFor(m => m.PECO_CD_ID)
                                                     Produto*
                                                     @Html.DropDownList("PROD_CD_ID", (SelectList)ViewBag.Produtos, "Selecionar", new { @class = "form-control", @id = "prod", onchange = "DesativaInsumo()" })
                                                 </div>
@@ -508,12 +506,12 @@
     <script src="~/Scripts/plugins/select2/select2.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
 
-     <script>
+     @*<script>
         $(function () {
             $('#prod').select2();
             $('#ins').select2();
         });
-    </script>
+    </script>*@
 
     <script>
         $(function () {

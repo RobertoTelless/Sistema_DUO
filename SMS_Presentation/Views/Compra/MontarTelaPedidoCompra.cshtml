@@ -287,8 +287,11 @@
     }
                     @if (cond.PECO_IN_STATUS == 1)
                     {
-                        <span>&nbsp;</span>
-                @Html.TableLinkDetails(cond.PECO_CD_ID, "EnviarCotacaoPedidoCompra", "fa-send", "Enviar para Cotação")
+                        if (cond.ITEM_PEDIDO_COMPRA.Count > 0)
+                        {
+                            <span>&nbsp;</span>
+                            @Html.TableLinkDetails(cond.PECO_CD_ID, "EnviarCotacaoPedidoCompra", "fa-send", "Enviar para Cotação")
+                        }
                         <span>&nbsp;</span>
                                         @Html.TableLinkDetails(cond.PECO_CD_ID, "CancelarPedidoCompra", "fa-thumbs-o-down", "Cancelar")}
                     @if (cond.PECO_IN_STATUS == 2)

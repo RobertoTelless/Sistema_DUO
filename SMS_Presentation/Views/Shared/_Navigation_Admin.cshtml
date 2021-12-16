@@ -83,17 +83,22 @@
                 <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Operacional</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "BaseAdmin", cssClass: "in")">
                     <li class="@Html.IsSelected(action: "Index")">
-                        <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Estoque</span> <span class="fa arrow"></span></a>
+                        <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Compras & Estoque</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "GestaoOperacional", cssClass: "in")">
-                            <li class="@Html.IsSelected(action: "CarregarDesenvolvimento")"><a href="@Url.Action("CarregarDesenvolvimento", "BaseAdmin")">Compras</a></li>
-                            @*<li class="@Html.IsSelected(action: "MontarTelaMovimentacaoAvulsa")"><a href="@Url.Action("MontarTelaMovimentacaoAvulsa", "Estoque")">Movimentações no Estoque</a></li>*@
+                            <li class="@Html.IsSelected(action: "MontarTelaPedidoCompra")"><a href="@Url.Action("MontarTelaPedidoCompra", "Compra")">Compras</a></li>
                             <li class="@Html.IsSelected(action: "MontarTelaEstoqueProduto")"><a href="@Url.Action("MontarTelaEstoqueProduto", "Estoque")">Consulta Produtos</a></li>
-                            @*<li class="@Html.IsSelected(action: "MontarTelaInventario")"><a href="@Url.Action("MontarTelaInventario", "Estoque")">Inventário</a></li>*@
+                        </ul>
+                    </li>
+                    <li class="@Html.IsSelected(action: "Index")">
+                        <a href="@Url.Action("CarregarBase", "BaseAdmin")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Vendas</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level collapse @Html.IsSelected(controller: "GestaoOperacional", cssClass: "in")">
+                            <li class="@Html.IsSelected(action: "MontarTelaPedidoVenda")"><a href="@Url.Action("MontarTelaPedidoVenda", "Venda", new { status = 1 })">Oportunidades</a></li>
+                            <li class="@Html.IsSelected(action: "MontarTelaPedidoVenda")"><a href="@Url.Action("MontarTelaPedidoVenda", "Venda", new { status = 2 })">Propostas</a></li>
+                            <li class="@Html.IsSelected(action: "MontarTelaPedidoVenda")"><a href="@Url.Action("MontarTelaPedidoVenda", "Venda", new { status = 3 })">Pedidos de Vendas</a></li>
+                            <li class="@Html.IsSelected(action: "MontarTelaPedidoVenda")"><a href="@Url.Action("MontarTelaPedidoVenda", "Venda", new { status = 4 })">Faturamento</a></li>
                         </ul>
                     </li>
                     <li class="@Html.IsSelected(action: "MontarTelaEquipamento")"><a href="@Url.Action("MontarTelaEquipamento", "Equipamento")">Patrimônio</a></li>
-                    <li class="@Html.IsSelected(action: "MontarTelaPedidoCompra")"><a href="@Url.Action("MontarTelaPedidoCompra", "Compra")">Compras</a></li>
-                    <li class="@Html.IsSelected(action: "MontarTelaPedidoVenda")"><a href="@Url.Action("MontarTelaPedidoVenda", "Venda")">Pedidos de Venda</a></li>
                 </ul>
             </li>
 

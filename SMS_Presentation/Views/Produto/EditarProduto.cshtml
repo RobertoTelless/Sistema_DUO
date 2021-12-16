@@ -233,6 +233,7 @@
                                                         @Html.HiddenFor(x => x.ProdutoOpcaoCombo)
                                                         @Html.HiddenFor(x => x.CobrarMaior)
                                                         @Html.HiddenFor(x => x.ArquivoTexto)
+                                                        @Html.HiddenFor(m => m.PROD_IN_COMPOSTO)
                                                         @if (!String.IsNullOrEmpty(Model.PROD_AQ_FOTO))
                                                         {
                                                             <img src="@Url.Content(Model.PROD_AQ_FOTO)" style="width: auto; height: auto; max-height: 110px; max-width: 90px;" data-toggle="modal" data-target="#fotoModal" onclick="CriaModal('@Model.PROD_NM_NOME', '@Url.Content(Model.PROD_AQ_FOTO)')">

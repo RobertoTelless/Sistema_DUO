@@ -103,6 +103,7 @@
                                                     @Html.HiddenFor(m => m.PROD_IN_ATIVO)
                                                     @Html.HiddenFor(m => m.FILI_CD_ID)
                                                     @Html.HiddenFor(m => m.PROD_AQ_FOTO)
+                                                    @Html.HiddenFor(m => m.PROD_IN_COMPOSTO)
                                                     Categoria*
                                                     @Html.DropDownListFor(m => m.CAPR_CD_ID, (SelectList)ViewBag.Tipos, "Selecionar", new { @class = "form-control", autofocus = true, onchange = "FiltrarSubCategoriaProduto($(this).val())", id = "catProd" })
                                                     @Html.ValidationMessageFor(m => m.CAPR_CD_ID, "", new { @style = "color:red" })

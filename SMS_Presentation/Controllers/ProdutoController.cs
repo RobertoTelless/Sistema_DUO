@@ -540,6 +540,7 @@ namespace SMS_Presentation.Controllers
             vm.ASSI_CD_ID = idAss;
             vm.PROD_DT_CADASTRO = DateTime.Today;
             vm.PROD_IN_ATIVO = 1;
+            vm.PROD_IN_COMPOSTO = 0;
             return View(vm);
         }
 

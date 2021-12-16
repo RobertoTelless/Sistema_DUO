@@ -709,7 +709,6 @@ namespace SMS_Presentation.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult EditarFornecedor(FornecedorViewModel vm)
         {
             if ((String)Session["Ativa"] == null)
