@@ -155,6 +155,7 @@ namespace SMS_Solution.Controllers
                 Session["Login"] = 1;
                 Session["IdAssinante"] = usuario.ASSI_CD_ID;
                 Session["IdFilial"] = usuario.FILI_CD_ID;
+                Session["IdUsuario"] = usuario.USUA_CD_ID;
 
                 // Route
                 if (usuario.USUA_IN_PROVISORIO == 1)
