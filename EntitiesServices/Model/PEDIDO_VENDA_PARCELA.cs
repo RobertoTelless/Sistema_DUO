@@ -14,12 +14,6 @@ namespace EntitiesServices.Model
     
     public partial class PEDIDO_VENDA_PARCELA
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PEDIDO_VENDA_PARCELA()
-        {
-            this.PEDIDO_VENDA1 = new HashSet<PEDIDO_VENDA>();
-        }
-    
         public int PVPC_CD_ID { get; set; }
         public int PEVE_CD_ID { get; set; }
         public Nullable<System.DateTime> PVPC_DT_VENCIMENTO_PARCELA { get; set; }
@@ -28,7 +22,5 @@ namespace EntitiesServices.Model
         public Nullable<int> PVPC_IN_ATIVO { get; set; }
     
         public virtual PEDIDO_VENDA PEDIDO_VENDA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PEDIDO_VENDA> PEDIDO_VENDA1 { get; set; }
     }
 }

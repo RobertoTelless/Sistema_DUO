@@ -628,7 +628,7 @@
                                         </div>
 
                                         <div class="row">
-                                            @if (Model.PEDIDO_VENDA_PARCELA1 != null && Model.PEDIDO_VENDA_PARCELA1.Count != 0)
+                                            @if (Model.PEDIDO_VENDA_PARCELA != null && Model.PEDIDO_VENDA_PARCELA.Count != 0)
                                             { 
                                                 <table class="table table-striped table-bordered table-hover dataTables-example">
                                                     <thead>
@@ -639,7 +639,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach (var cond in (Model.PEDIDO_VENDA_PARCELA1))
+                                                        @foreach (var cond in (Model.PEDIDO_VENDA_PARCELA))
                                                         {
                                                             <tr>
                                                                 <td>@cond.PVPC_IN_PARCELA</td>
@@ -688,10 +688,10 @@
                                             Valor Total Produtos (R$)
                                             @Html.TextBox("prodVlr", (Decimal)ViewBag.ValorTotalProd, new { @class = "form-control", autofocus = true, @readonly = "readonly" })
                                         </div>
-                                        <div class="col-lg-3 col-md-3 col-xs-12">
+                                        @*<div class="col-lg-3 col-md-3 col-xs-12">
                                             Valor Total Serviços (R$)
                                             @Html.TextBox("servVlr", (Decimal)ViewBag.ValorTotalServ, new { @class = "form-control", autofocus = true, @readonly = "readonly" })
-                                        </div>
+                                        </div>*@
                                     </div>
                                 </div>
                             </div>

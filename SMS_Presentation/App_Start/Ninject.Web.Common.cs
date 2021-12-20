@@ -247,6 +247,9 @@ namespace Presentation.Start
             kernel.Bind<IPedidoVendaAnexoRepository>().To<PedidoVendaAnexoRepository>();
             kernel.Bind<IPedidoVendaParcelaRepository>().To<PedidoVendaParcelaRepository>();
             kernel.Bind<IPedidoVendaRepository>().To<PedidoVendaRepository>();
+            kernel.Bind<IResumoVendaRepository>().To<ResumoVendaRepository>();
+            kernel.Bind<IFormaEnvioRepository>().To<FormaEnvioRepository>();
+            kernel.Bind<IFormaFreteRepository>().To<FormaFreteRepository>();
 
         }
     }

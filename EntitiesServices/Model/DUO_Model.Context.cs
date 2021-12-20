@@ -33,6 +33,7 @@ namespace EntitiesServices.Model
         public virtual DbSet<BANCO> BANCO { get; set; }
         public virtual DbSet<CARGO> CARGO { get; set; }
         public virtual DbSet<CATEGORIA_AGENDA> CATEGORIA_AGENDA { get; set; }
+        public virtual DbSet<CATEGORIA_CLIENTE> CATEGORIA_CLIENTE { get; set; }
         public virtual DbSet<CATEGORIA_EQUIPAMENTO> CATEGORIA_EQUIPAMENTO { get; set; }
         public virtual DbSet<CATEGORIA_FORNECEDOR> CATEGORIA_FORNECEDOR { get; set; }
         public virtual DbSet<CATEGORIA_NOTIFICACAO> CATEGORIA_NOTIFICACAO { get; set; }
@@ -40,70 +41,16 @@ namespace EntitiesServices.Model
         public virtual DbSet<CATEGORIA_TELEFONE> CATEGORIA_TELEFONE { get; set; }
         public virtual DbSet<CATEGORIA_USUARIO> CATEGORIA_USUARIO { get; set; }
         public virtual DbSet<CENTRO_CUSTO> CENTRO_CUSTO { get; set; }
-        public virtual DbSet<CONFIGURACAO> CONFIGURACAO { get; set; }
-        public virtual DbSet<CONTA_BANCO> CONTA_BANCO { get; set; }
-        public virtual DbSet<CONTA_BANCO_CONTATO> CONTA_BANCO_CONTATO { get; set; }
-        public virtual DbSet<CONTA_BANCO_LANCAMENTO> CONTA_BANCO_LANCAMENTO { get; set; }
-        public virtual DbSet<GRUPO> GRUPO { get; set; }
-        public virtual DbSet<LOG> LOG { get; set; }
-        public virtual DbSet<NOTICIA> NOTICIA { get; set; }
-        public virtual DbSet<NOTICIA_COMENTARIO> NOTICIA_COMENTARIO { get; set; }
-        public virtual DbSet<NOTIFICACAO> NOTIFICACAO { get; set; }
-        public virtual DbSet<NOTIFICACAO_ANEXO> NOTIFICACAO_ANEXO { get; set; }
-        public virtual DbSet<PERFIL> PERFIL { get; set; }
-        public virtual DbSet<PERIODICIDADE> PERIODICIDADE { get; set; }
-        public virtual DbSet<PERIODICIDADE_TAREFA> PERIODICIDADE_TAREFA { get; set; }
-        public virtual DbSet<SUBGRUPO> SUBGRUPO { get; set; }
-        public virtual DbSet<TAREFA> TAREFA { get; set; }
-        public virtual DbSet<TAREFA_ACOMPANHAMENTO> TAREFA_ACOMPANHAMENTO { get; set; }
-        public virtual DbSet<TAREFA_ANEXO> TAREFA_ANEXO { get; set; }
-        public virtual DbSet<TAREFA_NOTIFICACAO> TAREFA_NOTIFICACAO { get; set; }
-        public virtual DbSet<TAREFA_VINCULO> TAREFA_VINCULO { get; set; }
-        public virtual DbSet<TELEFONE> TELEFONE { get; set; }
-        public virtual DbSet<TEMPLATE> TEMPLATE { get; set; }
-        public virtual DbSet<TIPO_AGENDA> TIPO_AGENDA { get; set; }
-        public virtual DbSet<TIPO_CONTA> TIPO_CONTA { get; set; }
-        public virtual DbSet<TIPO_GRUPO> TIPO_GRUPO { get; set; }
-        public virtual DbSet<TIPO_PESSOA> TIPO_PESSOA { get; set; }
-        public virtual DbSet<TIPO_TAREFA> TIPO_TAREFA { get; set; }
-        public virtual DbSet<UF> UF { get; set; }
-        public virtual DbSet<USUARIO> USUARIO { get; set; }
-        public virtual DbSet<USUARIO_ANEXO> USUARIO_ANEXO { get; set; }
-        public virtual DbSet<USUARIO_FUNCIONARIO> USUARIO_FUNCIONARIO { get; set; }
-        public virtual DbSet<CATEGORIA_CLIENTE> CATEGORIA_CLIENTE { get; set; }
         public virtual DbSet<CLIENTE> CLIENTE { get; set; }
         public virtual DbSet<CLIENTE_ANEXO> CLIENTE_ANEXO { get; set; }
         public virtual DbSet<CLIENTE_CONTATO> CLIENTE_CONTATO { get; set; }
         public virtual DbSet<CLIENTE_QUADRO_SOCIETARIO> CLIENTE_QUADRO_SOCIETARIO { get; set; }
         public virtual DbSet<CLIENTE_REFERENCIA> CLIENTE_REFERENCIA { get; set; }
         public virtual DbSet<CLIENTE_TAG> CLIENTE_TAG { get; set; }
-        public virtual DbSet<FILIAL> FILIAL { get; set; }
-        public virtual DbSet<FORNECEDOR> FORNECEDOR { get; set; }
-        public virtual DbSet<FORNECEDOR_ANEXO> FORNECEDOR_ANEXO { get; set; }
-        public virtual DbSet<FORNECEDOR_CONTATO> FORNECEDOR_CONTATO { get; set; }
-        public virtual DbSet<FORNECEDOR_QUADRO_SOCIETARIO> FORNECEDOR_QUADRO_SOCIETARIO { get; set; }
-        public virtual DbSet<SEXO> SEXO { get; set; }
-        public virtual DbSet<TIPO_CONTRIBUINTE> TIPO_CONTRIBUINTE { get; set; }
-        public virtual DbSet<EQUIPAMENTO> EQUIPAMENTO { get; set; }
-        public virtual DbSet<EQUIPAMENTO_ANEXO> EQUIPAMENTO_ANEXO { get; set; }
-        public virtual DbSet<EQUIPAMENTO_MANUTENCAO> EQUIPAMENTO_MANUTENCAO { get; set; }
-        public virtual DbSet<MOVIMENTO_ESTOQUE_PRODUTO> MOVIMENTO_ESTOQUE_PRODUTO { get; set; }
-        public virtual DbSet<PRECO_PRODUTO> PRECO_PRODUTO { get; set; }
-        public virtual DbSet<PRODUTO> PRODUTO { get; set; }
-        public virtual DbSet<PRODUTO_ANEXO> PRODUTO_ANEXO { get; set; }
-        public virtual DbSet<PRODUTO_ESTOQUE_FILIAL> PRODUTO_ESTOQUE_FILIAL { get; set; }
-        public virtual DbSet<PRODUTO_FORNECEDOR> PRODUTO_FORNECEDOR { get; set; }
-        public virtual DbSet<PRODUTO_ORIGEM> PRODUTO_ORIGEM { get; set; }
-        public virtual DbSet<PRODUTO_TABELA_PRECO> PRODUTO_TABELA_PRECO { get; set; }
-        public virtual DbSet<SUBCATEGORIA_PRODUTO> SUBCATEGORIA_PRODUTO { get; set; }
-        public virtual DbSet<TIPO_TRANSPORTE> TIPO_TRANSPORTE { get; set; }
-        public virtual DbSet<TIPO_VEICULO> TIPO_VEICULO { get; set; }
-        public virtual DbSet<TRANSPORTADORA> TRANSPORTADORA { get; set; }
-        public virtual DbSet<TRANSPORTADORA_ANEXO> TRANSPORTADORA_ANEXO { get; set; }
-        public virtual DbSet<UNIDADE> UNIDADE { get; set; }
-        public virtual DbSet<FORNECEDOR_COMENTARIO> FORNECEDOR_COMENTARIO { get; set; }
-        public virtual DbSet<FORNECEDOR_MENSAGEM> FORNECEDOR_MENSAGEM { get; set; }
-        public virtual DbSet<TIPO_MENSAGEM> TIPO_MENSAGEM { get; set; }
+        public virtual DbSet<CONFIGURACAO> CONFIGURACAO { get; set; }
+        public virtual DbSet<CONTA_BANCO> CONTA_BANCO { get; set; }
+        public virtual DbSet<CONTA_BANCO_CONTATO> CONTA_BANCO_CONTATO { get; set; }
+        public virtual DbSet<CONTA_BANCO_LANCAMENTO> CONTA_BANCO_LANCAMENTO { get; set; }
         public virtual DbSet<CONTA_PAGAR> CONTA_PAGAR { get; set; }
         public virtual DbSet<CONTA_PAGAR_ANEXO> CONTA_PAGAR_ANEXO { get; set; }
         public virtual DbSet<CONTA_PAGAR_PARCELA> CONTA_PAGAR_PARCELA { get; set; }
@@ -114,20 +61,73 @@ namespace EntitiesServices.Model
         public virtual DbSet<CONTA_RECEBER_PARCELA> CONTA_RECEBER_PARCELA { get; set; }
         public virtual DbSet<CONTA_RECEBER_RATEIO> CONTA_RECEBER_RATEIO { get; set; }
         public virtual DbSet<CONTA_RECEBER_TAG> CONTA_RECEBER_TAG { get; set; }
+        public virtual DbSet<EQUIPAMENTO> EQUIPAMENTO { get; set; }
+        public virtual DbSet<EQUIPAMENTO_ANEXO> EQUIPAMENTO_ANEXO { get; set; }
+        public virtual DbSet<EQUIPAMENTO_MANUTENCAO> EQUIPAMENTO_MANUTENCAO { get; set; }
+        public virtual DbSet<FILIAL> FILIAL { get; set; }
+        public virtual DbSet<FORMA_ENVIO> FORMA_ENVIO { get; set; }
+        public virtual DbSet<FORMA_FRETE> FORMA_FRETE { get; set; }
         public virtual DbSet<FORMA_PAGAMENTO> FORMA_PAGAMENTO { get; set; }
-        public virtual DbSet<TIPO_FAVORECIDO> TIPO_FAVORECIDO { get; set; }
-        public virtual DbSet<TIPO_TAG> TIPO_TAG { get; set; }
+        public virtual DbSet<FORNECEDOR> FORNECEDOR { get; set; }
+        public virtual DbSet<FORNECEDOR_ANEXO> FORNECEDOR_ANEXO { get; set; }
+        public virtual DbSet<FORNECEDOR_COMENTARIO> FORNECEDOR_COMENTARIO { get; set; }
+        public virtual DbSet<FORNECEDOR_CONTATO> FORNECEDOR_CONTATO { get; set; }
+        public virtual DbSet<FORNECEDOR_MENSAGEM> FORNECEDOR_MENSAGEM { get; set; }
+        public virtual DbSet<FORNECEDOR_QUADRO_SOCIETARIO> FORNECEDOR_QUADRO_SOCIETARIO { get; set; }
+        public virtual DbSet<GRUPO> GRUPO { get; set; }
         public virtual DbSet<ITEM_PEDIDO_COMPRA> ITEM_PEDIDO_COMPRA { get; set; }
+        public virtual DbSet<ITEM_PEDIDO_VENDA> ITEM_PEDIDO_VENDA { get; set; }
+        public virtual DbSet<LOG> LOG { get; set; }
+        public virtual DbSet<MOVIMENTO_ESTOQUE_PRODUTO> MOVIMENTO_ESTOQUE_PRODUTO { get; set; }
+        public virtual DbSet<NOTICIA> NOTICIA { get; set; }
+        public virtual DbSet<NOTICIA_COMENTARIO> NOTICIA_COMENTARIO { get; set; }
+        public virtual DbSet<NOTIFICACAO> NOTIFICACAO { get; set; }
+        public virtual DbSet<NOTIFICACAO_ANEXO> NOTIFICACAO_ANEXO { get; set; }
         public virtual DbSet<PEDIDO_COMPRA> PEDIDO_COMPRA { get; set; }
         public virtual DbSet<PEDIDO_COMPRA_ACOMPANHAMENTO> PEDIDO_COMPRA_ACOMPANHAMENTO { get; set; }
         public virtual DbSet<PEDIDO_COMPRA_ANEXO> PEDIDO_COMPRA_ANEXO { get; set; }
-        public virtual DbSet<FORMA_ENVIO> FORMA_ENVIO { get; set; }
-        public virtual DbSet<FORMA_FRETE> FORMA_FRETE { get; set; }
-        public virtual DbSet<ITEM_PEDIDO_VENDA> ITEM_PEDIDO_VENDA { get; set; }
         public virtual DbSet<PEDIDO_VENDA> PEDIDO_VENDA { get; set; }
         public virtual DbSet<PEDIDO_VENDA_ACOMPANHAMENTO> PEDIDO_VENDA_ACOMPANHAMENTO { get; set; }
         public virtual DbSet<PEDIDO_VENDA_ANEXO> PEDIDO_VENDA_ANEXO { get; set; }
         public virtual DbSet<PEDIDO_VENDA_PARCELA> PEDIDO_VENDA_PARCELA { get; set; }
+        public virtual DbSet<PERFIL> PERFIL { get; set; }
+        public virtual DbSet<PERIODICIDADE> PERIODICIDADE { get; set; }
+        public virtual DbSet<PERIODICIDADE_TAREFA> PERIODICIDADE_TAREFA { get; set; }
+        public virtual DbSet<PRECO_PRODUTO> PRECO_PRODUTO { get; set; }
+        public virtual DbSet<PRODUTO> PRODUTO { get; set; }
+        public virtual DbSet<PRODUTO_ANEXO> PRODUTO_ANEXO { get; set; }
+        public virtual DbSet<PRODUTO_ESTOQUE_FILIAL> PRODUTO_ESTOQUE_FILIAL { get; set; }
+        public virtual DbSet<PRODUTO_FORNECEDOR> PRODUTO_FORNECEDOR { get; set; }
+        public virtual DbSet<PRODUTO_ORIGEM> PRODUTO_ORIGEM { get; set; }
+        public virtual DbSet<PRODUTO_TABELA_PRECO> PRODUTO_TABELA_PRECO { get; set; }
         public virtual DbSet<RESUMO_VENDA> RESUMO_VENDA { get; set; }
+        public virtual DbSet<SEXO> SEXO { get; set; }
+        public virtual DbSet<SUBCATEGORIA_PRODUTO> SUBCATEGORIA_PRODUTO { get; set; }
+        public virtual DbSet<SUBGRUPO> SUBGRUPO { get; set; }
+        public virtual DbSet<TAREFA> TAREFA { get; set; }
+        public virtual DbSet<TAREFA_ACOMPANHAMENTO> TAREFA_ACOMPANHAMENTO { get; set; }
+        public virtual DbSet<TAREFA_ANEXO> TAREFA_ANEXO { get; set; }
+        public virtual DbSet<TAREFA_NOTIFICACAO> TAREFA_NOTIFICACAO { get; set; }
+        public virtual DbSet<TAREFA_VINCULO> TAREFA_VINCULO { get; set; }
+        public virtual DbSet<TELEFONE> TELEFONE { get; set; }
+        public virtual DbSet<TEMPLATE> TEMPLATE { get; set; }
+        public virtual DbSet<TIPO_AGENDA> TIPO_AGENDA { get; set; }
+        public virtual DbSet<TIPO_CONTA> TIPO_CONTA { get; set; }
+        public virtual DbSet<TIPO_CONTRIBUINTE> TIPO_CONTRIBUINTE { get; set; }
+        public virtual DbSet<TIPO_FAVORECIDO> TIPO_FAVORECIDO { get; set; }
+        public virtual DbSet<TIPO_GRUPO> TIPO_GRUPO { get; set; }
+        public virtual DbSet<TIPO_MENSAGEM> TIPO_MENSAGEM { get; set; }
+        public virtual DbSet<TIPO_PESSOA> TIPO_PESSOA { get; set; }
+        public virtual DbSet<TIPO_TAG> TIPO_TAG { get; set; }
+        public virtual DbSet<TIPO_TAREFA> TIPO_TAREFA { get; set; }
+        public virtual DbSet<TIPO_TRANSPORTE> TIPO_TRANSPORTE { get; set; }
+        public virtual DbSet<TIPO_VEICULO> TIPO_VEICULO { get; set; }
+        public virtual DbSet<TRANSPORTADORA> TRANSPORTADORA { get; set; }
+        public virtual DbSet<TRANSPORTADORA_ANEXO> TRANSPORTADORA_ANEXO { get; set; }
+        public virtual DbSet<UF> UF { get; set; }
+        public virtual DbSet<UNIDADE> UNIDADE { get; set; }
+        public virtual DbSet<USUARIO> USUARIO { get; set; }
+        public virtual DbSet<USUARIO_ANEXO> USUARIO_ANEXO { get; set; }
+        public virtual DbSet<USUARIO_FUNCIONARIO> USUARIO_FUNCIONARIO { get; set; }
     }
 }

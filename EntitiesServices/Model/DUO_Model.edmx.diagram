@@ -4,52 +4,111 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="895d8d96b333439db2d91c936fb99b49" Name="Diagram1">
-        <EntityTypeShape EntityType="DUO_DatabaseModel.AGENDA" Width="1.5" PointX="7.5" PointY="54.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.AGENDA_ANEXO" Width="1.5" PointX="9.75" PointY="62" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.AGENDA_VINCULO" Width="1.5" PointX="15.75" PointY="51.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.ASSINANTE" Width="1.5" PointX="3" PointY="54.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.ASSINANTE_ANEXO" Width="1.5" PointX="5.25" PointY="38.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.BANCO" Width="1.5" PointX="5.25" PointY="42.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CARGO" Width="1.5" PointX="5.25" PointY="45.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_AGENDA" Width="1.5" PointX="5.25" PointY="48.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_EQUIPAMENTO" Width="1.5" PointX="5.25" PointY="51.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_FORNECEDOR" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_NOTIFICACAO" Width="1.5" PointX="5.25" PointY="54" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_PRODUTO" Width="1.5" PointX="5.25" PointY="56.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_TELEFONE" Width="1.5" PointX="5.25" PointY="59.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_USUARIO" Width="1.5" PointX="5.25" PointY="62.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CENTRO_CUSTO" Width="1.5" PointX="10.25" PointY="57.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONFIGURACAO" Width="1.5" PointX="5.25" PointY="69.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_BANCO" Width="1.5" PointX="10.5" PointY="48.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_BANCO_CONTATO" Width="1.5" PointX="12.75" PointY="46.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_BANCO_LANCAMENTO" Width="1.5" PointX="12.75" PointY="42.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.GRUPO" Width="1.5" PointX="7.5" PointY="73.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.LOG" Width="1.5" PointX="15.75" PointY="55.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTICIA" Width="1.5" PointX="5.25" PointY="78.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTICIA_COMENTARIO" Width="1.5" PointX="15.75" PointY="65" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTIFICACAO" Width="1.5" PointX="18.75" PointY="54.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTIFICACAO_ANEXO" Width="1.5" PointX="21" PointY="55.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PERFIL" Width="1.5" PointX="11.25" PointY="70.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PERIODICIDADE" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PERIODICIDADE_TAREFA" Width="1.5" PointX="5.25" PointY="83.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.SUBGRUPO" Width="1.5" PointX="9.75" PointY="66.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA" Width="1.5" PointX="18.75" PointY="71.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_ACOMPANHAMENTO" Width="1.5" PointX="21" PointY="62.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_ANEXO" Width="1.5" PointX="21" PointY="76.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_NOTIFICACAO" Width="1.5" PointX="24" PointY="63.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_VINCULO" Width="1.5" PointX="24" PointY="60.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TELEFONE" Width="1.5" PointX="7.5" PointY="60.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TEMPLATE" Width="1.5" PointX="5.25" PointY="86.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_AGENDA" Width="1.5" PointX="5.25" PointY="90.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_CONTA" Width="1.5" PointX="8.25" PointY="51.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_GRUPO" Width="1.5" PointX="5.25" PointY="93.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_PESSOA" Width="1.5" PointX="0.75" PointY="58.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TAREFA" Width="1.5" PointX="5.25" PointY="96.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.UF" Width="1.5" PointX="5.25" PointY="66.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.USUARIO" Width="1.5" PointX="13.5" PointY="49.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.USUARIO_ANEXO" Width="1.5" PointX="15.75" PointY="69.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.USUARIO_FUNCIONARIO" Width="1.5" PointX="15.75" PointY="72.375" IsExpanded="true" />
+      <Diagram DiagramId="ae92c70eabf64ca7a0176e49c43a50cb" Name="Diagram1">
+        <EntityTypeShape EntityType="DUO_DatabaseModel.AGENDA" Width="1.5" PointX="7.5" PointY="129" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.AGENDA_ANEXO" Width="1.5" PointX="9.75" PointY="119" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.AGENDA_VINCULO" Width="1.5" PointX="15.75" PointY="122.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.ASSINANTE" Width="1.5" PointX="3" PointY="130.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.ASSINANTE_ANEXO" Width="1.5" PointX="5.25" PointY="108.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.BANCO" Width="1.5" PointX="5.25" PointY="112.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CARGO" Width="1.5" PointX="5.25" PointY="115.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_AGENDA" Width="1.5" PointX="5.25" PointY="118.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_CLIENTE" Width="1.5" PointX="5.25" PointY="121.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_EQUIPAMENTO" Width="1.5" PointX="5.25" PointY="124.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_FORNECEDOR" Width="1.5" PointX="22.25" PointY="116.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_NOTIFICACAO" Width="1.5" PointX="5.25" PointY="127" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_PRODUTO" Width="1.5" PointX="5.25" PointY="130" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_TELEFONE" Width="1.5" PointX="5.25" PointY="133.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_USUARIO" Width="1.5" PointX="5.25" PointY="136.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CENTRO_CUSTO" Width="1.5" PointX="5.25" PointY="139.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE" Width="1.5" PointX="18.75" PointY="128.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_ANEXO" Width="1.5" PointX="21" PointY="127.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_CONTATO" Width="1.5" PointX="21" PointY="136.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_QUADRO_SOCIETARIO" Width="1.5" PointX="21" PointY="123" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_REFERENCIA" Width="1.5" PointX="21" PointY="119.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_TAG" Width="1.5" PointX="21" PointY="159.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONFIGURACAO" Width="1.5" PointX="5.25" PointY="144.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_BANCO" Width="1.5" PointX="10.5" PointY="122.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_BANCO_CONTATO" Width="1.5" PointX="12.75" PointY="119" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_BANCO_LANCAMENTO" Width="1.5" PointX="12.75" PointY="115.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR" Width="1.5" PointX="15.75" PointY="151.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_ANEXO" Width="1.5" PointX="18" PointY="168.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_PARCELA" Width="1.5" PointX="27" PointY="130.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_RATEIO" Width="1.5" PointX="24" PointY="158" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_TAG" Width="1.5" PointX="18" PointY="171.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER" Width="1.5" PointX="18.75" PointY="148.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_ANEXO" Width="1.5" PointX="21" PointY="150.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_PARCELA" Width="1.5" PointX="21" PointY="154.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_RATEIO" Width="1.5" PointX="24" PointY="154.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_TAG" Width="1.5" PointX="21" PointY="169.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO" Width="1.5" PointX="10.5" PointY="131" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO_ANEXO" Width="1.5" PointX="12.75" PointY="143.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO_MANUTENCAO" Width="1.5" PointX="15.75" PointY="140" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FILIAL" Width="1.5" PointX="10.25" PointY="142.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_ENVIO" Width="1.5" PointX="5.25" PointY="149.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_FRETE" Width="1.5" PointX="5.25" PointY="152.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_PAGAMENTO" Width="1.5" PointX="15.75" PointY="129.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR" Width="1.5" PointX="24.5" PointY="136.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_ANEXO" Width="1.5" PointX="26.75" PointY="136.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_COMENTARIO" Width="1.5" PointX="15.75" PointY="126.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_CONTATO" Width="1.5" PointX="26.75" PointY="139.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_MENSAGEM" Width="1.5" PointX="18.75" PointY="124.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_QUADRO_SOCIETARIO" Width="1.5" PointX="26.75" PointY="142.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.GRUPO" Width="1.5" PointX="7.5" PointY="158.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.ITEM_PEDIDO_COMPRA" Width="1.5" PointX="35" PointY="139.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" Width="1.5" PointX="34.25" PointY="145.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.LOG" Width="1.5" PointX="15.75" PointY="135.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.MOVIMENTO_ESTOQUE_PRODUTO" Width="1.5" PointX="12.5" PointY="147.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTICIA" Width="1.5" PointX="5.25" PointY="168.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTICIA_COMENTARIO" Width="1.5" PointX="15.75" PointY="146.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTIFICACAO" Width="1.5" PointX="21.75" PointY="131" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.NOTIFICACAO_ANEXO" Width="1.5" PointX="24" PointY="132" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA" Width="1.5" PointX="29.75" PointY="133" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA_ACOMPANHAMENTO" Width="1.5" PointX="32" PointY="129.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA_ANEXO" Width="1.5" PointX="32" PointY="136.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA" Width="1.5" PointX="29" PointY="141" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO" Width="1.5" PointX="34.25" PointY="135.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ANEXO" Width="1.5" PointX="31.25" PointY="152.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA" Width="1.5" PointX="31.25" PointY="155.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PERFIL" Width="1.5" PointX="11.25" PointY="111.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PERIODICIDADE" Width="1.5" PointX="26.75" PointY="152.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PERIODICIDADE_TAREFA" Width="1.5" PointX="5.25" PointY="173.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRECO_PRODUTO" Width="1.5" PointX="18.5" PointY="144.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO" Width="1.5" PointX="7.5" PointY="134.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ANEXO" Width="1.5" PointX="9.75" PointY="151.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ESTOQUE_FILIAL" Width="1.5" PointX="21.5" PointY="142.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_FORNECEDOR" Width="1.5" PointX="12.75" PointY="154" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ORIGEM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_TABELA_PRECO" Width="1.5" PointX="21.5" PointY="146.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.RESUMO_VENDA" Width="1.5" PointX="5.25" PointY="176.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.SEXO" Width="1.5" PointX="16.5" PointY="119.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.SUBCATEGORIA_PRODUTO" Width="1.5" PointX="10.5" PointY="138.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.SUBGRUPO" Width="1.5" PointX="9.75" PointY="155.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA" Width="1.5" PointX="18.75" PointY="161" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_ACOMPANHAMENTO" Width="1.5" PointX="32" PointY="144.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_ANEXO" Width="1.5" PointX="21" PointY="165.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_NOTIFICACAO" Width="1.5" PointX="32" PointY="148.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TAREFA_VINCULO" Width="1.5" PointX="32" PointY="140.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TELEFONE" Width="1.5" PointX="13.5" PointY="138.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TEMPLATE" Width="1.5" PointX="5.25" PointY="179.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_AGENDA" Width="1.5" PointX="5.25" PointY="183.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_CONTA" Width="1.5" PointX="8.25" PointY="125.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_CONTRIBUINTE" Width="1.5" PointX="16.5" PointY="116.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_FAVORECIDO" Width="1.5" PointX="16.5" PointY="179.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_GRUPO" Width="1.5" PointX="5.25" PointY="186.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_MENSAGEM" Width="1.5" PointX="16.5" PointY="113.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_PESSOA" Width="1.5" PointX="0.75" PointY="136.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TAG" Width="1.5" PointX="5.25" PointY="189.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TAREFA" Width="1.5" PointX="5.25" PointY="193.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TRANSPORTE" Width="1.5" PointX="22.25" PointY="162.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_VEICULO" Width="1.5" PointX="22.25" PointY="173.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TRANSPORTADORA" Width="1.5" PointX="24.5" PointY="146.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.TRANSPORTADORA_ANEXO" Width="1.5" PointX="26.75" PointY="148.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.UF" Width="1.5" PointX="8" PointY="163.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.UNIDADE" Width="1.5" PointX="5.25" PointY="155.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.USUARIO" Width="1.5" PointX="13.5" PointY="122.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.USUARIO_ANEXO" Width="1.5" PointX="15.75" PointY="166.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUO_DatabaseModel.USUARIO_FUNCIONARIO" Width="1.5" PointX="15.75" PointY="169.625" IsExpanded="true" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_AGENDA_ANEXO_AGENDA" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_AGENDA_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_AGENDA_CATEGORIA_AGENDA" ManuallyRouted="false" />
@@ -62,46 +121,175 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_BANCO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CARGO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_AGENDA_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_CLIENTE_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_EQUIPAMENTO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_NOTIFICACAO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_PRODUTO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_TELEFONE_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_USUARIO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CENTRO_CUSTO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONFIGURACAO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_BANCO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FILIAL_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_GRUPO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_LOG_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTICIA_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTIFICACAO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_PERIODICIDADE_TAREFA_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_RESUMO_VENDA_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_SUBGRUPO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TELEFONE_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TEMPLATE_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TIPO_AGENDA_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TIPO_GRUPO_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TIPO_TAG_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TIPO_TAREFA_ASSINANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_ASSINANTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_BANCO_BANCO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_CARGO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_CATEGORIA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_CATEGORIA_EQUIPAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_CATEGORIA_FORNECEDOR" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTIFICACAO_CATEGORIA_NOTIFICACAO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_CATEGORIA_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_CATEGORIA_PRODUTO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TELEFONE_CATEGORIA_TELEFONE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_CATEGORIA_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CENTRO_CUSTO_GRUPO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CENTRO_CUSTO_SUBGRUPO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CENTRO_CUSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_RATEIO_CENTRO_CUSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CENTRO_CUSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CENTRO_CUSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_CENTRO_CUSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CENTRO_CUSTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_ANEXO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_CONTATO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_QUADRO_SOCIETARIO_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_REFERENCIA_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_SEXO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TAG_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TIPO_CONTRIBUINTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TIPO_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_UF1" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CLIENTE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_BANCO_CONTATO_CONTA_BANCO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_BANCO_LANCAMENTO_CONTA_BANCO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_BANCO_TIPO_CONTA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CONTA_BANCO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CONTA_BANCO1" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_CONTA_BANCO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CONTA_BANCO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_CONTA_BANCO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_ANEXO_CONTA_PAGAR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_FORMA_PAGAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_CONTA_PAGAR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PERIODICIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_RATEIO_CONTA_PAGAR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TAG_CONTA_PAGAR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TIPO_FAVORECIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TIPO_TAG" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_FORMA_PAGAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TAG_TIPO_TAG" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_ANEXO_CONTA_RECEBER" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_FORMA_PAGAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_PARCELA_CONTA_RECEBER" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_PERIODICIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CONTA_RECEBER" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_CONTA_RECEBER" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_FAVORECIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_TAG" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_TIPO_TAG" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_ANEXO_EQUIPAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_PERIODICIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FILIAL_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRECO_PRODUTO_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ESTOQUE_FILIAL_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_FILIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_ENVIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_FRETE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORMA_PAGAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FORMA_PAGAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_ANEXO_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_CONTATO_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_QUADRO_SOCIETARIO_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_TIPO_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FORNECEDOR_FORNECEDOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_TIPO_MENSAGEM" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_GRUPO_TIPO_GRUPO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_SUBGRUPO_GRUPO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PEDIDO_COMPRA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_UNIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_UNIDADE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_LOG_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_PRODUTO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTICIA_COMENTARIO_NOTICIA" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTICIA_COMENTARIO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTIFICACAO_ANEXO_NOTIFICACAO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_NOTIFICACAO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_PEDIDO_COMPRA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ANEXO_PEDIDO_COMPRA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA1" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PERIODICIDADE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_PERFIL" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_PERIODICIDADE_TAREFA" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRECO_PRODUTO_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ANEXO_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ESTOQUE_FILIAL_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FORNECEDOR_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_SUBCATEGORIA_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_PRODUTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_UNIDADE" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_ACOMPANHAMENTO_TAREFA" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_ANEXO_TAREFA" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_NOTIFICACAO_TAREFA" ManuallyRouted="false" />
@@ -112,200 +300,11 @@
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_NOTIFICACAO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TAREFA_VINCULO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_TELEFONE_UF" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_TRANSPORTE" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_VEICULO" ManuallyRouted="false" />
+        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ANEXO_TRANSPORTADORA" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_ANEXO_USUARIO" ManuallyRouted="false" />
         <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_FUNCIONARIO_USUARIO" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CATEGORIA_CLIENTE" Width="1.5" PointX="21.5" PointY="59.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE" Width="1.5" PointX="23.75" PointY="45.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_ANEXO" Width="1.5" PointX="26" PointY="51.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_CONTATO" Width="1.5" PointX="26" PointY="54.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_QUADRO_SOCIETARIO" Width="1.5" PointX="26" PointY="44.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_REFERENCIA" Width="1.5" PointX="26" PointY="48.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CLIENTE_TAG" Width="1.5" PointX="26" PointY="67.125" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FILIAL" Width="1.5" PointX="13.5" PointY="63.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR" Width="1.5" PointX="15.75" PointY="31.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_ANEXO" Width="1.5" PointX="18" PointY="37.5" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_CONTATO" Width="1.5" PointX="18" PointY="34.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_QUADRO_SOCIETARIO" Width="1.5" PointX="18" PointY="30.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.SEXO" Width="1.5" PointX="21.5" PointY="51.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_CONTRIBUINTE" Width="1.5" PointX="21.5" PointY="48.625" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CATEGORIA_CLIENTE_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FILIAL_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_CATEGORIA_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_CATEGORIA_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_ANEXO_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_CONTATO_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_QUADRO_SOCIETARIO_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_REFERENCIA_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_SEXO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TAG_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TIPO_CONTRIBUINTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_TIPO_PESSOA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_UF" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_UF1" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CLIENTE_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FILIAL_UF" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_ANEXO_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_CONTATO_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_QUADRO_SOCIETARIO_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_TIPO_PESSOA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_UF" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO" Width="1.5" PointX="21.125" PointY="37.875" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO_ANEXO" Width="1.5" PointX="23.375" PointY="39.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.EQUIPAMENTO_MANUTENCAO" Width="1.5" PointX="21.375" PointY="34.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.MOVIMENTO_ESTOQUE_PRODUTO" Width="1.5" PointX="16.125" PointY="59.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRECO_PRODUTO" Width="1.5" PointX="19.125" PointY="66" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO" Width="1.5" PointX="29.125" PointY="54" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ANEXO" Width="1.5" PointX="31.375" PointY="65.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ESTOQUE_FILIAL" Width="1.5" PointX="31.375" PointY="61.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_FORNECEDOR" Width="1.5" PointX="21.375" PointY="30.5" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_ORIGEM" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PRODUTO_TABELA_PRECO" Width="1.5" PointX="34.375" PointY="62.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.SUBCATEGORIA_PRODUTO" Width="1.5" PointX="26.875" PointY="60.125" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TRANSPORTE" Width="1.5" PointX="19.875" PointY="82.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_VEICULO" Width="1.5" PointX="19.875" PointY="79.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TRANSPORTADORA" Width="1.5" PointX="22.125" PointY="66.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TRANSPORTADORA_ANEXO" Width="1.5" PointX="24.375" PointY="70.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.UNIDADE" Width="1.5" PointX="26.875" PointY="63.375" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_CATEGORIA_EQUIPAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_CATEGORIA_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_SUBCATEGORIA_PRODUTO_CATEGORIA_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_ANEXO_EQUIPAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_EQUIPAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_PERIODICIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRECO_PRODUTO_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ESTOQUE_FILIAL_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FORNECEDOR_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_MOVIMENTO_ESTOQUE_PRODUTO_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRECO_PRODUTO_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ANEXO_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_ESTOQUE_FILIAL_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_FORNECEDOR_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_SUBCATEGORIA_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_TABELA_PRECO_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PRODUTO_UNIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_TRANSPORTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_TIPO_VEICULO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_TRANSPORTADORA_ANEXO_TRANSPORTADORA" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_COMENTARIO" Width="1.5" PointX="18" PointY="42" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORNECEDOR_MENSAGEM" Width="1.5" PointX="18" PointY="45.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_MENSAGEM" Width="1.5" PointX="15.75" PointY="46.375" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_COMENTARIO_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_TIPO_MENSAGEM" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORNECEDOR_MENSAGEM_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_USUARIO_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_EQUIPAMENTO_MANUTENCAO_ASSINANTE" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR" Width="1.5" PointX="18" PointY="17.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_ANEXO" Width="1.5" PointX="20.25" PointY="25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_PARCELA" Width="1.5" PointX="28.25" PointY="26.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_RATEIO" Width="1.5" PointX="20.25" PointY="45.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_PAGAR_TAG" Width="1.5" PointX="20.25" PointY="21" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER" Width="1.5" PointX="26" PointY="30.5" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_ANEXO" Width="1.5" PointX="28.25" PointY="40.375" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_PARCELA" Width="1.5" PointX="28.25" PointY="32.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_RATEIO" Width="1.5" PointX="28.25" PointY="45" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.CONTA_RECEBER_TAG" Width="1.5" PointX="31.25" PointY="35.125" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_PAGAMENTO" Width="1.5" PointX="23.75" PointY="30.75" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_FAVORECIDO" Width="1.5" PointX="23.75" PointY="36.875" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.TIPO_TAG" Width="1.5" PointX="23.75" PointY="25.875" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_TIPO_TAG_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CENTRO_CUSTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_RATEIO_CENTRO_CUSTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CENTRO_CUSTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CENTRO_CUSTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CONTA_BANCO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_CONTA_BANCO1" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_CONTA_BANCO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_CONTA_BANCO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_PAGAMENTO_CONTA_BANCO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_ANEXO_CONTA_PAGAR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_FORMA_PAGAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_CONTA_PAGAR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PERIODICIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_RATEIO_CONTA_PAGAR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TAG_CONTA_PAGAR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TIPO_FAVORECIDO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TIPO_TAG" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_PARCELA_FORMA_PAGAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_PAGAR_TAG_TIPO_TAG" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_ANEXO_CONTA_RECEBER" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_FORMA_PAGAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_PARCELA_CONTA_RECEBER" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_PERIODICIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_RATEIO_CONTA_RECEBER" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_CONTA_RECEBER" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_FAVORECIDO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TIPO_TAG" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_CONTA_RECEBER_TAG_TIPO_TAG" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.ITEM_PEDIDO_COMPRA" Width="1.5" PointX="33.25" PointY="49.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA" Width="1.5" PointX="31" PointY="45.875" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA_ACOMPANHAMENTO" Width="1.5" PointX="33.25" PointY="55.625" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_COMPRA_ANEXO" Width="1.5" PointX="33.25" PointY="46.125" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_CENTRO_CUSTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORMA_PAGAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_FORNECEDOR" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PEDIDO_COMPRA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_COMPRA_UNIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_PEDIDO_COMPRA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ANEXO_PEDIDO_COMPRA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_COMPRA_ACOMPANHAMENTO_USUARIO" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_ENVIO" Width="1.5" PointX="31.75" PointY="41.875" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.FORMA_FRETE" Width="1.5" PointX="31.75" PointY="38.875" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.ITEM_PEDIDO_VENDA" Width="1.5" PointX="36.25" PointY="51.25" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA" Width="1.5" PointX="34" PointY="32" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ACOMPANHAMENTO" Width="1.5" PointX="36.25" PointY="47" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_ANEXO" Width="1.5" PointX="36.25" PointY="38.875" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.PEDIDO_VENDA_PARCELA" Width="1.5" PointX="36.25" PointY="35.5" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_ENVIO_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_FORMA_FRETE_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ASSINANTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CENTRO_CUSTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_CLIENTE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FILIAL" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_ENVIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_Forma_FRETE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_FORMA_PAGAMENTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PEDIDO_VENDA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_PRODUTO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_ITEM_PEDIDO_VENDA_UNIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_PEDIDO_VENDA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ANEXO_PEDIDO_VENDA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PARCELA_PEDIDO_VENDA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PEDIDO_VENDA_PARCELA" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_PERIODICIDADE" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_USUARIO1" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_PEDIDO_VENDA_ACOMPANHAMENTO_USUARIO" />
-        <EntityTypeShape EntityType="DUO_DatabaseModel.RESUMO_VENDA" Width="1.5" PointX="5.25" PointY="75.125" />
-        <AssociationConnector Association="DUO_DatabaseModel.FK_RESUMO_VENDA_ASSINANTE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

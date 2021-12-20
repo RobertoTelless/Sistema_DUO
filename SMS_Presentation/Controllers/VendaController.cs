@@ -528,7 +528,15 @@ namespace SMS_Presentation.Controllers
             // Prepara view
             PEDIDO_VENDA item = new PEDIDO_VENDA();
             PedidoVendaViewModel vm = Mapper.Map<PEDIDO_VENDA, PedidoVendaViewModel>(item);
-            vm.PEVE_NR_NUMERO = baseApp.GetAllItens(idAss).Select(x => x.PEVE_CD_ID).Max().ToString();
+            List<PEDIDO_VENDA> pv = baseApp.GetAllItens(idAss);
+            if (pv.Count > 0)
+            {
+                vm.PEVE_NR_NUMERO = baseApp.GetAllItens(idAss).Select(x => x.PEVE_CD_ID).Max().ToString();
+            }
+            else
+            {
+                vm.PEVE_NR_NUMERO = "1";
+            }
             vm.ASSI_CD_ID = idAss;
             vm.PEVE_DT_DATA = DateTime.Today.Date;
             vm.PEVE_IN_ATIVO = 1;

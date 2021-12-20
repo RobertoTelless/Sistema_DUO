@@ -86,7 +86,6 @@ namespace EntitiesServices.Model
         public virtual ICollection<PEDIDO_VENDA_ANEXO> PEDIDO_VENDA_ANEXO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEDIDO_VENDA_PARCELA> PEDIDO_VENDA_PARCELA { get; set; }
-        public virtual PEDIDO_VENDA_PARCELA PEDIDO_VENDA_PARCELA1 { get; set; }
         public virtual PERIODICIDADE PERIODICIDADE { get; set; }
         public virtual USUARIO USUARIO { get; set; }
         public virtual USUARIO USUARIO1 { get; set; }
